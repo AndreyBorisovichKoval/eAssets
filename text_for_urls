@@ -31,10 +31,13 @@ http://localhost:8000/assets/api/assets/3/
   "description": "Новое описание"
 }
 
-PATCH
+PATCH:
 http://localhost:8000/assets/api/assets/11/
 {
   "title": "Новое название актива11",
   "cost": 1500.0,
   "description": "Новое описание актива11"
 }
+
+DELETE:
+http://localhost:8000/assets/api/assets/18/

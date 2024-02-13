@@ -5,30 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3d639ec-df00-4d9e-aff5-86d9d5d8dc44" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/eAssets.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/api/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/api/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/api/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/api/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eAssets/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eAssets/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eAssets/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eAssets/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eAssets/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/urls_text" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/urls_text" beforeDir="false" afterPath="$PROJECT_DIR$/text_for_urls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +45,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "D:/0_Pycharm/eAssets",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -135,6 +113,7 @@
       <workItem from="1707737973027" duration="156000" />
       <workItem from="1707739285549" duration="1560000" />
       <workItem from="1707792444240" duration="4813000" />
+      <workItem from="1707797492386" duration="480000" />
     </task>
     <servers />
   </component>
