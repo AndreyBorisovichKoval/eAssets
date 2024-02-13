@@ -61,7 +61,6 @@ class Asset(models.Model):
     description = models.TextField(null=True)
 
 
-
 class AssetAssignment(models.Model):
     asset = models.ForeignKey(Asset, on_delete=models.CASCADE)
     staff = models.ForeignKey(Staff, on_delete=models.CASCADE)

@@ -1,5 +1,6 @@
 .idea
 __pycache__
+eAssets/__pycache__
 eAssets/eAssets/__pycache__
 eAssets/assets/__pycache__
 eAssets/assets/api/__pycache__
