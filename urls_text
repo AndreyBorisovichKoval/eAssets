@@ -1,0 +1,40 @@
+GET:
+http://localhost:8000/assets/ping/
+http://localhost:8000/assets/api/assets/
+http://localhost:8000/assets/api/assets/3/
+
+POST:
+http://localhost:8000/assets/api/assets/
+{
+  "inventory_number": "INV-203",
+  "title": "Название актива203",
+  "identifier": "ID-503",
+  "acquisition_date": "2022-01-01",
+  "service_life": 5,
+  "cost": 1000.0,
+  "current_cost": 900.0,
+  "last_recalculation_date": "2023-01-01",
+  "description": "Описание актива"
+}
+
+PUT:
+http://localhost:8000/assets/api/assets/3/
+{
+  "inventory_number": "INV-123",
+  "title": "Новый заголовок",
+  "identifier": "ID-456",
+  "acquisition_date": "2022-01-01",
+  "service_life": 5,
+  "cost": 1000.0,
+  "current_cost": 900.0,
+  "last_recalculation_date": "2023-01-01",
+  "description": "Новое описание"
+}
+
+PATCH
+http://localhost:8000/assets/api/assets/11/
+{
+  "title": "Новое название актива11",
+  "cost": 1500.0,
+  "description": "Новое описание актива11"
+}
