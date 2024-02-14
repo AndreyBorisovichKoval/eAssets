@@ -1,5 +1,6 @@
 GET:
 http://localhost:8000/assets/ping/
+http://localhost:8000/
 http://localhost:8000/assets/api/assets/
 http://localhost:8000/assets/api/assets/3/
 
