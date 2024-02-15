@@ -38,9 +38,23 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "rest_framework",
+    "django_crontab",
     "index",
     "assets",
 ]
+
+# ==================================================================
+# pip install django-crontab
+# ------------------------------
+CRONJOBS = [
+    ('0 0 1 * *', 'assets.tasks.my_task'),
+]
+# ------------------------------
+# Примените изменения в расписании с помощью следующей команды:
+# python manage.py crontab add
+# python manage.py crontab add
+# ==================================================================
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
