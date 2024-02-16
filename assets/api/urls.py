@@ -1,11 +1,17 @@
 from django.urls import path
-from assets.api.views import AssetViewSet, AssetDetail
+# from assets.api.views import AssetViewSet, AssetDetail
+from assets.api.views import AssetView
 
 
 urlpatterns = [
-    path('assets/', AssetViewSet.as_view(), name='assets-list'),
-    path('assets/<int:pk>/', AssetDetail.as_view(), name='assets-detail'),
+    path('assets/', AssetView.as_view(), name='assets-list'),
+    path('assets/<int:pk>/', AssetView.as_view(), name='assets-detail'),
 ]
+
+# urlpatterns = [
+#     path('assets/', AssetViewSet.as_view(), name='assets-list'),
+#     path('assets/<int:pk>/', AssetDetail.as_view(), name='assets-detail'),
+# ]
 
 # urlpatterns = [
 #     path('assets/', AssetViewSet.as_view(), name='assets-list'),
