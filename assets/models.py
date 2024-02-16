@@ -1,34 +1,34 @@
 from django.db import models
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 # from django.db.models import CASCADE
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+# from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 
 
-class UserManager(BaseUserManager):
-    def create_user(self, username, password=None):
-        if not username:
-            raise ValueError('Username is required')
-        user = self.model(username=username)
-        user.set_password(password)
-        user.save(using=self._db)
-        return user
-
-    def create_superuser(self, username, password=None):
-        return self.create_user(username, password)
-
-
-class User(AbstractBaseUser, PermissionsMixin):
-    username = models.CharField(max_length=150, unique=True)
-    is_active = models.BooleanField(default=True)
-    is_user = models.BooleanField(default=False)
-
-    objects = UserManager()
-
-    USERNAME_FIELD = 'username'
-
-    def __str__(self):
-        return self.username
-
+# class UserManager(BaseUserManager):
+#     def create_user(self, username, password=None):
+#         if not username:
+#             raise ValueError('Username is required')
+#         user = self.model(username=username)
+#         user.set_password(password)
+#         user.save(using=self._db)
+#         return user
+#
+#     def create_superuser(self, username, password=None):
+#         return self.create_user(username, password)
+#
+#
+# class User(AbstractBaseUser, PermissionsMixin):
+#     username = models.CharField(max_length=150, unique=True)
+#     is_active = models.BooleanField(default=True)
+#     is_user = models.BooleanField(default=False)
+#
+#     objects = UserManager()
+#
+#     USERNAME_FIELD = 'username'
+#
+#     def __str__(self):
+#         return self.username
+#
 
 class Department(models.Model):
     name = models.CharField(max_length=100)
@@ -99,6 +99,7 @@ class AssetTransfer(models.Model):
 
 # for Migrations
 # python manage.py makemigrations
+# python manage.py makemigrations assets
 # python manage.py migrate
 
 
