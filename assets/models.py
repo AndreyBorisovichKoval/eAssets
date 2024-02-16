@@ -1,6 +1,33 @@
 from django.db import models
-from django.contrib.auth.models import User
-from django.db.models import CASCADE
+# from django.contrib.auth.models import User
+# from django.db.models import CASCADE
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+
+
+class UserManager(BaseUserManager):
+    def create_user(self, username, password=None):
+        if not username:
+            raise ValueError('Username is required')
+        user = self.model(username=username)
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, username, password=None):
+        return self.create_user(username, password)
+
+
+class User(AbstractBaseUser, PermissionsMixin):
+    username = models.CharField(max_length=150, unique=True)
+    is_active = models.BooleanField(default=True)
+    is_user = models.BooleanField(default=False)
+
+    objects = UserManager()
+
+    USERNAME_FIELD = 'username'
+
+    def __str__(self):
+        return self.username
 
 
 class Department(models.Model):
@@ -30,29 +57,6 @@ class Staff(models.Model):
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
     division = models.ForeignKey(Division, on_delete=models.CASCADE)
     position = models.ForeignKey(Position, on_delete=models.CASCADE)
-
-    employee_details = models.OneToOneField("EmployeeDetails", on_delete=models.CASCADE)
-
-
-class EmployeeDetails(models.Model):
-    date_of_birth = models.DateField(blank=True, null=True)
-    passport = models.CharField(max_length=12)
-    individual_taxpayer_number = models.CharField(max_length=12)
-    gender = models.CharField(max_length=10, blank=True)
-    contact_number = models.CharField(max_length=20, blank=True)
-    email = models.EmailField(blank=True)
-    address = models.TextField(blank=True)
-    education = models.TextField(blank=True)
-    courses = models.TextField(blank=True)
-    skills = models.TextField(blank=True)
-    language_skills = models.TextField(blank=True, null=True)
-    previous_employment = models.TextField(blank=True)
-    emergency_contact_name = models.CharField(max_length=100, blank=True)
-    emergency_contact_number = models.CharField(max_length=20, blank=True)
-    joining_date = models.DateField(blank=True, null=True)
-    contract_start_date = models.DateField(blank=True, null=True)
-    contract_end_date = models.DateField(blank=True, null=True)
-    salary = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
     memo = models.TextField()
 
 
@@ -66,6 +70,14 @@ class Asset(models.Model):
     current_cost = models.DecimalField(max_digits=10, decimal_places=2)
     last_recalculation_date = models.DateField(null=True)
     description = models.TextField(null=True)
+    asset_type = models.ForeignKey('AssetType', on_delete=models.CASCADE)
+
+
+class AssetType(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 
 class AssetAssignment(models.Model):
@@ -73,6 +85,16 @@ class AssetAssignment(models.Model):
     staff = models.ForeignKey(Staff, on_delete=models.CASCADE)
     assignment_date = models.DateField()
     return_date = models.DateField(null=True)
+
+
+class AssetTransfer(models.Model):
+    asset = models.ForeignKey(Asset, on_delete=models.CASCADE)
+    from_staff = models.ForeignKey(Staff, related_name='transferred_assets', on_delete=models.CASCADE)
+    to_staff = models.ForeignKey(Staff, related_name='received_assets', on_delete=models.CASCADE)
+    transfer_date = models.DateField()
+
+    def __str__(self):
+        return f"{self.asset} transferred from {self.from_staff} to {self.to_staff} on {self.transfer_date}"
 
 
 # for Migrations
