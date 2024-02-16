@@ -93,16 +93,6 @@ class AssetAssignment(models.Model):
     return_date = models.DateField(null=True)
 
 
-# class AssetTransfer(models.Model):
-#     asset = models.ForeignKey(Asset, on_delete=models.CASCADE)
-#     from_staff = models.ForeignKey(Staff, related_name='transferred_assets', on_delete=models.CASCADE)
-#     to_staff = models.ForeignKey(Staff, related_name='received_assets', on_delete=models.CASCADE)
-#     transfer_date = models.DateField()
-#
-#     def __str__(self):
-#         return f"{self.asset} transferred from {self.from_staff} to {self.to_staff} on {self.transfer_date}"
-
-
 # for Migrations
 # python manage.py makemigrations
 # python manage.py makemigrations assets
