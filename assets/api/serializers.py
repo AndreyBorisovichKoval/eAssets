@@ -1,6 +1,6 @@
 from rest_framework import serializers
 # from assets.models import (UserManager, User, Department, Division, Position, Staff, Asset, AssetType, AssetAssignment, AssetTransfer)
-from assets.models import Department, Division, Position, Staff, Asset, AssetType, AssetAssignment, AssetTransfer
+from assets.models import Department, Division, Position, Staff, Asset, AssetType, AssetAssignment
 
 
 # class UserManagerSerializer(serializers.ModelSerializer):
@@ -57,10 +57,10 @@ class AssetAssignmentSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class AssetTransferSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = AssetTransfer
-        fields = '__all__'
+# class AssetTransferSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = AssetTransfer
+#         fields = '__all__'
 
 
 # class UserManger(models.Model):

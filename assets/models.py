@@ -54,7 +54,7 @@ class Staff(models.Model):
     last_name = models.CharField(max_length=100)
     first_name = models.CharField(max_length=100)
     patronymic = models.CharField(max_length=100)
-    department = models.ForeignKey(Department, on_delete=models.CASCADE)
+    # department = models.ForeignKey(Department, on_delete=models.CASCADE)
     division = models.ForeignKey(Division, on_delete=models.CASCADE)
     position = models.ForeignKey(Position, on_delete=models.CASCADE)
     memo = models.TextField()
@@ -87,14 +87,14 @@ class AssetAssignment(models.Model):
     return_date = models.DateField(null=True)
 
 
-class AssetTransfer(models.Model):
-    asset = models.ForeignKey(Asset, on_delete=models.CASCADE)
-    from_staff = models.ForeignKey(Staff, related_name='transferred_assets', on_delete=models.CASCADE)
-    to_staff = models.ForeignKey(Staff, related_name='received_assets', on_delete=models.CASCADE)
-    transfer_date = models.DateField()
-
-    def __str__(self):
-        return f"{self.asset} transferred from {self.from_staff} to {self.to_staff} on {self.transfer_date}"
+# class AssetTransfer(models.Model):
+#     asset = models.ForeignKey(Asset, on_delete=models.CASCADE)
+#     from_staff = models.ForeignKey(Staff, related_name='transferred_assets', on_delete=models.CASCADE)
+#     to_staff = models.ForeignKey(Staff, related_name='received_assets', on_delete=models.CASCADE)
+#     transfer_date = models.DateField()
+#
+#     def __str__(self):
+#         return f"{self.asset} transferred from {self.from_staff} to {self.to_staff} on {self.transfer_date}"
 
 
 # for Migrations
