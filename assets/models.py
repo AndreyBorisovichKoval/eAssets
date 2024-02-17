@@ -31,18 +31,18 @@ from django.contrib.auth.models import User
 #
 
 class Department(models.Model):
-    name = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
     is_deleted = models.BooleanField(default=False)
 
 
 class Division(models.Model):
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
-    name = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
     is_deleted = models.BooleanField(default=False)
 
 
 class Position(models.Model):
-    name = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
     is_deleted = models.BooleanField(default=False)
 
 
@@ -79,11 +79,11 @@ class Asset(models.Model):
 
 
 class AssetType(models.Model):
-    name = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
     is_deleted = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.name
+        return self.title
 
 
 class AssetAssignment(models.Model):

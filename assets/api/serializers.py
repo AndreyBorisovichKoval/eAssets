@@ -57,12 +57,6 @@ class AssetAssignmentSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-# class AssetTransferSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = AssetTransfer
-#         fields = '__all__'
-
-
 # class UserManger(models.Model):
 # class User(models.Model):
 # class Department(models.Model):
