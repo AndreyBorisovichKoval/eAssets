@@ -4,13 +4,28 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from typing import Any
-
+from rest_framework_simplejwt.tokens import AccessToken
+from assets.api.serializers import AssetSerializer
+from assets.models import Asset
 # from suppress import suppress
 # @suppress
 
 
-from assets.api.serializers import AssetSerializer
-from assets.models import Asset
+def get_user_id_from_token(request):
+    try:
+        authorization_header = request.headers.get('Authorization')
+        access_token = AccessToken(authorization_header.split()[1])
+        user_id = access_token['user_id']
+        return user_id
+    except (AuthenticationFailed, IndexError):
+        return None
+
+
+@api_view(["POST"])
+def create_user(request):
+    serializer = UserSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
 
 
 class AssetView(APIView):

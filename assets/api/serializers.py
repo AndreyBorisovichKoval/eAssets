@@ -1,6 +1,7 @@
+from django.contrib.auth.models import User
 from rest_framework import serializers
 # from assets.models import (UserManager, User, Department, Division, Position, Staff, Asset, AssetType, AssetAssignment, AssetTransfer)
-from assets.models import Department, Division, Position, Staff, Asset, AssetType, AssetAssignment
+from assets.models import Department, Division, Position, Staff, Asset, AssetType, AssetAssignment, TaskCheckPoint
 
 
 # class UserManagerSerializer(serializers.ModelSerializer):
@@ -13,6 +14,16 @@ from assets.models import Department, Division, Position, Staff, Asset, AssetTyp
 #     class Meta:
 #         model = User
 #         fields = '__all__'
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'email', 'password']
+        extra_kwargs = {'password': {'write_only': True}}
+
+    def create(self, validated_data):
+        user = User.objects.create_user(**validated_data)
+        return user
 
 
 class DepartmentSerializer(serializers.ModelSerializer):
@@ -57,6 +68,12 @@ class AssetAssignmentSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class TaskCheckPointSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TaskCheckPoint
+        fields = '__all__'
+
+
 # class UserManger(models.Model):
 # class User(models.Model):
 # class Department(models.Model):
@@ -67,4 +84,4 @@ class AssetAssignmentSerializer(serializers.ModelSerializer):
 # class AssetAssignment(models.Model):
 # admin.site.register(AssetType)
 # admin.site.register(AssetAssignment)
-# admin.site.register(AssetTransfer)
+# (TaskCheckPoint)

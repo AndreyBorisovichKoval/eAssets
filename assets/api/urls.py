@@ -5,6 +5,7 @@ from assets.api.views import AssetView
 
 urlpatterns = [
     path('assets/', AssetView.as_view(), name='assets-list'),
+    path('assets/', AssetView.as_view(), name='assets-list'),
     path('assets/<int:pk>/', AssetView.as_view(), name='assets-detail'),
 ]
 

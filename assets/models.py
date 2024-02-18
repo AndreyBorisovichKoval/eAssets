@@ -33,17 +33,23 @@ from django.contrib.auth.models import User
 class Department(models.Model):
     title = models.CharField(max_length=100)
     is_deleted = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    deleted_at = models.DateTimeField(null=True, blank=True)
 
 
 class Division(models.Model):
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     is_deleted = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    deleted_at = models.DateTimeField(null=True, blank=True)
 
 
 class Position(models.Model):
     title = models.CharField(max_length=100)
     is_deleted = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    deleted_at = models.DateTimeField(null=True, blank=True)
 
 
 class Staff(models.Model):
@@ -57,11 +63,12 @@ class Staff(models.Model):
     last_name = models.CharField(max_length=100)
     first_name = models.CharField(max_length=100)
     patronymic = models.CharField(max_length=100)
-    # department = models.ForeignKey(Department, on_delete=models.CASCADE)
     division = models.ForeignKey(Division, on_delete=models.CASCADE)
     position = models.ForeignKey(Position, on_delete=models.CASCADE)
     memo = models.TextField()
     is_deleted = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    deleted_at = models.DateTimeField(null=True, blank=True)
 
 
 class Asset(models.Model):
@@ -81,6 +88,8 @@ class Asset(models.Model):
 class AssetType(models.Model):
     title = models.CharField(max_length=100)
     is_deleted = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    deleted_at = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
         return self.title
@@ -91,6 +100,15 @@ class AssetAssignment(models.Model):
     staff = models.ForeignKey(Staff, on_delete=models.CASCADE)
     assignment_date = models.DateField()
     return_date = models.DateField(null=True)
+
+
+class TaskCheckPoint(models.Model):
+    title = models.CharField(max_length=100)
+    last_processed_date = models.DateTimeField(null=True, blank=True)
+    is_successful = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.title
 
 
 # for Migrations
