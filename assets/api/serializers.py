@@ -1,6 +1,5 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-# from assets.models import (UserManager, User, Department, Division, Position, Staff, Asset, AssetType, AssetAssignment, AssetTransfer)
 from assets.models import Department, Division, Position, Staff, Asset, AssetType, AssetAssignment, TaskCheckPoint
 
 
@@ -14,6 +13,7 @@ from assets.models import Department, Division, Position, Staff, Asset, AssetTyp
 #     class Meta:
 #         model = User
 #         fields = '__all__'
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
