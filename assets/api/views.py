@@ -8,8 +8,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from typing import Any
-from assets.api.serializers import (UserSerializer, AssetSerializer, DepartmentSerializer, DivisionSerializer,
-                                    PositionSerializer, AssetTypeSerializer, StaffSerializer, AssetAssignmentSerializer)
+from assets.api.serializers import (UserSerializer, DepartmentSerializer, DivisionSerializer, PositionSerializer,
+                                    StaffSerializer, AssetTypeSerializer, AssetSerializer, AssetAssignmentSerializer)
 from assets.models import *
 # from assets.models import Asset
 # from suppress import suppress
@@ -202,6 +202,62 @@ class PositionView(APIView):
             return Response(status=status.HTTP_404_NOT_FOUND)
 
 
+class StaffView(APIView):
+    # authentication_classes = [JWTAuthentication]
+    # permission_classes = [IsAuthenticated]
+
+    def get(self, request, pk=None):
+        if pk is None:
+            staff_members = Staff.objects.filter(is_deleted=False)
+            serializer = StaffSerializer(staff_members, many=True)
+            return Response(serializer.data)
+        else:
+            try:
+                staff_member = Staff.objects.get(pk=pk, is_deleted=False)
+                serializer = StaffSerializer(staff_member)
+                return Response(serializer.data, status=status.HTTP_200_OK)
+            except Staff.DoesNotExist:
+                return Response(status=status.HTTP_404_NOT_FOUND)
+
+    def post(self, request):
+        serializer = StaffSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def put(self, request, pk):
+        try:
+            staff_member = Staff.objects.get(pk=pk, is_deleted=False)
+            serializer = StaffSerializer(staff_member, data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except Staff.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+    def patch(self, request, pk):
+        try:
+            staff_member = Staff.objects.get(pk=pk, is_deleted=False)
+            serializer = StaffSerializer(staff_member, data=request.data, partial=True)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except Staff.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+    def delete(self, request, pk):
+        try:
+            staff_member = Staff.objects.get(pk=pk, is_deleted=False)
+            staff_member.is_deleted = True
+            staff_member.save()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        except Staff.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+
 class AssetTypeView(APIView):
     # authentication_classes = [JWTAuthentication]
     # permission_classes = [IsAuthenticated]
@@ -300,7 +356,6 @@ class AssetView(APIView):
         except Asset.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
 
-
     def patch(self, request: Any, pk: int) -> Any:
         try:
             asset = Asset.objects.get(pk=pk)
@@ -318,62 +373,6 @@ class AssetView(APIView):
             asset.delete()
             return Response(status=status.HTTP_204_NO_CONTENT)
         except Asset.DoesNotExist:
-            return Response(status=status.HTTP_404_NOT_FOUND)
-
-
-class StaffView(APIView):
-    # authentication_classes = [JWTAuthentication]
-    # permission_classes = [IsAuthenticated]
-
-    def get(self, request, pk=None):
-        if pk is None:
-            staff_members = Staff.objects.filter(is_deleted=False)
-            serializer = StaffSerializer(staff_members, many=True)
-            return Response(serializer.data)
-        else:
-            try:
-                staff_member = Staff.objects.get(pk=pk, is_deleted=False)
-                serializer = StaffSerializer(staff_member)
-                return Response(serializer.data, status=status.HTTP_200_OK)
-            except Staff.DoesNotExist:
-                return Response(status=status.HTTP_404_NOT_FOUND)
-
-    def post(self, request):
-        serializer = StaffSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    def put(self, request, pk):
-        try:
-            staff_member = Staff.objects.get(pk=pk, is_deleted=False)
-            serializer = StaffSerializer(staff_member, data=request.data)
-            if serializer.is_valid():
-                serializer.save()
-                return Response(serializer.data)
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        except Staff.DoesNotExist:
-            return Response(status=status.HTTP_404_NOT_FOUND)
-
-    def patch(self, request, pk):
-        try:
-            staff_member = Staff.objects.get(pk=pk, is_deleted=False)
-            serializer = StaffSerializer(staff_member, data=request.data, partial=True)
-            if serializer.is_valid():
-                serializer.save()
-                return Response(serializer.data)
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        except Staff.DoesNotExist:
-            return Response(status=status.HTTP_404_NOT_FOUND)
-
-    def delete(self, request, pk):
-        try:
-            staff_member = Staff.objects.get(pk=pk, is_deleted=False)
-            staff_member.is_deleted = True
-            staff_member.save()
-            return Response(status=status.HTTP_204_NO_CONTENT)
-        except Staff.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
 
 
