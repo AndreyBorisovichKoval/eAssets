@@ -1,5 +1,5 @@
 from django_crontab import CronJobBase
-from assets.tasks import recalculate_asset_current_cost
+from assets.tasks import recalculate_assets
 
 
 class MyTask(CronJobBase):
@@ -8,7 +8,7 @@ class MyTask(CronJobBase):
     code = 'assets.tasks.recalculate_asset_current_cost'  # Уникальный идентификатор задачи
 
     def do(self):
-        recalculate_asset_current_cost()
+        recalculate_assets()
 
 
 cron = MyTask()

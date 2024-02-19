@@ -4,7 +4,7 @@ from decimal import Decimal
 from assets.models import Asset, TaskCheckPoint
 
 
-def perform_recalculation_if_needed():
+def recalculate_assets():
     try:
         task_check_point = TaskCheckPoint.objects.get(title='Assets Recalculation')
         last_processed_date = task_check_point.last_processed_date
