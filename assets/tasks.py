@@ -24,7 +24,7 @@ def recalculate_assets():
                     datetime.now().month - acquisition_date.month)
 
                 # Вычисляем остаточную стоимость
-                depreciation_per_month = asset.cost / asset.service_life
+                depreciation_per_month = asset.cost / (asset.service_life * 12)
                 remaining_cost = asset.cost - (depreciation_per_month * months_passed)
 
                 # Обновляем поле current_cost актива
