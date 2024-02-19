@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('index.urls')),
     path('admin/', admin.site.urls),
     path('assets/', include('assets.urls')),
+
     path('auth/sign-up/', create_user, name='sign-up'),
     path('auth/sign-in/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
