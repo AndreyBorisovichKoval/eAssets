@@ -1,4 +1,5 @@
 # from django.contrib.auth.models import User
+# from django.contrib.auth.models import User, UserManager
 from rest_framework import serializers
 from assets.models import User, Department, Division, Position, Staff, Asset, AssetType, AssetAssignment, TaskCheckPoint
 # from assets.models import *
@@ -8,17 +9,12 @@ from assets.models import User, Department, Division, Position, Staff, Asset, As
 #     class Meta:
 #         model = UserManager
 #         fields = '__all__'
-#
-#
-# class UserSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = User
-#         fields = '__all__'
 
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
+        # fields = '__all__'
         fields = ['id', 'username', 'email', 'password', 'is_superuser']
         extra_kwargs = {'password': {'write_only': True}}
 
