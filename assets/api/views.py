@@ -11,7 +11,6 @@ from typing import Any
 from assets.api.serializers import (UserSerializer, DepartmentSerializer, DivisionSerializer, PositionSerializer,
                                     StaffSerializer, AssetTypeSerializer, AssetSerializer, AssetAssignmentSerializer)
 from assets.models import *
-# from assets.models import Asset
 # from suppress import suppress
 # @suppress
 
