@@ -1,14 +1,14 @@
 from django_crontab import CronJobBase
-from assets.tasks import my_task
+from assets.tasks import recalculate_asset_current_cost
 
 
 class MyTask(CronJobBase):
     RUN_AT_TIMES = ['00:00']  # Время запуска задачи
     schedule = ' '.join(RUN_AT_TIMES)  # Расписание в формате cron
-    code = 'assets.tasks.my_task'  # Уникальный идентификатор задачи
+    code = 'assets.tasks.recalculate_asset_current_cost'  # Уникальный идентификатор задачи
 
     def do(self):
-        my_task()
+        recalculate_asset_current_cost()
 
 
 cron = MyTask()

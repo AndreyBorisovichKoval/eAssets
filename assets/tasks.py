@@ -1,23 +1,41 @@
+from datetime import datetime, timedelta, date
+from decimal import Decimal
 
-def my_task():
-    # Код задачи
-    print("Задача выполняется")
-
-
+from assets.models import Asset, TaskCheckPoint
 
 
+def perform_recalculation_if_needed():
+    try:
+        task_check_point = TaskCheckPoint.objects.get(title='Assets Recalculation')
+        last_processed_date = task_check_point.last_processed_date
+        is_successful = task_check_point.is_successful
 
+        if last_processed_date.month != datetime.now().month or last_processed_date.year != datetime.now().year or not is_successful:
+            task_check_point.is_successful = False  # Устанавливаем значение 0 в поле is_successful
+            task_check_point.save()
 
-# Пакет django-crontab является популярным и широко используется в сообществе Django для выполнения задач по расписанию. Он предоставляет простой способ настройки и выполнения задач, используя стандартный планировщик задач в вашей операционной системе.
-#
-# Однако, как и любой другой инструмент, django-crontab имеет свои ограничения и может не подходить для всех случаев. Вот некоторые факторы, которые стоит учесть:
-#
-# Надежность: django-crontab полагается на внешний планировщик задач вашей операционной системы. Если планировщик задач не работает должным образом или ваш сервер Django не запущен, задачи могут не быть выполнены.
-#
-# Управление: В случае использования django-crontab вам потребуется управлять настройками и обслуживанием планировщика задач вашей операционной системы, чтобы гарантировать непрерывное выполнение задач.
-#
-# Платформенная зависимость: Возможности планировщика задач могут различаться в зависимости от операционной системы. Если ваш проект будет развернут на разных платформах, вам может потребоваться учесть эту разницу.
-#
-# Альтернативные решения: Вместо использования django-crontab, вы также можете рассмотреть другие альтернативы, такие как сторонние приложения или планировщик задач операционной системы. Некоторые популярные сторонние приложения включают Celery, Huey или APScheduler, которые предоставляют расширенные возможности планирования задач.
-#
-# Когда выбираете решение для планирования задач в вашем проекте, учитывайте требования вашего проекта, уровень сложности задач, платформенную зависимость и предпочтения команды разработчиков.
+            assets = Asset.objects.filter(is_written_off=False)
+
+            for asset in assets:
+                acquisition_date = asset.acquisition_date
+
+                # Вычисляем количество месяцев между датой приобретения и текущей датой
+                months_passed = (datetime.now().year - acquisition_date.year) * 12 + (
+                    datetime.now().month - acquisition_date.month)
+
+                # Вычисляем остаточную стоимость
+                depreciation_per_month = asset.cost / asset.service_life
+                remaining_cost = asset.cost - (depreciation_per_month * months_passed)
+
+                # Обновляем поле current_cost актива
+                asset.current_cost = Decimal(remaining_cost)
+                asset.last_recalculation_date = datetime.now()
+                asset.save()
+
+            task_check_point.last_processed_date = datetime.now()
+            task_check_point.is_successful = True  # Устанавливаем значение 1 в поле is_successful
+            task_check_point.save()
+
+    except TaskCheckPoint.DoesNotExist:
+        # Запись TaskCheckPoint не найдена
+        return TaskCheckPoint.DoesNotExist
