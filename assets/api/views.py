@@ -36,21 +36,24 @@ class AssetView(APIView):
     # authentication_classes = [JWTAuthentication]
     # permission_classes = [IsAuthenticated]
 
-    def get_object(self, pk):
-        try:
-            return Asset.objects.get(pk=pk)
-        except Asset.DoesNotExist:
-            return Response(status=status.HTTP_404_NOT_FOUND)
+    # def get_object(self, pk):
+    #     try:
+    #         return Asset.objects.get(pk=pk)
+    #     except Asset.DoesNotExist:
+    #         return Response(status=status.HTTP_404_NOT_FOUND)
 
     def get(self, request, pk=None):
         if pk is None:
-            asset_data = Asset.objects.all()
-            serializer = AssetSerializer(asset_data, many=True)
+            asset = Asset.objects.all()
+            serializer = AssetSerializer(asset, many=True)
             return Response(serializer.data)
         else:
-            asset_data = self.get_object(pk)
-            serializer = AssetSerializer(asset_data, many=True)
-            return Response(serializer.data)
+            try:
+                asset = Asset.objects.get(pk=pk)
+                serializer = AssetSerializer(asset)
+                return Response(serializer.data, status=status.HTTP_200_OK)
+            except Asset.DoesNotExist:
+                return Response(status=status.HTTP_404_NOT_FOUND)
 
     def post(self, request: Any) -> Any:
         serializer = AssetSerializer(data=request.data)
@@ -59,17 +62,6 @@ class AssetView(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
-class AssetDetail(APIView):
-    # def get_object(self, pk):
-    #     return get_object_or_404(Task, pk=pk)
-    def get(self, request: Any, pk: int) -> Any:
-        try:
-            asset = Asset.objects.get(pk=pk)
-            serializer = AssetSerializer(asset)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        except Asset.DoesNotExist:
-            return Response(status=status.HTTP_404_NOT_FOUND)
 
     def put(self, request: Any, pk: int) -> Any:
         try:
