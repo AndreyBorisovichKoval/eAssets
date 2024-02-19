@@ -34,8 +34,8 @@ def create_user(request):
 
 
 class DepartmentView(APIView):
-    # authentication_classes = [JWTAuthentication]
-    # permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
 
     def get(self, request, pk=None):
         if pk is None:
@@ -91,8 +91,8 @@ class DepartmentView(APIView):
 
 
 class DivisionView(APIView):
-    # authentication_classes = [JWTAuthentication]
-    # permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
 
     def get(self, request, pk=None):
         if pk is None:
@@ -147,8 +147,8 @@ class DivisionView(APIView):
 
 
 class PositionView(APIView):
-    # authentication_classes = [JWTAuthentication]
-    # permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
 
     def get(self, request, pk=None):
         if pk is None:
@@ -203,8 +203,8 @@ class PositionView(APIView):
 
 
 class StaffView(APIView):
-    # authentication_classes = [JWTAuthentication]
-    # permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
 
     def get(self, request, pk=None):
         if pk is None:
@@ -259,8 +259,8 @@ class StaffView(APIView):
 
 
 class AssetTypeView(APIView):
-    # authentication_classes = [JWTAuthentication]
-    # permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
 
     def get(self, request, pk=None):
         if pk is None:
@@ -315,8 +315,8 @@ class AssetTypeView(APIView):
 
 
 class AssetView(APIView):
-    # authentication_classes = [JWTAuthentication]
-    # permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
 
     # def get_object(self, pk):
     #     try:
@@ -377,6 +377,9 @@ class AssetView(APIView):
 
 
 class AssetAssignmentView(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
+
     def post(self, request):
         serializer = AssetAssignmentSerializer(data=request.data)
         if serializer.is_valid():
