@@ -6,7 +6,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.tokens import AccessToken
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from typing import Any
 from assets.api.serializers import (UserSerializer, DepartmentSerializer, DivisionSerializer, PositionSerializer,
                                     StaffSerializer, AssetTypeSerializer, AssetSerializer, AssetAssignmentSerializer)
@@ -26,6 +26,7 @@ def get_user_id_from_token(request):
 
 
 @api_view(["POST"])
+@permission_classes((IsAuthenticated, ))
 def create_user(request):
     serializer = UserSerializer(data=request.data)
     if serializer.is_valid():
