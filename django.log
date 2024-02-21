@@ -1,0 +1,210 @@
+INFO 2024-02-21 13:00:42,765 autoreload 2620 12896 Watching for file changes with StatReloader
+WARNING 2024-02-21 13:01:26,852 log 2620 9916 Unauthorized: /assets/api/asset/
+WARNING 2024-02-21 13:01:26,853 basehttp 2620 9916 "GET /assets/api/asset/ HTTP/1.1" 401 58
+WARNING 2024-02-21 13:01:57,697 log 2620 9916 Method Not Allowed: /auth/sign-up/
+WARNING 2024-02-21 13:01:57,698 basehttp 2620 9916 "GET /auth/sign-up/ HTTP/1.1" 405 40
+ERROR 2024-02-21 13:02:04,405 log 2620 9916 Internal Server Error: /auth/sign-up/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2024-02-21 13:02:04,408 basehttp 2620 9916 "POST /auth/sign-up/ HTTP/1.1" 500 84469
+ERROR 2024-02-21 13:03:11,928 log 2620 9916 Internal Server Error: /auth/sign-up/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2024-02-21 13:03:11,930 basehttp 2620 9916 "POST /auth/sign-up/ HTTP/1.1" 500 84469
+ERROR 2024-02-21 13:04:27,589 log 2620 9916 Internal Server Error: /auth/sign-up/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2024-02-21 13:04:27,591 basehttp 2620 9916 "POST /auth/sign-up/ HTTP/1.1" 500 84469
+ERROR 2024-02-21 13:05:02,080 log 2620 9916 Internal Server Error: /auth/sign-up/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2024-02-21 13:05:02,082 basehttp 2620 9916 "POST /auth/sign-up/ HTTP/1.1" 500 84469
+INFO 2024-02-21 13:05:40,699 autoreload 15644 13900 Watching for file changes with StatReloader
+ERROR 2024-02-21 13:05:45,020 log 15644 1488 Internal Server Error: /auth/sign-up/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2024-02-21 13:05:45,023 basehttp 15644 1488 "POST /auth/sign-up/ HTTP/1.1" 500 84469
+INFO 2024-02-21 13:06:31,571 basehttp 15644 1488 "POST /auth/sign-up/ HTTP/1.1" 200 71
+WARNING 2024-02-21 13:08:14,682 log 15644 1488 Bad Request: /auth/sign-in/
+WARNING 2024-02-21 13:08:14,682 basehttp 15644 1488 "POST /auth/sign-in/ HTTP/1.1" 400 108
+INFO 2024-02-21 13:08:29,266 basehttp 15644 1488 "POST /auth/sign-in/ HTTP/1.1" 200 483
+INFO 2024-02-21 13:11:12,659 basehttp 15644 1488 "GET /assets/api/asset/ HTTP/1.1" 200 73655
+INFO 2024-02-21 13:12:12,420 autoreload 15644 13900 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-21 13:12:13,300 autoreload 10748 17696 Watching for file changes with StatReloader
+INFO 2024-02-21 13:12:16,674 basehttp 10748 3328 "GET /assets/api/asset/ HTTP/1.1" 200 73655
+INFO 2024-02-21 13:12:23,195 basehttp 10748 3328 "GET /assets/api/asset/ HTTP/1.1" 200 73655
+INFO 2024-02-21 13:12:39,375 autoreload 10748 17696 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-21 13:12:40,282 autoreload 14512 14892 Watching for file changes with StatReloader
+INFO 2024-02-21 13:13:45,890 autoreload 14512 14892 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-21 13:13:46,752 autoreload 16160 4448 Watching for file changes with StatReloader
+WARNING 2024-02-21 13:13:51,450 log 16160 17684 Unauthorized: /assets/api/asset/
+WARNING 2024-02-21 13:13:51,451 basehttp 16160 17684 "GET /assets/api/asset/ HTTP/1.1" 401 183
+INFO 2024-02-21 13:14:39,021 basehttp 16160 17684 "GET /auth/sign-in HTTP/1.1" 301 0
+WARNING 2024-02-21 13:14:39,031 log 16160 12672 Method Not Allowed: /auth/sign-in/
+WARNING 2024-02-21 13:14:39,032 basehttp 16160 12672 "GET /auth/sign-in/ HTTP/1.1" 405 40
+ERROR 2024-02-21 13:14:45,070 log 16160 12672 Internal Server Error: /auth/sign-in
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/auth/sign-in/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2024-02-21 13:14:45,071 basehttp 16160 12672 "POST /auth/sign-in HTTP/1.1" 500 75106
+ERROR 2024-02-21 13:15:05,939 log 16160 7240 Internal Server Error: /auth/sign-in
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/auth/sign-in/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2024-02-21 13:15:05,941 basehttp 16160 7240 "POST /auth/sign-in HTTP/1.1" 500 75106
+INFO 2024-02-21 13:15:15,276 autoreload 12060 15876 Watching for file changes with StatReloader
+ERROR 2024-02-21 13:15:33,131 log 12060 2928 Internal Server Error: /auth/sign-in
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/auth/sign-in/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2024-02-21 13:15:33,134 basehttp 12060 2928 "POST /auth/sign-in HTTP/1.1" 500 75106
+INFO 2024-02-21 13:16:12,209 basehttp 12060 8936 "POST /auth/sign-in/ HTTP/1.1" 200 483
+INFO 2024-02-21 13:16:43,621 basehttp 12060 8936 "GET /assets/api/asset/ HTTP/1.1" 200 73655
+INFO 2024-02-21 13:17:01,559 basehttp 12060 8936 "GET /assets/api/asset/ HTTP/1.1" 200 73655
+INFO 2024-02-21 13:17:06,021 basehttp 12060 8936 "GET /assets/api/asset/ HTTP/1.1" 200 73655
+INFO 2024-02-21 13:18:17,403 autoreload 12060 15876 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-21 13:18:18,269 autoreload 2096 7312 Watching for file changes with StatReloader
+INFO 2024-02-21 13:18:29,929 autoreload 2096 7312 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-21 13:18:30,787 autoreload 10088 14896 Watching for file changes with StatReloader
+INFO 2024-02-21 13:19:59,448 autoreload 10088 14896 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-21 13:20:00,351 autoreload 16480 10504 Watching for file changes with StatReloader
+INFO 2024-02-21 13:20:04,148 basehttp 16480 7632 "GET /assets/api/asset/ HTTP/1.1" 200 73655
+INFO 2024-02-21 13:20:52,571 basehttp 16480 7632 "GET /assets/api/asset/122/ HTTP/1.1" 200 348
+WARNING 2024-02-21 13:21:24,174 log 16480 7632 Unauthorized: /assets/api/department/
+WARNING 2024-02-21 13:21:24,175 basehttp 16480 7632 "GET /assets/api/department/ HTTP/1.1" 401 183
+WARNING 2024-02-21 13:22:11,679 log 16480 7632 Unauthorized: /assets/api/department/
+WARNING 2024-02-21 13:22:11,680 basehttp 16480 7632 "GET /assets/api/department/ HTTP/1.1" 401 183
+INFO 2024-02-21 13:23:25,201 autoreload 16480 10504 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-21 13:23:26,161 autoreload 13920 12920 Watching for file changes with StatReloader
+INFO 2024-02-21 13:23:29,447 autoreload 13920 12920 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-21 13:23:30,306 autoreload 18048 11236 Watching for file changes with StatReloader
+WARNING 2024-02-21 13:23:49,177 log 18048 9596 Unauthorized: /assets/api/department/
+WARNING 2024-02-21 13:23:49,178 basehttp 18048 9596 "GET /assets/api/department/ HTTP/1.1" 401 183
+INFO 2024-02-21 13:24:48,809 basehttp 18048 9596 "POST /auth/sign-in/ HTTP/1.1" 200 483
+INFO 2024-02-21 13:25:51,945 basehttp 18048 9596 "GET /assets/api/department/ HTTP/1.1" 200 485
+INFO 2024-02-21 13:26:05,225 basehttp 18048 9596 "GET /assets/api/department/ HTTP/1.1" 200 485
+INFO 2024-02-21 13:26:06,578 basehttp 18048 9596 "GET /assets/api/department/ HTTP/1.1" 200 485
+INFO 2024-02-21 13:26:18,037 autoreload 18048 11236 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-21 13:26:18,913 autoreload 17736 15264 Watching for file changes with StatReloader
+INFO 2024-02-21 13:26:34,409 autoreload 17736 15264 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-21 13:26:35,279 autoreload 8456 15308 Watching for file changes with StatReloader
+INFO 2024-02-21 13:26:40,165 basehttp 8456 1396 "GET /assets/api/department/ HTTP/1.1" 200 485
+INFO 2024-02-21 13:44:25,904 autoreload 8456 15308 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-21 13:44:26,867 autoreload 5396 8212 Watching for file changes with StatReloader
+INFO 2024-02-21 13:45:43,014 autoreload 5396 8212 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-21 13:45:43,910 autoreload 19184 4448 Watching for file changes with StatReloader

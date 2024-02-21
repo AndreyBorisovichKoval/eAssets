@@ -1,8 +1,9 @@
 from django.shortcuts import get_object_or_404
-from rest_framework import status, viewsets
+from rest_framework import status, viewsets, request
 from rest_framework.exceptions import AuthenticationFailed
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.permissions import IsAuthenticated
+# from rest_framework_simplejwt.models.TokenUser import username
 from rest_framework_simplejwt.tokens import AccessToken
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -11,8 +12,20 @@ from typing import Any
 from assets.api.serializers import (UserSerializer, DepartmentSerializer, DivisionSerializer, PositionSerializer,
                                     StaffSerializer, AssetTypeSerializer, AssetSerializer, AssetAssignmentSerializer)
 from assets.models import *
+import logging
+
 # from suppress import suppress
 # @suppress
+
+# Получаем логгер Django
+logger = logging.getLogger('django')
+# logger = logging.getLogger(__name__)
+# def my_function():
+# logger.debug('user_id', get_user_id_from_token(request))
+# logger.info('Это информационное сообщение')
+# logger.warning('Это предупреждение')
+# logger.error('Это сообщение об ошибке')
+# logger.critical('Это критическое сообщение')
 
 
 def get_user_id_from_token(request):
@@ -20,6 +33,7 @@ def get_user_id_from_token(request):
         authorization_header = request.headers.get('Authorization')
         access_token = AccessToken(authorization_header.split()[1])
         user_id = access_token['user_id']
+        logger.info(f'User: {user_id} добавлен в систему для доступа к ')
         return user_id
     except (AuthenticationFailed, IndexError):
         return None
@@ -37,6 +51,8 @@ def create_user(request):
 class DepartmentView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
+
+    print(3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679)
 
     def get(self, request, pk=None):
         if pk is None:
@@ -318,7 +334,6 @@ class AssetTypeView(APIView):
 class AssetView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
-
     # def get_object(self, pk):
     #     try:
     #         return Asset.objects.get(pk=pk)
