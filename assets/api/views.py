@@ -26,7 +26,7 @@ def get_user_id_from_token(request):
 
 
 @api_view(["POST"])
-@permission_classes((IsAuthenticated, ))
+# @permission_classes((IsAuthenticated, ))
 def create_user(request):
     serializer = UserSerializer(data=request.data)
     if serializer.is_valid():
