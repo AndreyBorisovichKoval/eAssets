@@ -208,3 +208,98 @@ INFO 2024-02-21 13:44:25,904 autoreload 8456 15308 D:\0_Pycharm\eAssets\assets\a
 INFO 2024-02-21 13:44:26,867 autoreload 5396 8212 Watching for file changes with StatReloader
 INFO 2024-02-21 13:45:43,014 autoreload 5396 8212 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
 INFO 2024-02-21 13:45:43,910 autoreload 19184 4448 Watching for file changes with StatReloader
+INFO 2024-02-23 12:21:21,175 autoreload 11804 12132 Watching for file changes with StatReloader
+WARNING 2024-02-23 12:21:25,799 log 11804 1672 Unauthorized: /assets/api/department/
+WARNING 2024-02-23 12:21:25,800 basehttp 11804 1672 "GET /assets/api/department/ HTTP/1.1" 401 183
+INFO 2024-02-23 12:23:15,648 autoreload 11804 12132 D:\0_Pycharm\eAssets\eAssets\settings.py changed, reloading.
+INFO 2024-02-23 12:23:16,558 autoreload 12392 4808 Watching for file changes with StatReloader
+WARNING 2024-02-23 12:23:22,335 log 12392 8292 Unauthorized: /assets/api/department/
+WARNING 2024-02-23 12:23:22,336 basehttp 12392 8292 "GET /assets/api/department/ HTTP/1.1" 401 183
+WARNING 2024-02-23 12:23:36,403 log 12392 8292 Unauthorized: /assets/api/department/
+WARNING 2024-02-23 12:23:36,404 basehttp 12392 8292 "GET /assets/api/department/ HTTP/1.1" 401 183
+WARNING 2024-02-23 12:24:07,991 log 12392 8292 Unauthorized: /auth/sign-in/
+WARNING 2024-02-23 12:24:07,992 basehttp 12392 8292 "POST /auth/sign-in/ HTTP/1.1" 401 63
+INFO 2024-02-23 12:24:36,084 basehttp 12392 8292 "POST /auth/sign-in/ HTTP/1.1" 200 483
+WARNING 2024-02-23 12:25:19,234 log 12392 8292 Unauthorized: /assets/api/department/
+WARNING 2024-02-23 12:25:19,235 basehttp 12392 8292 "GET /assets/api/department/ HTTP/1.1" 401 183
+INFO 2024-02-23 12:25:40,273 basehttp 12392 8292 "GET /assets/api/department/ HTTP/1.1" 200 629
+INFO 2024-02-23 12:26:28,238 basehttp 12392 8292 "POST /assets/api/department/ HTTP/1.1" 201 143
+INFO 2024-02-23 12:26:34,531 basehttp 12392 8292 "GET /assets/api/department/ HTTP/1.1" 200 773
+INFO 2024-02-23 12:28:46,197 autoreload 12392 4808 D:\0_Pycharm\eAssets\assets\models.py changed, reloading.
+INFO 2024-02-23 12:28:47,071 autoreload 12548 15044 Watching for file changes with StatReloader
+INFO 2024-02-23 12:29:15,216 autoreload 12548 15044 D:\0_Pycharm\eAssets\assets\models.py changed, reloading.
+INFO 2024-02-23 12:29:16,311 autoreload 12736 9704 Watching for file changes with StatReloader
+INFO 2024-02-23 12:31:01,990 autoreload 12736 9704 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-23 12:31:02,848 autoreload 2080 2960 Watching for file changes with StatReloader
+INFO 2024-02-23 12:33:14,137 autoreload 2080 2960 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-23 12:33:15,068 autoreload 17392 8696 Watching for file changes with StatReloader
+INFO 2024-02-23 12:39:05,119 autoreload 17392 8696 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-23 12:39:06,016 autoreload 16220 4180 Watching for file changes with StatReloader
+INFO 2024-02-23 12:40:28,960 autoreload 16220 4180 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-23 12:40:29,880 autoreload 16336 11328 Watching for file changes with StatReloader
+INFO 2024-02-23 12:45:06,958 autoreload 16336 11328 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-23 12:45:07,821 autoreload 8196 16556 Watching for file changes with StatReloader
+INFO 2024-02-23 12:45:15,467 autoreload 8196 16556 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-23 12:45:16,415 autoreload 12728 8128 Watching for file changes with StatReloader
+INFO 2024-02-23 12:46:16,908 autoreload 12728 8128 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-23 12:46:17,833 autoreload 17900 11900 Watching for file changes with StatReloader
+INFO 2024-02-23 12:53:04,892 autoreload 17900 11900 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-23 12:53:05,823 autoreload 19452 15620 Watching for file changes with StatReloader
+INFO 2024-02-23 12:53:42,867 basehttp 19452 6016 "GET /assets/api/department/ HTTP/1.1" 200 773
+ERROR 2024-02-23 12:53:59,999 views 19452 6016 An error occurred while processing the POST request when creating the Department...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 86, in post
+    action_description = f"Created a department: {department.name} ({department.id})"
+                                                  ^^^^^^^^^^^^^^^
+AttributeError: 'Department' object has no attribute 'name'
+ERROR 2024-02-23 12:54:00,001 log 19452 6016 Internal Server Error: /assets/api/department/
+ERROR 2024-02-23 12:54:00,002 basehttp 19452 6016 "POST /assets/api/department/ HTTP/1.1" 500 33
+INFO 2024-02-23 12:55:23,560 autoreload 19452 15620 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-23 12:55:24,600 autoreload 10572 10100 Watching for file changes with StatReloader
+ERROR 2024-02-23 12:55:30,781 views 10572 15356 An error occurred while processing the POST request when creating the Department...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 86, in post
+    action_description = f"Created a department: {department.name} ({department.id})"
+                                                  ^^^^^^^^^^^^^^^
+AttributeError: 'Department' object has no attribute 'name'
+ERROR 2024-02-23 12:55:30,783 log 10572 15356 Internal Server Error: /assets/api/department/
+ERROR 2024-02-23 12:55:30,784 basehttp 10572 15356 "POST /assets/api/department/ HTTP/1.1" 500 33
+INFO 2024-02-23 12:56:24,306 autoreload 10572 10100 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-23 12:56:25,586 autoreload 4452 13136 Watching for file changes with StatReloader
+INFO 2024-02-23 12:56:35,128 autoreload 11172 10740 Watching for file changes with StatReloader
+INFO 2024-02-23 12:56:41,869 basehttp 11172 14296 "GET /assets/api/department/ HTTP/1.1" 200 1061
+ERROR 2024-02-23 12:56:57,859 views 11172 14296 An error occurred while processing the POST request when creating the Department...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 86, in post
+    action_description = f"Created a department: {department.name} ({department.id})"
+                                                  ^^^^^^^^^^^^^^^
+AttributeError: 'Department' object has no attribute 'name'
+ERROR 2024-02-23 12:56:57,860 log 11172 14296 Internal Server Error: /assets/api/department/
+ERROR 2024-02-23 12:56:57,861 basehttp 11172 14296 "POST /assets/api/department/ HTTP/1.1" 500 33
+INFO 2024-02-23 12:57:02,996 basehttp 11172 14296 "GET /assets/api/department/ HTTP/1.1" 200 1205
+ERROR 2024-02-23 12:57:10,029 views 11172 14296 An error occurred while processing the POST request when creating the Department...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 86, in post
+    action_description = f"Created a department: {department.name} ({department.id})"
+                                                  ^^^^^^^^^^^^^^^
+AttributeError: 'Department' object has no attribute 'name'
+ERROR 2024-02-23 12:57:10,030 log 11172 14296 Internal Server Error: /assets/api/department/
+ERROR 2024-02-23 12:57:10,031 basehttp 11172 14296 "POST /assets/api/department/ HTTP/1.1" 500 33
+INFO 2024-02-23 12:59:33,644 autoreload 11172 10740 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-23 12:59:34,518 autoreload 15380 15612 Watching for file changes with StatReloader
+ERROR 2024-02-23 12:59:39,329 views 15380 8412 An error occurred while processing the POST request when creating the Department...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 87, in post
+    UserAction.objects.create(user=request.user, action=action_description, timestamp=timezone.now())
+                                                                                      ^^^^^^^^^^^^
+AttributeError: type object 'datetime.timezone' has no attribute 'now'
+ERROR 2024-02-23 12:59:39,330 log 15380 8412 Internal Server Error: /assets/api/department/
+ERROR 2024-02-23 12:59:39,331 basehttp 15380 8412 "POST /assets/api/department/ HTTP/1.1" 500 33
+INFO 2024-02-23 13:00:32,045 autoreload 15380 15612 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-23 13:00:32,925 autoreload 16288 6324 Watching for file changes with StatReloader
+INFO 2024-02-23 13:00:37,370 basehttp 16288 11924 "POST /assets/api/department/ HTTP/1.1" 201 144
+INFO 2024-02-23 13:00:47,476 basehttp 16288 11924 "GET /assets/api/department/ HTTP/1.1" 200 1639
+INFO 2024-02-23 13:01:39,842 autoreload 16288 6324 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-23 13:01:40,725 autoreload 10196 18456 Watching for file changes with StatReloader
+INFO 2024-02-23 13:02:37,308 basehttp 10196 8836 "GET /assets/api/department/ HTTP/1.1" 200 1639
+INFO 2024-02-23 13:02:47,395 basehttp 10196 8836 "POST /assets/api/department/ HTTP/1.1" 201 144

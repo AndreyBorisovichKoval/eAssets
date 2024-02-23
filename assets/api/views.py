@@ -1,3 +1,4 @@
+from datetime import datetime, timezone
 from django.shortcuts import get_object_or_404
 from rest_framework import status, viewsets, request
 from rest_framework.exceptions import AuthenticationFailed
@@ -33,7 +34,7 @@ def get_user_id_from_token(request):
         authorization_header = request.headers.get('Authorization')
         access_token = AccessToken(authorization_header.split()[1])
         user_id = access_token['user_id']
-        logger.info(f'User: {user_id} добавлен в систему для доступа к ')
+        # logger.info(f'User: {user_id} добавлен в систему для доступа к ')
         return user_id
     except (AuthenticationFailed, IndexError):
         return None
@@ -52,8 +53,6 @@ class DepartmentView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
 
-    print(3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679)
-
     def get(self, request, pk=None):
         if pk is None:
             departments = Department.objects.filter(is_deleted=False)
@@ -67,12 +66,32 @@ class DepartmentView(APIView):
             except Department.DoesNotExist:
                 return Response(status=status.HTTP_404_NOT_FOUND)
 
+    # def post(self, request):
+    #     request.data['created_at'] = datetime.now()  # Добавляем текущую дату/время
+    #     request.data['created_by'] = request.user.id  # Добавляем ID пользователя, создавшего запись
+    #     serializer = DepartmentSerializer(data=request.data)
+    #     if serializer.is_valid():
+    #         serializer.save()
+    #         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
     def post(self, request):
-        serializer = DepartmentSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        try:
+            request.data['created_by'] = request.user.id
+            serializer = DepartmentSerializer(data=request.data)
+            if serializer.is_valid():
+                department = serializer.save()
+
+                # Добавляем запись о действии пользователя с информацией о департаменте
+                action_description = f"Created a department: {department.title} ({department.id})"
+                UserAction.objects.create(user=request.user, action=action_description)
+
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            logger.exception("An error occurred while processing the POST request when creating the Department...")
+            return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
 
     def put(self, request, pk):
         try:
