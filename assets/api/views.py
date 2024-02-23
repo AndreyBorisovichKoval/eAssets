@@ -68,7 +68,7 @@ class DepartmentView(APIView):
 
     def post(self, request):
         try:
-            logger.info('Start')
+            # logger.info('Start')
             request.data['created_by'] = request.user.id
             serializer = DepartmentSerializer(data=request.data)
             if serializer.is_valid():
