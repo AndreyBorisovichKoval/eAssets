@@ -367,3 +367,59 @@ WARNING 2024-02-23 15:40:37,310 log 13328 10132 Not Found: /assets/api/departmen
 WARNING 2024-02-23 15:40:37,310 basehttp 13328 10132 "DELETE /assets/api/department/19/ HTTP/1.1" 404 0
 WARNING 2024-02-23 15:40:44,524 log 13328 10132 Not Found: /assets/api/department/19/
 WARNING 2024-02-23 15:40:44,525 basehttp 13328 10132 "GET /assets/api/department/19/ HTTP/1.1" 404 0
+INFO 2024-02-23 15:45:21,991 autoreload 13328 1772 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-23 15:45:27,754 autoreload 2152 17652 Watching for file changes with StatReloader
+WARNING 2024-02-23 15:45:33,447 log 2152 15156 Not Found: /assets/api/department/19/
+WARNING 2024-02-23 15:45:33,448 basehttp 2152 15156 "GET /assets/api/department/19/ HTTP/1.1" 404 0
+INFO 2024-02-23 15:45:39,169 basehttp 2152 15156 "GET /assets/api/department/ HTTP/1.1" 200 2654
+INFO 2024-02-23 15:45:51,625 basehttp 2152 15156 "GET /assets/api/department/18/ HTTP/1.1" 200 144
+INFO 2024-02-23 15:46:00,815 views 2152 15156 
+(__-=*=-__ Department 18 deleted by user 1 Test1.)
+INFO 2024-02-23 15:46:00,816 basehttp 2152 15156 "DELETE /assets/api/department/18/ HTTP/1.1" 204 0
+WARNING 2024-02-23 15:46:06,878 log 2152 15156 Not Found: /assets/api/department/18/
+WARNING 2024-02-23 15:46:06,879 basehttp 2152 15156 "DELETE /assets/api/department/18/ HTTP/1.1" 404 0
+WARNING 2024-02-23 15:46:11,559 log 2152 15156 Not Found: /assets/api/department/18/
+WARNING 2024-02-23 15:46:11,560 basehttp 2152 15156 "GET /assets/api/department/18/ HTTP/1.1" 404 0
+INFO 2024-02-23 15:50:06,670 autoreload 2152 17652 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-23 15:50:07,564 autoreload 12796 18444 Watching for file changes with StatReloader
+WARNING 2024-02-23 15:50:14,549 log 12796 15232 Not Found: /assets/api/department/18/
+WARNING 2024-02-23 15:50:14,550 basehttp 12796 15232 "GET /assets/api/department/18/ HTTP/1.1" 404 0
+INFO 2024-02-23 15:50:24,456 basehttp 12796 15232 "GET /assets/api/department/ HTTP/1.1" 200 2509
+INFO 2024-02-23 15:50:33,398 views 12796 15232 
+(__-=*=-__ Department 22 Test_Dep_07 added by user 1 Test1. __-=*=-__)
+INFO 2024-02-23 15:50:33,399 basehttp 12796 15232 "POST /assets/api/department/ HTTP/1.1" 201 144
+INFO 2024-02-23 15:50:43,752 basehttp 12796 15232 "GET /assets/api/department/22/ HTTP/1.1" 200 144
+INFO 2024-02-23 15:51:01,981 views 12796 15232 
+(__-=*=-__ Department 22 Test_Dep_07 deleted by user 1 Test1. __-=*=-__)
+INFO 2024-02-23 15:51:01,982 basehttp 12796 15232 "DELETE /assets/api/department/22/ HTTP/1.1" 204 0
+WARNING 2024-02-23 15:51:07,720 log 12796 15232 Not Found: /assets/api/department/22/
+WARNING 2024-02-23 15:51:07,720 basehttp 12796 15232 "GET /assets/api/department/22/ HTTP/1.1" 404 0
+INFO 2024-02-23 15:51:16,047 basehttp 12796 15232 "GET /assets/api/department/ HTTP/1.1" 200 2509
+INFO 2024-02-23 15:57:16,602 autoreload 12796 18444 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-23 15:57:17,473 autoreload 14660 13476 Watching for file changes with StatReloader
+WARNING 2024-02-23 16:08:26,342 log 14660 9944 Bad Request: /assets/api/department/
+WARNING 2024-02-23 16:08:26,343 basehttp 14660 9944 "POST /assets/api/department/ HTTP/1.1" 400 37
+WARNING 2024-02-23 16:10:12,052 log 14660 9944 Bad Request: /assets/api/department/
+WARNING 2024-02-23 16:10:12,053 basehttp 14660 9944 "POST /assets/api/department/ HTTP/1.1" 400 37
+INFO 2024-02-23 16:11:33,730 views 14660 9944 
+(__-=*=-__ Department 23 123 added by user 1 Test1. __-=*=-__)
+INFO 2024-02-23 16:11:33,737 basehttp 14660 9944 "POST /assets/api/department/ HTTP/1.1" 201 136
+INFO 2024-02-23 16:11:43,169 views 14660 9944 
+(__-=*=-__ Department 24 Test_Dep_07 added by user 1 Test1. __-=*=-__)
+INFO 2024-02-23 16:11:43,170 basehttp 14660 9944 "POST /assets/api/department/ HTTP/1.1" 201 144
+INFO 2024-02-23 16:16:35,585 views 14660 12504 
+(__-=*=-__ Department 25 Department 1 added by user 1 Test1. __-=*=-__)
+INFO 2024-02-23 16:16:35,587 basehttp 14660 12504 "POST /assets/api/department/ HTTP/1.1" 201 145
+WARNING 2024-02-23 16:16:46,427 log 14660 12504 Bad Request: /assets/api/department/
+WARNING 2024-02-23 16:16:46,428 basehttp 14660 12504 "POST /assets/api/department/ HTTP/1.1" 400 37
+WARNING 2024-02-23 16:17:18,428 log 14660 12504 Bad Request: /assets/api/department/
+WARNING 2024-02-23 16:17:18,428 basehttp 14660 12504 "POST /assets/api/department/ HTTP/1.1" 400 37
+WARNING 2024-02-23 16:17:30,440 log 14660 12504 Bad Request: /assets/api/department/
+WARNING 2024-02-23 16:17:30,441 basehttp 14660 12504 "POST /assets/api/department/ HTTP/1.1" 400 37
+INFO 2024-02-23 16:18:05,028 basehttp 14660 12504 "GET /assets/api/department/ HTTP/1.1" 200 2937
+INFO 2024-02-23 16:18:16,491 basehttp 14660 12504 "GET /assets/api/department/24/ HTTP/1.1" 200 144
+INFO 2024-02-23 16:18:21,495 views 14660 12504 
+(__-=*=-__ Department 24 Test_Dep_07 deleted by user 1 Test1. __-=*=-__)
+INFO 2024-02-23 16:18:21,496 basehttp 14660 12504 "DELETE /assets/api/department/24/ HTTP/1.1" 204 0
+WARNING 2024-02-23 16:18:27,463 log 14660 12504 Not Found: /assets/api/department/24/
+WARNING 2024-02-23 16:18:27,464 basehttp 14660 12504 "GET /assets/api/department/24/ HTTP/1.1" 404 0

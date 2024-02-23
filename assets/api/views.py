@@ -66,15 +66,6 @@ class DepartmentView(APIView):
             except Department.DoesNotExist:
                 return Response(status=status.HTTP_404_NOT_FOUND)
 
-    # def post(self, request):
-    #     request.data['created_at'] = datetime.now()  # Добавляем текущую дату/время
-    #     request.data['created_by'] = request.user.id  # Добавляем ID пользователя, создавшего запись
-    #     serializer = DepartmentSerializer(data=request.data)
-    #     if serializer.is_valid():
-    #         serializer.save()
-    #         return Response(serializer.data, status=status.HTTP_201_CREATED)
-    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
     def post(self, request):
         try:
             request.data['created_by'] = request.user.id
@@ -87,7 +78,7 @@ class DepartmentView(APIView):
                 UserAction.objects.create(user=request.user, action=action_description)
 
                 # Логируем добавление департамента
-                logger.info(f"(__==--==__ Department {department.id} added by user {request.user.id} {request.user.username}.)")
+                logger.info(f"\n(__-=*=-__ Department {department.id} {department.title} added by user {request.user.id} {request.user.username}. __-=*=-__)")
 
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -129,7 +120,7 @@ class DepartmentView(APIView):
             UserAction.objects.create(user=request.user, action=action_description)
 
             # Логируем удаление департамента
-            logger.info(f"(__==--==__ Department {department.id} deleted by user {request.user.id} {request.user.username}.)")
+            logger.info(f"\n(__-=*=-__ Department {department.id} {department.title} deleted by user {request.user.id} {request.user.username}. __-=*=-__)")
 
             return Response(status=status.HTTP_204_NO_CONTENT)
         except Department.DoesNotExist:
