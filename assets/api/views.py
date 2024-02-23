@@ -83,8 +83,11 @@ class DepartmentView(APIView):
                 department = serializer.save()
 
                 # Добавляем запись о действии пользователя с информацией о департаменте
-                action_description = f"Created a department: {department.title} ({department.id})"
+                action_description = f"User {request.user.username} created a department: id = {department.id}, title = {department.title}."
                 UserAction.objects.create(user=request.user, action=action_description)
+
+                # Логируем добавление департамента
+                logger.info(f"(__==--==__ Department {department.id} added by user {request.user.id} {request.user.username}.)")
 
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -119,12 +122,21 @@ class DepartmentView(APIView):
         try:
             department = Department.objects.get(pk=pk, is_deleted=False)
             department.is_deleted = True
-            # department.delete()
             department.save()
+
+            # Заносим данные о действии пользователя
+            action_description = f"User {request.user.username} deleted a department: id = {department.id}, title = {department.title}."
+            UserAction.objects.create(user=request.user, action=action_description)
+
+            # Логируем удаление департамента
+            logger.info(f"(__==--==__ Department {department.id} deleted by user {request.user.id} {request.user.username}.)")
+
             return Response(status=status.HTTP_204_NO_CONTENT)
         except Department.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
-
+        except Exception as e:
+            logger.exception("An error occurred while processing the DELETE request when deleting the Department...")
+            return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 class DivisionView(APIView):
     authentication_classes = [JWTAuthentication]

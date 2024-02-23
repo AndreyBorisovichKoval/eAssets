@@ -303,3 +303,67 @@ INFO 2024-02-23 13:01:39,842 autoreload 16288 6324 D:\0_Pycharm\eAssets\assets\a
 INFO 2024-02-23 13:01:40,725 autoreload 10196 18456 Watching for file changes with StatReloader
 INFO 2024-02-23 13:02:37,308 basehttp 10196 8836 "GET /assets/api/department/ HTTP/1.1" 200 1639
 INFO 2024-02-23 13:02:47,395 basehttp 10196 8836 "POST /assets/api/department/ HTTP/1.1" 201 144
+INFO 2024-02-23 13:46:52,796 autoreload 8960 18468 Watching for file changes with StatReloader
+INFO 2024-02-23 13:47:00,880 basehttp 8960 19452 "GET /assets/api/department/ HTTP/1.1" 200 1784
+INFO 2024-02-23 13:47:10,270 basehttp 8960 19452 "POST /assets/api/department/ HTTP/1.1" 201 144
+INFO 2024-02-23 13:47:14,090 basehttp 8960 19452 "POST /assets/api/department/ HTTP/1.1" 201 144
+INFO 2024-02-23 13:48:31,223 autoreload 8960 18468 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-23 13:48:32,117 autoreload 3128 11284 Watching for file changes with StatReloader
+INFO 2024-02-23 13:48:34,855 basehttp 3128 9780 "POST /assets/api/department/ HTTP/1.1" 201 144
+INFO 2024-02-23 13:49:02,628 autoreload 3128 11284 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-23 13:49:03,530 autoreload 17588 2688 Watching for file changes with StatReloader
+INFO 2024-02-23 13:49:12,313 basehttp 17588 11556 "POST /assets/api/department/ HTTP/1.1" 201 144
+INFO 2024-02-23 13:50:37,570 basehttp 17588 11556 "GET /assets/api/department/ HTTP/1.1" 200 2364
+INFO 2024-02-23 13:50:45,316 basehttp 17588 11556 "GET /assets/api/department/15/ HTTP/1.1" 200 144
+WARNING 2024-02-23 13:50:52,950 log 17588 11556 Not Found: /assets/api/department/155/
+WARNING 2024-02-23 13:50:52,950 basehttp 17588 11556 "GET /assets/api/department/155/ HTTP/1.1" 404 0
+INFO 2024-02-23 13:53:32,751 autoreload 17588 2688 D:\0_Pycharm\eAssets\eAssets\settings.py changed, reloading.
+WARNING 2024-02-23 13:53:46,951 log 14248 17748 Not Found: /assets/api/department/155/
+WARNING 2024-02-23 13:53:46,952 basehttp 14248 17748 "GET /assets/api/department/155/ HTTP/1.1" 404 0
+INFO 2024-02-23 15:13:26,880 autoreload 17532 14632 Watching for file changes with StatReloader
+INFO 2024-02-23 15:24:24,595 autoreload 17532 14632 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-23 15:24:25,483 autoreload 8488 17008 Watching for file changes with StatReloader
+INFO 2024-02-23 15:24:30,712 basehttp 8488 18684 "GET /assets/api/department/15/ HTTP/1.1" 200 144
+INFO 2024-02-23 15:24:36,400 basehttp 8488 18684 "GET /assets/api/department/ HTTP/1.1" 200 2364
+INFO 2024-02-23 15:24:52,312 views 8488 18684 Department 17 added by user Test1.
+INFO 2024-02-23 15:24:52,313 basehttp 8488 18684 "POST /assets/api/department/ HTTP/1.1" 201 144
+INFO 2024-02-23 15:25:13,275 basehttp 8488 18684 "GET /assets/api/department/17/ HTTP/1.1" 200 144
+INFO 2024-02-23 15:25:33,780 views 8488 18684 Department 17 deleted by user Test1.
+INFO 2024-02-23 15:25:33,781 basehttp 8488 18684 "DELETE /assets/api/department/17/ HTTP/1.1" 204 0
+WARNING 2024-02-23 15:25:44,933 log 8488 18684 Not Found: /assets/api/department/17/
+WARNING 2024-02-23 15:25:44,933 basehttp 8488 18684 "GET /assets/api/department/17/ HTTP/1.1" 404 0
+INFO 2024-02-23 15:28:51,308 autoreload 8488 17008 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-23 15:28:52,171 autoreload 1976 8736 Watching for file changes with StatReloader
+WARNING 2024-02-23 15:28:59,172 log 1976 772 Not Found: /assets/api/department/17/
+WARNING 2024-02-23 15:28:59,173 basehttp 1976 772 "GET /assets/api/department/17/ HTTP/1.1" 404 0
+INFO 2024-02-23 15:29:11,244 views 1976 772 (__==--==__ Department 18 added by user Test1.)
+INFO 2024-02-23 15:29:11,250 basehttp 1976 772 "POST /assets/api/department/ HTTP/1.1" 201 144
+INFO 2024-02-23 15:29:15,048 views 1976 772 (__==--==__ Department 19 added by user Test1.)
+INFO 2024-02-23 15:29:15,049 basehttp 1976 772 "POST /assets/api/department/ HTTP/1.1" 201 144
+INFO 2024-02-23 15:29:16,453 views 1976 772 (__==--==__ Department 20 added by user Test1.)
+INFO 2024-02-23 15:29:16,454 basehttp 1976 772 "POST /assets/api/department/ HTTP/1.1" 201 144
+INFO 2024-02-23 15:29:25,348 basehttp 1976 772 "GET /assets/api/department/20/ HTTP/1.1" 200 144
+INFO 2024-02-23 15:29:28,318 basehttp 1976 772 "GET /assets/api/department/20/ HTTP/1.1" 200 144
+INFO 2024-02-23 15:29:40,987 views 1976 772 (__==--==__ Department 20 deleted by user Test1.)
+INFO 2024-02-23 15:29:40,987 basehttp 1976 772 "DELETE /assets/api/department/20/ HTTP/1.1" 204 0
+WARNING 2024-02-23 15:29:45,177 log 1976 772 Not Found: /assets/api/department/20/
+WARNING 2024-02-23 15:29:45,178 basehttp 1976 772 "DELETE /assets/api/department/20/ HTTP/1.1" 404 0
+WARNING 2024-02-23 15:29:49,442 log 1976 772 Not Found: /assets/api/department/20/
+WARNING 2024-02-23 15:29:49,442 basehttp 1976 772 "DELETE /assets/api/department/20/ HTTP/1.1" 404 0
+INFO 2024-02-23 15:36:44,015 autoreload 1976 8736 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-23 15:36:44,905 autoreload 4268 14632 Watching for file changes with StatReloader
+INFO 2024-02-23 15:39:14,075 autoreload 4268 14632 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-23 15:39:14,955 autoreload 13328 1772 Watching for file changes with StatReloader
+WARNING 2024-02-23 15:39:30,819 log 13328 10132 Not Found: /assets/api/department/20/
+WARNING 2024-02-23 15:39:30,819 basehttp 13328 10132 "GET /assets/api/department/20/ HTTP/1.1" 404 0
+INFO 2024-02-23 15:39:36,643 basehttp 13328 10132 "GET /assets/api/department/ HTTP/1.1" 200 2654
+INFO 2024-02-23 15:39:48,152 basehttp 13328 10132 "GET /assets/api/department/19/ HTTP/1.1" 200 144
+INFO 2024-02-23 15:40:02,203 views 13328 10132 (__==--==__ Department 21 added by user 1 Test1.)
+INFO 2024-02-23 15:40:02,204 basehttp 13328 10132 "POST /assets/api/department/ HTTP/1.1" 201 144
+INFO 2024-02-23 15:40:07,428 basehttp 13328 10132 "GET /assets/api/department/ HTTP/1.1" 200 2799
+INFO 2024-02-23 15:40:28,328 views 13328 10132 (__==--==__ Department 19 deleted by user 1 Test1.)
+INFO 2024-02-23 15:40:28,328 basehttp 13328 10132 "DELETE /assets/api/department/19/ HTTP/1.1" 204 0
+WARNING 2024-02-23 15:40:37,310 log 13328 10132 Not Found: /assets/api/department/19/
+WARNING 2024-02-23 15:40:37,310 basehttp 13328 10132 "DELETE /assets/api/department/19/ HTTP/1.1" 404 0
+WARNING 2024-02-23 15:40:44,524 log 13328 10132 Not Found: /assets/api/department/19/
+WARNING 2024-02-23 15:40:44,525 basehttp 13328 10132 "GET /assets/api/department/19/ HTTP/1.1" 404 0
