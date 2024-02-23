@@ -1,3 +1,4 @@
+from datetime import datetime, timezone
 from django.shortcuts import get_object_or_404
 from rest_framework import status, viewsets, request
 from rest_framework.exceptions import AuthenticationFailed
@@ -33,11 +34,9 @@ def get_user_id_from_token(request):
         authorization_header = request.headers.get('Authorization')
         access_token = AccessToken(authorization_header.split()[1])
         user_id = access_token['user_id']
-        logger.info(f'User: {user_id} добавлен в систему для доступа к ')
-
+        # logger.info(f'User: {user_id} добавлен в систему для доступа к ')
         return user_id
     except (AuthenticationFailed, IndexError):
-
         return None
 
 
@@ -54,8 +53,6 @@ class DepartmentView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
 
-    print(3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679)
-
     def get(self, request, pk=None):
         if pk is None:
             departments = Department.objects.filter(is_deleted=False)
@@ -70,11 +67,26 @@ class DepartmentView(APIView):
                 return Response(status=status.HTTP_404_NOT_FOUND)
 
     def post(self, request):
-        serializer = DepartmentSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        try:
+            # logger.info('Start')
+            request.data['created_by'] = request.user.id
+            serializer = DepartmentSerializer(data=request.data)
+            if serializer.is_valid():
+                department = serializer.save()
+
+                # Добавляем запись о действии пользователя с информацией о департаменте
+                action_description = f"User {request.user.username} created a department: id = {department.id}, title = {department.title}."
+                UserAction.objects.create(user=request.user, action=action_description)
+
+                # Логируем добавление департамента
+                logger.info(f"\n(__-=*=-__ Department {department.id} {department.title} added by user {request.user.id} {request.user.username}. __-=*=-__)")
+
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            logger.exception("An error occurred while processing the POST request when creating the Department...")
+            return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
 
     def put(self, request, pk):
         try:
@@ -102,12 +114,21 @@ class DepartmentView(APIView):
         try:
             department = Department.objects.get(pk=pk, is_deleted=False)
             department.is_deleted = True
-            # department.delete()
             department.save()
+
+            # Заносим данные о действии пользователя
+            action_description = f"User {request.user.username} deleted a department: id = {department.id}, title = {department.title}."
+            UserAction.objects.create(user=request.user, action=action_description)
+
+            # Логируем удаление департамента
+            logger.info(f"\n(__-=*=-__ Department {department.id} {department.title} deleted by user {request.user.id} {request.user.username}. __-=*=-__)")
+
             return Response(status=status.HTTP_204_NO_CONTENT)
         except Department.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
-
+        except Exception as e:
+            logger.exception("An error occurred while processing the DELETE request when deleting the Department...")
+            return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 class DivisionView(APIView):
     authentication_classes = [JWTAuthentication]
@@ -413,5 +434,4 @@ class AssetAssignmentView(APIView):
             return Response({'message': 'Return date updated successfully.'})
         except AssetAssignment.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
-
 
