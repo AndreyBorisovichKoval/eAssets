@@ -15,8 +15,6 @@ from assets.api.serializers import (UserSerializer, DepartmentSerializer, Divisi
 from assets.models import *
 import logging
 
-# from suppress import suppress
-# @suppress
 
 # Получаем логгер Django
 logger = logging.getLogger('django')
@@ -68,7 +66,6 @@ class DepartmentView(APIView):
 
     def post(self, request):
         try:
-            # logger.info('Start')
             request.data['created_by'] = request.user.id
             serializer = DepartmentSerializer(data=request.data)
             if serializer.is_valid():
@@ -434,4 +431,3 @@ class AssetAssignmentView(APIView):
             return Response({'message': 'Return date updated successfully.'})
         except AssetAssignment.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
-
