@@ -34,8 +34,10 @@ def get_user_id_from_token(request):
         access_token = AccessToken(authorization_header.split()[1])
         user_id = access_token['user_id']
         logger.info(f'User: {user_id} добавлен в систему для доступа к ')
+
         return user_id
     except (AuthenticationFailed, IndexError):
+
         return None
 
 
