@@ -1,7 +1,7 @@
 # from django.contrib.auth.models import User
 # from django.contrib.auth.models import User, UserManager
 from rest_framework import serializers
-from assets.models import User, Department, Division, Position, Staff, Asset, AssetType, AssetAssignment, TaskCheckPoint
+from assets.models import User, Department, Division, Position, Staff, Asset, AssetType, AssetAssignment, TaskCheckPoint, UserAction
 # from assets.models import *
 
 
@@ -62,6 +62,12 @@ class AssetTypeSerializer(serializers.ModelSerializer):
 class AssetAssignmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = AssetAssignment
+        fields = '__all__'
+
+
+class UserActionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserAction
         fields = '__all__'
 
 
