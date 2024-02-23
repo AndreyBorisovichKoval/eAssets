@@ -423,3 +423,50 @@ INFO 2024-02-23 16:18:21,495 views 14660 12504
 INFO 2024-02-23 16:18:21,496 basehttp 14660 12504 "DELETE /assets/api/department/24/ HTTP/1.1" 204 0
 WARNING 2024-02-23 16:18:27,463 log 14660 12504 Not Found: /assets/api/department/24/
 WARNING 2024-02-23 16:18:27,464 basehttp 14660 12504 "GET /assets/api/department/24/ HTTP/1.1" 404 0
+INFO 2024-02-23 16:51:49,233 autoreload 6436 14428 Watching for file changes with StatReloader
+ERROR 2024-02-23 16:52:06,915 log 6436 11012 Internal Server Error: /assets/api/department/24/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DepartmentView.post() got an unexpected keyword argument 'pk'
+ERROR 2024-02-23 16:52:06,918 basehttp 6436 11012 "POST /assets/api/department/24/ HTTP/1.1" 500 93807
+INFO 2024-02-23 16:53:08,948 views 6436 11012 Start
+INFO 2024-02-23 16:53:08,963 views 6436 11012 
+(__-=*=-__ Department 26 Test_Dep_07 added by user 1 Test1. __-=*=-__)
+INFO 2024-02-23 16:53:08,964 basehttp 6436 11012 "POST /assets/api/department/ HTTP/1.1" 201 144
+INFO 2024-02-23 16:53:40,419 views 6436 11012 Start
+WARNING 2024-02-23 16:53:40,421 log 6436 11012 Bad Request: /assets/api/department/
+WARNING 2024-02-23 16:53:40,422 basehttp 6436 11012 "POST /assets/api/department/ HTTP/1.1" 400 37
+INFO 2024-02-23 16:54:17,162 autoreload 6436 14428 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-23 16:54:18,037 autoreload 7764 15576 Watching for file changes with StatReloader
+INFO 2024-02-23 16:54:25,362 views 7764 7136 Start
+ERROR 2024-02-23 16:54:25,363 views 7764 7136 An error occurred while processing the POST request when creating the Department...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 73, in post
+    request.data['created_by'] = request.user.id2123123
+                                 ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'id2123123'
+ERROR 2024-02-23 16:54:25,367 log 7764 7136 Internal Server Error: /assets/api/department/
+ERROR 2024-02-23 16:54:25,368 basehttp 7764 7136 "POST /assets/api/department/ HTTP/1.1" 500 33
+INFO 2024-02-23 17:00:01,462 autoreload 7764 15576 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-23 17:00:02,368 autoreload 10568 13176 Watching for file changes with StatReloader
