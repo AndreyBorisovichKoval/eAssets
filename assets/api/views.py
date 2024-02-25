@@ -310,55 +310,89 @@ class StaffView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request, pk=None):
-        if pk is None:
-            staff_members = Staff.objects.filter(is_deleted=False)
-            serializer = StaffSerializer(staff_members, many=True)
-            return Response(serializer.data)
-        else:
+        # Добавляем запись о действии пользователя перед проверкой pk
+        action_description = f"User {request.user.username} initiated a GET request to retrieve staff data."
+        UserAction.objects.create(user=request.user, action=action_description)
+
+        if pk:
             try:
-                staff_member = Staff.objects.get(pk=pk, is_deleted=False)
-                serializer = StaffSerializer(staff_member)
-                return Response(serializer.data, status=status.HTTP_200_OK)
+                staff = Staff.objects.get(pk=pk, is_deleted=False)
+                serializer = StaffSerializer(staff)
+                logger.info(f"Staff {staff.id} {staff.name} viewed by user {request.user.id} {request.user.username}.")
+                return Response(serializer.data)
             except Staff.DoesNotExist:
                 return Response(status=status.HTTP_404_NOT_FOUND)
+            except Exception as e:
+                logger.exception("An error occurred while processing the GET request when retrieving the Staff...")
+                return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        else:
+            staff = Staff.objects.filter(is_deleted=False)
+            serializer = StaffSerializer(staff, many=True)
+            logger.info(f"All Staff viewed by user {request.user.id} {request.user.username}.")
+            return Response(serializer.data)
 
     def post(self, request):
-        serializer = StaffSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    def put(self, request, pk):
         try:
-            staff_member = Staff.objects.get(pk=pk, is_deleted=False)
-            serializer = StaffSerializer(staff_member, data=request.data)
+            request.data['created_by'] = request.user.id
+            serializer = StaffSerializer(data=request.data)
             if serializer.is_valid():
-                serializer.save()
-                return Response(serializer.data)
+                staff = serializer.save()
+
+                # Добавляем запись о действии пользователя с информацией о сотруднике
+                action_description = f"User {request.user.username} created a staff member: id = {staff.id}, name = {staff.name}."
+                UserAction.objects.create(user=request.user, action=action_description)
+
+                # Логируем добавление сотрудника
+                logger.info(f"\n(__-=*=-__ Staff {staff.id} {staff.name} added by user {request.user.id} {request.user.username}. __-=*=-__)")
+
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        except Staff.DoesNotExist:
-            return Response(status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            logger.exception("An error occurred while processing the POST request when creating the Staff...")
+            return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def patch(self, request, pk):
         try:
-            staff_member = Staff.objects.get(pk=pk, is_deleted=False)
-            serializer = StaffSerializer(staff_member, data=request.data, partial=True)
+            staff = Staff.objects.get(pk=pk, is_deleted=False)
+            serializer = StaffSerializer(staff, data=request.data, partial=True)
             if serializer.is_valid():
-                serializer.save()
+                staff = serializer.save()
+
+                # Добавляем запись о действии пользователя с информацией о сотруднике
+                action_description = f"User {request.user.username} updated staff member: id = {staff.id}, name = {staff.name}."
+                UserAction.objects.create(user=request.user, action=action_description)
+
+                # Логируем обновление сотрудника
+                logger.info(f"\n(__-=*=-__ Staff {staff.id} {staff.name} updated by user {request.user.id} {request.user.username}. __-=*=-__)")
+
                 return Response(serializer.data)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except Staff.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            logger.exception("An error occurred while processing the PATCH request when updating the Staff...")
+            return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def delete(self, request, pk):
         try:
-            staff_member = Staff.objects.get(pk=pk, is_deleted=False)
-            staff_member.is_deleted = True
-            staff_member.save()
+            staff = Staff.objects.get(pk=pk, is_deleted=False)
+            staff.deleted_by = request.user
+            staff.is_deleted = True
+            staff.save()
+
+            # Заносим данные о действии пользователя
+            action_description = f"User {request.user.username} deleted a staff member: id = {staff.id}, name = {staff.name}."
+            UserAction.objects.create(user=request.user, action=action_description)
+
+            # Логируем удаление сотрудника
+            logger.info(f"\n(__-=*=-__ Staff {staff.id} {staff.name} deleted by user {request.user.id} {request.user.username}. __-=*=-__)")
+
             return Response(status=status.HTTP_204_NO_CONTENT)
         except Staff.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            logger.exception("An error occurred while processing the DELETE request when deleting the Staff...")
+            return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class AssetTypeView(APIView):
