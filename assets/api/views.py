@@ -51,18 +51,40 @@ class DepartmentView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
 
+    # def get(self, request, pk=None):
+    #     if pk is None:
+    #         departments = Department.objects.filter(is_deleted=False)
+    #         serializer = DepartmentSerializer(departments, many=True)
+    #         return Response(serializer.data)
+    #     else:
+    #         try:
+    #             department = Department.objects.get(pk=pk, is_deleted=False)
+    #             serializer = DepartmentSerializer(department)
+    #             return Response(serializer.data, status=status.HTTP_200_OK)
+    #         except Department.DoesNotExist:
+    #             return Response(status=status.HTTP_404_NOT_FOUND)
+
     def get(self, request, pk=None):
-        if pk is None:
-            departments = Department.objects.filter(is_deleted=False)
-            serializer = DepartmentSerializer(departments, many=True)
-            return Response(serializer.data)
-        else:
+        # Добавляем запись о действии пользователя перед проверкой pk
+        # action_description = f"User {request.user.username} initiated a GET request to retrieve department data."
+        # UserAction.objects.create(user=request.user, action=action_description)
+
+        if pk:
             try:
                 department = Department.objects.get(pk=pk, is_deleted=False)
                 serializer = DepartmentSerializer(department)
-                return Response(serializer.data, status=status.HTTP_200_OK)
+                logger.info(f"Department {department.id} {department.title} viewed by user {request.user.id} {request.user.username}.")
+                return Response(serializer.data)
             except Department.DoesNotExist:
                 return Response(status=status.HTTP_404_NOT_FOUND)
+            except Exception as e:
+                logger.exception("An error occurred while processing the GET request when retrieving the Department...")
+                return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        else:
+            departments = Department.objects.filter(is_deleted=False)
+            serializer = DepartmentSerializer(departments, many=True)
+            logger.info(f"All Departments viewed by user {request.user.id} {request.user.username}.")
+            return Response(serializer.data)
 
     def post(self, request):
         try:
@@ -85,27 +107,51 @@ class DepartmentView(APIView):
             return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-    def put(self, request, pk):
-        try:
-            department = Department.objects.get(pk=pk, is_deleted=False)
-            serializer = DepartmentSerializer(department, data=request.data)
-            if serializer.is_valid():
-                serializer.save()
-                return Response(serializer.data)
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        except Department.DoesNotExist:
-            return Response(status=status.HTTP_404_NOT_FOUND)
+    # def put(self, request, pk):
+    #     try:
+    #         department = Department.objects.get(pk=pk, is_deleted=False)
+    #         serializer = DepartmentSerializer(department, data=request.data)
+    #         if serializer.is_valid():
+    #             serializer.save()
+    #             return Response(serializer.data)
+    #         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    #     except Department.DoesNotExist:
+    #         return Response(status=status.HTTP_404_NOT_FOUND)
+
+    # def patch(self, request, pk):
+    #     try:
+    #         department = Department.objects.get(pk=pk, is_deleted=False)
+    #         serializer = DepartmentSerializer(department, data=request.data, partial=True)
+    #         if serializer.is_valid():
+    #             serializer.save()
+    #             return Response(serializer.data)
+    #         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    #     except Department.DoesNotExist:
+    #         return Response(status=status.HTTP_404_NOT_FOUND)
 
     def patch(self, request, pk):
         try:
             department = Department.objects.get(pk=pk, is_deleted=False)
             serializer = DepartmentSerializer(department, data=request.data, partial=True)
             if serializer.is_valid():
-                serializer.save()
+                department = serializer.save()
+
+                # Добавляем запись о действии пользователя с информацией о департаменте
+                action_description = f"User {request.user.username} updated department: id = {department.id}, title = {department.title}."
+                UserAction.objects.create(user=request.user, action=action_description)
+
+                # Логируем обновление департамента
+                logger.info(
+                    f"\n(__-=*=-__ Department {department.id} {department.title} updated by user {request.user.id} {request.user.username}. __-=*=-__)")
+
                 return Response(serializer.data)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except Department.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            logger.exception("An error occurred while processing the PATCH request when updating the Department...")
+            return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
 
     def delete(self, request, pk):
         try:
