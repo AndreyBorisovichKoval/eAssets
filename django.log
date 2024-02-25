@@ -914,3 +914,256 @@ WARNING 2024-02-25 17:13:59,574 log 6416 12268 Not Found: /assets/api/position/1
 WARNING 2024-02-25 17:13:59,574 basehttp 6416 12268 "DELETE /assets/api/position/14/ HTTP/1.1" 404 0
 INFO 2024-02-25 17:15:16,799 autoreload 6416 15572 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
 INFO 2024-02-25 17:15:17,652 autoreload 8792 9996 Watching for file changes with StatReloader
+INFO 2024-02-25 17:20:37,725 autoreload 12048 6176 Watching for file changes with StatReloader
+INFO 2024-02-25 17:20:49,635 views 12048 13744 All Staff viewed by user 6 user_1.
+INFO 2024-02-25 17:20:49,644 basehttp 12048 13744 "GET /assets/api/staff/ HTTP/1.1" 200 10962
+ERROR 2024-02-25 17:21:24,200 views 12048 13744 An error occurred while processing the GET request when retrieving the Staff...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 321, in get
+    logger.info(f"Staff {staff.id} {staff.name} viewed by user {request.user.id} {request.user.username}.")
+                                    ^^^^^^^^^^
+AttributeError: 'Staff' object has no attribute 'name'
+ERROR 2024-02-25 17:21:24,204 log 12048 13744 Internal Server Error: /assets/api/staff/42/
+ERROR 2024-02-25 17:21:24,204 basehttp 12048 13744 "GET /assets/api/staff/42/ HTTP/1.1" 500 33
+ERROR 2024-02-25 17:21:39,716 views 12048 13744 An error occurred while processing the GET request when retrieving the Staff...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 321, in get
+    logger.info(f"Staff {staff.id} {staff.name} viewed by user {request.user.id} {request.user.username}.")
+                                    ^^^^^^^^^^
+AttributeError: 'Staff' object has no attribute 'name'
+ERROR 2024-02-25 17:21:39,717 log 12048 13744 Internal Server Error: /assets/api/staff/42/
+ERROR 2024-02-25 17:21:39,719 basehttp 12048 13744 "GET /assets/api/staff/42/ HTTP/1.1" 500 33
+ERROR 2024-02-25 17:21:41,404 views 12048 13744 An error occurred while processing the GET request when retrieving the Staff...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 321, in get
+    logger.info(f"Staff {staff.id} {staff.name} viewed by user {request.user.id} {request.user.username}.")
+                                    ^^^^^^^^^^
+AttributeError: 'Staff' object has no attribute 'name'
+ERROR 2024-02-25 17:21:41,405 log 12048 13744 Internal Server Error: /assets/api/staff/42/
+ERROR 2024-02-25 17:21:41,405 basehttp 12048 13744 "GET /assets/api/staff/42/ HTTP/1.1" 500 33
+ERROR 2024-02-25 17:21:49,424 views 12048 13744 An error occurred while processing the GET request when retrieving the Staff...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 321, in get
+    logger.info(f"Staff {staff.id} {staff.name} viewed by user {request.user.id} {request.user.username}.")
+                                    ^^^^^^^^^^
+AttributeError: 'Staff' object has no attribute 'name'
+ERROR 2024-02-25 17:21:49,425 log 12048 13744 Internal Server Error: /assets/api/staff/41/
+ERROR 2024-02-25 17:21:49,426 basehttp 12048 13744 "GET /assets/api/staff/41/ HTTP/1.1" 500 33
+ERROR 2024-02-25 17:22:35,831 views 12048 13744 An error occurred while processing the GET request when retrieving the Staff...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 321, in get
+    logger.info(f"Staff {staff.id} {staff.name} viewed by user {request.user.id} {request.user.username}.")
+                                    ^^^^^^^^^^
+AttributeError: 'Staff' object has no attribute 'name'
+ERROR 2024-02-25 17:22:35,833 log 12048 13744 Internal Server Error: /assets/api/staff/41/
+ERROR 2024-02-25 17:22:35,834 basehttp 12048 13744 "GET /assets/api/staff/41/ HTTP/1.1" 500 33
+INFO 2024-02-25 17:23:37,231 autoreload 12048 6176 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 17:23:37,755 autoreload 16136 5928 Watching for file changes with StatReloader
+ERROR 2024-02-25 17:24:10,401 views 16136 3788 An error occurred while processing the GET request when retrieving the Staff...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 321, in get
+    logger.info(f"Staff {staff.id} {staff.name} viewed by user {request.user.id} {request.user.username}.")
+                                    ^^^^^^^^^^
+AttributeError: 'Staff' object has no attribute 'name'
+ERROR 2024-02-25 17:24:10,403 log 16136 3788 Internal Server Error: /assets/api/staff/41/
+ERROR 2024-02-25 17:24:10,403 basehttp 16136 3788 "GET /assets/api/staff/41/ HTTP/1.1" 500 33
+INFO 2024-02-25 17:24:22,102 views 16136 3788 All Staff viewed by user 6 user_1.
+INFO 2024-02-25 17:24:22,109 basehttp 16136 3788 "GET /assets/api/staff/ HTTP/1.1" 200 10962
+ERROR 2024-02-25 17:24:51,089 views 16136 3788 An error occurred while processing the GET request when retrieving the Staff...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 321, in get
+    logger.info(f"Staff {staff.id} {staff.name} viewed by user {request.user.id} {request.user.username}.")
+                                    ^^^^^^^^^^
+AttributeError: 'Staff' object has no attribute 'name'
+ERROR 2024-02-25 17:24:51,090 log 16136 3788 Internal Server Error: /assets/api/staff/42/
+ERROR 2024-02-25 17:24:51,090 basehttp 16136 3788 "GET /assets/api/staff/42/ HTTP/1.1" 500 33
+INFO 2024-02-25 17:25:07,896 views 16136 3788 All Staff viewed by user 6 user_1.
+INFO 2024-02-25 17:25:07,900 basehttp 16136 3788 "GET /assets/api/staff/ HTTP/1.1" 200 10962
+ERROR 2024-02-25 17:25:15,228 views 16136 3788 An error occurred while processing the GET request when retrieving the Staff...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 321, in get
+    logger.info(f"Staff {staff.id} {staff.name} viewed by user {request.user.id} {request.user.username}.")
+                                    ^^^^^^^^^^
+AttributeError: 'Staff' object has no attribute 'name'
+ERROR 2024-02-25 17:25:15,228 log 16136 3788 Internal Server Error: /assets/api/staff/42/
+ERROR 2024-02-25 17:25:15,229 basehttp 16136 3788 "GET /assets/api/staff/42/ HTTP/1.1" 500 33
+ERROR 2024-02-25 17:27:46,193 views 16136 15668 An error occurred while processing the GET request when retrieving the Staff...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 321, in get
+    logger.info(f"Staff {staff.id} {staff.name} viewed by user {request.user.id} {request.user.username}.")
+                                    ^^^^^^^^^^
+AttributeError: 'Staff' object has no attribute 'name'
+ERROR 2024-02-25 17:27:46,194 log 16136 15668 Internal Server Error: /assets/api/staff/42/
+ERROR 2024-02-25 17:27:46,194 basehttp 16136 15668 "GET /assets/api/staff/42/ HTTP/1.1" 500 33
+INFO 2024-02-25 17:27:53,377 views 16136 15668 All Staff viewed by user 6 user_1.
+INFO 2024-02-25 17:27:53,380 basehttp 16136 15668 "GET /assets/api/staff/ HTTP/1.1" 200 10962
+ERROR 2024-02-25 17:28:05,686 views 16136 15668 An error occurred while processing the GET request when retrieving the Staff...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 321, in get
+    logger.info(f"Staff {staff.id} {staff.name} viewed by user {request.user.id} {request.user.username}.")
+                                    ^^^^^^^^^^
+AttributeError: 'Staff' object has no attribute 'name'
+ERROR 2024-02-25 17:28:05,687 log 16136 15668 Internal Server Error: /assets/api/staff/1/
+ERROR 2024-02-25 17:28:05,687 basehttp 16136 15668 "GET /assets/api/staff/1/ HTTP/1.1" 500 33
+INFO 2024-02-25 17:28:10,356 views 16136 15668 All Staff viewed by user 6 user_1.
+INFO 2024-02-25 17:28:10,359 basehttp 16136 15668 "GET /assets/api/staff/ HTTP/1.1" 200 10962
+INFO 2024-02-25 17:32:41,618 autoreload 16136 5928 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 17:32:44,453 autoreload 16540 16548 Watching for file changes with StatReloader
+INFO 2024-02-25 17:34:28,304 autoreload 16540 16548 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 17:34:28,849 autoreload 4492 15488 Watching for file changes with StatReloader
+INFO 2024-02-25 17:34:34,242 views 4492 1668 All Staff viewed by user 6 user_1.
+INFO 2024-02-25 17:34:34,261 basehttp 4492 1668 "GET /assets/api/staff/ HTTP/1.1" 200 10962
+INFO 2024-02-25 17:34:39,679 views 4492 1668 Staff 42 Кузьмин Владимир Дмитриевич viewed by user 6 user_1.
+INFO 2024-02-25 17:34:39,680 basehttp 4492 1668 "GET /assets/api/staff/42/ HTTP/1.1" 200 262
+INFO 2024-02-25 17:34:59,493 views 4492 1668 Staff 42 Кузьмин Владимир Дмитриевич viewed by user 6 user_1.
+INFO 2024-02-25 17:34:59,494 basehttp 4492 1668 "GET /assets/api/staff/42/ HTTP/1.1" 200 262
+INFO 2024-02-25 17:35:13,139 views 4492 1668 All Staff viewed by user 6 user_1.
+INFO 2024-02-25 17:35:13,143 basehttp 4492 1668 "GET /assets/api/staff/ HTTP/1.1" 200 10962
+INFO 2024-02-25 17:35:21,936 views 4492 1668 Staff 42 Кузьмин Владимир Дмитриевич viewed by user 6 user_1.
+INFO 2024-02-25 17:35:21,937 basehttp 4492 1668 "GET /assets/api/staff/42/ HTTP/1.1" 200 262
+ERROR 2024-02-25 17:36:57,720 views 4492 1668 An error occurred while processing the POST request when creating the Staff...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 342, in post
+    action_description = f"User {request.user.username} created a staff member: id = {staff.id}, name = {staff.name}."
+                                                                                                         ^^^^^^^^^^
+AttributeError: 'Staff' object has no attribute 'name'
+ERROR 2024-02-25 17:36:57,721 log 4492 1668 Internal Server Error: /assets/api/staff/
+ERROR 2024-02-25 17:36:57,722 basehttp 4492 1668 "POST /assets/api/staff/ HTTP/1.1" 500 33
+INFO 2024-02-25 17:39:33,918 autoreload 4492 15488 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 17:39:34,511 autoreload 15272 12340 Watching for file changes with StatReloader
+INFO 2024-02-25 17:39:58,252 views 15272 16556 
+(__-=*=-__ Staff 44 Тестов Тест Тестович added by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 17:39:58,257 basehttp 15272 16556 "POST /assets/api/staff/ HTTP/1.1" 201 250
+INFO 2024-02-25 17:41:39,155 autoreload 15272 12340 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 17:41:39,672 autoreload 4512 4240 Watching for file changes with StatReloader
+INFO 2024-02-25 17:42:36,462 views 4512 13160 
+(__-=*=-__ Staff 45 Тестов Тест Тестович added by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 17:42:36,466 basehttp 4512 13160 "POST /assets/api/staff/ HTTP/1.1" 201 250
+INFO 2024-02-25 17:42:46,183 views 4512 13160 
+(__-=*=-__ Staff 46 Тестов Тест Тестович added by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 17:42:46,194 basehttp 4512 13160 "POST /assets/api/staff/ HTTP/1.1" 201 250
+ERROR 2024-02-25 17:50:14,641 views 4512 13160 An error occurred while processing the PATCH request when updating the Staff...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 362, in patch
+    action_description = f"User {request.user.username} updated staff member: id = {staff.id}, name = {staff.name}."
+                                                                                                       ^^^^^^^^^^
+AttributeError: 'Staff' object has no attribute 'name'
+ERROR 2024-02-25 17:50:14,644 log 4512 13160 Internal Server Error: /assets/api/staff/46/
+ERROR 2024-02-25 17:50:14,645 basehttp 4512 13160 "PATCH /assets/api/staff/46/ HTTP/1.1" 500 33
+INFO 2024-02-25 17:52:22,031 autoreload 4512 4240 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 17:52:26,222 autoreload 15648 2928 Watching for file changes with StatReloader
+ERROR 2024-02-25 17:52:33,700 views 15648 14132 An error occurred while processing the PATCH request when updating the Staff...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 357, in patch
+    serializer = StaffSerializer(staff, data=request.data, partial=True)
+                                 ^^^^^
+NameError: name 'staff' is not defined. Did you mean: 'Staff'?
+ERROR 2024-02-25 17:52:33,703 log 15648 14132 Internal Server Error: /assets/api/staff/46/
+ERROR 2024-02-25 17:52:33,703 basehttp 15648 14132 "PATCH /assets/api/staff/46/ HTTP/1.1" 500 33
+INFO 2024-02-25 17:53:13,732 autoreload 15648 2928 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 17:53:14,288 autoreload 14332 8272 Watching for file changes with StatReloader
+ERROR 2024-02-25 17:53:18,932 views 14332 15000 An error occurred while processing the PATCH request when updating the Staff...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 366, in patch
+    logger.info(f"\n(__-=*=-__ Staff {staff_members.id} {staff_members.name} updated by user {request.user.id} {request.user.username}. __-=*=-__)")
+                                                         ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Staff' object has no attribute 'name'
+ERROR 2024-02-25 17:53:18,934 log 14332 15000 Internal Server Error: /assets/api/staff/46/
+ERROR 2024-02-25 17:53:18,935 basehttp 14332 15000 "PATCH /assets/api/staff/46/ HTTP/1.1" 500 33
+ERROR 2024-02-25 17:53:25,160 views 14332 15000 An error occurred while processing the PATCH request when updating the Staff...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 366, in patch
+    logger.info(f"\n(__-=*=-__ Staff {staff_members.id} {staff_members.name} updated by user {request.user.id} {request.user.username}. __-=*=-__)")
+                                                         ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Staff' object has no attribute 'name'
+ERROR 2024-02-25 17:53:25,163 log 14332 15000 Internal Server Error: /assets/api/staff/46/
+ERROR 2024-02-25 17:53:25,164 basehttp 14332 15000 "PATCH /assets/api/staff/46/ HTTP/1.1" 500 33
+INFO 2024-02-25 17:54:04,404 autoreload 14332 8272 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 17:54:07,405 autoreload 1208 3912 Watching for file changes with StatReloader
+INFO 2024-02-25 17:54:12,211 views 1208 13056 
+(__-=*=-__ Staff 46 ТестовИК ТестИК Тестович updated by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 17:54:12,242 basehttp 1208 13056 "PATCH /assets/api/staff/46/ HTTP/1.1" 200 258
+INFO 2024-02-25 17:57:38,894 autoreload 1208 3912 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 17:57:39,432 autoreload 10016 12972 Watching for file changes with StatReloader
+INFO 2024-02-25 17:57:42,888 views 10016 16976 
+(__-=*=-__ Staff 46 ТестовИК ТестИК Тестович updated by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 17:57:42,896 basehttp 10016 16976 "PATCH /assets/api/staff/46/ HTTP/1.1" 200 258
+INFO 2024-02-25 18:00:36,824 views 10016 16976 
+(__-=*=-__ Staff 46 ТестовИК ТестИК Тестович updated by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 18:00:36,825 basehttp 10016 16976 "PATCH /assets/api/staff/46/ HTTP/1.1" 200 258
+ERROR 2024-02-25 18:02:10,164 views 10016 16976 An error occurred while processing the DELETE request when deleting the Staff...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 384, in delete
+    action_description = f"User {request.user.username} deleted a staff member: id = {staff.id}, name = {staff.name}."
+                                                                                                         ^^^^^^^^^^
+AttributeError: 'Staff' object has no attribute 'name'
+ERROR 2024-02-25 18:02:10,166 log 10016 16976 Internal Server Error: /assets/api/staff/46/
+ERROR 2024-02-25 18:02:10,166 basehttp 10016 16976 "DELETE /assets/api/staff/46/ HTTP/1.1" 500 33
+INFO 2024-02-25 18:03:07,377 autoreload 10016 12972 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 18:03:07,978 autoreload 8224 4512 Watching for file changes with StatReloader
+WARNING 2024-02-25 18:03:13,775 log 8224 14236 Not Found: /assets/api/staff/46/
+WARNING 2024-02-25 18:03:13,776 basehttp 8224 14236 "DELETE /assets/api/staff/46/ HTTP/1.1" 404 0
+INFO 2024-02-25 18:03:30,800 views 8224 14236 
+(__-=*=-__ Staff 45 Тестов Тест Тестович deleted by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 18:03:30,800 basehttp 8224 14236 "DELETE /assets/api/staff/45/ HTTP/1.1" 204 0
+WARNING 2024-02-25 18:03:33,355 log 8224 14236 Not Found: /assets/api/staff/45/
+WARNING 2024-02-25 18:03:33,356 basehttp 8224 14236 "DELETE /assets/api/staff/45/ HTTP/1.1" 404 0
+INFO 2024-02-25 18:04:43,159 autoreload 8224 4512 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 18:04:43,637 autoreload 2588 14296 Watching for file changes with StatReloader
+INFO 2024-02-25 18:10:50,401 autoreload 2588 14296 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 18:10:50,947 autoreload 5104 16464 Watching for file changes with StatReloader
+ERROR 2024-02-25 18:11:06,019 views 5104 13728 An error occurred while processing the DELETE request when deleting the Staff...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 382, in delete
+    staff_members.deleted_at = timezone.now()
+                               ^^^^^^^^^^^^
+AttributeError: type object 'datetime.timezone' has no attribute 'now'
+ERROR 2024-02-25 18:11:06,020 log 5104 13728 Internal Server Error: /assets/api/staff/44/
+ERROR 2024-02-25 18:11:06,021 basehttp 5104 13728 "DELETE /assets/api/staff/44/ HTTP/1.1" 500 33
+INFO 2024-02-25 18:12:43,983 autoreload 5104 16464 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 18:12:45,193 autoreload 13160 16520 Watching for file changes with StatReloader
+INFO 2024-02-25 18:12:53,530 views 13160 9180 
+(__-=*=-__ Staff 44 Тестов Тест Тестович deleted by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 18:12:53,531 basehttp 13160 9180 "DELETE /assets/api/staff/44/ HTTP/1.1" 204 0
+WARNING 2024-02-25 18:14:02,050 log 13160 9180 Not Found: /assets/api/staff/44/
+WARNING 2024-02-25 18:14:02,050 basehttp 13160 9180 "DELETE /assets/api/staff/44/ HTTP/1.1" 404 0
+INFO 2024-02-25 18:14:33,246 autoreload 13160 16520 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 18:14:33,778 autoreload 16648 8500 Watching for file changes with StatReloader
+INFO 2024-02-25 18:15:17,467 autoreload 16648 8500 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 18:15:17,990 autoreload 4688 9344 Watching for file changes with StatReloader
+INFO 2024-02-25 18:15:43,653 autoreload 4688 9344 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 18:15:44,156 autoreload 9556 13744 Watching for file changes with StatReloader
+INFO 2024-02-25 18:16:03,215 views 9556 3384 All Departments viewed by user 6 user_1.
+INFO 2024-02-25 18:16:03,328 basehttp 9556 3384 "GET /assets/api/department/ HTTP/1.1" 200 1067
+INFO 2024-02-25 18:16:23,911 views 9556 3384 
+(__-=*=-__ Department 13 Dep_Test_0012 added by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 18:16:23,911 basehttp 9556 3384 "POST /assets/api/department/ HTTP/1.1" 201 146
+INFO 2024-02-25 18:16:28,357 views 9556 3384 All Departments viewed by user 6 user_1.
+INFO 2024-02-25 18:16:28,359 basehttp 9556 3384 "GET /assets/api/department/ HTTP/1.1" 200 1214
+INFO 2024-02-25 18:16:44,205 views 9556 3384 
+(__-=*=-__ Department 13 Dep_Test_0012 deleted by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 18:16:44,206 basehttp 9556 3384 "DELETE /assets/api/department/13/ HTTP/1.1" 204 0
+INFO 2024-02-25 18:17:35,001 views 9556 3384 Division 17 Div_Test_0002 added by user 6 user_1.
+INFO 2024-02-25 18:17:35,002 basehttp 9556 3384 "POST /assets/api/division/ HTTP/1.1" 201 161
+INFO 2024-02-25 18:17:39,029 views 9556 3384 All Divisions viewed by user 6 user_1.
+INFO 2024-02-25 18:17:39,033 basehttp 9556 3384 "GET /assets/api/division/ HTTP/1.1" 200 2677
+INFO 2024-02-25 18:17:55,288 views 9556 3384 Division 17 Div_Test_0002 deleted by user 6 user_1.
+INFO 2024-02-25 18:17:55,288 basehttp 9556 3384 "DELETE /assets/api/division/17/ HTTP/1.1" 204 0
+WARNING 2024-02-25 18:17:57,653 log 9556 3384 Not Found: /assets/api/division/17/
+WARNING 2024-02-25 18:17:57,653 basehttp 9556 3384 "DELETE /assets/api/division/17/ HTTP/1.1" 404 0
+INFO 2024-02-25 18:18:55,565 views 9556 3384 All Positions viewed by user 6 user_1.
+INFO 2024-02-25 18:18:55,568 basehttp 9556 3384 "GET /assets/api/position/ HTTP/1.1" 200 1772
+INFO 2024-02-25 18:19:02,785 views 9556 3384 
+(__-=*=-__ Position 15 Pos_Test_0001 added by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 18:19:02,786 basehttp 9556 3384 "POST /assets/api/position/ HTTP/1.1" 201 146
+INFO 2024-02-25 18:19:05,616 views 9556 3384 All Positions viewed by user 6 user_1.
+INFO 2024-02-25 18:19:05,618 basehttp 9556 3384 "GET /assets/api/position/ HTTP/1.1" 200 1919
+INFO 2024-02-25 18:19:17,602 views 9556 3384 
+(__-=*=-__ Position 15 Pos_Test_0001 deleted by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 18:19:17,602 basehttp 9556 3384 "DELETE /assets/api/position/15/ HTTP/1.1" 204 0
+INFO 2024-02-25 18:27:52,702 autoreload 9556 13744 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 18:27:53,224 autoreload 14940 3428 Watching for file changes with StatReloader
+INFO 2024-02-25 18:28:07,293 autoreload 14940 3428 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 18:28:07,886 autoreload 14036 4328 Watching for file changes with StatReloader
+INFO 2024-02-25 18:30:34,127 autoreload 14036 4328 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 18:30:34,658 autoreload 7384 11644 Watching for file changes with StatReloader

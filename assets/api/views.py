@@ -121,6 +121,7 @@ class DepartmentView(APIView):
             department = Department.objects.get(pk=pk, is_deleted=False)
             department.deleted_by = request.user
             department.is_deleted = True
+            department.deleted_at = datetime.now()
             department.save()
 
             # Заносим данные о действии пользователя
@@ -202,6 +203,7 @@ class DivisionView(APIView):
             division = Division.objects.get(pk=pk, is_deleted=False)
             division.deleted_by = request.user
             division.is_deleted = True
+            division.deleted_at = datetime.now()
             division.save()
             action_description = f"User {request.user.username} deleted a division: id = {division.id}, title = {division.title}."
             UserAction.objects.create(user=request.user, action=action_description)
@@ -288,6 +290,7 @@ class PositionView(APIView):
             position = Position.objects.get(pk=pk, is_deleted=False)
             position.deleted_by = request.user
             position.is_deleted = True
+            position.deleted_at = datetime.now()
             position.save()
 
             # Заносим данные о действии пользователя
@@ -311,14 +314,14 @@ class StaffView(APIView):
 
     def get(self, request, pk=None):
         # Добавляем запись о действии пользователя перед проверкой pk
-        action_description = f"User {request.user.username} initiated a GET request to retrieve staff data."
-        UserAction.objects.create(user=request.user, action=action_description)
+        # action_description = f"User {request.user.username} initiated a GET request to retrieve staff data."
+        # UserAction.objects.create(user=request.user, action=action_description)
 
         if pk:
             try:
-                staff = Staff.objects.get(pk=pk, is_deleted=False)
-                serializer = StaffSerializer(staff)
-                logger.info(f"Staff {staff.id} {staff.name} viewed by user {request.user.id} {request.user.username}.")
+                staff_members = Staff.objects.get(pk=pk, is_deleted=False)
+                serializer = StaffSerializer(staff_members)
+                logger.info(f"Staff {staff_members.id} {staff_members.full_name} viewed by user {request.user.id} {request.user.username}.")
                 return Response(serializer.data)
             except Staff.DoesNotExist:
                 return Response(status=status.HTTP_404_NOT_FOUND)
@@ -326,8 +329,8 @@ class StaffView(APIView):
                 logger.exception("An error occurred while processing the GET request when retrieving the Staff...")
                 return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         else:
-            staff = Staff.objects.filter(is_deleted=False)
-            serializer = StaffSerializer(staff, many=True)
+            staff_members = Staff.objects.filter(is_deleted=False)
+            serializer = StaffSerializer(staff_members, many=True)
             logger.info(f"All Staff viewed by user {request.user.id} {request.user.username}.")
             return Response(serializer.data)
 
@@ -336,14 +339,14 @@ class StaffView(APIView):
             request.data['created_by'] = request.user.id
             serializer = StaffSerializer(data=request.data)
             if serializer.is_valid():
-                staff = serializer.save()
+                staff_members = serializer.save()
 
                 # Добавляем запись о действии пользователя с информацией о сотруднике
-                action_description = f"User {request.user.username} created a staff member: id = {staff.id}, name = {staff.name}."
+                action_description = f"User {request.user.username} created a staff member: id = {staff_members.id}, full_name = {staff_members.full_name}."
                 UserAction.objects.create(user=request.user, action=action_description)
 
                 # Логируем добавление сотрудника
-                logger.info(f"\n(__-=*=-__ Staff {staff.id} {staff.name} added by user {request.user.id} {request.user.username}. __-=*=-__)")
+                logger.info(f"\n(__-=*=-__ Staff {staff_members.id} {staff_members.full_name} added by user {request.user.id} {request.user.username}. __-=*=-__)")
 
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -353,17 +356,17 @@ class StaffView(APIView):
 
     def patch(self, request, pk):
         try:
-            staff = Staff.objects.get(pk=pk, is_deleted=False)
-            serializer = StaffSerializer(staff, data=request.data, partial=True)
+            staff_members = Staff.objects.get(pk=pk, is_deleted=False)
+            serializer = StaffSerializer(staff_members, data=request.data, partial=True)
             if serializer.is_valid():
-                staff = serializer.save()
+                staff_members = serializer.save()
 
                 # Добавляем запись о действии пользователя с информацией о сотруднике
-                action_description = f"User {request.user.username} updated staff member: id = {staff.id}, name = {staff.name}."
+                action_description = f"User {request.user.username} updated staff member: id = {staff_members.id}, full_name = {staff_members.full_name}, division = {staff_members.division}, position = {staff_members.position}, memo = {staff_members.memo}."
                 UserAction.objects.create(user=request.user, action=action_description)
 
                 # Логируем обновление сотрудника
-                logger.info(f"\n(__-=*=-__ Staff {staff.id} {staff.name} updated by user {request.user.id} {request.user.username}. __-=*=-__)")
+                logger.info(f"\n(__-=*=-__ Staff {staff_members.id} {staff_members.full_name} updated by user {request.user.id} {request.user.username}. __-=*=-__)")
 
                 return Response(serializer.data)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -375,17 +378,18 @@ class StaffView(APIView):
 
     def delete(self, request, pk):
         try:
-            staff = Staff.objects.get(pk=pk, is_deleted=False)
-            staff.deleted_by = request.user
-            staff.is_deleted = True
-            staff.save()
+            staff_members = Staff.objects.get(pk=pk, is_deleted=False)
+            staff_members.deleted_by = request.user
+            staff_members.is_deleted = True
+            staff_members.deleted_at = datetime.now()
+            staff_members.save()
 
             # Заносим данные о действии пользователя
-            action_description = f"User {request.user.username} deleted a staff member: id = {staff.id}, name = {staff.name}."
+            action_description = f"User {request.user.username} deleted a staff member: id = {staff_members.id}, full_name = {staff_members.full_name}."
             UserAction.objects.create(user=request.user, action=action_description)
 
             # Логируем удаление сотрудника
-            logger.info(f"\n(__-=*=-__ Staff {staff.id} {staff.name} deleted by user {request.user.id} {request.user.username}. __-=*=-__)")
+            logger.info(f"\n(__-=*=-__ Staff {staff_members.id} {staff_members.full_name} deleted by user {request.user.id} {request.user.username}. __-=*=-__)")
 
             return Response(status=status.HTTP_204_NO_CONTENT)
         except Staff.DoesNotExist:
@@ -400,116 +404,163 @@ class AssetTypeView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request, pk=None):
-        if pk is None:
-            asset_types = AssetType.objects.filter(is_deleted=False)
-            serializer = AssetTypeSerializer(asset_types, many=True)
-            return Response(serializer.data)
-        else:
+        if pk:
             try:
                 asset_type = AssetType.objects.get(pk=pk, is_deleted=False)
                 serializer = AssetTypeSerializer(asset_type)
-                return Response(serializer.data, status=status.HTTP_200_OK)
+                logger.info(f"AssetType {asset_type.id} {asset_type.title} viewed by user {request.user.id} {request.user.username}.")
+                return Response(serializer.data)
             except AssetType.DoesNotExist:
                 return Response(status=status.HTTP_404_NOT_FOUND)
+            except Exception as e:
+                logger.exception("An error occurred while processing the GET request when retrieving the AssetType...")
+                return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        else:
+            asset_types = AssetType.objects.filter(is_deleted=False)
+            serializer = AssetTypeSerializer(asset_types, many=True)
+            logger.info(f"All AssetTypes viewed by user {request.user.id} {request.user.username}.")
+            return Response(serializer.data)
 
     def post(self, request):
-        serializer = AssetTypeSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    def put(self, request, pk):
         try:
-            asset_type = AssetType.objects.get(pk=pk, is_deleted=False)
-            serializer = AssetTypeSerializer(asset_type, data=request.data)
+            request.data['created_by'] = request.user.id
+            serializer = AssetTypeSerializer(data=request.data)
             if serializer.is_valid():
-                serializer.save()
-                return Response(serializer.data)
+                asset_type = serializer.save()
+
+                action_description = f"User {request.user.username} created an asset type: id = {asset_type.id}, title = {asset_type.title}."
+                UserAction.objects.create(user=request.user, action=action_description)
+
+                logger.info(f"\n(__-=*=-__ AssetType {asset_type.id} {asset_type.title} added by user {request.user.id} {request.user.username}. __-=*=-__)")
+
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        except AssetType.DoesNotExist:
-            return Response(status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            logger.exception("An error occurred while processing the POST request when creating the AssetType...")
+            return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def patch(self, request, pk):
         try:
             asset_type = AssetType.objects.get(pk=pk, is_deleted=False)
             serializer = AssetTypeSerializer(asset_type, data=request.data, partial=True)
             if serializer.is_valid():
-                serializer.save()
+                asset_type = serializer.save()
+
+                action_description = f"User {request.user.username} updated asset type: id = {asset_type.id}, title = {asset_type.title}."
+                UserAction.objects.create(user=request.user, action=action_description)
+
+                logger.info(
+                    f"\n(__-=*=-__ AssetType {asset_type.id} {asset_type.title} updated by user {request.user.id} {request.user.username}. __-=*=-__)")
+
                 return Response(serializer.data)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except AssetType.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            logger.exception("An error occurred while processing the PATCH request when updating the AssetType...")
+            return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def delete(self, request, pk):
         try:
             asset_type = AssetType.objects.get(pk=pk, is_deleted=False)
+            asset_type.deleted_by = request.user
             asset_type.is_deleted = True
+            asset_type.deleted_at = datetime.now()
             asset_type.save()
+
+            action_description = f"User {request.user.username} deleted an asset type: id = {asset_type.id}, title = {asset_type.title}."
+            UserAction.objects.create(user=request.user, action=action_description)
+
+            logger.info(f"\n(__-=*=-__ AssetType {asset_type.id} {asset_type.title} deleted by user {request.user.id} {request.user.username}. __-=*=-__)")
+
             return Response(status=status.HTTP_204_NO_CONTENT)
         except AssetType.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            logger.exception("An error occurred while processing the DELETE request when deleting the AssetType...")
+            return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class AssetView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
-    # def get_object(self, pk):
-    #     try:
-    #         return Asset.objects.get(pk=pk)
-    #     except Asset.DoesNotExist:
-    #         return Response(status=status.HTTP_404_NOT_FOUND)
 
     def get(self, request, pk=None):
-        if pk is None:
-            asset = Asset.objects.all()
-            serializer = AssetSerializer(asset, many=True)
-            return Response(serializer.data)
-        else:
+        if pk:
             try:
-                asset = Asset.objects.get(pk=pk)
+                asset = Asset.objects.get(pk=pk, is_deleted=False)
                 serializer = AssetSerializer(asset)
-                return Response(serializer.data, status=status.HTTP_200_OK)
+                logger.info(f"Asset {asset.id} {asset.title} viewed by user {request.user.id} {request.user.username}.")
+                return Response(serializer.data)
             except Asset.DoesNotExist:
                 return Response(status=status.HTTP_404_NOT_FOUND)
+            except Exception as e:
+                logger.exception("An error occurred while processing the GET request when retrieving the Asset...")
+                return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        else:
+            assets = Asset.objects.filter(is_deleted=False)
+            serializer = AssetSerializer(assets, many=True)
+            logger.info(f"All Assets viewed by user {request.user.id} {request.user.username}.")
+            return Response(serializer.data)
 
-    def post(self, request: Any) -> Any:
-        serializer = AssetSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
-    def put(self, request: Any, pk: int) -> Any:
+    def post(self, request):
         try:
-            asset = Asset.objects.get(pk=pk)
-            serializer = AssetSerializer(asset, data=request.data)
+            request.data['created_by'] = request.user.id
+            serializer = AssetSerializer(data=request.data)
             if serializer.is_valid():
-                serializer.save()
-                return Response(serializer.data)
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        except Asset.DoesNotExist:
-            return Response(status=status.HTTP_404_NOT_FOUND)
+                asset = serializer.save()
 
-    def patch(self, request: Any, pk: int) -> Any:
+                action_description = f"User {request.user.username} created an asset: id = {asset.id}, title = {asset.title}."
+                UserAction.objects.create(user=request.user, action=action_description)
+
+                logger.info(f"\n(__-=*=-__ Asset {asset.id} {asset.title} added by user {request.user.id} {request.user.username}. __-=*=-__)")
+
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            logger.exception("An error occurred while processing the POST request when creating the Asset...")
+            return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    def patch(self, request, pk):
         try:
-            asset = Asset.objects.get(pk=pk)
+            asset = Asset.objects.get(pk=pk, is_deleted=False)
             serializer = AssetSerializer(asset, data=request.data, partial=True)
             if serializer.is_valid():
-                serializer.save()
+                asset = serializer.save()
+
+                action_description = f"User {request.user.username} updated asset: id = {asset.id}, title = {asset.title}."
+                UserAction.objects.create(user=request.user, action=action_description)
+
+                logger.info(
+                    f"\n(__-=*=-__ Asset {asset.id} {asset.title} updated by user {request.user.id} {request.user.username}. __-=*=-__)")
+
                 return Response(serializer.data)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except Asset.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            logger.exception("An error occurred while processing the PATCH request when updating the Asset...")
+            return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-    def delete(self, request: Any, pk: int) -> Any:
+    def delete(self, request, pk):
         try:
-            asset = Asset.objects.get(pk=pk)
-            asset.delete()
+            asset = Asset.objects.get(pk=pk, is_deleted=False)
+            asset.deleted_by = request.user
+            asset.is_deleted = True
+            asset.deleted_at = datetime.now()
+            asset.save()
+
+            action_description = f"User {request.user.username} deleted an asset: id = {asset.id}, title = {asset.title}."
+            UserAction.objects.create(user=request.user, action=action_description)
+
+            logger.info(f"\n(__-=*=-__ Asset {asset.id} {asset.title} deleted by user {request.user.id} {request.user.username}. __-=*=-__)")
+
             return Response(status=status.HTTP_204_NO_CONTENT)
         except Asset.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            logger.exception("An error occurred while processing the DELETE request when deleting the Asset...")
+            return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class AssetAssignmentView(APIView):
