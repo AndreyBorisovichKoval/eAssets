@@ -219,55 +219,90 @@ class PositionView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request, pk=None):
-        if pk is None:
-            positions = Position.objects.filter(is_deleted=False)
-            serializer = PositionSerializer(positions, many=True)
-            return Response(serializer.data)
-        else:
+        # Добавляем запись о действии пользователя перед проверкой pk
+        # action_description = f"User {request.user.username} initiated a GET request to retrieve position data."
+        # UserAction.objects.create(user=request.user, action=action_description)
+
+        if pk:
             try:
                 position = Position.objects.get(pk=pk, is_deleted=False)
                 serializer = PositionSerializer(position)
-                return Response(serializer.data, status=status.HTTP_200_OK)
+                logger.info(f"Position {position.id} {position.title} viewed by user {request.user.id} {request.user.username}.")
+                return Response(serializer.data)
             except Position.DoesNotExist:
                 return Response(status=status.HTTP_404_NOT_FOUND)
+            except Exception as e:
+                logger.exception("An error occurred while processing the GET request when retrieving the Position...")
+                return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        else:
+            positions = Position.objects.filter(is_deleted=False)
+            serializer = PositionSerializer(positions, many=True)
+            logger.info(f"All Positions viewed by user {request.user.id} {request.user.username}.")
+            return Response(serializer.data)
 
     def post(self, request):
-        serializer = PositionSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    def put(self, request, pk):
         try:
-            position = Position.objects.get(pk=pk, is_deleted=False)
-            serializer = PositionSerializer(position, data=request.data)
+            request.data['created_by'] = request.user.id
+            serializer = PositionSerializer(data=request.data)
             if serializer.is_valid():
-                serializer.save()
-                return Response(serializer.data)
+                position = serializer.save()
+
+                # Добавляем запись о действии пользователя с информацией о должности
+                action_description = f"User {request.user.username} created a position: id = {position.id}, title = {position.title}."
+                UserAction.objects.create(user=request.user, action=action_description)
+
+                # Логируем добавление должности
+                logger.info(f"\n(__-=*=-__ Position {position.id} {position.title} added by user {request.user.id} {request.user.username}. __-=*=-__)")
+
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        except Position.DoesNotExist:
-            return Response(status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            logger.exception("An error occurred while processing the POST request when creating the Position...")
+            return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def patch(self, request, pk):
         try:
             position = Position.objects.get(pk=pk, is_deleted=False)
             serializer = PositionSerializer(position, data=request.data, partial=True)
             if serializer.is_valid():
-                serializer.save()
+                position = serializer.save()
+
+                # Добавляем запись о действии пользователя с информацией о должности
+                action_description = f"User {request.user.username} updated position: id = {position.id}, title = {position.title}."
+                UserAction.objects.create(user=request.user, action=action_description)
+
+                # Логируем обновление должности
+                logger.info(
+                    f"\n(__-=*=-__ Position {position.id} {position.title} updated by user {request.user.id} {request.user.username}. __-=*=-__)")
+
                 return Response(serializer.data)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except Position.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            logger.exception("An error occurred while processing the PATCH request when updating the Position...")
+            return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def delete(self, request, pk):
         try:
             position = Position.objects.get(pk=pk, is_deleted=False)
+            position.deleted_by = request.user
             position.is_deleted = True
             position.save()
+
+            # Заносим данные о действии пользователя
+            action_description = f"User {request.user.username} deleted a position: id = {position.id}, title = {position.title}."
+            UserAction.objects.create(user=request.user, action=action_description)
+
+            # Логируем удаление должности
+            logger.info(f"\n(__-=*=-__ Position {position.id} {position.title} deleted by user {request.user.id} {request.user.username}. __-=*=-__)")
+
             return Response(status=status.HTTP_204_NO_CONTENT)
         except Position.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            logger.exception("An error occurred while processing the DELETE request when deleting the Position...")
+            return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class StaffView(APIView):

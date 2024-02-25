@@ -874,3 +874,43 @@ WARNING 2024-02-25 16:48:23,795 log 14312 13380 Not Found: /assets/api/division/
 WARNING 2024-02-25 16:48:23,796 basehttp 14312 13380 "PATCH /assets/api/division/16/ HTTP/1.1" 404 0
 INFO 2024-02-25 16:48:52,080 views 14312 13380 Division 15 Div_Test_0015 updated by user 6 user_1.
 INFO 2024-02-25 16:48:52,081 basehttp 14312 13380 "PATCH /assets/api/division/15/ HTTP/1.1" 200 162
+INFO 2024-02-25 16:55:37,757 autoreload 5224 10936 Watching for file changes with StatReloader
+INFO 2024-02-25 16:56:18,008 basehttp 5224 4052 "GET /assets/api/position/ HTTP/1.1" 200 1475
+INFO 2024-02-25 16:56:53,959 basehttp 5224 4052 "GET /assets/api/position/10/ HTTP/1.1" 200 146
+INFO 2024-02-25 16:58:32,162 basehttp 5224 4052 "POST /assets/api/position/ HTTP/1.1" 201 149
+INFO 2024-02-25 17:00:37,356 autoreload 5224 10936 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 17:00:38,092 autoreload 12964 14940 Watching for file changes with StatReloader
+INFO 2024-02-25 17:00:43,371 basehttp 12964 9368 "POST /assets/api/position/ HTTP/1.1" 201 146
+INFO 2024-02-25 17:00:52,265 basehttp 12964 9368 "GET /assets/api/position/ HTTP/1.1" 200 1772
+INFO 2024-02-25 17:02:43,630 basehttp 12964 9368 "PATCH /assets/api/position/12/ HTTP/1.1" 200 146
+INFO 2024-02-25 17:03:21,320 basehttp 12964 9368 "DELETE /assets/api/position/12/ HTTP/1.1" 204 0
+INFO 2024-02-25 17:03:41,846 basehttp 12964 9368 "POST /assets/api/position/ HTTP/1.1" 201 146
+WARNING 2024-02-25 17:03:55,055 log 12964 9368 Not Found: /assets/api/position/12/
+WARNING 2024-02-25 17:03:55,055 basehttp 12964 9368 "PATCH /assets/api/position/12/ HTTP/1.1" 404 0
+INFO 2024-02-25 17:04:12,024 basehttp 12964 9368 "PATCH /assets/api/position/13/ HTTP/1.1" 200 146
+INFO 2024-02-25 17:04:37,543 basehttp 12964 9368 "PATCH /assets/api/position/11/ HTTP/1.1" 200 149
+INFO 2024-02-25 17:07:12,916 autoreload 12964 14940 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 17:07:13,468 autoreload 15648 9016 Watching for file changes with StatReloader
+INFO 2024-02-25 17:12:33,663 autoreload 15648 9016 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 17:12:34,290 autoreload 6416 15572 Watching for file changes with StatReloader
+INFO 2024-02-25 17:12:43,993 views 6416 12268 All Positions viewed by user 6 user_1.
+INFO 2024-02-25 17:12:43,999 basehttp 6416 12268 "GET /assets/api/position/ HTTP/1.1" 200 1772
+INFO 2024-02-25 17:12:52,647 views 6416 12268 Position 10 Supervisor viewed by user 6 user_1.
+INFO 2024-02-25 17:12:52,648 basehttp 6416 12268 "GET /assets/api/position/10/ HTTP/1.1" 200 146
+INFO 2024-02-25 17:13:00,831 views 6416 12268 
+(__-=*=-__ Position 14 Pos_Test_0001 added by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 17:13:00,832 basehttp 6416 12268 "POST /assets/api/position/ HTTP/1.1" 201 146
+INFO 2024-02-25 17:13:12,249 views 6416 12268 Position 14 Pos_Test_0001 viewed by user 6 user_1.
+INFO 2024-02-25 17:13:12,250 basehttp 6416 12268 "GET /assets/api/position/14/ HTTP/1.1" 200 146
+INFO 2024-02-25 17:13:32,013 views 6416 12268 
+(__-=*=-__ Position 14 Pos_Test_0014 updated by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 17:13:32,013 basehttp 6416 12268 "PATCH /assets/api/position/14/ HTTP/1.1" 200 146
+INFO 2024-02-25 17:13:39,870 views 6416 12268 Position 14 Pos_Test_0014 viewed by user 6 user_1.
+INFO 2024-02-25 17:13:39,872 basehttp 6416 12268 "GET /assets/api/position/14/ HTTP/1.1" 200 146
+INFO 2024-02-25 17:13:56,303 views 6416 12268 
+(__-=*=-__ Position 14 Pos_Test_0014 deleted by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 17:13:56,303 basehttp 6416 12268 "DELETE /assets/api/position/14/ HTTP/1.1" 204 0
+WARNING 2024-02-25 17:13:59,574 log 6416 12268 Not Found: /assets/api/position/14/
+WARNING 2024-02-25 17:13:59,574 basehttp 6416 12268 "DELETE /assets/api/position/14/ HTTP/1.1" 404 0
+INFO 2024-02-25 17:15:16,799 autoreload 6416 15572 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 17:15:17,652 autoreload 8792 9996 Watching for file changes with StatReloader
