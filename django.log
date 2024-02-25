@@ -750,3 +750,30 @@ INFO 2024-02-25 15:06:08,537 autoreload 14288 15832 D:\0_Pycharm\eAssets\assets\
 INFO 2024-02-25 15:06:13,026 autoreload 2528 9012 Watching for file changes with StatReloader
 INFO 2024-02-25 15:06:16,237 views 2528 15136 Department 2 Technical department viewed by user 6 user_1.
 INFO 2024-02-25 15:06:16,276 basehttp 2528 15136 "GET /assets/api/department/2/ HTTP/1.1" 200 155
+INFO 2024-02-25 15:31:47,519 autoreload 9704 11128 Watching for file changes with StatReloader
+INFO 2024-02-25 15:32:03,661 views 9704 13468 All Departments viewed by user 6 user_1.
+INFO 2024-02-25 15:32:03,670 basehttp 9704 13468 "GET /assets/api/department/ HTTP/1.1" 200 1214
+INFO 2024-02-25 15:32:31,458 views 9704 13468 
+(__-=*=-__ Department 7 Dep_Test_0007 updated by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 15:32:31,459 basehttp 9704 13468 "PATCH /assets/api/department/7/ HTTP/1.1" 200 145
+INFO 2024-02-25 15:32:43,975 views 9704 13468 All Departments viewed by user 6 user_1.
+INFO 2024-02-25 15:32:43,977 basehttp 9704 13468 "GET /assets/api/department/ HTTP/1.1" 200 1214
+INFO 2024-02-25 15:33:09,592 views 9704 13468 
+(__-=*=-__ Department 11 Dep_Test_0011 updated by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 15:33:09,592 basehttp 9704 13468 "PATCH /assets/api/department/11/ HTTP/1.1" 200 146
+INFO 2024-02-25 15:33:13,701 views 9704 13468 All Departments viewed by user 6 user_1.
+INFO 2024-02-25 15:33:13,703 basehttp 9704 13468 "GET /assets/api/department/ HTTP/1.1" 200 1214
+INFO 2024-02-25 15:33:18,750 basehttp 9704 14284 "GET /admin/assets/ HTTP/1.1" 200 7648
+INFO 2024-02-25 15:33:57,406 views 9704 13468 
+(__-=*=-__ Department 12 Dep_Test_0012 added by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 15:33:57,406 basehttp 9704 13468 "POST /assets/api/department/ HTTP/1.1" 201 146
+INFO 2024-02-25 15:34:33,871 views 9704 13468 All Departments viewed by user 6 user_1.
+INFO 2024-02-25 15:34:33,873 basehttp 9704 13468 "GET /assets/api/department/ HTTP/1.1" 200 1361
+INFO 2024-02-25 15:35:02,962 views 9704 13468 
+(__-=*=-__ Department 11 Dep_Test_0011 deleted by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 15:35:02,963 basehttp 9704 13468 "DELETE /assets/api/department/11/ HTTP/1.1" 204 0
+WARNING 2024-02-25 15:35:08,387 log 9704 13468 Not Found: /assets/api/department/11/
+WARNING 2024-02-25 15:35:08,387 basehttp 9704 13468 "DELETE /assets/api/department/11/ HTTP/1.1" 404 0
+INFO 2024-02-25 15:35:14,514 views 9704 13468 
+(__-=*=-__ Department 12 Dep_Test_0012 deleted by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 15:35:14,514 basehttp 9704 13468 "DELETE /assets/api/department/12/ HTTP/1.1" 204 0
