@@ -488,7 +488,7 @@ class AssetView(APIView):
     def get(self, request, pk=None):
         if pk:
             try:
-                asset = Asset.objects.get(pk=pk, is_deleted=False)
+                asset = Asset.objects.get(pk=pk, is_written_off=False)
                 serializer = AssetSerializer(asset)
                 logger.info(f"Asset {asset.id} {asset.title} viewed by user {request.user.id} {request.user.username}.")
                 return Response(serializer.data)
@@ -498,7 +498,7 @@ class AssetView(APIView):
                 logger.exception("An error occurred while processing the GET request when retrieving the Asset...")
                 return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         else:
-            assets = Asset.objects.filter(is_deleted=False)
+            assets = Asset.objects.filter(is_written_off=False)
             serializer = AssetSerializer(assets, many=True)
             logger.info(f"All Assets viewed by user {request.user.id} {request.user.username}.")
             return Response(serializer.data)
@@ -510,7 +510,7 @@ class AssetView(APIView):
             if serializer.is_valid():
                 asset = serializer.save()
 
-                action_description = f"User {request.user.username} created an asset: id = {asset.id}, title = {asset.title}."
+                action_description = f"User {request.user.username} created an asset: id = {asset.id}, title = {asset.title}, inventory_number = {asset.inventory_number}, identifier = {asset.identifier}, acquisition_date = {asset.acquisition_date}, service_life = {asset.service_life}, cost = {asset.cost}, service_life = {asset.service_life}, description = {asset.description}, asset_type = {asset.asset_type}."
                 UserAction.objects.create(user=request.user, action=action_description)
 
                 logger.info(f"\n(__-=*=-__ Asset {asset.id} {asset.title} added by user {request.user.id} {request.user.username}. __-=*=-__)")
@@ -523,12 +523,12 @@ class AssetView(APIView):
 
     def patch(self, request, pk):
         try:
-            asset = Asset.objects.get(pk=pk, is_deleted=False)
+            asset = Asset.objects.get(pk=pk, is_written_off=False)
             serializer = AssetSerializer(asset, data=request.data, partial=True)
             if serializer.is_valid():
                 asset = serializer.save()
 
-                action_description = f"User {request.user.username} updated asset: id = {asset.id}, title = {asset.title}."
+                action_description = f"User {request.user.username} updated asset: id = {asset.id}, title = {asset.title}, inventory_number = {asset.inventory_number}, identifier = {asset.identifier}, acquisition_date = {asset.acquisition_date}, service_life = {asset.service_life}, cost = {asset.cost}, service_life = {asset.service_life}, description = {asset.description}, asset_type = {asset.asset_type}."
                 UserAction.objects.create(user=request.user, action=action_description)
 
                 logger.info(
@@ -542,15 +542,33 @@ class AssetView(APIView):
             logger.exception("An error occurred while processing the PATCH request when updating the Asset...")
             return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+    def put(self, request, pk=None):
+        if pk:
+            try:
+                asset = Asset.objects.get(pk=pk, is_written_off=True)
+                serializer = AssetSerializer(asset)
+                logger.info(f"Asset {asset.id} {asset.title} viewed by user {request.user.id} {request.user.username}.")
+                return Response(serializer.data)
+            except Asset.DoesNotExist:
+                return Response(status=status.HTTP_404_NOT_FOUND)
+            except Exception as e:
+                logger.exception("An error occurred while processing the GET request when retrieving the Asset...")
+                return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        else:
+            assets = Asset.objects.filter(is_written_off=True)
+            serializer = AssetSerializer(assets, many=True)
+            logger.info(f"All Assets viewed by user {request.user.id} {request.user.username}.")
+            return Response(serializer.data)
+
     def delete(self, request, pk):
         try:
-            asset = Asset.objects.get(pk=pk, is_deleted=False)
-            asset.deleted_by = request.user
-            asset.is_deleted = True
-            asset.deleted_at = datetime.now()
+            asset = Asset.objects.get(pk=pk, is_written_off=False)
+            asset.written_off_by = request.user
+            asset.is_written_off = True
+            asset.written_off_at = datetime.now()
             asset.save()
 
-            action_description = f"User {request.user.username} deleted an asset: id = {asset.id}, title = {asset.title}."
+            action_description = f"User {request.user.username} wrote off fixed asset: id = {asset.id}, title = {asset.title}."
             UserAction.objects.create(user=request.user, action=action_description)
 
             logger.info(f"\n(__-=*=-__ Asset {asset.id} {asset.title} deleted by user {request.user.id} {request.user.username}. __-=*=-__)")

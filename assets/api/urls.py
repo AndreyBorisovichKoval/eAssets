@@ -22,6 +22,8 @@ urlpatterns = [
 
     path('asset/', AssetView.as_view(), name='asset-list'),
     path('asset/<int:pk>/', AssetView.as_view(), name='asset-detail'),
+    path('asset/written_off/', AssetView.as_view(), name='asset-list'),
+    path('asset/written_off/<int:pk>/', AssetView.as_view(), name='asset-list'),
 
     path('assetassignment/', AssetAssignmentView.as_view(), name='assetassignment-list'),
     path('assetassignment/<int:pk>/', AssetAssignmentView.as_view(), name='assetassignment-detail'),

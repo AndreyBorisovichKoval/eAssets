@@ -1167,3 +1167,245 @@ INFO 2024-02-25 18:28:07,293 autoreload 14940 3428 D:\0_Pycharm\eAssets\assets\a
 INFO 2024-02-25 18:28:07,886 autoreload 14036 4328 Watching for file changes with StatReloader
 INFO 2024-02-25 18:30:34,127 autoreload 14036 4328 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
 INFO 2024-02-25 18:30:34,658 autoreload 7384 11644 Watching for file changes with StatReloader
+INFO 2024-02-25 18:31:27,951 autoreload 13052 12380 Watching for file changes with StatReloader
+INFO 2024-02-25 18:41:59,035 views 13052 9172 All AssetTypes viewed by user 6 user_1.
+INFO 2024-02-25 18:41:59,103 basehttp 13052 9172 "GET /assets/api/assettype/ HTTP/1.1" 200 849
+INFO 2024-02-25 18:42:28,035 views 13052 9172 AssetType 6 Printer viewed by user 6 user_1.
+INFO 2024-02-25 18:42:28,036 basehttp 13052 9172 "GET /assets/api/assettype/6/ HTTP/1.1" 200 142
+ERROR 2024-02-25 18:43:45,320 log 13052 9172 Internal Server Error: /assets/api/assettype/6/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: AssetTypeView.post() got an unexpected keyword argument 'pk'
+ERROR 2024-02-25 18:43:45,322 basehttp 13052 9172 "POST /assets/api/assettype/6/ HTTP/1.1" 500 87823
+INFO 2024-02-25 18:44:21,850 views 13052 9172 
+(__-=*=-__ AssetType 7 Type_Test_0001 added by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 18:44:21,851 basehttp 13052 9172 "POST /assets/api/assettype/ HTTP/1.1" 201 146
+ERROR 2024-02-25 18:46:39,825 log 13052 9172 Internal Server Error: /assets/api/assettype/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: AssetTypeView.patch() missing 1 required positional argument: 'pk'
+ERROR 2024-02-25 18:46:39,827 basehttp 13052 9172 "PATCH /assets/api/assettype/ HTTP/1.1" 500 87740
+INFO 2024-02-25 18:47:05,555 views 13052 9172 
+(__-=*=-__ AssetType 7 Type_Test_0007 updated by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 18:47:05,556 basehttp 13052 9172 "PATCH /assets/api/assettype/7/ HTTP/1.1" 200 146
+INFO 2024-02-25 18:47:56,002 views 13052 9172 
+(__-=*=-__ AssetType 7 Type_Test_0007 deleted by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 18:47:56,002 basehttp 13052 9172 "DELETE /assets/api/assettype/7/ HTTP/1.1" 204 0
+WARNING 2024-02-25 18:47:59,660 log 13052 9172 Not Found: /assets/api/assettype/7/
+WARNING 2024-02-25 18:47:59,660 basehttp 13052 9172 "DELETE /assets/api/assettype/7/ HTTP/1.1" 404 0
+ERROR 2024-02-25 18:53:35,219 log 13052 9172 Internal Server Error: /assets/api/asset/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 501, in get
+    assets = Asset.objects.filter(is_deleted=False)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1613, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1645, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1495, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1307, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1772, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'is_deleted' into field. Choices are: acquisition_date, asset_type, asset_type_id, assetassignment, cost, created_by, created_by_id, current_cost, description, id, identifier, inventory_number, is_written_off, last_recalculation_date, service_life, title, written_off_by, written_off_by_id
+ERROR 2024-02-25 18:53:35,222 basehttp 13052 9172 "GET /assets/api/asset/ HTTP/1.1" 500 140190
+INFO 2024-02-25 19:00:01,793 autoreload 13052 12380 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 19:00:04,996 autoreload 3568 7448 Watching for file changes with StatReloader
+INFO 2024-02-25 19:10:22,824 autoreload 3568 7448 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 19:10:23,439 autoreload 16576 16944 Watching for file changes with StatReloader
+INFO 2024-02-25 19:10:35,762 views 16576 9368 All Assets viewed by user 6 user_1.
+INFO 2024-02-25 19:10:35,780 basehttp 16576 9368 "GET /assets/api/asset/ HTTP/1.1" 200 79735
+INFO 2024-02-25 19:21:52,343 views 16576 9368 All Assets viewed by user 6 user_1.
+INFO 2024-02-25 19:21:52,356 basehttp 16576 9368 "GET /assets/api/asset/ HTTP/1.1" 200 79735
+INFO 2024-02-25 19:22:05,471 views 16576 9368 Asset 210 Asus viewed by user 6 user_1.
+INFO 2024-02-25 19:22:05,474 basehttp 16576 9368 "GET /assets/api/asset/210/ HTTP/1.1" 200 379
+INFO 2024-02-25 19:33:45,542 autoreload 16576 16944 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 19:33:48,408 autoreload 7172 18384 Watching for file changes with StatReloader
+INFO 2024-02-25 19:44:24,869 views 7172 16536 AssetType 6 Printer viewed by user 6 user_1.
+INFO 2024-02-25 19:44:24,887 basehttp 7172 16536 "GET /assets/api/assettype/6/ HTTP/1.1" 200 142
+INFO 2024-02-25 19:44:45,955 views 7172 16536 All AssetTypes viewed by user 6 user_1.
+INFO 2024-02-25 19:44:45,958 basehttp 7172 16536 "GET /assets/api/assettype/ HTTP/1.1" 200 849
+INFO 2024-02-25 19:44:59,711 views 7172 16536 
+(__-=*=-__ AssetType 8 Type_Test_0001 added by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 19:44:59,712 basehttp 7172 16536 "POST /assets/api/assettype/ HTTP/1.1" 201 146
+INFO 2024-02-25 19:45:02,533 views 7172 16536 All AssetTypes viewed by user 6 user_1.
+INFO 2024-02-25 19:45:02,536 basehttp 7172 16536 "GET /assets/api/assettype/ HTTP/1.1" 200 996
+INFO 2024-02-25 19:45:37,077 views 7172 16536 
+(__-=*=-__ Asset 212 Test_0001 added by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 19:45:37,078 basehttp 7172 16536 "POST /assets/api/asset/ HTTP/1.1" 201 378
+INFO 2024-02-25 19:45:49,045 views 7172 16536 All Assets viewed by user 6 user_1.
+INFO 2024-02-25 19:45:49,056 basehttp 7172 16536 "GET /assets/api/asset/ HTTP/1.1" 200 80114
+INFO 2024-02-25 19:46:04,461 views 7172 16536 Asset 212 Test_0001 viewed by user 6 user_1.
+INFO 2024-02-25 19:46:04,462 basehttp 7172 16536 "GET /assets/api/asset/212/ HTTP/1.1" 200 378
+INFO 2024-02-25 19:49:57,480 views 7172 16536 
+(__-=*=-__ Asset 212 Test_0212 updated by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 19:49:57,481 basehttp 7172 16536 "PATCH /assets/api/asset/212/ HTTP/1.1" 200 378
+INFO 2024-02-25 19:51:27,171 views 7172 16536 
+(__-=*=-__ Asset 212 Test_0212 updated by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 19:51:27,173 basehttp 7172 16536 "PATCH /assets/api/asset/212/ HTTP/1.1" 200 378
+INFO 2024-02-25 19:52:07,067 autoreload 7172 18384 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 19:52:09,884 autoreload 15488 17580 Watching for file changes with StatReloader
+INFO 2024-02-25 19:55:26,494 autoreload 15488 17580 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 19:55:30,050 autoreload 17476 13728 Watching for file changes with StatReloader
+INFO 2024-02-25 19:55:39,930 views 17476 13252 
+(__-=*=-__ Asset 212 Test_0212 updated by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 19:55:39,932 basehttp 17476 13252 "PATCH /assets/api/asset/212/ HTTP/1.1" 200 378
+INFO 2024-02-25 19:56:44,656 views 17476 13252 
+(__-=*=-__ Asset 212 Test_0212 updated by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 19:56:44,659 basehttp 17476 13252 "PATCH /assets/api/asset/212/ HTTP/1.1" 200 378
+INFO 2024-02-25 19:57:05,583 views 17476 13252 
+(__-=*=-__ Asset 212 Test_0212 updated by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 19:57:05,584 basehttp 17476 13252 "PATCH /assets/api/asset/212/ HTTP/1.1" 200 378
+INFO 2024-02-25 19:57:31,782 autoreload 11712 17988 Watching for file changes with StatReloader
+INFO 2024-02-25 19:57:35,889 views 11712 13436 
+(__-=*=-__ Asset 212 Test_0212 updated by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 19:57:35,892 basehttp 11712 13436 "PATCH /assets/api/asset/212/ HTTP/1.1" 200 378
+INFO 2024-02-25 19:58:20,006 views 11712 13436 
+(__-=*=-__ Asset 212 Test_0212 updated by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 19:58:20,006 basehttp 11712 13436 "PATCH /assets/api/asset/212/ HTTP/1.1" 200 378
+INFO 2024-02-25 19:59:48,395 autoreload 11712 17988 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 19:59:48,912 autoreload 10784 12656 Watching for file changes with StatReloader
+INFO 2024-02-25 19:59:51,812 views 10784 18268 
+(__-=*=-__ Asset 212 Test_0212 updated by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 19:59:51,814 basehttp 10784 18268 "PATCH /assets/api/asset/212/ HTTP/1.1" 200 378
+INFO 2024-02-25 20:01:57,433 views 10784 18268 
+(__-=*=-__ Asset 213 Test_0213 added by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 20:01:57,434 basehttp 10784 18268 "POST /assets/api/asset/ HTTP/1.1" 201 379
+INFO 2024-02-25 20:02:40,326 views 10784 18268 
+(__-=*=-__ Asset 212 Test_0212 updated by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 20:02:40,327 basehttp 10784 18268 "PATCH /assets/api/asset/212/ HTTP/1.1" 200 378
+INFO 2024-02-25 20:05:02,061 autoreload 10784 12656 D:\0_Pycharm\eAssets\assets\models.py changed, reloading.
+INFO 2024-02-25 20:05:02,675 autoreload 14384 11848 Watching for file changes with StatReloader
+INFO 2024-02-25 20:05:25,326 autoreload 14384 11848 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 20:05:26,283 autoreload 17788 14824 Watching for file changes with StatReloader
+INFO 2024-02-25 20:07:41,292 autoreload 17584 12112 Watching for file changes with StatReloader
+INFO 2024-02-25 20:07:56,969 views 17584 1636 
+(__-=*=-__ Asset 212 Test_0212 deleted by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 20:07:56,970 basehttp 17584 1636 "DELETE /assets/api/asset/212/ HTTP/1.1" 204 0
+WARNING 2024-02-25 20:08:05,640 log 17584 1636 Not Found: /assets/api/asset/212/
+WARNING 2024-02-25 20:08:05,641 basehttp 17584 1636 "DELETE /assets/api/asset/212/ HTTP/1.1" 404 0
+INFO 2024-02-25 20:11:15,911 autoreload 17584 12112 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 20:11:25,432 autoreload 11580 17884 Watching for file changes with StatReloader
+INFO 2024-02-25 20:11:28,703 views 11580 14236 All Assets viewed by user 6 user_1.
+INFO 2024-02-25 20:11:28,721 basehttp 11580 14236 "GET /assets/api/asset/ HTTP/1.1" 200 84757
+WARNING 2024-02-25 20:11:41,390 log 11580 14236 Not Found: /assets/api/asset/212/
+WARNING 2024-02-25 20:11:41,390 basehttp 11580 14236 "GET /assets/api/asset/212/ HTTP/1.1" 404 0
+WARNING 2024-02-25 20:14:35,585 log 11580 14236 Not Found: /assets/api/asset/written_off/
+WARNING 2024-02-25 20:14:35,585 basehttp 11580 14236 "GET /assets/api/asset/written_off/ HTTP/1.1" 404 6468
+INFO 2024-02-25 20:15:17,863 autoreload 11580 17884 D:\0_Pycharm\eAssets\assets\api\urls.py changed, reloading.
+INFO 2024-02-25 20:15:18,345 autoreload 5928 17356 Watching for file changes with StatReloader
+INFO 2024-02-25 20:16:30,101 autoreload 5928 17356 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 20:16:30,728 autoreload 14884 12764 Watching for file changes with StatReloader
+INFO 2024-02-25 20:17:19,943 autoreload 14884 12764 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 20:17:20,807 autoreload 16040 14412 Watching for file changes with StatReloader
+INFO 2024-02-25 20:17:28,693 autoreload 16040 14412 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 20:17:29,313 autoreload 1588 15636 Watching for file changes with StatReloader
+INFO 2024-02-25 20:18:35,915 views 1588 1068 All Assets viewed by user 6 user_1.
+INFO 2024-02-25 20:18:35,923 basehttp 1588 1068 "PUT /assets/api/asset/written_off/ HTTP/1.1" 200 423
+INFO 2024-02-25 20:18:54,693 views 1588 1068 
+(__-=*=-__ Asset 214 Test_0213 added by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 20:18:54,694 basehttp 1588 1068 "POST /assets/api/asset/ HTTP/1.1" 201 401
+INFO 2024-02-25 20:18:55,757 views 1588 1068 
+(__-=*=-__ Asset 215 Test_0213 added by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 20:18:55,775 basehttp 1588 1068 "POST /assets/api/asset/ HTTP/1.1" 201 401
+INFO 2024-02-25 20:19:06,878 views 1588 1068 All Assets viewed by user 6 user_1.
+INFO 2024-02-25 20:19:06,891 basehttp 1588 1068 "GET /assets/api/asset/ HTTP/1.1" 200 85561
+INFO 2024-02-25 20:19:22,494 views 1588 1068 
+(__-=*=-__ Asset 214 Test_0213 deleted by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 20:19:22,495 basehttp 1588 1068 "DELETE /assets/api/asset/214/ HTTP/1.1" 204 0
+INFO 2024-02-25 20:19:26,321 views 1588 1068 
+(__-=*=-__ Asset 215 Test_0213 deleted by user 6 user_1. __-=*=-__)
+INFO 2024-02-25 20:19:26,322 basehttp 1588 1068 "DELETE /assets/api/asset/215/ HTTP/1.1" 204 0
+WARNING 2024-02-25 20:19:29,132 log 1588 1068 Not Found: /assets/api/asset/215/
+WARNING 2024-02-25 20:19:29,133 basehttp 1588 1068 "DELETE /assets/api/asset/215/ HTTP/1.1" 404 0
+INFO 2024-02-25 20:19:33,717 views 1588 1068 All Assets viewed by user 6 user_1.
+INFO 2024-02-25 20:19:33,720 basehttp 1588 1068 "PUT /assets/api/asset/written_off/ HTTP/1.1" 200 1269
+WARNING 2024-02-25 20:20:31,269 log 1588 1068 Not Found: /assets/api/asset/written_off/212/
+WARNING 2024-02-25 20:20:31,269 basehttp 1588 1068 "PUT /assets/api/asset/written_off/212/ HTTP/1.1" 404 6722
+INFO 2024-02-25 20:21:24,945 autoreload 1588 15636 D:\0_Pycharm\eAssets\assets\api\urls.py changed, reloading.
+INFO 2024-02-25 20:21:25,536 autoreload 16916 2624 Watching for file changes with StatReloader
+INFO 2024-02-25 20:21:31,303 views 16916 11660 Asset 212 Test_0212 viewed by user 6 user_1.
+INFO 2024-02-25 20:21:31,312 basehttp 16916 11660 "PUT /assets/api/asset/written_off/212/ HTTP/1.1" 200 421
+INFO 2024-02-25 20:21:37,803 views 16916 11660 All Assets viewed by user 6 user_1.
+INFO 2024-02-25 20:21:37,809 basehttp 16916 11660 "PUT /assets/api/asset/written_off/ HTTP/1.1" 200 1269
+INFO 2024-02-25 20:21:44,695 views 16916 11660 Asset 212 Test_0212 viewed by user 6 user_1.
+INFO 2024-02-25 20:21:44,696 basehttp 16916 11660 "PUT /assets/api/asset/written_off/212/ HTTP/1.1" 200 421

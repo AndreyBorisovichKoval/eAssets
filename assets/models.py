@@ -68,6 +68,7 @@ class Asset(models.Model):
     asset_type = models.ForeignKey('AssetType', on_delete=models.CASCADE)
     is_written_off = models.BooleanField(default=False)
     written_off_by = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='written_off_assets', null=True, blank=True)
+    written_off_at = models.DateTimeField(null=True, blank=True)
 
 
 class AssetType(models.Model):
