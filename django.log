@@ -777,3 +777,100 @@ WARNING 2024-02-25 15:35:08,387 basehttp 9704 13468 "DELETE /assets/api/departme
 INFO 2024-02-25 15:35:14,514 views 9704 13468 
 (__-=*=-__ Department 12 Dep_Test_0012 deleted by user 6 user_1. __-=*=-__)
 INFO 2024-02-25 15:35:14,514 basehttp 9704 13468 "DELETE /assets/api/department/12/ HTTP/1.1" 204 0
+INFO 2024-02-25 15:53:08,869 autoreload 5224 9852 Watching for file changes with StatReloader
+INFO 2024-02-25 15:53:52,772 views 5224 15732 All Divisions viewed by user 6 user_1.
+INFO 2024-02-25 15:53:52,866 basehttp 5224 15732 "GET /assets/api/division/ HTTP/1.1" 200 1542
+WARNING 2024-02-25 15:55:13,703 log 5224 15732 Not Found: /assets/api/division/10/
+WARNING 2024-02-25 15:55:13,704 basehttp 5224 15732 "GET /assets/api/division/10/ HTTP/1.1" 404 0
+INFO 2024-02-25 15:55:24,829 views 5224 15732 Division 9 Office service viewed by user 6 user_1.
+INFO 2024-02-25 15:55:24,830 basehttp 5224 15732 "GET /assets/api/division/9/ HTTP/1.1" 200 164
+INFO 2024-02-25 15:55:37,868 views 5224 15732 Division 9 Office service viewed by user 6 user_1.
+INFO 2024-02-25 15:55:37,870 basehttp 5224 15732 "GET /assets/api/division/9/ HTTP/1.1" 200 164
+INFO 2024-02-25 15:57:18,604 views 5224 15732 Division 10 Dev_Test_0001 added by user 6 user_1.
+INFO 2024-02-25 15:57:18,605 basehttp 5224 15732 "POST /assets/api/division/ HTTP/1.1" 201 161
+INFO 2024-02-25 15:57:54,634 views 5224 15732 Division 11 Dev_Test_0001 added by user 6 user_1.
+INFO 2024-02-25 15:57:54,635 basehttp 5224 15732 "POST /assets/api/division/ HTTP/1.1" 201 161
+INFO 2024-02-25 15:59:14,796 views 5224 15732 Division 11 Dev_Test_0002 updated by user 6 user_1.
+INFO 2024-02-25 15:59:14,797 basehttp 5224 15732 "PATCH /assets/api/division/11/ HTTP/1.1" 200 161
+INFO 2024-02-25 16:00:15,865 views 5224 15732 Division 11 Div_Test_0002 updated by user 6 user_1.
+INFO 2024-02-25 16:00:15,866 basehttp 5224 15732 "PATCH /assets/api/division/11/ HTTP/1.1" 200 161
+INFO 2024-02-25 16:00:23,119 views 5224 15732 Division 10 Div_Test_0001 updated by user 6 user_1.
+INFO 2024-02-25 16:00:23,119 basehttp 5224 15732 "PATCH /assets/api/division/10/ HTTP/1.1" 200 161
+INFO 2024-02-25 16:08:47,994 autoreload 5224 9852 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 16:08:51,063 autoreload 13112 11024 Watching for file changes with StatReloader
+INFO 2024-02-25 16:32:33,299 autoreload 13112 11024 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 16:32:33,784 autoreload 16300 8784 Watching for file changes with StatReloader
+ERROR 2024-02-25 16:32:44,897 views 16300 14176 An error occurred while processing the POST request when creating the Division...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 171, in post
+    action_description = f"User {request.user.username} created a division: id = {division.id}, title = {division.title}, department = {department.name}."
+                                                                                                                                        ^^^^^^^^^^^^^^^
+AttributeError: 'Department' object has no attribute 'name'
+ERROR 2024-02-25 16:32:44,898 log 16300 14176 Internal Server Error: /assets/api/division/
+ERROR 2024-02-25 16:32:44,899 basehttp 16300 14176 "POST /assets/api/division/ HTTP/1.1" 500 33
+INFO 2024-02-25 16:32:56,946 views 16300 14176 All Divisions viewed by user 6 user_1.
+INFO 2024-02-25 16:32:56,956 basehttp 16300 14176 "GET /assets/api/division/ HTTP/1.1" 200 2028
+INFO 2024-02-25 16:33:10,390 views 16300 14176 Division 9 Office service viewed by user 6 user_1.
+INFO 2024-02-25 16:33:10,391 basehttp 16300 14176 "GET /assets/api/division/9/ HTTP/1.1" 200 164
+INFO 2024-02-25 16:33:22,708 views 16300 14176 Division 12 Dev_Test_0001 viewed by user 6 user_1.
+INFO 2024-02-25 16:33:22,709 basehttp 16300 14176 "GET /assets/api/division/12/ HTTP/1.1" 200 161
+ERROR 2024-02-25 16:33:55,088 views 16300 14176 An error occurred while processing the POST request when creating the Division...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 171, in post
+    action_description = f"User {request.user.username} created a division: id = {division.id}, title = {division.title}, department = {department.name}."
+                                                                                                                                        ^^^^^^^^^^^^^^^
+AttributeError: 'Department' object has no attribute 'name'
+ERROR 2024-02-25 16:33:55,089 log 16300 14176 Internal Server Error: /assets/api/division/
+ERROR 2024-02-25 16:33:55,089 basehttp 16300 14176 "POST /assets/api/division/ HTTP/1.1" 500 33
+ERROR 2024-02-25 16:34:40,087 views 16300 14176 An error occurred while processing the POST request when creating the Division...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 171, in post
+    action_description = f"User {request.user.username} created a division: id = {division.id}, title = {division.title}, department = {department.name}."
+                                                                                                                                        ^^^^^^^^^^^^^^^
+AttributeError: 'Department' object has no attribute 'name'
+ERROR 2024-02-25 16:34:40,087 log 16300 14176 Internal Server Error: /assets/api/division/
+ERROR 2024-02-25 16:34:40,088 basehttp 16300 14176 "POST /assets/api/division/ HTTP/1.1" 500 33
+ERROR 2024-02-25 16:35:17,161 views 16300 14176 An error occurred while processing the POST request when creating the Division...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 171, in post
+    action_description = f"User {request.user.username} created a division: id = {division.id}, title = {division.title}, department = {department.name}."
+                                                                                                                                        ^^^^^^^^^^^^^^^
+AttributeError: 'Department' object has no attribute 'name'
+ERROR 2024-02-25 16:35:17,165 log 16300 14176 Internal Server Error: /assets/api/division/
+ERROR 2024-02-25 16:35:17,166 basehttp 16300 14176 "POST /assets/api/division/ HTTP/1.1" 500 33
+INFO 2024-02-25 16:42:11,453 autoreload 16300 8784 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 16:42:12,005 autoreload 10452 12236 Watching for file changes with StatReloader
+INFO 2024-02-25 16:42:16,658 autoreload 10452 12236 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 16:42:17,130 autoreload 9252 13592 Watching for file changes with StatReloader
+INFO 2024-02-25 16:42:21,514 views 9252 12692 Division 16 Div_Test_0002 added by user 6 user_1.
+INFO 2024-02-25 16:42:21,519 basehttp 9252 12692 "POST /assets/api/division/ HTTP/1.1" 201 161
+ERROR 2024-02-25 16:43:08,436 views 9252 12692 An error occurred while processing the PATCH request when updating the Division...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 189, in patch
+    action_description = f"User {request.user.username} updated division: id = {division.id}, title = {division.title}, department = {department.name}."
+                                                                                                                                      ^^^^^^^^^^^^^^^
+AttributeError: 'Department' object has no attribute 'name'
+ERROR 2024-02-25 16:43:08,437 log 9252 12692 Internal Server Error: /assets/api/division/16/
+ERROR 2024-02-25 16:43:08,438 basehttp 9252 12692 "PATCH /assets/api/division/16/ HTTP/1.1" 500 33
+ERROR 2024-02-25 16:43:30,301 views 9252 12692 An error occurred while processing the PATCH request when updating the Division...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views.py", line 189, in patch
+    action_description = f"User {request.user.username} updated division: id = {division.id}, title = {division.title}, department = {department.name}."
+                                                                                                                                      ^^^^^^^^^^^^^^^
+AttributeError: 'Department' object has no attribute 'name'
+ERROR 2024-02-25 16:43:30,301 log 9252 12692 Internal Server Error: /assets/api/division/16/
+ERROR 2024-02-25 16:43:30,302 basehttp 9252 12692 "PATCH /assets/api/division/16/ HTTP/1.1" 500 33
+INFO 2024-02-25 16:44:36,944 autoreload 9252 13592 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-25 16:44:37,516 autoreload 14312 5496 Watching for file changes with StatReloader
+INFO 2024-02-25 16:44:52,760 views 14312 13380 Division 16 Div_Test_0001 updated by user 6 user_1.
+INFO 2024-02-25 16:44:52,765 basehttp 14312 13380 "PATCH /assets/api/division/16/ HTTP/1.1" 200 162
+INFO 2024-02-25 16:45:52,225 views 14312 13380 Division 16 Div_Test_0001 updated by user 6 user_1.
+INFO 2024-02-25 16:45:52,226 basehttp 14312 13380 "PATCH /assets/api/division/16/ HTTP/1.1" 200 162
+INFO 2024-02-25 16:46:35,691 views 14312 13380 Division 16 Div_Test_0001 deleted by user 6 user_1.
+INFO 2024-02-25 16:46:35,691 basehttp 14312 13380 "DELETE /assets/api/division/16/ HTTP/1.1" 204 0
+WARNING 2024-02-25 16:46:39,888 log 14312 13380 Not Found: /assets/api/division/16/
+WARNING 2024-02-25 16:46:39,888 basehttp 14312 13380 "DELETE /assets/api/division/16/ HTTP/1.1" 404 0
+WARNING 2024-02-25 16:48:23,795 log 14312 13380 Not Found: /assets/api/division/16/
+WARNING 2024-02-25 16:48:23,796 basehttp 14312 13380 "PATCH /assets/api/division/16/ HTTP/1.1" 404 0
+INFO 2024-02-25 16:48:52,080 views 14312 13380 Division 15 Div_Test_0015 updated by user 6 user_1.
+INFO 2024-02-25 16:48:52,081 basehttp 14312 13380 "PATCH /assets/api/division/15/ HTTP/1.1" 200 162

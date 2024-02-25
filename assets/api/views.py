@@ -143,55 +143,75 @@ class DivisionView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request, pk=None):
-        if pk is None:
-            divisions = Division.objects.filter(is_deleted=False)
-            serializer = DivisionSerializer(divisions, many=True)
-            return Response(serializer.data)
-        else:
+        if pk:
             try:
                 division = Division.objects.get(pk=pk, is_deleted=False)
                 serializer = DivisionSerializer(division)
-                return Response(serializer.data, status=status.HTTP_200_OK)
+                logger.info(f"Division {division.id} {division.title} viewed by user {request.user.id} {request.user.username}.")
+                return Response(serializer.data)
             except Division.DoesNotExist:
                 return Response(status=status.HTTP_404_NOT_FOUND)
+            except Exception as e:
+                logger.exception("An error occurred while processing the GET request when retrieving the Division...")
+                return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        else:
+            divisions = Division.objects.filter(is_deleted=False)
+            serializer = DivisionSerializer(divisions, many=True)
+            logger.info(f"All Divisions viewed by user {request.user.id} {request.user.username}.")
+            return Response(serializer.data)
 
     def post(self, request):
-        serializer = DivisionSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    def put(self, request, pk):
         try:
-            division = Division.objects.get(pk=pk, is_deleted=False)
-            serializer = DivisionSerializer(division, data=request.data)
+            request.data['created_by'] = request.user.id
+            serializer = DivisionSerializer(data=request.data)
             if serializer.is_valid():
-                serializer.save()
-                return Response(serializer.data)
+                division = serializer.save()
+                action_description = f"User {request.user.username} created a division: id = {division.id}, title = {division.title}."
+                UserAction.objects.create(user=request.user, action=action_description)
+                logger.info(
+                    f"Division {division.id} {division.title} added by user {request.user.id} {request.user.username}.")
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        except Division.DoesNotExist:
-            return Response(status=status.HTTP_404_NOT_FOUND)
+        except Department.DoesNotExist:
+            return Response({'error': 'Department not found'}, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            logger.exception("An error occurred while processing the POST request when creating the Division...")
+            return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def patch(self, request, pk):
         try:
             division = Division.objects.get(pk=pk, is_deleted=False)
+            department_id = request.data.get('department')
+            department = Department.objects.get(pk=department_id)
             serializer = DivisionSerializer(division, data=request.data, partial=True)
             if serializer.is_valid():
-                serializer.save()
+                division = serializer.save()
+                action_description = f"User {request.user.username} updated division: id = {division.id}, title = {division.title}."
+                UserAction.objects.create(user=request.user, action=action_description)
+                logger.info(f"Division {division.id} {division.title} updated by user {request.user.id} {request.user.username}.")
                 return Response(serializer.data)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except Division.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            logger.exception("An error occurred while processing the PATCH request when updating the Division...")
+            return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def delete(self, request, pk):
         try:
             division = Division.objects.get(pk=pk, is_deleted=False)
+            division.deleted_by = request.user
             division.is_deleted = True
             division.save()
+            action_description = f"User {request.user.username} deleted a division: id = {division.id}, title = {division.title}."
+            UserAction.objects.create(user=request.user, action=action_description)
+            logger.info(f"Division {division.id} {division.title} deleted by user {request.user.id} {request.user.username}.")
             return Response(status=status.HTTP_204_NO_CONTENT)
         except Division.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            logger.exception("An error occurred while processing the DELETE request when deleting the Division...")
+            return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class PositionView(APIView):
