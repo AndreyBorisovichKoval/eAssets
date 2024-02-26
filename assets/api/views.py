@@ -581,6 +581,27 @@ class AssetView(APIView):
             return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
+# class AssetAssignmentView(APIView):
+#     authentication_classes = [JWTAuthentication]
+#     permission_classes = [IsAuthenticated]
+#
+#     def post(self, request):
+#         serializer = AssetAssignmentSerializer(data=request.data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return Response(serializer.data, status=status.HTTP_201_CREATED)
+#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+#
+#     def delete(self, request, pk):
+#         try:
+#             assignment = AssetAssignment.objects.get(pk=pk)
+#             assignment.return_date = request.data['return_date']
+#             assignment.save()
+#             return Response({'message': 'Return date updated successfully.'})
+#         except AssetAssignment.DoesNotExist:
+#             return Response(status=status.HTTP_404_NOT_FOUND)
+
+
 class AssetAssignmentView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
@@ -588,15 +609,22 @@ class AssetAssignmentView(APIView):
     def post(self, request):
         serializer = AssetAssignmentSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            assignment = serializer.save()
+            log_user_action(request.user, f"Created asset assignment with ID {assignment.id}")
+            add_to_change_history(assignment, "Created assignment")
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def patch(self, request, pk):
+    def delete(self, request, pk):
         try:
             assignment = AssetAssignment.objects.get(pk=pk)
             assignment.return_date = request.data['return_date']
             assignment.save()
+            log_user_action(request.user, f"Updated return date for asset assignment with ID {assignment.id}")
+            add_to_change_history(assignment, "Updated return date")
             return Response({'message': 'Return date updated successfully.'})
         except AssetAssignment.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            logger.exception("An error occurred while processing the DELETE request when deleting the AssetAssignment...")
+            return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
