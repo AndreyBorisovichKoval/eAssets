@@ -2,6 +2,7 @@ from django.urls import path
 # from assets.api.views import AssetViewSet, AssetDetail
 from assets.api.views import (DepartmentView, DivisionView, PositionView, StaffView, AssetTypeView, AssetView,
                               AssetAssignmentView)
+from assets.api.views_reports import *
 
 
 urlpatterns = [
@@ -27,6 +28,13 @@ urlpatterns = [
 
     path('assetassignment/', AssetAssignmentView.as_view(), name='assetassignment-list'),
     path('assetassignment/<int:pk>/', AssetAssignmentView.as_view(), name='assetassignment-detail'),
+
+    path('reports/staff/<int:pk>/assets/', get_staff_assets, name='staff_assets-list'),
+    path('reports/department/<int:pk>/assets/', get_department_assets, name='department_assets-list'),
+    path('reports/division/<int:pk>/assets/', get_division_assets, name='division_assets-list'),
+    path('reports/retired_assets/', get_retired_assets, name='retired_assets-list'),
+
+
 ]
 
 

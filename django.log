@@ -1658,3 +1658,374 @@ INFO 2024-02-26 15:29:11,360 views 1308 396
 INFO 2024-02-26 15:29:11,366 basehttp 1308 396 "PATCH /assets/api/assetassignment/211/ HTTP/1.1" 201 135
 INFO 2024-02-26 15:42:40,542 autoreload 1308 10932 D:\0_Pycharm\eAssets\assets\api\urls.py changed, reloading.
 INFO 2024-02-26 15:42:43,242 autoreload 13616 3864 Watching for file changes with StatReloader
+INFO 2024-02-26 16:37:29,196 autoreload 8948 14128 Watching for file changes with StatReloader
+ERROR 2024-02-26 16:39:19,913 log 8948 5836 Internal Server Error: /assets/api/reports/staff/32/assets/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: get_assigned_assets() got an unexpected keyword argument 'pk'
+ERROR 2024-02-26 16:39:19,914 basehttp 8948 5836 "GET /assets/api/reports/staff/32/assets/ HTTP/1.1" 500 61037
+INFO 2024-02-26 16:41:48,322 autoreload 8948 14128 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 16:41:49,026 autoreload 2700 10192 Watching for file changes with StatReloader
+INFO 2024-02-26 16:42:05,584 autoreload 2700 10192 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 16:42:06,221 autoreload 12100 272 Watching for file changes with StatReloader
+INFO 2024-02-26 16:42:12,516 basehttp 12100 12172 "GET /assets/api/reports/staff/32/assets/ HTTP/1.1" 200 417
+INFO 2024-02-26 16:44:49,878 autoreload 12100 272 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 16:44:50,550 autoreload 13436 10388 Watching for file changes with StatReloader
+INFO 2024-02-26 16:44:53,418 basehttp 13436 14112 "GET /assets/api/reports/staff/32/assets/ HTTP/1.1" 200 532
+INFO 2024-02-26 16:45:25,486 basehttp 13436 14112 "GET /assets/api/reports/staff/1/assets/ HTTP/1.1" 200 532
+INFO 2024-02-26 16:46:18,198 autoreload 13436 10388 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 16:46:18,849 autoreload 8404 880 Watching for file changes with StatReloader
+INFO 2024-02-26 16:47:27,474 autoreload 8404 880 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 16:47:28,089 autoreload 11336 10852 Watching for file changes with StatReloader
+INFO 2024-02-26 16:48:58,726 autoreload 11336 10852 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 16:48:59,462 autoreload 12516 3388 Watching for file changes with StatReloader
+INFO 2024-02-26 16:49:03,876 views_reports 12516 18140 Retrieved assigned assets for staff with ID: 1
+INFO 2024-02-26 16:49:03,876 basehttp 12516 18140 "GET /assets/api/reports/staff/1/assets/ HTTP/1.1" 200 532
+INFO 2024-02-26 16:49:23,966 views_reports 12516 18140 Retrieved assigned assets for staff with ID: 32
+INFO 2024-02-26 16:49:23,967 basehttp 12516 18140 "GET /assets/api/reports/staff/32/assets/ HTTP/1.1" 200 532
+INFO 2024-02-26 16:51:58,076 autoreload 12516 3388 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 16:51:58,701 autoreload 15172 4624 Watching for file changes with StatReloader
+INFO 2024-02-26 16:53:33,392 autoreload 15172 4624 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 16:53:36,278 autoreload 5992 6028 Watching for file changes with StatReloader
+INFO 2024-02-26 16:53:38,305 views_reports 5992 12292 Retrieved assigned assets for staff with ID: 32
+INFO 2024-02-26 16:53:38,306 basehttp 5992 12292 "GET /assets/api/reports/staff/32/assets/ HTTP/1.1" 200 532
+INFO 2024-02-26 16:53:47,358 views_reports 5992 12292 Retrieved assigned assets for staff with ID: 32
+INFO 2024-02-26 16:53:47,358 basehttp 5992 12292 "GET /assets/api/reports/staff/32/assets/ HTTP/1.1" 200 532
+INFO 2024-02-26 16:54:15,574 views_reports 5992 12292 Retrieved assigned assets for staff with ID: 12
+INFO 2024-02-26 16:54:15,575 basehttp 5992 12292 "GET /assets/api/reports/staff/12/assets/ HTTP/1.1" 200 532
+INFO 2024-02-26 16:54:55,951 autoreload 5992 6028 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 16:54:56,649 autoreload 17996 16040 Watching for file changes with StatReloader
+INFO 2024-02-26 16:54:58,754 views_reports 17996 5496 Retrieved assigned assets for staff with ID: 12
+INFO 2024-02-26 16:54:58,755 basehttp 17996 5496 "GET /assets/api/reports/staff/12/assets/ HTTP/1.1" 200 532
+INFO 2024-02-26 16:57:16,628 autoreload 17996 16040 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 16:57:17,370 autoreload 15204 4948 Watching for file changes with StatReloader
+INFO 2024-02-26 16:57:20,908 views_reports 15204 11708 __-=*=-__ Retrieved assigned assets for staff with ID: 12. __-=*=-__
+INFO 2024-02-26 16:57:20,909 basehttp 15204 11708 "GET /assets/api/reports/staff/12/assets/ HTTP/1.1" 200 532
+INFO 2024-02-26 17:02:54,249 autoreload 15204 4948 D:\0_Pycharm\eAssets\assets\api\urls.py changed, reloading.
+INFO 2024-02-26 17:02:54,907 autoreload 6168 1360 Watching for file changes with StatReloader
+INFO 2024-02-26 17:03:15,520 autoreload 6168 1360 D:\0_Pycharm\eAssets\assets\api\urls.py changed, reloading.
+INFO 2024-02-26 17:03:16,181 autoreload 13864 1108 Watching for file changes with StatReloader
+INFO 2024-02-26 17:03:30,587 autoreload 13864 1108 D:\0_Pycharm\eAssets\assets\api\urls.py changed, reloading.
+INFO 2024-02-26 17:03:31,226 autoreload 6048 16844 Watching for file changes with StatReloader
+INFO 2024-02-26 17:03:36,017 views_reports 6048 11476 __-=*=-__ Retrieved assigned assets for staff with ID: 12. __-=*=-__
+INFO 2024-02-26 17:03:36,018 basehttp 6048 11476 "GET /assets/api/reports/staff/12/assets/ HTTP/1.1" 200 532
+INFO 2024-02-26 17:03:58,584 autoreload 6048 16844 D:\0_Pycharm\eAssets\assets\api\urls.py changed, reloading.
+INFO 2024-02-26 17:03:59,231 autoreload 17452 17004 Watching for file changes with StatReloader
+INFO 2024-02-26 17:04:05,929 views_reports 17452 16240 __-=*=-__ Retrieved assigned assets for staff with ID: 12. __-=*=-__
+INFO 2024-02-26 17:04:05,931 basehttp 17452 16240 "GET /assets/api/reports/staff/12/assets/ HTTP/1.1" 200 532
+ERROR 2024-02-26 17:04:50,041 log 17452 16240 Internal Server Error: /assets/api/reports/department/1/assets/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: get_department_assets() got an unexpected keyword argument 'pk'
+ERROR 2024-02-26 17:04:50,042 basehttp 17452 16240 "GET /assets/api/reports/department/1/assets/ HTTP/1.1" 500 61086
+INFO 2024-02-26 17:07:16,395 autoreload 17452 17004 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 17:07:17,035 autoreload 17992 17296 Watching for file changes with StatReloader
+INFO 2024-02-26 17:08:57,170 autoreload 17992 17296 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 17:08:57,940 autoreload 4312 16072 Watching for file changes with StatReloader
+ERROR 2024-02-26 17:09:10,400 log 4312 14432 Internal Server Error: /assets/api/reports/department/1/assets/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 45, in get_department_assets
+    assets = Asset.objects.filter(department=department)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1613, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1645, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1495, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1307, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1772, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'department' into field. Choices are: acquisition_date, asset_type, asset_type_id, assetassignment, cost, created_by, created_by_id, current_cost, description, id, identifier, inventory_number, is_written_off, last_recalculation_date, service_life, title, written_off_at, written_off_by, written_off_by_id
+ERROR 2024-02-26 17:09:10,405 basehttp 4312 14432 "GET /assets/api/reports/department/1/assets/ HTTP/1.1" 500 113393
+INFO 2024-02-26 17:11:23,426 autoreload 4312 16072 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 17:11:24,127 autoreload 16228 18208 Watching for file changes with StatReloader
+INFO 2024-02-26 17:11:27,781 views_reports 16228 16976 Retrieved assets for department with ID: 1
+INFO 2024-02-26 17:11:27,783 basehttp 16228 16976 "GET /assets/api/reports/department/1/assets/ HTTP/1.1" 200 7448
+INFO 2024-02-26 17:13:46,278 autoreload 16228 18208 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 17:13:47,368 autoreload 5376 17868 Watching for file changes with StatReloader
+ERROR 2024-02-26 17:13:51,424 log 5376 10412 Internal Server Error: /assets/api/reports/department/1/assets/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 76, in get_department_assets
+    'full_name': asset.assetassignment.staff.full_name,
+                 ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Asset' object has no attribute 'assetassignment'. Did you mean: 'assetassignment_set'?
+ERROR 2024-02-26 17:13:51,429 basehttp 5376 10412 "GET /assets/api/reports/department/1/assets/ HTTP/1.1" 500 67780
+ERROR 2024-02-26 17:15:14,516 log 5376 10412 Internal Server Error: /assets/api/reports/department/1/assets/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 76, in get_department_assets
+    'full_name': asset.assetassignment.staff.full_name,
+                 ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Asset' object has no attribute 'assetassignment'. Did you mean: 'assetassignment_set'?
+ERROR 2024-02-26 17:15:14,521 basehttp 5376 10412 "GET /assets/api/reports/department/1/assets/ HTTP/1.1" 500 67780
+INFO 2024-02-26 17:17:26,214 autoreload 5376 17868 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 17:17:26,944 autoreload 7708 12148 Watching for file changes with StatReloader
+INFO 2024-02-26 17:17:29,354 views_reports 7708 4248 Retrieved assets for department with ID: 1
+INFO 2024-02-26 17:17:29,355 basehttp 7708 4248 "GET /assets/api/reports/department/1/assets/ HTTP/1.1" 200 7448
+INFO 2024-02-26 17:20:17,613 autoreload 7708 12148 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 17:20:18,319 autoreload 12964 14652 Watching for file changes with StatReloader
+ERROR 2024-02-26 17:20:32,224 log 12964 16932 Internal Server Error: /assets/api/reports/division/1/assets/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 77, in get_division_assets
+    'full_name': asset.assetassignment.staff.full_name,
+                 ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Asset' object has no attribute 'assetassignment'. Did you mean: 'assetassignment_set'?
+ERROR 2024-02-26 17:20:32,229 basehttp 12964 16932 "GET /assets/api/reports/division/1/assets/ HTTP/1.1" 500 67060
+INFO 2024-02-26 17:20:50,304 autoreload 12964 14652 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 17:20:50,972 autoreload 3076 11424 Watching for file changes with StatReloader
+INFO 2024-02-26 17:20:52,886 views_reports 3076 6704 Retrieved assets for division with ID: 1
+INFO 2024-02-26 17:20:52,887 basehttp 3076 6704 "GET /assets/api/reports/division/1/assets/ HTTP/1.1" 200 3460
+INFO 2024-02-26 17:21:23,710 autoreload 3076 11424 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 17:21:24,421 autoreload 8472 12272 Watching for file changes with StatReloader
+INFO 2024-02-26 17:21:25,953 views_reports 8472 5636 Retrieved assets for division with ID: 1
+INFO 2024-02-26 17:21:25,956 basehttp 8472 5636 "GET /assets/api/reports/division/1/assets/ HTTP/1.1" 200 3460
+INFO 2024-02-26 17:23:37,397 autoreload 8472 12272 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 17:23:38,029 autoreload 12124 14432 Watching for file changes with StatReloader
+INFO 2024-02-26 17:24:24,334 autoreload 12124 14432 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 17:24:24,997 autoreload 12064 18084 Watching for file changes with StatReloader
+ERROR 2024-02-26 17:24:27,614 log 12064 14140 Internal Server Error: /assets/api/reports/division/1/assets/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 76, in get_division_assets
+    'staff_full_name': asset.assetassignment.staff.full_name,
+                       ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Asset' object has no attribute 'assetassignment'. Did you mean: 'assetassignment_set'?
+ERROR 2024-02-26 17:24:27,619 basehttp 12064 14140 "GET /assets/api/reports/division/1/assets/ HTTP/1.1" 500 66830
+INFO 2024-02-26 17:32:02,642 autoreload 12064 18084 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 17:32:03,291 autoreload 12296 1420 Watching for file changes with StatReloader
+INFO 2024-02-26 17:32:07,294 views_reports 12296 18328 Retrieved assets for division with ID: 1
+INFO 2024-02-26 17:32:07,296 basehttp 12296 18328 "GET /assets/api/reports/division/1/assets/ HTTP/1.1" 200 7550
+INFO 2024-02-26 17:32:32,622 autoreload 12296 1420 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 17:32:33,292 autoreload 8972 16376 Watching for file changes with StatReloader
+INFO 2024-02-26 17:32:35,849 views_reports 8972 884 Retrieved assets for division with ID: 1
+INFO 2024-02-26 17:32:35,850 basehttp 8972 884 "GET /assets/api/reports/division/1/assets/ HTTP/1.1" 200 7550
+INFO 2024-02-26 17:34:42,314 autoreload 8972 16376 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 17:34:43,163 autoreload 18120 11124 Watching for file changes with StatReloader
+INFO 2024-02-26 17:36:07,558 autoreload 18120 11124 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 17:36:08,225 autoreload 5684 18208 Watching for file changes with StatReloader
+INFO 2024-02-26 17:36:56,416 autoreload 5684 18208 D:\0_Pycharm\eAssets\assets\api\urls.py changed, reloading.
+INFO 2024-02-26 17:36:57,083 autoreload 14608 4196 Watching for file changes with StatReloader
+INFO 2024-02-26 17:37:41,171 autoreload 14608 4196 D:\0_Pycharm\eAssets\assets\api\urls.py changed, reloading.
+INFO 2024-02-26 17:37:41,850 autoreload 3816 3532 Watching for file changes with StatReloader
+INFO 2024-02-26 17:39:00,403 views_reports 3816 4224 __-=*=-__ Retrieved assigned assets for staff with ID: 12. __-=*=-__
+INFO 2024-02-26 17:39:00,404 basehttp 3816 4224 "GET /assets/api/reports/staff/12/assets/ HTTP/1.1" 200 532
+INFO 2024-02-26 17:39:18,670 views_reports 3816 4224 Retrieved assets for department with ID: 1
+INFO 2024-02-26 17:39:18,671 basehttp 3816 4224 "GET /assets/api/reports/department/1/assets/ HTTP/1.1" 200 7448
+INFO 2024-02-26 17:39:37,687 views_reports 3816 4224 Retrieved assets for division with ID: 1
+INFO 2024-02-26 17:39:37,689 basehttp 3816 4224 "GET /assets/api/reports/division/1/assets/ HTTP/1.1" 200 7550
+ERROR 2024-02-26 17:40:53,279 log 3816 4224 Internal Server Error: /assets/api/reports/retired-assets/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 110, in get_retired_assets
+    retired_assets = Asset.objects.filter(retired=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1613, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1645, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1495, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1307, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1772, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'retired' into field. Choices are: acquisition_date, asset_type, asset_type_id, assetassignment, cost, created_by, created_by_id, current_cost, description, id, identifier, inventory_number, is_written_off, last_recalculation_date, service_life, title, written_off_at, written_off_by, written_off_by_id
+ERROR 2024-02-26 17:40:53,283 basehttp 3816 4224 "GET /assets/api/reports/retired-assets/ HTTP/1.1" 500 112597
+INFO 2024-02-26 17:41:25,197 autoreload 3816 3532 D:\0_Pycharm\eAssets\assets\api\urls.py changed, reloading.
+INFO 2024-02-26 17:41:25,878 autoreload 6436 2924 Watching for file changes with StatReloader
+ERROR 2024-02-26 17:42:14,606 log 6436 7004 Internal Server Error: /assets/api/reports/retired-assets/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 110, in get_retired_assets
+    retired_assets = Asset.objects.filter(retired=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1613, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1645, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1495, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1307, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1772, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'retired' into field. Choices are: acquisition_date, asset_type, asset_type_id, assetassignment, cost, created_by, created_by_id, current_cost, description, id, identifier, inventory_number, is_written_off, last_recalculation_date, service_life, title, written_off_at, written_off_by, written_off_by_id
+ERROR 2024-02-26 17:42:14,611 basehttp 6436 7004 "GET /assets/api/reports/retired-assets/ HTTP/1.1" 500 112597
+INFO 2024-02-26 17:44:47,012 autoreload 6436 2924 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 17:44:47,697 autoreload 1104 10128 Watching for file changes with StatReloader
+ERROR 2024-02-26 17:44:51,767 log 1104 8936 Internal Server Error: /assets/api/reports/retired-assets/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 110, in get_retired_assets
+    retired_assets = Asset.objects.filter(retired=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1613, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1645, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1495, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1307, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1772, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'retired' into field. Choices are: acquisition_date, asset_type, asset_type_id, assetassignment, cost, created_by, created_by_id, current_cost, description, id, identifier, inventory_number, is_written_off, last_recalculation_date, service_life, title, written_off_at, written_off_by, written_off_by_id
+ERROR 2024-02-26 17:44:51,771 basehttp 1104 8936 "GET /assets/api/reports/retired-assets/ HTTP/1.1" 500 112607
+INFO 2024-02-26 17:45:40,464 autoreload 1104 10128 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 17:45:41,108 autoreload 2892 4868 Watching for file changes with StatReloader
+INFO 2024-02-26 17:45:54,492 autoreload 2892 4868 D:\0_Pycharm\eAssets\assets\api\urls.py changed, reloading.
+INFO 2024-02-26 17:45:55,144 autoreload 12484 7720 Watching for file changes with StatReloader
+ERROR 2024-02-26 17:46:05,594 log 12484 16708 Internal Server Error: /assets/api/reports/retired_assets/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 110, in get_retired_assets
+    retired_assets = Asset.objects.filter(retired=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1613, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1645, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1495, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1307, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1772, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'retired' into field. Choices are: acquisition_date, asset_type, asset_type_id, assetassignment, cost, created_by, created_by_id, current_cost, description, id, identifier, inventory_number, is_written_off, last_recalculation_date, service_life, title, written_off_at, written_off_by, written_off_by_id
+ERROR 2024-02-26 17:46:05,598 basehttp 12484 16708 "GET /assets/api/reports/retired_assets/ HTTP/1.1" 500 112597
+INFO 2024-02-26 17:48:19,699 autoreload 12484 7720 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 17:48:20,385 autoreload 10436 1560 Watching for file changes with StatReloader
+INFO 2024-02-26 17:48:33,955 views_reports 10436 3864 Retrieved retired assets
+INFO 2024-02-26 17:48:33,956 basehttp 10436 3864 "GET /assets/api/reports/retired_assets/ HTTP/1.1" 200 357
+INFO 2024-02-26 17:50:33,400 views_reports 10436 3864 Retrieved retired assets
+INFO 2024-02-26 17:50:33,400 basehttp 10436 3864 "GET /assets/api/reports/retired_assets/ HTTP/1.1" 200 357
