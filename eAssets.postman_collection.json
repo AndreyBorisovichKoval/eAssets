@@ -12,11 +12,21 @@
 				{
 					"name": "Create User",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5MDQ4MTg3LCJpYXQiOjE3MDg5NjE3ODcsImp0aSI6ImE2NzI4ZTYwM2FhNzQ3Y2VhZTAwYzc4NzIxZjE0YTE5IiwidXNlcl9pZCI6Nn0.OAKf0JSvOuTVSBCg1U3fwxo72MBf0Iq9a3f87cxKi2c",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"user_1\",\r\n    \"email\": \"user_1.eassets@gmail.com\",\r\n    \"password\": \"User_123\",\r\n    \"is_superuser\": false\r\n}\r\n",
+							"raw": "{\r\n    \"username\": \"user_5\",\r\n    \"email\": \"user_5.eassets@gmail.com\",\r\n    \"password\": \"User_123\",\r\n    \"is_superuser\": false\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -40,14 +50,14 @@
 					"response": []
 				},
 				{
-					"name": "Change Password",
+					"name": "Change Password (custom)",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5MDQ1NDI2LCJpYXQiOjE3MDg5NTkwMjYsImp0aSI6IjkxODc4Mzg1ZjY0NjRlMGU5MTFlOTMzZTYzNDJjYTU0IiwidXNlcl9pZCI6Nn0.0WJtupHaV6gsOCxhffsxm06vE9q3bwdKReemXymqG8M",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5MDQ4MzMzLCJpYXQiOjE3MDg5NjE5MzMsImp0aSI6IjYwMzIxYjRlN2MwZjRiOGRhMzU0NTUwYWZlMGE4ZTQ4IiwidXNlcl9pZCI6MTB9.v4Q5O7bFCljuyQOMWYR2dBAZ04Cgf9sYd1TGFExFHNw",
 									"type": "string"
 								}
 							]
@@ -73,6 +83,46 @@
 							"path": [
 								"auth",
 								"change_password",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password (built-in)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5MDQ3MzI4LCJpYXQiOjE3MDg5NjA5MjgsImp0aSI6IjY1NGI3MmM3NTMxODQ4NjFiNDYzNzJjODc0MmVhNGM4IiwidXNlcl9pZCI6Nn0.FyP9NUUC2PpxXc_Nh0l7y7iJ90WE0IEjhSN9MuhLTsk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"old_password\": \"User_123\",\r\n  \"new_password1\": \"User_123456\",\r\n  \"new_password2\": \"User_123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/change-password/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"change-password",
 								""
 							]
 						}
