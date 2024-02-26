@@ -606,25 +606,69 @@ class AssetAssignmentView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
 
+    def get(self, request, pk=None):
+        if pk:
+            try:
+                asset_assignment = AssetAssignment.objects.get(pk=pk)
+                serializer = AssetAssignmentSerializer(asset_assignment)
+                logger.info(f"AssetAssignment {asset_assignment.id} viewed by user {request.user.id} {request.user.username}.")
+                return Response(serializer.data)
+            except AssetAssignment.DoesNotExist:
+                logger.error(f"AssetAssignment with pk={pk} does not exist")
+                return Response(status=status.HTTP_404_NOT_FOUND)
+            except Exception as e:
+                logger.exception("An error occurred while processing the GET request for asset assignment...")
+                return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        else:
+            try:
+                asset_assignments = AssetAssignment.objects.all()
+                serializer = AssetAssignmentSerializer(asset_assignments, many=True)
+                logger.info(f"All AssetsAssignments viewed by user {request.user.id} {request.user.username}.")
+                return Response(serializer.data)
+            except Exception as e:
+                logger.exception("An error occurred while processing the GET request for asset assignments...")
+                return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
     def post(self, request):
         serializer = AssetAssignmentSerializer(data=request.data)
         if serializer.is_valid():
-            assignment = serializer.save()
-            log_user_action(request.user, f"Created asset assignment with ID {assignment.id}")
-            add_to_change_history(assignment, "Created assignment")
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            try:
+                # Устанавливаем assignment_by в текущего пользователя
+                serializer.validated_data['assignment_by'] = request.user
+
+                asset_assignment = serializer.save()
+
+                action_description = f"User {request.user.id} {request.user.username} created asset assignment: {asset_assignment.id}. The fixed asset {asset_assignment.asset} is tied to the employee {asset_assignment.staff}."
+
+                # Создаем запись в UserAction
+                UserAction.objects.create(user=request.user, action=action_description)
+
+                logger.info(f"\n(__-=*=-__ {action_description} __-=*=-__)")
+
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            except Exception as e:
+                logger.error(f"Error creating asset assignment: {str(e)}")
+                return Response("Error creating asset assignment.", status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        else:
+            logger.error(f"Invalid asset assignment data: {serializer.errors}")
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, pk):
         try:
-            assignment = AssetAssignment.objects.get(pk=pk)
-            assignment.return_date = request.data['return_date']
-            assignment.save()
-            log_user_action(request.user, f"Updated return date for asset assignment with ID {assignment.id}")
-            add_to_change_history(assignment, "Updated return date")
+            asset_assignment = AssetAssignment.objects.get(pk=pk)
+            asset_assignment.return_date = datetime.now().date()
+            asset_assignment.return_by = request.user
+            asset_assignment.save()
+
+            action_description = f"User {request.user.username} updated return date for asset assignment: id = {asset_assignment.id}, asset = {asset_assignment.asset}, staff = {asset_assignment.staff}."
+            UserAction.objects.create(user=request.user, action=action_description)
+
+            logger.info(f"\n(__-=*=-__ {action_description} __-=*=-__)")
+
             return Response({'message': 'Return date updated successfully.'})
         except AssetAssignment.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
         except Exception as e:
-            logger.exception("An error occurred while processing the DELETE request when deleting the AssetAssignment...")
+            logger.exception("An error occurred while processing the DELETE request when updating return date for the asset assignment...")
             return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+

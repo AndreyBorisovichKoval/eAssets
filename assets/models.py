@@ -86,10 +86,10 @@ class AssetType(models.Model):
 class AssetAssignment(models.Model):
     asset = models.ForeignKey(Asset, on_delete=models.CASCADE)
     staff = models.ForeignKey(Staff, on_delete=models.CASCADE)
-    assignment_date = models.DateField()
-    assignment_date_by = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='created_asset_assignments', null=True, blank=True)
+    assignment_date = models.DateTimeField(auto_now_add=True)
+    assignment_by = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='created_asset_assignments', null=True, blank=True)
     return_date = models.DateField(null=True)
-    return_date_by = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='return_date_asset_assignments', null=True, blank=True)
+    return_by = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='return_date_asset_assignments', null=True, blank=True)
 
 
 class UserAction(models.Model):

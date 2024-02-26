@@ -1409,3 +1409,67 @@ INFO 2024-02-25 20:21:37,803 views 16916 11660 All Assets viewed by user 6 user_
 INFO 2024-02-25 20:21:37,809 basehttp 16916 11660 "PUT /assets/api/asset/written_off/ HTTP/1.1" 200 1269
 INFO 2024-02-25 20:21:44,695 views 16916 11660 Asset 212 Test_0212 viewed by user 6 user_1.
 INFO 2024-02-25 20:21:44,696 basehttp 16916 11660 "PUT /assets/api/asset/written_off/212/ HTTP/1.1" 200 421
+INFO 2024-02-26 12:47:38,109 autoreload 10620 12944 Watching for file changes with StatReloader
+INFO 2024-02-26 12:47:50,722 views 10620 17260 
+(__-=*=-__ User 6 user_1 the fixed asset Asset object (213) is tied to the employee Тестов Тест Тестович. __-=*=-__)
+INFO 2024-02-26 12:47:50,763 basehttp 10620 17260 "POST /assets/api/assetassignment/ HTTP/1.1" 201 148
+INFO 2024-02-26 12:49:51,394 autoreload 10620 12944 D:\0_Pycharm\eAssets\assets\models.py changed, reloading.
+INFO 2024-02-26 12:49:52,162 autoreload 16944 14832 Watching for file changes with StatReloader
+INFO 2024-02-26 12:50:29,354 autoreload 5636 13728 Watching for file changes with StatReloader
+INFO 2024-02-26 12:50:34,862 views 5636 5188 
+(__-=*=-__ User 6 user_1 the fixed asset Asset object (213) is tied to the employee Тестов Тест Тестович. __-=*=-__)
+INFO 2024-02-26 12:50:34,869 basehttp 5636 5188 "POST /assets/api/assetassignment/ HTTP/1.1" 201 138
+INFO 2024-02-26 12:52:40,668 autoreload 5636 13728 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 12:52:41,503 autoreload 3420 13612 Watching for file changes with StatReloader
+INFO 2024-02-26 12:52:47,548 views 3420 16956 
+(__-=*=-__ User 6 user_1 the fixed asset Asset object (213) is tied to the employee Тестов Тест Тестович. __-=*=-__)
+INFO 2024-02-26 12:52:47,569 basehttp 3420 16956 "POST /assets/api/assetassignment/ HTTP/1.1" 201 135
+INFO 2024-02-26 12:53:37,836 autoreload 3420 13612 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 12:53:41,309 autoreload 10276 10548 Watching for file changes with StatReloader
+INFO 2024-02-26 12:56:11,389 autoreload 10276 10548 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 12:56:12,119 autoreload 17120 7572 Watching for file changes with StatReloader
+INFO 2024-02-26 12:57:17,016 autoreload 17120 7572 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 12:57:18,269 autoreload 17052 13104 Watching for file changes with StatReloader
+INFO 2024-02-26 12:59:03,472 autoreload 17052 13104 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 12:59:04,118 autoreload 15600 15880 Watching for file changes with StatReloader
+INFO 2024-02-26 12:59:13,655 views 15600 12216 
+(__-=*=-__ User 6 user_1 the fixed asset Asset object (213) is tied to the employee Тестов Тест Тестович. __-=*=-__)
+INFO 2024-02-26 12:59:13,664 basehttp 15600 12216 "POST /assets/api/assetassignment/ HTTP/1.1" 201 135
+INFO 2024-02-26 13:05:41,813 autoreload 15600 15880 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 13:05:42,593 autoreload 9936 6852 Watching for file changes with StatReloader
+INFO 2024-02-26 13:05:56,881 views 9936 12072 
+(__-=*=-__ User 6 user_1 created asset assignment: 215. The fixed asset Asset object (213) is tied to the employee Тестов Тест Тестович. __-=*=-__)
+INFO 2024-02-26 13:05:56,886 basehttp 9936 12072 "POST /assets/api/assetassignment/ HTTP/1.1" 201 135
+INFO 2024-02-26 13:16:05,380 autoreload 9936 6852 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 13:16:06,206 autoreload 12552 1160 Watching for file changes with StatReloader
+INFO 2024-02-26 13:28:03,884 autoreload 12552 1160 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 13:28:04,500 autoreload 10224 11472 Watching for file changes with StatReloader
+INFO 2024-02-26 13:30:38,363 views 10224 396 
+(__-=*=-__ User user_1 updated return date for asset assignment: id = 215, asset = Asset object (213), staff = Тестов Тест Тестович. __-=*=-__)
+INFO 2024-02-26 13:30:38,364 basehttp 10224 396 "DELETE /assets/api/assetassignment/215/ HTTP/1.1" 200 47
+INFO 2024-02-26 13:34:24,643 autoreload 10224 11472 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 13:34:25,637 autoreload 16956 15596 Watching for file changes with StatReloader
+INFO 2024-02-26 13:35:52,854 autoreload 16956 15596 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 13:35:53,584 autoreload 18040 3512 Watching for file changes with StatReloader
+INFO 2024-02-26 13:36:51,319 autoreload 18040 3512 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 13:36:52,110 autoreload 10664 3368 Watching for file changes with StatReloader
+INFO 2024-02-26 13:40:08,443 autoreload 10664 3368 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 13:40:09,207 autoreload 15784 11704 Watching for file changes with StatReloader
+INFO 2024-02-26 13:43:14,148 autoreload 15784 11704 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 13:43:15,383 autoreload 2336 11668 Watching for file changes with StatReloader
+INFO 2024-02-26 13:44:00,860 views 2336 864 AssetAssignment 215 viewed by user 6 user_1.
+INFO 2024-02-26 13:44:00,868 basehttp 2336 864 "GET /assets/api/assetassignment/215/ HTTP/1.1" 200 140
+INFO 2024-02-26 13:44:49,198 views 2336 864 All AssetsAssignments viewed by user 6 user_1.
+INFO 2024-02-26 13:44:49,211 basehttp 2336 864 "GET /assets/api/assetassignment/ HTTP/1.1" 200 28151
+INFO 2024-02-26 13:45:19,075 views 2336 864 AssetAssignment 215 viewed by user 6 user_1.
+INFO 2024-02-26 13:45:19,076 basehttp 2336 864 "GET /assets/api/assetassignment/215/ HTTP/1.1" 200 140
+INFO 2024-02-26 13:45:24,186 views 2336 864 
+(__-=*=-__ User 6 user_1 created asset assignment: 216. The fixed asset Asset object (213) is tied to the employee Тестов Тест Тестович. __-=*=-__)
+INFO 2024-02-26 13:45:24,187 basehttp 2336 864 "POST /assets/api/assetassignment/ HTTP/1.1" 201 135
+INFO 2024-02-26 13:45:50,285 views 2336 864 AssetAssignment 216 viewed by user 6 user_1.
+INFO 2024-02-26 13:45:50,286 basehttp 2336 864 "GET /assets/api/assetassignment/216/ HTTP/1.1" 200 135
+INFO 2024-02-26 13:46:01,459 views 2336 864 
+(__-=*=-__ User user_1 updated return date for asset assignment: id = 216, asset = Asset object (213), staff = Тестов Тест Тестович. __-=*=-__)
+INFO 2024-02-26 13:46:01,459 basehttp 2336 864 "DELETE /assets/api/assetassignment/216/ HTTP/1.1" 200 47
+INFO 2024-02-26 13:46:09,125 views 2336 864 AssetAssignment 216 viewed by user 6 user_1.
+INFO 2024-02-26 13:46:09,126 basehttp 2336 864 "GET /assets/api/assetassignment/216/ HTTP/1.1" 200 140
