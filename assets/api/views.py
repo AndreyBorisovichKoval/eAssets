@@ -672,3 +672,9 @@ class AssetAssignmentView(APIView):
             logger.exception("An error occurred while processing the DELETE request when updating return date for the asset assignment...")
             return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+    # def move_asset_assignment(self, request, pk):
+    def patch(self, request, pk):
+
+        delete_response = self.delete(request, pk)
+        post_response = self.post(request)
+        return post_response

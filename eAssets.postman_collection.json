@@ -7,1396 +7,1632 @@
 	},
 	"item": [
 		{
-			"name": "Create User",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"user_1\",\r\n    \"email\": \"user_1.eassets@gmail.com\",\r\n    \"password\": \"User_123\",\r\n    \"is_superuser\": false\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"user_1\",\r\n    \"email\": \"user_1.eassets@gmail.com\",\r\n    \"password\": \"User_123\",\r\n    \"is_superuser\": false\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/sign-up/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"sign-up",
+								""
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8000/auth/sign-up/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"auth",
-						"sign-up",
-						""
-					]
+				{
+					"name": "Authorization/sign-in/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"user_1\",\r\n    \"password\": \"User_123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/sign-in/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"sign-in",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh_token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcwODQ0OTUxMiwiaWF0IjoxNzA4MzYzMTEyLCJqdGkiOiI2MTY1YTEyYWIwMDM0NWE4YWU1M2I2NTYzMGY3ZjMzNCIsInVzZXJfaWQiOjN9.vCjPNVeWMkzhQqvPehE_CGM30LpEIVaqz3UMTvpT7qI\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/token/refresh/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"token",
+								"refresh",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify_token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4NDMzMzc0LCJpYXQiOjE3MDgzNjMxMTIsImp0aSI6IjRmNGZkY2VmYWEwMTQ0NGI5MDdkNmI5NGYwNTBiOWJiIiwidXNlcl9pZCI6M30.pu9h1EG3rR-wHBdXF4w4zuC1x_0DEUaUy6ogZyxyDCw\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/token/verify/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"token",
+								"verify",
+								""
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Authorization/sign-in/",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"user_1\",\r\n    \"password\": \"User_123\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Departments",
+			"item": [
+				{
+					"name": "http://localhost:8000/assets/api/department/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM3NTgxLCJpYXQiOjE3MDg4NTExODEsImp0aSI6IjQ1MDk3ZjRlZWQ2MDQ5MTg4NzMwOTY4MTI3MWMzMmI0IiwidXNlcl9pZCI6Nn0.JUI6Z6gwu8U0VdLCyEc3LeFlhOsNgb_ICexQYihtq-c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/assets/api/department/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"assets",
+								"api",
+								"department",
+								""
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8000/auth/sign-in/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"auth",
-						"sign-in",
-						""
-					]
+				{
+					"name": "http://localhost:8000/assets/api/department/3/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM3NTgxLCJpYXQiOjE3MDg4NTExODEsImp0aSI6IjQ1MDk3ZjRlZWQ2MDQ5MTg4NzMwOTY4MTI3MWMzMmI0IiwidXNlcl9pZCI6Nn0.JUI6Z6gwu8U0VdLCyEc3LeFlhOsNgb_ICexQYihtq-c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/assets/api/department/2/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"assets",
+								"api",
+								"department",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/assets/api/department/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Dep_Test_0012\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/assets/api/department/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"assets",
+								"api",
+								"department",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/assets/api/department/11/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Dep_Test_0005\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/assets/api/department/11/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"assets",
+								"api",
+								"department",
+								"11",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/assets/api/department/7/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/assets/api/department/7/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"assets",
+								"api",
+								"department",
+								"7",
+								""
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"description": "Departments"
 		},
 		{
-			"name": "Refresh_token",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcwODQ0OTUxMiwiaWF0IjoxNzA4MzYzMTEyLCJqdGkiOiI2MTY1YTEyYWIwMDM0NWE4YWU1M2I2NTYzMGY3ZjMzNCIsInVzZXJfaWQiOjN9.vCjPNVeWMkzhQqvPehE_CGM30LpEIVaqz3UMTvpT7qI\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Divisions",
+			"item": [
+				{
+					"name": "http://localhost:8000/assets/api/division/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/assets/api/division/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"assets",
+								"api",
+								"division",
+								""
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8000/auth/token/refresh/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"auth",
-						"token",
-						"refresh",
-						""
-					]
+				{
+					"name": "http://localhost:8000/assets/api/division/9/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/assets/api/division/9/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"assets",
+								"api",
+								"division",
+								"9",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/assets/api/division/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Dev_Test_0001\",\r\n    \"department\": 7\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/assets/api/division/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"assets",
+								"api",
+								"division",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/assets/api/division/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Div_Test_0015\",\r\n    \"department\": 10\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/assets/api/division/15/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"assets",
+								"api",
+								"division",
+								"15",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/assets/api/division/16/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/assets/api/division/16/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"assets",
+								"api",
+								"division",
+								"16",
+								""
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Verify_token",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4NDMzMzc0LCJpYXQiOjE3MDgzNjMxMTIsImp0aSI6IjRmNGZkY2VmYWEwMTQ0NGI5MDdkNmI5NGYwNTBiOWJiIiwidXNlcl9pZCI6M30.pu9h1EG3rR-wHBdXF4w4zuC1x_0DEUaUy6ogZyxyDCw\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Positions",
+			"item": [
+				{
+					"name": "http://localhost:8000/assets/api/position/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/assets/api/position/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"assets",
+								"api",
+								"position",
+								""
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8000/auth/token/verify/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"auth",
-						"token",
-						"verify",
-						""
-					]
+				{
+					"name": "http://localhost:8000/assets/api/position/10/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/assets/api/position/10/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"assets",
+								"api",
+								"position",
+								"10",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/assets/api/position/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Pos_Test_0001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/assets/api/position/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"assets",
+								"api",
+								"position",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/assets/api/position/12/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Pos_Test_0011\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/assets/api/position/11/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"assets",
+								"api",
+								"position",
+								"11",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/assets/api/position/12/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/assets/api/position/14/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"assets",
+								"api",
+								"position",
+								"14",
+								""
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "http://localhost:8000/assets/api/department/",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
+			"name": "Staff",
+			"item": [
+				{
+					"name": "http://localhost:8000/assets/api/staff/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/assets/api/staff/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"assets",
+								"api",
+								"staff",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/assets/api/staff/42/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/assets/api/staff/42/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"assets",
+								"api",
+								"staff",
+								"42",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/assets/api/staff/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"last_name\": \"Тестов\",\r\n    \"first_name\": \"Тест\",\r\n    \"patronymic\": \"Тестович\",\r\n    \"memo\": \"Memo_0002\",\r\n    \"division\": 9,\r\n    \"position\": 7\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/assets/api/staff/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"assets",
+								"api",
+								"staff",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/assets/api/staff/46/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"last_name\": \"ТестовИК\",\r\n    \"first_name\": \"ТестИК\",\r\n    \"patronymic\": \"Тестович\",\r\n    \"memo\": \"Memo_0003\",\r\n    \"division\": 1,\r\n    \"position\": 6\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/assets/api/staff/46/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"assets",
+								"api",
+								"staff",
+								"46",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/assets/api/staff/46/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/assets/api/staff/44/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"assets",
+								"api",
+								"staff",
+								"44",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Assets",
+			"item": [
+				{
+					"name": "Asset_Type",
+					"item": [
 						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM3NTgxLCJpYXQiOjE3MDg4NTExODEsImp0aSI6IjQ1MDk3ZjRlZWQ2MDQ5MTg4NzMwOTY4MTI3MWMzMmI0IiwidXNlcl9pZCI6Nn0.JUI6Z6gwu8U0VdLCyEc3LeFlhOsNgb_ICexQYihtq-c",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/assets/api/department/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"department",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/department/3/",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
+							"name": "http://localhost:8000/assets/api/assettype/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/assets/api/assettype/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"assets",
+										"api",
+										"assettype",
+										""
+									]
+								}
+							},
+							"response": []
+						},
 						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM3NTgxLCJpYXQiOjE3MDg4NTExODEsImp0aSI6IjQ1MDk3ZjRlZWQ2MDQ5MTg4NzMwOTY4MTI3MWMzMmI0IiwidXNlcl9pZCI6Nn0.JUI6Z6gwu8U0VdLCyEc3LeFlhOsNgb_ICexQYihtq-c",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/assets/api/department/2/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"department",
-						"2",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/department/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
+							"name": "http://localhost:8000/assets/api/assettype/6/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/assets/api/assettype/6/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"assets",
+										"api",
+										"assettype",
+										"6",
+										""
+									]
+								}
+							},
+							"response": []
+						},
 						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Dep_Test_0012\"\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/assets/api/department/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"department",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/department/11/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
+							"name": "http://localhost:8000/assets/api/assettype/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Type_Test_0001\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/assets/api/assettype/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"assets",
+										"api",
+										"assettype",
+										""
+									]
+								}
+							},
+							"response": []
+						},
 						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Dep_Test_0005\"\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/assets/api/department/11/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"department",
-						"11",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/department/7/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
+							"name": "http://localhost:8000/assets/api/assettype/7/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Type_Test_0007\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/assets/api/assettype/7/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"assets",
+										"api",
+										"assettype",
+										"7",
+										""
+									]
+								}
+							},
+							"response": []
+						},
 						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
+							"name": "http://localhost:8000/assets/api/assettype/7/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/assets/api/assettype/7/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"assets",
+										"api",
+										"assettype",
+										"7",
+										""
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8000/assets/api/department/7/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"department",
-						"7",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/division/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
+				{
+					"name": "Asset",
+					"item": [
 						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8000/assets/api/division/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"division",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/division/9/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
+							"name": "http://localhost:8000/assets/api/asset/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/assets/api/asset/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"assets",
+										"api",
+										"asset",
+										""
+									]
+								}
+							},
+							"response": []
+						},
 						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8000/assets/api/division/9/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"division",
-						"9",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/division/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
+							"name": "http://localhost:8000/assets/api/asset/210/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/assets/api/asset/210/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"assets",
+										"api",
+										"asset",
+										"210",
+										""
+									]
+								}
+							},
+							"response": []
+						},
 						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Dev_Test_0001\",\r\n    \"department\": 7\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/assets/api/division/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"division",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/division/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
+							"name": "http://localhost:8000/assets/api/asset/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"inventory_number\": \"INV-10213\",\r\n    \"title\": \"Test_0213\",\r\n    \"identifier\": \"S/N-45654858\",\r\n    \"acquisition_date\": \"2023-01-28\",\r\n    \"service_life\": 15,\r\n    \"cost\": \"1200.00\",\r\n    \"current_cost\": \"1200.00\",\r\n    \"description\": \"Конфигурация оборудования, либо мебели…\",\r\n    \"asset_type\": 8\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/assets/api/asset/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"assets",
+										"api",
+										"asset",
+										""
+									]
+								}
+							},
+							"response": []
+						},
 						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Div_Test_0015\",\r\n    \"department\": 10\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/assets/api/division/15/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"division",
-						"15",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/division/16/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
+							"name": "http://localhost:8000/assets/api/asset/212/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"inventory_number\": \"INV-10211\",\r\n    \"title\": \"Test_0212\",\r\n    \"identifier\": \"S/N-45654856\",\r\n    \"acquisition_date\": \"2023-01-23\",\r\n    \"service_life\": 6,\r\n    \"cost\": \"1500.00\",\r\n    \"description\": \"Конфигурация оборудования, либо мебели…\",\r\n    \"asset_type\": 8\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/assets/api/asset/212/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"assets",
+										"api",
+										"asset",
+										"212",
+										""
+									]
+								}
+							},
+							"response": []
+						},
 						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/assets/api/division/16/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"division",
-						"16",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/position/",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
+							"name": "http://localhost:8000/assets/api/asset/212/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/assets/api/asset/212/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"assets",
+										"api",
+										"asset",
+										"212",
+										""
+									]
+								}
+							},
+							"response": []
+						},
 						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/assets/api/position/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"position",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/position/10/",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
+							"name": "http://localhost:8000/assets/api/asset/written_off/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/assets/api/asset/written_off/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"assets",
+										"api",
+										"asset",
+										"written_off",
+										""
+									]
+								}
+							},
+							"response": []
+						},
 						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
+							"name": "http://localhost:8000/assets/api/asset/written_off/212/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/assets/api/asset/written_off/212/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"assets",
+										"api",
+										"asset",
+										"written_off",
+										"212",
+										""
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/assets/api/position/10/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"position",
-						"10",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/position/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
+				{
+					"name": "Asset_Assignment",
+					"item": [
 						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Pos_Test_0001\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/assets/api/position/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"position",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/position/12/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
+							"name": "http://localhost:8000/assets/api/assetassignment/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/assets/api/assetassignment/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"assets",
+										"api",
+										"assetassignment",
+										""
+									]
+								}
+							},
+							"response": []
+						},
 						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Pos_Test_0011\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/assets/api/position/11/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"position",
-						"11",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/position/12/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
+							"name": "http://localhost:8000/assets/api/assetassignment/215/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/assets/api/assetassignment/215/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"assets",
+										"api",
+										"assetassignment",
+										"215",
+										""
+									]
+								}
+							},
+							"response": []
+						},
 						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/assets/api/position/14/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"position",
-						"14",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/staff/",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
+							"name": "http://localhost:8000/assets/api/assetassignment/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"asset\": 213,\r\n    \"staff\": 44\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/assets/api/assetassignment/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"assets",
+										"api",
+										"assetassignment",
+										""
+									]
+								}
+							},
+							"response": []
+						},
 						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/assets/api/staff/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"staff",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/staff/42/",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
+							"name": "http://localhost:8000/assets/api/assetassignment/215/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/assets/api/assetassignment/215/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"assets",
+										"api",
+										"assetassignment",
+										"215",
+										""
+									]
+								}
+							},
+							"response": []
+						},
 						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
+							"name": "http://localhost:8000/assets/api/assetassignment/214/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5MDI4MTcyLCJpYXQiOjE3MDg5NDE3NzIsImp0aSI6ImQyMzA4YWJhNWY0MDQ3ZjFhYjIxYTY0YTdlMzJlMGU2IiwidXNlcl9pZCI6Nn0.m_dQOSnDsmPxSMncOHH-3o_C9UMdHwNXKG_K6Nq4zuE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"asset\": 213,\r\n    \"staff\": 43\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/assets/api/assetassignment/211/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"assets",
+										"api",
+										"assetassignment",
+										"211",
+										""
+									]
+								}
+							},
+							"response": []
 						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/assets/api/staff/42/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"staff",
-						"42",
-						""
 					]
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/staff/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"last_name\": \"Тестов\",\r\n    \"first_name\": \"Тест\",\r\n    \"patronymic\": \"Тестович\",\r\n    \"memo\": \"Memo_0002\",\r\n    \"division\": 9,\r\n    \"position\": 7\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/assets/api/staff/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"staff",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/staff/46/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"last_name\": \"ТестовИК\",\r\n    \"first_name\": \"ТестИК\",\r\n    \"patronymic\": \"Тестович\",\r\n    \"memo\": \"Memo_0003\",\r\n    \"division\": 1,\r\n    \"position\": 6\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/assets/api/staff/46/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"staff",
-						"46",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/staff/46/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8000/assets/api/staff/44/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"staff",
-						"44",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/assettype/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8000/assets/api/assettype/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"assettype",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/assettype/6/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8000/assets/api/assettype/6/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"assettype",
-						"6",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/assettype/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Type_Test_0001\"\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/assets/api/assettype/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"assettype",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/assettype/7/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Type_Test_0007\"\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/assets/api/assettype/7/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"assettype",
-						"7",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/assettype/7/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/assets/api/assettype/7/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"assettype",
-						"7",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/asset/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8000/assets/api/asset/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"asset",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/asset/210/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8000/assets/api/asset/210/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"asset",
-						"210",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/asset/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"inventory_number\": \"INV-10213\",\r\n    \"title\": \"Test_0213\",\r\n    \"identifier\": \"S/N-45654858\",\r\n    \"acquisition_date\": \"2023-01-28\",\r\n    \"service_life\": 15,\r\n    \"cost\": \"1200.00\",\r\n    \"current_cost\": \"1200.00\",\r\n    \"description\": \"Конфигурация оборудования, либо мебели…\",\r\n    \"asset_type\": 8\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/assets/api/asset/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"asset",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/asset/212/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"inventory_number\": \"INV-10211\",\r\n    \"title\": \"Test_0212\",\r\n    \"identifier\": \"S/N-45654856\",\r\n    \"acquisition_date\": \"2023-01-23\",\r\n    \"service_life\": 6,\r\n    \"cost\": \"1500.00\",\r\n    \"description\": \"Конфигурация оборудования, либо мебели…\",\r\n    \"asset_type\": 8\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/assets/api/asset/212/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"asset",
-						"212",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/asset/212/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8000/assets/api/asset/212/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"asset",
-						"212",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/asset/written_off/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/assets/api/asset/written_off/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"asset",
-						"written_off",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/assets/api/asset/written_off/212/",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
-							"type": "string"
-						}
-					]
-				},
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/assets/api/asset/written_off/212/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"assets",
-						"api",
-						"asset",
-						"written_off",
-						"212",
-						""
-					]
-				}
-			},
-			"response": []
+			]
 		}
 	]
 }

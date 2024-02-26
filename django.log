@@ -1473,3 +1473,188 @@ INFO 2024-02-26 13:46:01,459 views 2336 864
 INFO 2024-02-26 13:46:01,459 basehttp 2336 864 "DELETE /assets/api/assetassignment/216/ HTTP/1.1" 200 47
 INFO 2024-02-26 13:46:09,125 views 2336 864 AssetAssignment 216 viewed by user 6 user_1.
 INFO 2024-02-26 13:46:09,126 basehttp 2336 864 "GET /assets/api/assetassignment/216/ HTTP/1.1" 200 140
+INFO 2024-02-26 14:59:53,230 autoreload 5044 2360 Watching for file changes with StatReloader
+WARNING 2024-02-26 15:00:04,991 log 5044 1492 Forbidden (CSRF cookie not set.): /assets/api/assetassignment/214/move/
+WARNING 2024-02-26 15:00:04,992 basehttp 5044 1492 "PATCH /assets/api/assetassignment/214/move/ HTTP/1.1" 403 2869
+INFO 2024-02-26 15:01:36,975 autoreload 5044 2360 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 15:01:37,729 autoreload 16856 16052 Watching for file changes with StatReloader
+INFO 2024-02-26 15:02:02,658 autoreload 16856 16052 D:\0_Pycharm\eAssets\assets\api\urls.py changed, reloading.
+INFO 2024-02-26 15:02:03,304 autoreload 12068 13060 Watching for file changes with StatReloader
+WARNING 2024-02-26 15:02:38,930 log 12068 16596 Unauthorized: /assets/api/assetassignment/214/move/
+WARNING 2024-02-26 15:02:38,931 basehttp 12068 16596 "PATCH /assets/api/assetassignment/214/move/ HTTP/1.1" 401 183
+INFO 2024-02-26 15:02:52,672 basehttp 12068 16596 "POST /auth/sign-in/ HTTP/1.1" 200 483
+INFO 2024-02-26 15:03:18,208 views 12068 16596 
+(__-=*=-__ User user_1 updated return date for asset assignment: id = 214, asset = Asset object (213), staff = Тестов Тест Тестович. __-=*=-__)
+INFO 2024-02-26 15:03:18,214 views 12068 16596 
+(__-=*=-__ User 6 user_1 created asset assignment: 217. The fixed asset Asset object (213) is tied to the employee Тестов Тест Тестович. __-=*=-__)
+ERROR 2024-02-26 15:03:18,502 log 12068 16596 Internal Server Error: /assets/api/assetassignment/214/move/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'rest_framework.utils.serializer_helpers.ReturnDict'>`
+ERROR 2024-02-26 15:03:18,504 basehttp 12068 16596 "PATCH /assets/api/assetassignment/214/move/ HTTP/1.1" 500 79931
+INFO 2024-02-26 15:07:10,632 autoreload 12068 13060 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 15:07:11,294 autoreload 7688 10064 Watching for file changes with StatReloader
+INFO 2024-02-26 15:07:16,176 views 7688 10316 
+(__-=*=-__ User user_1 updated return date for asset assignment: id = 214, asset = Asset object (213), staff = Тестов Тест Тестович. __-=*=-__)
+INFO 2024-02-26 15:07:16,181 views 7688 10316 
+(__-=*=-__ User 6 user_1 created asset assignment: 218. The fixed asset Asset object (213) is tied to the employee Тестов Тест Тестович. __-=*=-__)
+ERROR 2024-02-26 15:07:16,223 log 7688 10316 Internal Server Error: /assets/api/assetassignment/214/move/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2024-02-26 15:07:16,226 basehttp 7688 10316 "PATCH /assets/api/assetassignment/214/move/ HTTP/1.1" 500 79315
+INFO 2024-02-26 15:08:17,191 autoreload 7688 10064 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 15:08:17,792 autoreload 2560 16152 Watching for file changes with StatReloader
+INFO 2024-02-26 15:08:21,299 views 2560 11996 
+(__-=*=-__ User user_1 updated return date for asset assignment: id = 214, asset = Asset object (213), staff = Тестов Тест Тестович. __-=*=-__)
+INFO 2024-02-26 15:08:21,305 views 2560 11996 
+(__-=*=-__ User 6 user_1 created asset assignment: 219. The fixed asset Asset object (213) is tied to the employee Тестов Тест Тестович. __-=*=-__)
+ERROR 2024-02-26 15:08:21,347 log 2560 11996 Internal Server Error: /assets/api/assetassignment/214/move/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2024-02-26 15:08:21,350 basehttp 2560 11996 "PATCH /assets/api/assetassignment/214/move/ HTTP/1.1" 500 79315
+INFO 2024-02-26 15:12:46,790 autoreload 2560 16152 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 15:12:47,482 autoreload 7860 15620 Watching for file changes with StatReloader
+INFO 2024-02-26 15:12:51,830 views 7860 5564 
+(__-=*=-__ User user_1 updated return date for asset assignment: id = 214, asset = Asset object (213), staff = Тестов Тест Тестович. __-=*=-__)
+INFO 2024-02-26 15:12:51,836 views 7860 5564 
+(__-=*=-__ User 6 user_1 created asset assignment: 220. The fixed asset Asset object (213) is tied to the employee Тестов Тест Тестович. __-=*=-__)
+ERROR 2024-02-26 15:12:51,874 log 7860 5564 Internal Server Error: /assets/api/assetassignment/214/move/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'rest_framework.utils.serializer_helpers.ReturnDict'>`
+ERROR 2024-02-26 15:12:51,878 basehttp 7860 5564 "PATCH /assets/api/assetassignment/214/move/ HTTP/1.1" 500 79931
+INFO 2024-02-26 15:14:48,098 autoreload 7860 15620 D:\0_Pycharm\eAssets\assets\api\urls.py changed, reloading.
+INFO 2024-02-26 15:14:48,754 autoreload 6488 11124 Watching for file changes with StatReloader
+INFO 2024-02-26 15:15:52,504 views 6488 17164 
+(__-=*=-__ User user_1 updated return date for asset assignment: id = 213, asset = Asset object (213), staff = Тестов Тест Тестович. __-=*=-__)
+INFO 2024-02-26 15:15:52,509 views 6488 17164 
+(__-=*=-__ User 6 user_1 created asset assignment: 221. The fixed asset Asset object (213) is tied to the employee Тестов Тест Тестович. __-=*=-__)
+ERROR 2024-02-26 15:15:52,545 log 6488 17164 Internal Server Error: /assets/api/assetassignment/213/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'rest_framework.utils.serializer_helpers.ReturnDict'>`
+ERROR 2024-02-26 15:15:52,547 basehttp 6488 17164 "PATCH /assets/api/assetassignment/213/ HTTP/1.1" 500 79866
+INFO 2024-02-26 15:17:58,759 autoreload 6488 11124 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 15:18:00,006 autoreload 3988 16400 Watching for file changes with StatReloader
+INFO 2024-02-26 15:19:59,048 views 3988 8412 
+(__-=*=-__ User user_1 updated return date for asset assignment: id = 211, asset = Asset object (213), staff = Тестов Тест Тестович. __-=*=-__)
+INFO 2024-02-26 15:19:59,053 views 3988 8412 
+(__-=*=-__ User 6 user_1 created asset assignment: 222. The fixed asset Asset object (213) is tied to the employee Тестов Тест Тестович. __-=*=-__)
+INFO 2024-02-26 15:19:59,059 basehttp 3988 8412 "PATCH /assets/api/assetassignment/211/ HTTP/1.1" 201 135
+INFO 2024-02-26 15:21:29,737 autoreload 3988 16400 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 15:21:30,629 autoreload 14536 8900 Watching for file changes with StatReloader
+INFO 2024-02-26 15:26:51,241 autoreload 6488 18108 Watching for file changes with StatReloader
+INFO 2024-02-26 15:27:49,065 views 6488 8052 
+(__-=*=-__ User user_1 updated return date for asset assignment: id = 211, asset = Asset object (213), staff = Тестов Тест Тестович. __-=*=-__)
+ERROR 2024-02-26 15:27:49,106 log 6488 8052 Internal Server Error: /assets/api/assetassignment/211/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\rest_framework\views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2024-02-26 15:27:49,108 basehttp 6488 8052 "PATCH /assets/api/assetassignment/211/ HTTP/1.1" 500 79250
+INFO 2024-02-26 15:28:36,801 autoreload 6488 18108 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 15:28:37,443 autoreload 1308 10932 Watching for file changes with StatReloader
+INFO 2024-02-26 15:29:11,355 views 1308 396 
+(__-=*=-__ User user_1 updated return date for asset assignment: id = 211, asset = Asset object (213), staff = Тестов Тест Тестович. __-=*=-__)
+INFO 2024-02-26 15:29:11,360 views 1308 396 
+(__-=*=-__ User 6 user_1 created asset assignment: 223. The fixed asset Asset object (213) is tied to the employee Тестов Тест Тестович. __-=*=-__)
+INFO 2024-02-26 15:29:11,366 basehttp 1308 396 "PATCH /assets/api/assetassignment/211/ HTTP/1.1" 201 135
+INFO 2024-02-26 15:42:40,542 autoreload 1308 10932 D:\0_Pycharm\eAssets\assets\api\urls.py changed, reloading.
+INFO 2024-02-26 15:42:43,242 autoreload 13616 3864 Watching for file changes with StatReloader
