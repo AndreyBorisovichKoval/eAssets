@@ -2189,3 +2189,72 @@ INFO 2024-02-26 19:52:05,668 basehttp 6404 16204 "POST /auth/sign-in/ HTTP/1.1" 
 WARNING 2024-02-26 19:52:21,425 log 6404 16204 Forbidden: /auth/change_password/
 WARNING 2024-02-26 19:52:21,425 basehttp 6404 16204 "PUT /auth/change_password/ HTTP/1.1" 403 43
 INFO 2024-02-26 19:52:33,818 basehttp 6404 16204 "PUT /auth/change_password/ HTTP/1.1" 200 32
+INFO 2024-02-26 20:17:57,500 autoreload 10344 9404 Watching for file changes with StatReloader
+WARNING 2024-02-26 20:18:02,976 log 10344 3524 Forbidden (CSRF cookie not set.): /auth/change-password/
+WARNING 2024-02-26 20:18:02,977 basehttp 10344 3524 "PUT /auth/change-password/ HTTP/1.1" 403 2869
+WARNING 2024-02-26 20:18:51,782 log 10344 3524 Unauthorized: /auth/sign-in/
+WARNING 2024-02-26 20:18:51,783 basehttp 10344 3524 "POST /auth/sign-in/ HTTP/1.1" 401 63
+INFO 2024-02-26 20:19:01,431 basehttp 10344 3524 "POST /auth/sign-in/ HTTP/1.1" 200 483
+WARNING 2024-02-26 20:19:18,942 log 10344 3524 Forbidden (CSRF cookie not set.): /auth/change-password/
+WARNING 2024-02-26 20:19:18,942 basehttp 10344 3524 "PUT /auth/change-password/ HTTP/1.1" 403 2869
+WARNING 2024-02-26 20:21:40,713 log 10344 3524 Forbidden (CSRF cookie not set.): /auth/change-password/
+WARNING 2024-02-26 20:21:40,713 basehttp 10344 3524 "PUT /auth/change-password/ HTTP/1.1" 403 2869
+WARNING 2024-02-26 20:21:55,744 log 10344 3524 Forbidden (CSRF cookie not set.): /auth/change-password/
+WARNING 2024-02-26 20:21:55,744 basehttp 10344 3524 "PUT /auth/change-password/ HTTP/1.1" 403 2869
+INFO 2024-02-26 20:22:08,738 basehttp 10344 3524 "POST /auth/sign-in/ HTTP/1.1" 200 483
+WARNING 2024-02-26 20:22:26,597 log 10344 3524 Forbidden (CSRF cookie not set.): /auth/change-password/
+WARNING 2024-02-26 20:22:26,598 basehttp 10344 3524 "PUT /auth/change-password/ HTTP/1.1" 403 2869
+WARNING 2024-02-26 20:26:28,638 log 10344 3524 Forbidden (CSRF cookie not set.): /auth/change-password/
+WARNING 2024-02-26 20:26:28,638 basehttp 10344 3524 "PUT /auth/change-password/ HTTP/1.1" 403 2869
+WARNING 2024-02-26 20:30:23,495 log 10344 3524 Forbidden: /auth/change_password/
+WARNING 2024-02-26 20:30:23,496 basehttp 10344 3524 "PUT /auth/change_password/ HTTP/1.1" 403 43
+INFO 2024-02-26 20:32:44,758 autoreload 10344 9404 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 20:32:45,616 autoreload 8408 16996 Watching for file changes with StatReloader
+INFO 2024-02-26 20:33:17,968 autoreload 8408 16996 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 20:33:18,587 autoreload 15084 13188 Watching for file changes with StatReloader
+INFO 2024-02-26 20:33:48,026 autoreload 15084 13188 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 20:33:48,640 autoreload 15208 14208 Watching for file changes with StatReloader
+INFO 2024-02-26 20:34:12,595 autoreload 15208 14208 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 20:34:13,221 autoreload 10852 13704 Watching for file changes with StatReloader
+INFO 2024-02-26 20:35:17,482 autoreload 10852 13704 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 20:35:18,137 autoreload 16320 10692 Watching for file changes with StatReloader
+INFO 2024-02-26 20:35:36,775 autoreload 16320 10692 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 20:35:37,434 autoreload 4744 15596 Watching for file changes with StatReloader
+INFO 2024-02-26 20:35:47,833 autoreload 4744 15596 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 20:35:48,478 autoreload 17024 16764 Watching for file changes with StatReloader
+WARNING 2024-02-26 20:36:09,297 log 17024 10604 Unauthorized: /auth/sign-up/
+WARNING 2024-02-26 20:36:09,298 basehttp 17024 10604 "POST /auth/sign-up/ HTTP/1.1" 401 58
+INFO 2024-02-26 20:36:27,382 basehttp 17024 10604 "POST /auth/sign-in/ HTTP/1.1" 200 483
+WARNING 2024-02-26 20:36:59,108 views 17024 10604 Only administrators can create users.
+WARNING 2024-02-26 20:36:59,108 log 17024 10604 Forbidden: /auth/sign-up/
+WARNING 2024-02-26 20:36:59,109 basehttp 17024 10604 "POST /auth/sign-up/ HTTP/1.1" 403 50
+INFO 2024-02-26 20:37:06,553 basehttp 17024 10604 "POST /auth/sign-in/ HTTP/1.1" 200 483
+INFO 2024-02-26 20:37:23,595 views 17024 10604 User created successfully.
+INFO 2024-02-26 20:37:23,627 basehttp 17024 10604 "POST /auth/sign-up/ HTTP/1.1" 201 246
+INFO 2024-02-26 20:37:41,268 basehttp 17024 10604 "POST /auth/sign-in/ HTTP/1.1" 200 486
+WARNING 2024-02-26 20:38:06,229 views 17024 10604 Current password is incorrect.
+WARNING 2024-02-26 20:38:06,230 log 17024 10604 Forbidden: /auth/change_password/
+WARNING 2024-02-26 20:38:06,230 basehttp 17024 10604 "PUT /auth/change_password/ HTTP/1.1" 403 43
+INFO 2024-02-26 20:38:18,036 views 17024 10604 Password changed successfully.
+INFO 2024-02-26 20:38:18,037 basehttp 17024 10604 "PUT /auth/change_password/ HTTP/1.1" 200 32
+WARNING 2024-02-26 20:38:46,508 log 17024 10604 Unauthorized: /auth/sign-in/
+WARNING 2024-02-26 20:38:46,509 basehttp 17024 10604 "POST /auth/sign-in/ HTTP/1.1" 401 63
+INFO 2024-02-26 20:38:53,934 basehttp 17024 10604 "POST /auth/sign-in/ HTTP/1.1" 200 486
+INFO 2024-02-26 20:39:20,674 views 17024 10604 Password changed successfully.
+INFO 2024-02-26 20:39:20,675 basehttp 17024 10604 "PUT /auth/change_password/ HTTP/1.1" 200 32
+INFO 2024-02-26 20:46:22,959 autoreload 17024 16764 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 20:46:23,747 autoreload 5712 6272 Watching for file changes with StatReloader
+INFO 2024-02-26 20:46:42,038 views 5712 16108 User created successfully.
+INFO 2024-02-26 20:46:42,040 basehttp 5712 16108 "POST /auth/sign-up/ HTTP/1.1" 201 246
+INFO 2024-02-26 20:47:05,227 autoreload 5712 6272 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 20:47:05,988 autoreload 4320 17700 Watching for file changes with StatReloader
+WARNING 2024-02-26 20:48:56,359 log 4320 11532 Unauthorized: /auth/sign-in/
+WARNING 2024-02-26 20:48:56,360 basehttp 4320 11532 "POST /auth/sign-in/ HTTP/1.1" 401 63
+INFO 2024-02-26 20:49:08,921 basehttp 4320 11532 "POST /auth/sign-in/ HTTP/1.1" 200 486
+WARNING 2024-02-26 20:49:33,889 views 4320 11532 Only administrators can create users.
+WARNING 2024-02-26 20:49:33,890 log 4320 11532 Forbidden: /auth/sign-up/
+WARNING 2024-02-26 20:49:33,890 basehttp 4320 11532 "POST /auth/sign-up/ HTTP/1.1" 403 50
+INFO 2024-02-26 20:51:53,379 autoreload 4320 17700 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 20:51:54,149 autoreload 18392 9112 Watching for file changes with StatReloader
+INFO 2024-02-26 20:52:19,558 views 18392 3148 Password changed successfully.
+INFO 2024-02-26 20:52:19,560 basehttp 18392 3148 "PUT /auth/change_password/ HTTP/1.1" 200 32

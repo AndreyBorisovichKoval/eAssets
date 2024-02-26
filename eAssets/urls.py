@@ -20,6 +20,7 @@ from django.urls import path, include
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
 from assets.api.views import create_user, change_password
 from assets.views import recalculate_assets_view
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', include('index.urls')),
@@ -28,6 +29,7 @@ urlpatterns = [
 
     path('auth/sign-up/', create_user, name='sign-up'),
     path('auth/change_password/', change_password, name='change_password'),
+    path('auth/change-password/', auth_views.PasswordChangeView.as_view(), name='change-password'),
 
     path('auth/sign-in/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
 

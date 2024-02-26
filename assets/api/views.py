@@ -53,13 +53,24 @@ def get_user_id_from_token(request):
 @permission_classes([IsAuthenticated])
 def create_user(request):
     if not request.user.is_superuser:
+        logger.warning("Only administrators can create users.")
         raise PermissionDenied("Only administrators can create users.")
 
     serializer = UserSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
+
+        user = request.user
+        action = f"User '{serializer.data['username']}' created"
+        user_action = UserAction(user=user, action=action)
+        user_action.save()
+
+        logger.info("User created successfully.")
         return Response(serializer.data, status=status.HTTP_201_CREATED)
-    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    else:
+        logger.error("Failed to create user.")
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 @api_view(["PUT"])
 @authentication_classes([JWTAuthentication])
@@ -68,11 +79,13 @@ def change_password(request):
     user = request.user
     # Проверяем, является ли пользователь аутентифицированным
     if not user.is_authenticated:
+        logger.warning("User is not authenticated.")
         raise PermissionDenied("User is not authenticated.")
     # Получаем текущий пароль пользователя
     current_password = request.data.get("current_password")
     # Проверяем, совпадает ли текущий пароль с паролем пользователя
     if not user.check_password(current_password):
+        logger.warning("Current password is incorrect.")
         raise PermissionDenied("Current password is incorrect.")
     # Получаем новый пароль
     new_password = request.data.get("new_password")
@@ -80,8 +93,12 @@ def change_password(request):
     user.password = make_password(new_password)
     user.save()
 
-    return Response("Password changed successfully.", status=status.HTTP_200_OK)
+    action = f"Password changed for user '{user.username}'"
+    user_action = UserAction(user=user, action=action)
+    user_action.save()
 
+    logger.info("Password changed successfully.")
+    return Response("Password changed successfully.", status=status.HTTP_200_OK)
 
 
 class DepartmentView(APIView):
