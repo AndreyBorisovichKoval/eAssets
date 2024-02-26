@@ -14,8 +14,8 @@ from assets.models import User, Department, Division, Position, Staff, Asset, As
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        # fields = '__all__'
-        fields = ['id', 'username', 'email', 'password', 'is_superuser']
+        fields = '__all__'
+        # fields = ['id', 'username', 'email', 'password', 'is_superuser']
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):

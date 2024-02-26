@@ -1,20 +1,21 @@
 from datetime import datetime, timezone
+import logging
+
+from django.contrib.auth.hashers import make_password
 from django.shortcuts import get_object_or_404
 from rest_framework import status, viewsets, request
-from rest_framework.exceptions import AuthenticationFailed
+from rest_framework.exceptions import AuthenticationFailed, PermissionDenied
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.permissions import IsAuthenticated
-# from rest_framework_simplejwt.models.TokenUser import username
 from rest_framework_simplejwt.tokens import AccessToken
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.decorators import api_view, permission_classes
+from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from typing import Any
+
 from assets.api.serializers import (UserSerializer, DepartmentSerializer, DivisionSerializer, PositionSerializer,
                                     StaffSerializer, AssetTypeSerializer, AssetSerializer, AssetAssignmentSerializer)
 from assets.models import *
-import logging
-
 
 # Получаем логгер Django
 logger = logging.getLogger('django')
@@ -38,13 +39,49 @@ def get_user_id_from_token(request):
         return None
 
 
+# @api_view(["POST"])
+# @authentication_classes([JWTAuthentication])
+# @permission_classes([IsAuthenticated])
+# def create_user(request):
+#     serializer = UserSerializer(data=request.data)
+#     if serializer.is_valid():
+#         serializer.save()
+#         return Response(serializer.data)
+
 @api_view(["POST"])
-# @permission_classes((IsAuthenticated, ))
+@authentication_classes([JWTAuthentication])
+@permission_classes([IsAuthenticated])
 def create_user(request):
+    if not request.user.is_superuser:
+        raise PermissionDenied("Only administrators can create users.")
+
     serializer = UserSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
-        return Response(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(["PUT"])
+@authentication_classes([JWTAuthentication])
+@permission_classes([IsAuthenticated])
+def change_password(request):
+    user = request.user
+    # Проверяем, является ли пользователь аутентифицированным
+    if not user.is_authenticated:
+        raise PermissionDenied("User is not authenticated.")
+    # Получаем текущий пароль пользователя
+    current_password = request.data.get("current_password")
+    # Проверяем, совпадает ли текущий пароль с паролем пользователя
+    if not user.check_password(current_password):
+        raise PermissionDenied("Current password is incorrect.")
+    # Получаем новый пароль
+    new_password = request.data.get("new_password")
+    # Устанавливаем новый пароль для пользователя
+    user.password = make_password(new_password)
+    user.save()
+
+    return Response("Password changed successfully.", status=status.HTTP_200_OK)
+
 
 
 class DepartmentView(APIView):

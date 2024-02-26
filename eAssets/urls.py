@@ -18,7 +18,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
-from assets.api.views import create_user
+from assets.api.views import create_user, change_password
 from assets.views import recalculate_assets_view
 
 urlpatterns = [
@@ -27,7 +27,10 @@ urlpatterns = [
     path('assets/', include('assets.urls')),
 
     path('auth/sign-up/', create_user, name='sign-up'),
+    path('auth/change_password/', change_password, name='change_password'),
+
     path('auth/sign-in/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+
     path('auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('auth/token/verify/', TokenVerifyView.as_view(), name='verify_refresh'),
 

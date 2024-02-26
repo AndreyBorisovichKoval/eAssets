@@ -2138,3 +2138,54 @@ INFO 2024-02-26 18:56:49,414 views_reports 8560 16084 Calculated current price f
 INFO 2024-02-26 18:56:49,415 basehttp 8560 16084 "GET /assets/api/reports/current_cost_by_type_assets/8/ HTTP/1.1" 200 28
 INFO 2024-02-26 18:57:01,846 views_reports 8560 16084 Calculated total price for asset type with id 8
 INFO 2024-02-26 18:57:01,847 basehttp 8560 16084 "GET /assets/api/reports/cost_by_type_assets/8/ HTTP/1.1" 200 26
+INFO 2024-02-26 19:21:36,364 autoreload 12912 15656 Watching for file changes with StatReloader
+WARNING 2024-02-26 19:22:02,747 log 12912 15756 Unauthorized: /auth/sign-up/
+WARNING 2024-02-26 19:22:02,747 basehttp 12912 15756 "POST /auth/sign-up/ HTTP/1.1" 401 58
+INFO 2024-02-26 19:22:22,003 basehttp 12912 15756 "POST /auth/sign-in/ HTTP/1.1" 200 483
+INFO 2024-02-26 19:22:45,545 basehttp 12912 15756 "POST /auth/sign-up/ HTTP/1.1" 200 84
+INFO 2024-02-26 19:26:51,499 autoreload 12912 15656 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 19:26:52,286 autoreload 15736 15832 Watching for file changes with StatReloader
+INFO 2024-02-26 19:27:30,120 autoreload 15736 15832 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 19:27:30,871 autoreload 14784 448 Watching for file changes with StatReloader
+WARNING 2024-02-26 19:27:57,028 log 14784 1136 Forbidden: /auth/sign-up/
+WARNING 2024-02-26 19:27:57,029 basehttp 14784 1136 "POST /auth/sign-up/ HTTP/1.1" 403 50
+INFO 2024-02-26 19:28:27,642 basehttp 14784 1136 "POST /auth/sign-in/ HTTP/1.1" 200 483
+INFO 2024-02-26 19:28:49,648 basehttp 14784 1136 "POST /auth/sign-up/ HTTP/1.1" 201 84
+INFO 2024-02-26 19:33:27,314 autoreload 14784 448 D:\0_Pycharm\eAssets\assets\api\serializers.py changed, reloading.
+INFO 2024-02-26 19:33:27,929 autoreload 15700 860 Watching for file changes with StatReloader
+INFO 2024-02-26 19:34:40,594 basehttp 15700 2264 "POST /auth/sign-in/ HTTP/1.1" 200 483
+INFO 2024-02-26 19:35:31,799 basehttp 15700 2264 "POST /auth/sign-in/ HTTP/1.1" 200 483
+WARNING 2024-02-26 19:36:08,562 log 15700 2264 Forbidden: /auth/sign-up/
+WARNING 2024-02-26 19:36:08,563 basehttp 15700 2264 "POST /auth/sign-up/ HTTP/1.1" 403 50
+WARNING 2024-02-26 19:36:38,139 log 15700 2264 Forbidden: /auth/sign-up/
+WARNING 2024-02-26 19:36:38,140 basehttp 15700 2264 "POST /auth/sign-up/ HTTP/1.1" 403 50
+WARNING 2024-02-26 19:36:39,308 log 15700 2264 Forbidden: /auth/sign-up/
+WARNING 2024-02-26 19:36:39,309 basehttp 15700 2264 "POST /auth/sign-up/ HTTP/1.1" 403 50
+INFO 2024-02-26 19:36:49,837 basehttp 15700 2264 "POST /auth/sign-in/ HTTP/1.1" 200 483
+INFO 2024-02-26 19:37:11,809 basehttp 15700 2264 "POST /auth/sign-up/ HTTP/1.1" 201 245
+INFO 2024-02-26 19:40:27,699 autoreload 15700 860 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 19:40:28,299 autoreload 13644 11572 Watching for file changes with StatReloader
+INFO 2024-02-26 19:42:25,316 autoreload 13644 11572 D:\0_Pycharm\eAssets\eAssets\urls.py changed, reloading.
+INFO 2024-02-26 19:42:26,366 autoreload 15060 14044 Watching for file changes with StatReloader
+INFO 2024-02-26 19:43:19,291 autoreload 15060 14044 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-26 19:43:19,981 autoreload 11804 16928 Watching for file changes with StatReloader
+WARNING 2024-02-26 19:46:32,311 log 11804 10448 Not Found: /auth/change_password/
+WARNING 2024-02-26 19:46:32,312 basehttp 11804 10448 "POST /auth/change_password/ HTTP/1.1" 404 3258
+INFO 2024-02-26 19:48:31,315 autoreload 11804 16928 D:\0_Pycharm\eAssets\eAssets\urls.py changed, reloading.
+INFO 2024-02-26 19:48:31,974 autoreload 6404 13420 Watching for file changes with StatReloader
+WARNING 2024-02-26 19:48:41,418 log 6404 16204 Method Not Allowed: /auth/change_password/
+WARNING 2024-02-26 19:48:41,419 basehttp 6404 16204 "POST /auth/change_password/ HTTP/1.1" 405 41
+WARNING 2024-02-26 19:49:45,644 log 6404 16204 Method Not Allowed: /auth/change_password/
+WARNING 2024-02-26 19:49:45,644 basehttp 6404 16204 "PATCH /auth/change_password/ HTTP/1.1" 405 42
+WARNING 2024-02-26 19:49:53,683 log 6404 16204 Forbidden: /auth/change_password/
+WARNING 2024-02-26 19:49:53,683 basehttp 6404 16204 "PUT /auth/change_password/ HTTP/1.1" 403 43
+INFO 2024-02-26 19:50:26,772 basehttp 6404 16204 "POST /auth/sign-in/ HTTP/1.1" 200 483
+WARNING 2024-02-26 19:50:47,571 log 6404 16204 Forbidden: /auth/change_password/
+WARNING 2024-02-26 19:50:47,572 basehttp 6404 16204 "PUT /auth/change_password/ HTTP/1.1" 403 43
+INFO 2024-02-26 19:51:22,853 basehttp 6404 16204 "PUT /auth/change_password/ HTTP/1.1" 200 32
+WARNING 2024-02-26 19:51:51,332 log 6404 16204 Unauthorized: /auth/sign-in/
+WARNING 2024-02-26 19:51:51,332 basehttp 6404 16204 "POST /auth/sign-in/ HTTP/1.1" 401 63
+INFO 2024-02-26 19:52:05,668 basehttp 6404 16204 "POST /auth/sign-in/ HTTP/1.1" 200 483
+WARNING 2024-02-26 19:52:21,425 log 6404 16204 Forbidden: /auth/change_password/
+WARNING 2024-02-26 19:52:21,425 basehttp 6404 16204 "PUT /auth/change_password/ HTTP/1.1" 403 43
+INFO 2024-02-26 19:52:33,818 basehttp 6404 16204 "PUT /auth/change_password/ HTTP/1.1" 200 32
