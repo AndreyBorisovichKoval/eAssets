@@ -2029,3 +2029,43 @@ INFO 2024-02-26 17:48:33,955 views_reports 10436 3864 Retrieved retired assets
 INFO 2024-02-26 17:48:33,956 basehttp 10436 3864 "GET /assets/api/reports/retired_assets/ HTTP/1.1" 200 357
 INFO 2024-02-26 17:50:33,400 views_reports 10436 3864 Retrieved retired assets
 INFO 2024-02-26 17:50:33,400 basehttp 10436 3864 "GET /assets/api/reports/retired_assets/ HTTP/1.1" 200 357
+INFO 2024-02-26 18:02:03,113 autoreload 17480 2352 Watching for file changes with StatReloader
+ERROR 2024-02-26 18:02:07,625 log 17480 16980 Internal Server Error: /assets/api/reports/calculate_total_price_assets/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 107, in calculate_total_price
+    total_price = Asset.objects.filter(is_written_off=False).aggregate(Sum('cost'))['cost__sum']
+                                                                       ^^^
+NameError: name 'Sum' is not defined. Did you mean: 'sum'?
+ERROR 2024-02-26 18:02:07,629 basehttp 17480 16980 "GET /assets/api/reports/calculate_total_price_assets/ HTTP/1.1" 500 64839
+INFO 2024-02-26 18:03:17,334 autoreload 17480 2352 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 18:03:18,038 autoreload 1820 4936 Watching for file changes with StatReloader
+INFO 2024-02-26 18:03:22,911 views_reports 1820 11268 Calculated total price of active assets
+INFO 2024-02-26 18:03:22,912 basehttp 1820 11268 "GET /assets/api/reports/calculate_total_price_assets/ HTTP/1.1" 200 29
+INFO 2024-02-26 18:03:55,580 views_reports 1820 11268 __-=*=-__ Retrieved assigned assets for staff with ID: 12. __-=*=-__
+INFO 2024-02-26 18:03:55,581 basehttp 1820 11268 "GET /assets/api/reports/staff/12/assets/ HTTP/1.1" 200 532
+INFO 2024-02-26 18:04:43,312 views_reports 1820 11268 Retrieved retired assets
+INFO 2024-02-26 18:04:43,313 basehttp 1820 11268 "GET /assets/api/reports/retired_assets/ HTTP/1.1" 200 357
+INFO 2024-02-26 18:04:52,793 views_reports 1820 11268 Calculated total price of active assets
+INFO 2024-02-26 18:04:52,794 basehttp 1820 11268 "GET /assets/api/reports/calculate_total_price_assets/ HTTP/1.1" 200 29
+INFO 2024-02-26 18:12:57,161 views_reports 1820 11268 Calculated total price of active assets
+INFO 2024-02-26 18:12:57,162 basehttp 1820 11268 "GET /assets/api/reports/calculate_total_price_assets/ HTTP/1.1" 200 29
+WARNING 2024-02-26 18:17:26,738 log 1820 11268 Not Found: /assets/api/reports/cost_assets/
+WARNING 2024-02-26 18:17:26,738 basehttp 1820 11268 "GET /assets/api/reports/cost_assets/ HTTP/1.1" 404 8330
+INFO 2024-02-26 18:19:27,693 autoreload 1820 4936 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 18:19:30,823 autoreload 12996 4248 Watching for file changes with StatReloader
+INFO 2024-02-26 18:20:32,398 autoreload 12996 4248 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 18:20:33,122 autoreload 16164 4360 Watching for file changes with StatReloader
+INFO 2024-02-26 18:20:41,411 views_reports 16164 8224 Calculated total price of active assets
+INFO 2024-02-26 18:20:41,412 basehttp 16164 8224 "GET /assets/api/reports/cost_assets/ HTTP/1.1" 200 29
+INFO 2024-02-26 18:21:08,811 views_reports 16164 8224 Calculated total current price of active assets
+INFO 2024-02-26 18:21:08,812 basehttp 16164 8224 "GET /assets/api/reports/current_cost_assets/ HTTP/1.1" 200 37
+INFO 2024-02-26 18:21:16,276 views_reports 16164 8224 Calculated total price of active assets
+INFO 2024-02-26 18:21:16,277 basehttp 16164 8224 "GET /assets/api/reports/cost_assets/ HTTP/1.1" 200 29
+INFO 2024-02-26 18:21:22,243 views_reports 16164 8224 Calculated total current price of active assets
+INFO 2024-02-26 18:21:22,243 basehttp 16164 8224 "GET /assets/api/reports/current_cost_assets/ HTTP/1.1" 200 37

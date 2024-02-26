@@ -1,4 +1,5 @@
 from datetime import datetime, timezone
+from django.db.models import Sum
 from django.shortcuts import get_object_or_404
 from django.http import JsonResponse
 from rest_framework import status, viewsets, request
@@ -58,27 +59,6 @@ def get_department_assets(request, pk):
     return JsonResponse(asset_list, safe=False)
 
 
-# @authentication_classes([JWTAuthentication])
-# @permission_classes([IsAuthenticated])
-# def get_division_assets(request, pk):
-#     division = get_object_or_404(Division, id=pk)
-#     staff_in_division = Staff.objects.filter(division=division)
-#     assigned_assets = Asset.objects.filter(assetassignment__staff__in=staff_in_division)
-#
-#     asset_list = []
-#     for asset in assigned_assets:
-#         asset_list.append({
-#             'division': division.title,
-#             'asset_type': asset.asset_type.title if asset.asset_type else None,
-#             'inventory_number': asset.inventory_number,
-#             'title': asset.title,
-#             'identifier': asset.identifier,
-#             'staff_full_name': asset.assetassignment.staff.full_name,
-#         })
-#
-#     logger.info(f"Retrieved assets for division with ID: {pk}")
-#     return JsonResponse(asset_list, safe=False)
-
 @authentication_classes([JWTAuthentication])
 @permission_classes([IsAuthenticated])
 def get_division_assets(request, pk):
@@ -121,3 +101,24 @@ def get_retired_assets(request):
     logger.info("Retrieved retired assets")
     return JsonResponse(asset_list, safe=False)
 
+
+@authentication_classes([JWTAuthentication])
+@permission_classes([IsAuthenticated])
+def calculate_cost_assets(request):
+    total_price = Asset.objects.filter(is_written_off=False).aggregate(Sum('cost'))['cost__sum']
+    if total_price is None:
+        total_price = 0
+
+    logger.info("Calculated total price of active assets")
+    return JsonResponse({'total_price': total_price}, safe=False)
+
+
+@authentication_classes([JWTAuthentication])
+@permission_classes([IsAuthenticated])
+def calculate_current_cost_assets(request):
+    total_price = Asset.objects.filter(is_written_off=False).aggregate(Sum('current_cost'))['current_cost__sum']
+    if total_price is None:
+        total_price = 0
+
+    logger.info("Calculated total current price of active assets")
+    return JsonResponse({'total_current_price': total_price}, safe=False)

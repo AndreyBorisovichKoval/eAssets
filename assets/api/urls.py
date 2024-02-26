@@ -33,7 +33,8 @@ urlpatterns = [
     path('reports/department/<int:pk>/assets/', get_department_assets, name='department_assets-list'),
     path('reports/division/<int:pk>/assets/', get_division_assets, name='division_assets-list'),
     path('reports/retired_assets/', get_retired_assets, name='retired_assets-list'),
-
+    path('reports/cost_assets/', calculate_cost_assets, name='calculate_cost_assets-list'),
+    path('reports/current_cost_assets/', calculate_current_cost_assets, name='calculate_current_cost_assets-list'),
 
 ]
 
