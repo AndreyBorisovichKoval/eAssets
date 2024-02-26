@@ -35,6 +35,8 @@ urlpatterns = [
     path('reports/retired_assets/', get_retired_assets, name='retired_assets-list'),
     path('reports/cost_assets/', calculate_cost_assets, name='calculate_cost_assets-list'),
     path('reports/current_cost_assets/', calculate_current_cost_assets, name='calculate_current_cost_assets-list'),
+    path('reports/cost_by_type_assets/<int:pk>/', calculate_total_price_by_type, name='calculate_total_price_by_type-list'),
+    path('reports/current_cost_by_type_assets/<int:pk>/', calculate_current_price_by_type, name='calculate_current_price_by_type-list'),
 
 ]
 

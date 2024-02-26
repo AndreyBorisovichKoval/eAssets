@@ -122,3 +122,26 @@ def calculate_current_cost_assets(request):
 
     logger.info("Calculated total current price of active assets")
     return JsonResponse({'total_current_price': total_price}, safe=False)
+
+
+@authentication_classes([JWTAuthentication])
+@permission_classes([IsAuthenticated])
+def calculate_total_price_by_type(request, pk):
+    total_price = Asset.objects.filter(asset_type_id=pk, is_written_off=False).aggregate(Sum('cost'))['cost__sum']
+    if total_price is None:
+        total_price = 0
+
+    logger.info(f"Calculated total price for asset type with id {pk}")
+    return JsonResponse({'total_price': total_price}, safe=False)
+
+
+@authentication_classes([JWTAuthentication])
+@permission_classes([IsAuthenticated])
+def calculate_current_price_by_type(request, pk):
+    current_price = Asset.objects.filter(asset_type_id=pk, is_written_off=False).aggregate(Sum('current_cost'))['current_cost__sum']
+    if current_price is None:
+        current_price = 0
+
+    logger.info(f"Calculated current price for asset type with id {pk}")
+    return JsonResponse({'current_price': current_price}, safe=False)
+

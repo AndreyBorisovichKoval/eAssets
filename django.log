@@ -2069,3 +2069,72 @@ INFO 2024-02-26 18:21:16,276 views_reports 16164 8224 Calculated total price of 
 INFO 2024-02-26 18:21:16,277 basehttp 16164 8224 "GET /assets/api/reports/cost_assets/ HTTP/1.1" 200 29
 INFO 2024-02-26 18:21:22,243 views_reports 16164 8224 Calculated total current price of active assets
 INFO 2024-02-26 18:21:22,243 basehttp 16164 8224 "GET /assets/api/reports/current_cost_assets/ HTTP/1.1" 200 37
+INFO 2024-02-26 18:46:59,662 autoreload 13460 4120 Watching for file changes with StatReloader
+ERROR 2024-02-26 18:47:02,009 log 13460 15276 Internal Server Error: /assets/api/reports/cost_by_type_assets/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: calculate_total_price_by_type() missing 1 required positional argument: 'asset_type_id'
+ERROR 2024-02-26 18:47:02,011 basehttp 13460 15276 "GET /assets/api/reports/cost_by_type_assets/ HTTP/1.1" 500 61189
+INFO 2024-02-26 18:47:45,740 autoreload 13460 4120 D:\0_Pycharm\eAssets\assets\api\urls.py changed, reloading.
+INFO 2024-02-26 18:47:46,432 autoreload 9268 2160 Watching for file changes with StatReloader
+ERROR 2024-02-26 18:48:10,520 log 9268 6272 Internal Server Error: /assets/api/reports/cost_by_type_assets/1/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: calculate_total_price_by_type() got an unexpected keyword argument 'pk'
+ERROR 2024-02-26 18:48:10,521 basehttp 9268 6272 "GET /assets/api/reports/cost_by_type_assets/1/ HTTP/1.1" 500 61160
+INFO 2024-02-26 18:48:37,562 autoreload 9268 2160 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 18:48:38,280 autoreload 17012 14788 Watching for file changes with StatReloader
+INFO 2024-02-26 18:48:40,877 views_reports 17012 16152 Calculated total price for asset type with id 1
+INFO 2024-02-26 18:48:40,879 basehttp 17012 16152 "GET /assets/api/reports/cost_by_type_assets/1/ HTTP/1.1" 200 28
+INFO 2024-02-26 18:48:50,955 views_reports 17012 16152 Calculated total price for asset type with id 2
+INFO 2024-02-26 18:48:50,956 basehttp 17012 16152 "GET /assets/api/reports/cost_by_type_assets/2/ HTTP/1.1" 200 29
+INFO 2024-02-26 18:48:56,938 views_reports 17012 16152 Calculated total price for asset type with id 3
+INFO 2024-02-26 18:48:56,939 basehttp 17012 16152 "GET /assets/api/reports/cost_by_type_assets/3/ HTTP/1.1" 200 28
+INFO 2024-02-26 18:49:02,613 views_reports 17012 16152 Calculated total price for asset type with id 4
+INFO 2024-02-26 18:49:02,616 basehttp 17012 16152 "GET /assets/api/reports/cost_by_type_assets/4/ HTTP/1.1" 200 27
+INFO 2024-02-26 18:49:08,774 views_reports 17012 16152 Calculated total price for asset type with id 5
+INFO 2024-02-26 18:49:08,774 basehttp 17012 16152 "GET /assets/api/reports/cost_by_type_assets/5/ HTTP/1.1" 200 29
+INFO 2024-02-26 18:49:13,335 views_reports 17012 16152 Calculated total price for asset type with id 6
+INFO 2024-02-26 18:49:13,335 basehttp 17012 16152 "GET /assets/api/reports/cost_by_type_assets/6/ HTTP/1.1" 200 18
+INFO 2024-02-26 18:49:19,986 views_reports 17012 16152 Calculated total price for asset type with id 7
+INFO 2024-02-26 18:49:19,987 basehttp 17012 16152 "GET /assets/api/reports/cost_by_type_assets/7/ HTTP/1.1" 200 18
+INFO 2024-02-26 18:49:25,698 views_reports 17012 16152 Calculated total price for asset type with id 5
+INFO 2024-02-26 18:49:25,699 basehttp 17012 16152 "GET /assets/api/reports/cost_by_type_assets/5/ HTTP/1.1" 200 29
+INFO 2024-02-26 18:49:31,053 views_reports 17012 16152 Calculated total price for asset type with id 1
+INFO 2024-02-26 18:49:31,053 basehttp 17012 16152 "GET /assets/api/reports/cost_by_type_assets/1/ HTTP/1.1" 200 28
+INFO 2024-02-26 18:49:35,821 views_reports 17012 16152 Calculated total price for asset type with id 1
+INFO 2024-02-26 18:49:35,821 basehttp 17012 16152 "GET /assets/api/reports/cost_by_type_assets/1/ HTTP/1.1" 200 28
+WARNING 2024-02-26 18:50:10,912 log 17012 16152 Not Found: /assets/api/reports/current_cost_by_type_assets/1/
+WARNING 2024-02-26 18:50:10,912 basehttp 17012 16152 "GET /assets/api/reports/current_cost_by_type_assets/1/ HTTP/1.1" 404 8927
+INFO 2024-02-26 18:51:10,966 autoreload 17012 14788 D:\0_Pycharm\eAssets\assets\api\urls.py changed, reloading.
+INFO 2024-02-26 18:51:11,604 autoreload 18060 13136 Watching for file changes with StatReloader
+INFO 2024-02-26 18:52:02,187 autoreload 18060 13136 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 18:52:02,810 autoreload 9516 15720 Watching for file changes with StatReloader
+INFO 2024-02-26 18:52:30,931 autoreload 9516 15720 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-26 18:52:31,827 autoreload 12100 9664 Watching for file changes with StatReloader
+INFO 2024-02-26 18:52:37,722 views_reports 12100 15792 Calculated total price for asset type with id 1
+INFO 2024-02-26 18:52:37,723 basehttp 12100 15792 "GET /assets/api/reports/current_cost_by_type_assets/1/ HTTP/1.1" 200 28
+INFO 2024-02-26 18:53:15,411 autoreload 12100 9664 D:\0_Pycharm\eAssets\assets\api\urls.py changed, reloading.
+INFO 2024-02-26 18:53:18,577 autoreload 8560 18232 Watching for file changes with StatReloader
+INFO 2024-02-26 18:53:20,079 views_reports 8560 16084 Calculated current price for asset type with id 1
+INFO 2024-02-26 18:53:20,080 basehttp 8560 16084 "GET /assets/api/reports/current_cost_by_type_assets/1/ HTTP/1.1" 200 30
+INFO 2024-02-26 18:54:09,889 views_reports 8560 16084 Calculated total price for asset type with id 1
+INFO 2024-02-26 18:54:09,889 basehttp 8560 16084 "GET /assets/api/reports/cost_by_type_assets/1/ HTTP/1.1" 200 28
+INFO 2024-02-26 18:54:13,953 views_reports 8560 16084 Calculated current price for asset type with id 1
+INFO 2024-02-26 18:54:13,954 basehttp 8560 16084 "GET /assets/api/reports/current_cost_by_type_assets/1/ HTTP/1.1" 200 30
+INFO 2024-02-26 18:54:57,671 views_reports 8560 16084 Calculated current price for asset type with id 8
+INFO 2024-02-26 18:54:57,672 basehttp 8560 16084 "GET /assets/api/reports/current_cost_by_type_assets/8/ HTTP/1.1" 200 28
+INFO 2024-02-26 18:56:49,414 views_reports 8560 16084 Calculated current price for asset type with id 8
+INFO 2024-02-26 18:56:49,415 basehttp 8560 16084 "GET /assets/api/reports/current_cost_by_type_assets/8/ HTTP/1.1" 200 28
+INFO 2024-02-26 18:57:01,846 views_reports 8560 16084 Calculated total price for asset type with id 8
+INFO 2024-02-26 18:57:01,847 basehttp 8560 16084 "GET /assets/api/reports/cost_by_type_assets/8/ HTTP/1.1" 200 26
