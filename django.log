@@ -2884,3 +2884,50 @@ INFO 2024-02-27 12:12:50,268 autoreload 12644 9984 Watching for file changes wit
 INFO 2024-02-27 12:13:02,517 basehttp 12644 15372 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 200 22780
 INFO 2024-02-27 12:13:06,101 basehttp 12644 15372 "GET /assets/api/reports/export_to_excel_report/ HTTP/1.1" 200 22496
 INFO 2024-02-27 12:22:17,659 basehttp 12644 15372 "GET /assets/api/reports/export_to_excel_report/ HTTP/1.1" 200 22496
+INFO 2024-02-27 12:45:37,632 autoreload 9924 5264 Watching for file changes with StatReloader
+WARNING 2024-02-27 12:45:42,413 log 9924 18312 Unauthorized: /assets/api/assettype/
+WARNING 2024-02-27 12:45:42,414 basehttp 9924 18312 "GET /assets/api/assettype/ HTTP/1.1" 401 183
+INFO 2024-02-27 12:45:56,713 basehttp 9924 18312 "POST /auth/sign-in/ HTTP/1.1" 200 486
+INFO 2024-02-27 12:46:10,537 views 9924 18312 All AssetTypes viewed by user 11 user_6.
+INFO 2024-02-27 12:46:10,545 basehttp 9924 18312 "GET /assets/api/assettype/ HTTP/1.1" 200 996
+WARNING 2024-02-27 12:46:15,512 log 9924 18312 Unauthorized: /assets/api/assettype/6/
+WARNING 2024-02-27 12:46:15,513 basehttp 9924 18312 "GET /assets/api/assettype/6/ HTTP/1.1" 401 183
+INFO 2024-02-27 12:46:24,206 views 9924 18312 AssetType 6 Printer viewed by user 11 user_6.
+INFO 2024-02-27 12:46:24,207 basehttp 9924 18312 "GET /assets/api/assettype/6/ HTTP/1.1" 200 142
+INFO 2024-02-27 12:46:37,760 views 9924 18312 All AssetTypes viewed by user 11 user_6.
+INFO 2024-02-27 12:46:37,762 basehttp 9924 18312 "GET /assets/api/assettype/ HTTP/1.1" 200 996
+WARNING 2024-02-27 12:47:09,822 log 9924 18312 Unauthorized: /assets/api/asset/
+WARNING 2024-02-27 12:47:09,822 basehttp 9924 18312 "GET /assets/api/asset/ HTTP/1.1" 401 183
+INFO 2024-02-27 12:47:17,010 views 9924 18312 All Assets viewed by user 11 user_6.
+INFO 2024-02-27 12:47:17,024 basehttp 9924 18312 "GET /assets/api/asset/ HTTP/1.1" 200 85179
+INFO 2024-02-27 13:01:05,369 autoreload 17420 2644 Watching for file changes with StatReloader
+INFO 2024-02-27 13:03:02,019 autoreload 17420 2644 D:\0_Pycharm\eAssets\eAssets\settings.py changed, reloading.
+INFO 2024-02-27 13:03:02,576 autoreload 1668 12360 Watching for file changes with StatReloader
+INFO 2024-02-27 13:03:22,665 autoreload 1668 12360 D:\0_Pycharm\eAssets\eAssets\urls.py changed, reloading.
+INFO 2024-02-27 13:03:23,386 autoreload 2296 17520 Watching for file changes with StatReloader
+INFO 2024-02-27 13:03:28,856 autoreload 2296 17520 D:\0_Pycharm\eAssets\eAssets\urls.py changed, reloading.
+INFO 2024-02-27 13:03:29,371 autoreload 4228 4312 Watching for file changes with StatReloader
+INFO 2024-02-27 15:09:16,317 autoreload 17484 16428 Watching for file changes with StatReloader
+INFO 2024-02-27 15:09:55,199 autoreload 17484 16428 D:\0_Pycharm\eAssets\eAssets\urls.py changed, reloading.
+INFO 2024-02-27 15:09:55,712 autoreload 11568 4572 Watching for file changes with StatReloader
+INFO 2024-02-27 15:11:03,257 autoreload 1964 13748 Watching for file changes with StatReloader
+INFO 2024-02-27 15:15:11,104 autoreload 14032 9160 Watching for file changes with StatReloader
+INFO 2024-02-27 15:19:25,657 autoreload 9264 14368 Watching for file changes with StatReloader
+INFO 2024-02-27 15:24:42,590 autoreload 4620 5888 Watching for file changes with StatReloader
+INFO 2024-02-27 15:25:29,894 autoreload 7908 11496 Watching for file changes with StatReloader
+INFO 2024-02-27 15:34:31,828 autoreload 16512 5236 Watching for file changes with StatReloader
+INFO 2024-02-27 15:42:58,894 autoreload 2892 17668 Watching for file changes with StatReloader
+INFO 2024-02-27 15:44:36,412 autoreload 3576 13716 Watching for file changes with StatReloader
+INFO 2024-02-27 15:45:23,314 autoreload 3576 13716 D:\0_Pycharm\eAssets\assets\views.py changed, reloading.
+INFO 2024-02-27 15:45:23,858 autoreload 10720 11884 Watching for file changes with StatReloader
+INFO 2024-02-27 15:45:42,006 autoreload 10720 11884 D:\0_Pycharm\eAssets\eAssets\urls.py changed, reloading.
+INFO 2024-02-27 15:45:42,541 autoreload 14368 8956 Watching for file changes with StatReloader
+INFO 2024-02-27 15:45:59,540 autoreload 14368 8956 D:\0_Pycharm\eAssets\eAssets\urls.py changed, reloading.
+INFO 2024-02-27 15:46:00,122 autoreload 18368 15772 Watching for file changes with StatReloader
+WARNING 2024-02-27 15:46:28,464 log 18368 18204 Unauthorized: /assets/api/department/
+WARNING 2024-02-27 15:46:28,465 basehttp 18368 18204 "GET /assets/api/department/ HTTP/1.1" 401 183
+INFO 2024-02-27 15:46:40,597 basehttp 18368 18204 "POST /auth/sign-in/ HTTP/1.1" 200 486
+INFO 2024-02-27 15:47:03,501 views 18368 18204 All Departments viewed by user 11 user_6.
+INFO 2024-02-27 15:47:03,714 basehttp 18368 18204 "GET /assets/api/department/ HTTP/1.1" 200 1067
+INFO 2024-02-27 15:47:13,033 views 18368 18204 Department 2 Technical department viewed by user 11 user_6.
+INFO 2024-02-27 15:47:13,034 basehttp 18368 18204 "GET /assets/api/department/2/ HTTP/1.1" 200 155
