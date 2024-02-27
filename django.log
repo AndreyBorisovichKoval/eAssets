@@ -2593,3 +2593,294 @@ INFO 2024-02-27 07:40:43,291 autoreload 16012 9268 Watching for file changes wit
 INFO 2024-02-27 07:40:49,263 basehttp 16012 17688 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 200 22780
 INFO 2024-02-27 07:43:28,223 autoreload 16012 9268 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
 INFO 2024-02-27 07:43:29,250 autoreload 3340 1316 Watching for file changes with StatReloader
+INFO 2024-02-27 10:36:09,496 autoreload 5188 17468 Watching for file changes with StatReloader
+INFO 2024-02-27 10:36:21,434 basehttp 5188 3736 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 200 22781
+INFO 2024-02-27 10:38:12,059 autoreload 5188 17468 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 10:38:12,987 autoreload 14164 8464 Watching for file changes with StatReloader
+INFO 2024-02-27 10:38:25,463 basehttp 14164 9192 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 200 20555
+INFO 2024-02-27 10:41:50,409 autoreload 14164 8464 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 10:41:53,815 autoreload 16464 2080 Watching for file changes with StatReloader
+ERROR 2024-02-27 10:42:01,123 log 16464 16580 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 2199, in add_fields
+    join_info = self.setup_joins(
+                ^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1867, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+                                       ^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1772, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'code' into field. Choices are: asset, created_at, created_by, created_by_id, deleted_at, deleted_by, deleted_by_id, id, is_deleted, title
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 406, in export_to_xlsx
+    asset_types = AssetType.objects.all().values('code', 'name')
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\query.py", line 1360, in values
+    clone = self._values(*fields, **expressions)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\query.py", line 1355, in _values
+    clone.query.set_values(fields)
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 2502, in set_values
+    self.add_fields(field_names, True)
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 2227, in add_fields
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'code' into field. Choices are: asset, created_at, created_by, created_by_id, deleted_at, deleted_by, deleted_by_id, id, is_deleted, title
+ERROR 2024-02-27 10:42:01,129 basehttp 16464 16580 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 131654
+INFO 2024-02-27 10:42:35,341 autoreload 16464 2080 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 10:42:36,276 autoreload 11632 5964 Watching for file changes with StatReloader
+INFO 2024-02-27 10:48:01,743 autoreload 11632 5964 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 10:48:03,203 autoreload 4456 18052 Watching for file changes with StatReloader
+ERROR 2024-02-27 10:48:08,495 log 4456 15028 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 2199, in add_fields
+    join_info = self.setup_joins(
+                ^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1867, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+                                       ^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 1772, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'name' into field. Choices are: asset, created_at, created_by, created_by_id, deleted_at, deleted_by, deleted_by_id, id, is_deleted, title
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 406, in export_to_xlsx
+    asset_types = AssetType.objects.all().values('title', 'name')
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\query.py", line 1360, in values
+    clone = self._values(*fields, **expressions)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\query.py", line 1355, in _values
+    clone.query.set_values(fields)
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 2502, in set_values
+    self.add_fields(field_names, True)
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\db\models\sql\query.py", line 2227, in add_fields
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'name' into field. Choices are: asset, created_at, created_by, created_by_id, deleted_at, deleted_by, deleted_by_id, id, is_deleted, title
+ERROR 2024-02-27 10:48:08,498 basehttp 4456 15028 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 134274
+INFO 2024-02-27 10:49:49,896 autoreload 4456 18052 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 10:49:50,573 autoreload 2256 17180 Watching for file changes with StatReloader
+ERROR 2024-02-27 10:49:54,108 log 2256 12320 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 407, in export_to_xlsx
+    asset_type_dict = {asset_type['title']: asset_type['name'] for asset_type in asset_types}
+                                            ~~~~~~~~~~^^^^^^^^
+KeyError: 'name'
+ERROR 2024-02-27 10:49:54,109 basehttp 2256 12320 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 95742
+INFO 2024-02-27 10:50:43,760 autoreload 2256 17180 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 10:50:44,340 autoreload 17748 12192 Watching for file changes with StatReloader
+INFO 2024-02-27 10:50:48,783 basehttp 17748 6964 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 200 19755
+INFO 2024-02-27 10:52:55,005 autoreload 17748 12192 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 10:52:55,567 autoreload 16640 18276 Watching for file changes with StatReloader
+ERROR 2024-02-27 10:52:59,807 log 16640 13972 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 410, in export_to_xlsx
+    writer = pd.ExcelWriter('report.xlsx', engine='xlsxwriter')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\excel\_xlsxwriter.py", line 204, in __init__
+    super().__init__(
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\excel\_base.py", line 1246, in __init__
+    self._handles = get_handle(
+                    ^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'report.xlsx'
+ERROR 2024-02-27 10:52:59,809 basehttp 16640 13972 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 114366
+INFO 2024-02-27 10:53:19,753 basehttp 16640 13972 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 200 20555
+INFO 2024-02-27 11:09:22,333 autoreload 16640 18276 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 11:09:22,953 autoreload 8792 10404 Watching for file changes with StatReloader
+ERROR 2024-02-27 11:09:56,244 log 8792 12388 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 418, in export_to_xlsx
+    writer.save()
+    ^^^^^^^^^^^
+AttributeError: 'XlsxWriter' object has no attribute 'save'. Did you mean: '_save'?
+ERROR 2024-02-27 11:09:56,245 basehttp 8792 12388 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 92569
+ERROR 2024-02-27 11:17:15,753 log 8792 12388 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 418, in export_to_xlsx
+    writer.save()
+    ^^^^^^^^^^^
+AttributeError: 'XlsxWriter' object has no attribute 'save'. Did you mean: '_save'?
+ERROR 2024-02-27 11:17:15,754 basehttp 8792 12388 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 92569
+INFO 2024-02-27 11:18:44,831 autoreload 8792 10404 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 11:18:48,774 autoreload 14148 16032 Watching for file changes with StatReloader
+INFO 2024-02-27 11:18:57,582 basehttp 14148 12868 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 200 20389
+INFO 2024-02-27 11:21:11,195 autoreload 14148 16032 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 11:21:15,040 autoreload 14504 17896 Watching for file changes with StatReloader
+INFO 2024-02-27 11:21:22,188 basehttp 14504 7140 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 200 20228
+INFO 2024-02-27 11:28:51,415 autoreload 14504 17896 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 11:28:55,311 autoreload 16012 16872 Watching for file changes with StatReloader
+INFO 2024-02-27 11:31:29,063 autoreload 16012 16872 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 11:31:30,194 autoreload 17336 5952 Watching for file changes with StatReloader
+ERROR 2024-02-27 11:31:41,418 log 17336 5824 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 502, in export_to_xlsx
+    writer.save()
+    ^^^^^^^^^^^
+AttributeError: 'XlsxWriter' object has no attribute 'save'. Did you mean: '_save'?
+ERROR 2024-02-27 11:31:41,421 basehttp 17336 5824 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 94696
+INFO 2024-02-27 11:33:05,113 autoreload 17336 5952 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 11:33:06,693 autoreload 7760 13860 Watching for file changes with StatReloader
+INFO 2024-02-27 11:33:13,498 basehttp 7760 9340 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 200 20474
+INFO 2024-02-27 11:39:28,129 autoreload 7760 13860 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 11:39:35,062 autoreload 18248 17444 Watching for file changes with StatReloader
+INFO 2024-02-27 11:39:41,396 autoreload 18248 17444 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 11:39:42,447 autoreload 6316 4420 Watching for file changes with StatReloader
+ERROR 2024-02-27 11:39:53,953 log 6316 15048 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 583, in export_to_xlsx
+    combined_df.to_excel(writer, sheet_name='Combined', index=False)
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\generic.py", line 2414, in to_excel
+    formatter.write(
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\formats\excel.py", line 952, in write
+    writer._write_cells(
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\excel\_xlsxwriter.py", line 261, in _write_cells
+    for cell in cells:
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\formats\excel.py", line 890, in get_formatted_cells
+    cell.val = self._format_value(cell.val)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\formats\excel.py", line 607, in _format_value
+    raise ValueError(
+ValueError: Excel does not support datetimes with timezones. Please ensure that datetimes are timezone unaware before writing to Excel.
+ERROR 2024-02-27 11:39:53,961 basehttp 6316 15048 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 133815
+INFO 2024-02-27 11:41:07,997 autoreload 6316 4420 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 11:41:12,305 autoreload 3196 8896 Watching for file changes with StatReloader
+ERROR 2024-02-27 11:41:19,037 log 3196 14284 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 579, in export_to_xlsx
+    assets_df['acquisition_date'] = assets_df['acquisition_date'].dt.date.astype(str)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\generic.py", line 6296, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\accessor.py", line 224, in __get__
+    accessor_obj = self._accessor(obj)
+                   ^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\indexes\accessors.py", line 643, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+ERROR 2024-02-27 11:41:19,043 basehttp 3196 14284 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 103319
+ERROR 2024-02-27 11:41:21,952 log 3196 14284 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 579, in export_to_xlsx
+    assets_df['acquisition_date'] = assets_df['acquisition_date'].dt.date.astype(str)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\generic.py", line 6296, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\accessor.py", line 224, in __get__
+    accessor_obj = self._accessor(obj)
+                   ^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\indexes\accessors.py", line 643, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+ERROR 2024-02-27 11:41:21,955 basehttp 3196 14284 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 103319
+INFO 2024-02-27 11:42:49,409 autoreload 3196 8896 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 11:42:54,616 autoreload 3844 5132 Watching for file changes with StatReloader
+INFO 2024-02-27 11:43:03,986 basehttp 3844 11376 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 200 22496
+INFO 2024-02-27 11:47:38,078 autoreload 3844 5132 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 11:47:41,340 autoreload 18232 10556 Watching for file changes with StatReloader
+INFO 2024-02-27 11:51:22,726 autoreload 18232 10556 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 11:51:26,610 autoreload 7572 10828 Watching for file changes with StatReloader
+ERROR 2024-02-27 11:51:35,276 log 7572 13364 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 602, in export_to_xlsx
+    with open('report_in_one_sheets.xlsx', 'rb') as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'report_in_one_sheets.xlsx'
+ERROR 2024-02-27 11:51:35,278 basehttp 7572 13364 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 94532
+INFO 2024-02-27 11:52:08,716 autoreload 7572 10828 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 11:52:09,319 autoreload 17768 9172 Watching for file changes with StatReloader
+INFO 2024-02-27 11:52:16,242 basehttp 17768 4136 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 200 22497
+INFO 2024-02-27 12:07:13,212 autoreload 17768 9172 D:\0_Pycharm\eAssets\assets\api\urls.py changed, reloading.
+INFO 2024-02-27 12:07:13,837 autoreload 7704 13676 Watching for file changes with StatReloader
+INFO 2024-02-27 12:07:54,919 basehttp 7704 13012 "GET /assets/api/reports/export_to_excel_report/ HTTP/1.1" 200 22497
+INFO 2024-02-27 12:08:20,140 basehttp 7704 13012 "GET /assets/api/reports/export_to_excel_report/ HTTP/1.1" 200 22496
+INFO 2024-02-27 12:08:25,646 basehttp 7704 13012 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 200 20228
+INFO 2024-02-27 12:09:36,469 autoreload 7704 13676 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 12:09:37,091 autoreload 11376 18232 Watching for file changes with StatReloader
+INFO 2024-02-27 12:09:41,898 basehttp 11376 2560 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 200 20554
+INFO 2024-02-27 12:10:18,975 autoreload 11376 18232 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 12:10:19,578 autoreload 2504 2068 Watching for file changes with StatReloader
+INFO 2024-02-27 12:10:25,760 basehttp 2504 17096 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 200 22780
+INFO 2024-02-27 12:10:50,170 basehttp 2504 17096 "GET /assets/api/reports/export_to_excel_report/ HTTP/1.1" 200 22496
+INFO 2024-02-27 12:12:49,568 autoreload 2504 2068 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 12:12:50,268 autoreload 12644 9984 Watching for file changes with StatReloader
+INFO 2024-02-27 12:13:02,517 basehttp 12644 15372 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 200 22780
+INFO 2024-02-27 12:13:06,101 basehttp 12644 15372 "GET /assets/api/reports/export_to_excel_report/ HTTP/1.1" 200 22496
+INFO 2024-02-27 12:22:17,659 basehttp 12644 15372 "GET /assets/api/reports/export_to_excel_report/ HTTP/1.1" 200 22496

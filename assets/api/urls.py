@@ -39,6 +39,7 @@ urlpatterns = [
     path('reports/current_cost_by_type_assets/<int:pk>/', calculate_current_price_by_type, name='calculate_current_price_by_type-list'),
 
     path('reports/export_to_excel/', export_to_xlsx, name='export_to_excel'),
+    path('reports/export_to_excel_report/', export_to_xlsx_report, name='export_to_excel'),
 
 ]
 
