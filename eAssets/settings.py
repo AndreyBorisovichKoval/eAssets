@@ -41,12 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "rest_framework",
     "rest_framework_simplejwt",
-    # "django_crontab",
-    # "django_cron",
+    "django_crontab",
     "index",
     "assets",
-    "eAssets",
-    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -235,18 +232,14 @@ LOGGING = {
 
 
 
-# # ==================================================================
-# # pip install django-crontab
-# # ------------------------------
-# CRONJOBS = [
-#     ('0 0 1 * *', 'assets.tasks.my_task'),  # Выполнять ежемесячно 1-го в 00:00, + 'путь.к.функции'
-# ]
-# # ------------------------------
-# # Примените изменения в расписании с помощью следующей команды:
-# # python manage.py crontab add
-# # python manage.py crontab add
-# # ==================================================================
-# CRON_CLASSES = [
-#     'assets.cron.AssetRecalculationCronJob',
-# ]
-# # ==================================================================
+# ==================================================================
+# pip install django-crontab
+# ------------------------------
+CRONJOBS = [
+    ('0 0 1 * *', 'assets.tasks.my_task'),  # Выполнять ежемесячно 1-го в 00:00, + 'путь.к.функции'
+]
+# ------------------------------
+# Примените изменения в расписании с помощью следующей команды:
+# python manage.py crontab add
+# python manage.py crontab add
+# ==================================================================

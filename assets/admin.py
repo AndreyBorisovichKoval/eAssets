@@ -13,5 +13,4 @@ admin.site.register(Staff)
 admin.site.register(Asset)
 admin.site.register(AssetType)
 admin.site.register(AssetAssignment)
-# admin.site.register(AssetTransfer)
 

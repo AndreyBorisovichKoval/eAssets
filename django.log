@@ -2931,3 +2931,25 @@ INFO 2024-02-27 15:47:03,501 views 18368 18204 All Departments viewed by user 11
 INFO 2024-02-27 15:47:03,714 basehttp 18368 18204 "GET /assets/api/department/ HTTP/1.1" 200 1067
 INFO 2024-02-27 15:47:13,033 views 18368 18204 Department 2 Technical department viewed by user 11 user_6.
 INFO 2024-02-27 15:47:13,034 basehttp 18368 18204 "GET /assets/api/department/2/ HTTP/1.1" 200 155
+INFO 2024-02-27 16:09:42,562 autoreload 14876 13640 Watching for file changes with StatReloader
+INFO 2024-02-27 16:09:58,036 views 14876 10584 Department 2 Technical department viewed by user 11 user_6.
+INFO 2024-02-27 16:09:58,046 basehttp 14876 10584 "GET /assets/api/department/2/ HTTP/1.1" 200 155
+WARNING 2024-02-27 16:10:19,407 log 14876 10584 Unauthorized: /assets/api/division/
+WARNING 2024-02-27 16:10:19,408 basehttp 14876 10584 "GET /assets/api/division/ HTTP/1.1" 401 183
+INFO 2024-02-27 16:10:26,615 views 14876 10584 All Divisions viewed by user 11 user_6.
+INFO 2024-02-27 16:10:26,768 basehttp 14876 10584 "GET /assets/api/division/ HTTP/1.1" 200 2515
+INFO 2024-02-27 16:10:49,548 views 14876 10584 All Staff viewed by user 11 user_6.
+INFO 2024-02-27 16:10:49,713 basehttp 14876 10584 "GET /assets/api/staff/ HTTP/1.1" 200 11213
+INFO 2024-02-27 16:11:13,081 views_reports 14876 10584 Retrieved assets for department with ID: 1
+INFO 2024-02-27 16:11:13,082 basehttp 14876 10584 "GET /assets/api/reports/department/1/assets/ HTTP/1.1" 200 7448
+INFO 2024-02-27 16:11:31,614 views_reports 14876 10584 __-=*=-__ Retrieved assigned assets for staff with ID: 12. __-=*=-__
+INFO 2024-02-27 16:11:31,614 basehttp 14876 10584 "GET /assets/api/reports/staff/12/assets/ HTTP/1.1" 200 532
+INFO 2024-02-27 16:11:44,503 views_reports 14876 10584 Calculated total price of active assets
+INFO 2024-02-27 16:11:44,503 basehttp 14876 10584 "GET /assets/api/reports/cost_assets/ HTTP/1.1" 200 29
+INFO 2024-02-27 16:11:50,165 views_reports 14876 10584 Calculated total current price of active assets
+INFO 2024-02-27 16:11:50,166 basehttp 14876 10584 "GET /assets/api/reports/current_cost_assets/ HTTP/1.1" 200 37
+INFO 2024-02-27 16:11:57,486 views_reports 14876 10584 Calculated current price for asset type with id 1
+INFO 2024-02-27 16:11:57,486 basehttp 14876 10584 "GET /assets/api/reports/current_cost_by_type_assets/1/ HTTP/1.1" 200 30
+INFO 2024-02-27 16:12:04,429 basehttp 14876 10584 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 200 22780
+INFO 2024-02-27 16:12:10,507 basehttp 14876 10584 "GET /assets/api/reports/export_to_excel_report/ HTTP/1.1" 200 22495
+INFO 2024-02-27 16:15:41,482 basehttp 14876 10584 "GET /recalculation/ HTTP/1.1" 200 32
