@@ -1751,6 +1751,26 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "http://localhost:8000/recalculation/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/recalculation/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"recalculation",
+								""
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -2023,6 +2043,72 @@
 								"reports",
 								"current_cost_by_type_assets",
 								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/assets/api/reports/export_to_excel/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5MDI4MTcyLCJpYXQiOjE3MDg5NDE3NzIsImp0aSI6ImQyMzA4YWJhNWY0MDQ3ZjFhYjIxYTY0YTdlMzJlMGU2IiwidXNlcl9pZCI6Nn0.m_dQOSnDsmPxSMncOHH-3o_C9UMdHwNXKG_K6Nq4zuE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/assets/api/reports/export_to_excel/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"assets",
+								"api",
+								"reports",
+								"export_to_excel",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/assets/api/reports/export_to_excel_report/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5MDI4MTcyLCJpYXQiOjE3MDg5NDE3NzIsImp0aSI6ImQyMzA4YWJhNWY0MDQ3ZjFhYjIxYTY0YTdlMzJlMGU2IiwidXNlcl9pZCI6Nn0.m_dQOSnDsmPxSMncOHH-3o_C9UMdHwNXKG_K6Nq4zuE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/assets/api/reports/export_to_excel_report/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"assets",
+								"api",
+								"reports",
+								"export_to_excel_report",
 								""
 							]
 						}

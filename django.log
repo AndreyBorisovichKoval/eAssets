@@ -2953,3 +2953,11 @@ INFO 2024-02-27 16:11:57,486 basehttp 14876 10584 "GET /assets/api/reports/curre
 INFO 2024-02-27 16:12:04,429 basehttp 14876 10584 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 200 22780
 INFO 2024-02-27 16:12:10,507 basehttp 14876 10584 "GET /assets/api/reports/export_to_excel_report/ HTTP/1.1" 200 22495
 INFO 2024-02-27 16:15:41,482 basehttp 14876 10584 "GET /recalculation/ HTTP/1.1" 200 32
+INFO 2024-02-27 16:33:15,101 autoreload 1912 16532 Watching for file changes with StatReloader
+INFO 2024-02-27 16:33:33,319 basehttp 1912 17936 "GET /recalculation/ HTTP/1.1" 200 32
+INFO 2024-02-27 16:34:21,246 basehttp 1912 17936 "GET /recalculation/ HTTP/1.1" 200 32
+INFO 2024-02-27 16:35:03,357 basehttp 1912 17936 "GET /recalculation/ HTTP/1.1" 200 32
+INFO 2024-02-27 16:35:48,091 views_reports 1912 17936 Calculated total price of active assets
+INFO 2024-02-27 16:35:48,091 basehttp 1912 17936 "GET /assets/api/reports/cost_assets/ HTTP/1.1" 200 29
+INFO 2024-02-27 16:35:55,400 views_reports 1912 17936 Calculated total current price of active assets
+INFO 2024-02-27 16:35:55,400 basehttp 1912 17936 "GET /assets/api/reports/current_cost_assets/ HTTP/1.1" 200 37
