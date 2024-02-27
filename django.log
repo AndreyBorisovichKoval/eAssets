@@ -2258,3 +2258,338 @@ INFO 2024-02-26 20:51:53,379 autoreload 4320 17700 D:\0_Pycharm\eAssets\assets\a
 INFO 2024-02-26 20:51:54,149 autoreload 18392 9112 Watching for file changes with StatReloader
 INFO 2024-02-26 20:52:19,558 views 18392 3148 Password changed successfully.
 INFO 2024-02-26 20:52:19,560 basehttp 18392 3148 "PUT /auth/change_password/ HTTP/1.1" 200 32
+INFO 2024-02-27 07:06:03,079 autoreload 8160 6476 Watching for file changes with StatReloader
+INFO 2024-02-27 07:11:17,521 autoreload 3868 2296 Watching for file changes with StatReloader
+ERROR 2024-02-27 07:11:27,754 log 3868 5040 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: export_to_xlsm() takes 0 positional arguments but 1 was given
+ERROR 2024-02-27 07:11:27,755 basehttp 3868 5040 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 60964
+INFO 2024-02-27 07:14:49,782 autoreload 3868 2296 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 07:14:53,132 autoreload 9928 6904 Watching for file changes with StatReloader
+ERROR 2024-02-27 07:14:58,054 log 9928 7676 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 233, in export_to_xlsm
+    with pd.ExcelWriter('report.xlsm', engine='openpyxl', mode='xlsxwriter') as writer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\excel\_openpyxl.py", line 61, in __init__
+    super().__init__(
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\excel\_base.py", line 1246, in __init__
+    self._handles = get_handle(
+                    ^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid mode: 'xlsxwriterb'
+ERROR 2024-02-27 07:14:58,058 basehttp 9928 7676 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 97245
+INFO 2024-02-27 07:16:23,551 autoreload 9928 6904 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 07:16:24,134 autoreload 16172 9488 Watching for file changes with StatReloader
+ERROR 2024-02-27 07:16:28,738 log 16172 1636 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 233, in export_to_xlsm
+    with pd.ExcelWriter('report.xlsm', engine='xlsxwriter') as writer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\excel\_xlsxwriter.py", line 197, in __init__
+    from xlsxwriter import Workbook
+ModuleNotFoundError: No module named 'xlsxwriter'
+ERROR 2024-02-27 07:16:28,744 basehttp 16172 1636 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 86172
+INFO 2024-02-27 07:19:06,323 autoreload 13948 10872 Watching for file changes with StatReloader
+ERROR 2024-02-27 07:19:11,818 log 13948 11952 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 234, in export_to_xlsm
+    with pd.ExcelWriter('report.xlsm', engine='xlsxwriter') as writer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\excel\_xlsxwriter.py", line 204, in __init__
+    super().__init__(
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\excel\_base.py", line 1221, in __init__
+    self.check_extension(ext)
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\excel\_base.py", line 1340, in check_extension
+    raise ValueError(f"Invalid extension for engine '{cls.engine}': '{ext}'")
+ValueError: Invalid extension for engine '<property object at 0x000001D0FD6C7380>': 'xlsm'
+ERROR 2024-02-27 07:19:11,821 basehttp 13948 11952 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 95864
+ERROR 2024-02-27 07:19:17,367 log 13948 11952 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 234, in export_to_xlsm
+    with pd.ExcelWriter('report.xlsm', engine='xlsxwriter') as writer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\excel\_xlsxwriter.py", line 204, in __init__
+    super().__init__(
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\excel\_base.py", line 1221, in __init__
+    self.check_extension(ext)
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\excel\_base.py", line 1340, in check_extension
+    raise ValueError(f"Invalid extension for engine '{cls.engine}': '{ext}'")
+ValueError: Invalid extension for engine '<property object at 0x000001D0FD6C7380>': 'xlsm'
+ERROR 2024-02-27 07:19:17,369 basehttp 13948 11952 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 95864
+INFO 2024-02-27 07:20:25,803 autoreload 13948 10872 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 07:20:26,385 autoreload 8948 4172 Watching for file changes with StatReloader
+ERROR 2024-02-27 07:20:30,833 log 8948 18172 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: export_to_xlsm() takes 0 positional arguments but 1 was given
+ERROR 2024-02-27 07:20:30,835 basehttp 8948 18172 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 60964
+INFO 2024-02-27 07:21:11,718 autoreload 8948 4172 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 07:21:12,303 autoreload 15216 5768 Watching for file changes with StatReloader
+ERROR 2024-02-27 07:21:18,968 log 15216 14672 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 233, in export_to_xlsm
+    with pd.ExcelWriter('report.xlsm', engine='xlsxwriter') as writer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\excel\_xlsxwriter.py", line 204, in __init__
+    super().__init__(
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\excel\_base.py", line 1221, in __init__
+    self.check_extension(ext)
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\excel\_base.py", line 1340, in check_extension
+    raise ValueError(f"Invalid extension for engine '{cls.engine}': '{ext}'")
+ValueError: Invalid extension for engine '<property object at 0x0000020AEFB47330>': 'xlsm'
+ERROR 2024-02-27 07:21:18,970 basehttp 15216 14672 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 95864
+INFO 2024-02-27 07:24:52,856 autoreload 10412 8392 Watching for file changes with StatReloader
+ERROR 2024-02-27 07:24:58,154 log 10412 13600 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 235, in export_to_xlsx
+    assets_df.to_excel(writer, sheet_name='Assets', index=False)
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\generic.py", line 2414, in to_excel
+    formatter.write(
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\formats\excel.py", line 952, in write
+    writer._write_cells(
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\excel\_xlsxwriter.py", line 261, in _write_cells
+    for cell in cells:
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\formats\excel.py", line 890, in get_formatted_cells
+    cell.val = self._format_value(cell.val)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\formats\excel.py", line 607, in _format_value
+    raise ValueError(
+ValueError: Excel does not support datetimes with timezones. Please ensure that datetimes are timezone unaware before writing to Excel.
+ERROR 2024-02-27 07:24:58,158 basehttp 10412 13600 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 120919
+INFO 2024-02-27 07:26:00,327 autoreload 10412 8392 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 07:26:00,988 autoreload 18160 13696 Watching for file changes with StatReloader
+ERROR 2024-02-27 07:26:05,152 log 18160 16356 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'date_created'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 234, in export_to_xlsx
+    assets_df['date_created'] = assets_df['date_created'].dt.tz_localize(None)
+                                ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\frame.py", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'date_created'
+ERROR 2024-02-27 07:26:05,157 basehttp 18160 16356 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 99717
+INFO 2024-02-27 07:31:49,630 autoreload 18160 13696 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 07:31:50,352 autoreload 6120 9488 Watching for file changes with StatReloader
+ERROR 2024-02-27 07:31:56,728 log 6120 3628 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 263, in export_to_xlsx
+    assets_df.to_excel(writer, sheet_name='Assets', index=False)
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\generic.py", line 2414, in to_excel
+    formatter.write(
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\formats\excel.py", line 952, in write
+    writer._write_cells(
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\excel\_xlsxwriter.py", line 261, in _write_cells
+    for cell in cells:
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\formats\excel.py", line 890, in get_formatted_cells
+    cell.val = self._format_value(cell.val)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\formats\excel.py", line 607, in _format_value
+    raise ValueError(
+ValueError: Excel does not support datetimes with timezones. Please ensure that datetimes are timezone unaware before writing to Excel.
+ERROR 2024-02-27 07:31:56,733 basehttp 6120 3628 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 136522
+INFO 2024-02-27 07:33:01,997 autoreload 6120 9488 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 07:33:02,607 autoreload 12124 3736 Watching for file changes with StatReloader
+INFO 2024-02-27 07:33:51,498 autoreload 12124 3736 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 07:33:52,057 autoreload 17884 5316 Watching for file changes with StatReloader
+ERROR 2024-02-27 07:33:56,839 log 17884 12596 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 262, in export_to_xlsx
+    assets_df['acquisition_date'] = assets_df['acquisition_date'].apply(lambda dt: dt.replace(tzinfo=None) if dt is not None else None)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\series.py", line 4915, in apply
+    ).apply()
+      ^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\apply.py", line 1427, in apply
+    return self.apply_standard()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\apply.py", line 1507, in apply_standard
+    mapped = obj._map_values(
+             ^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\base.py", line 921, in _map_values
+    return algorithms.map_array(arr, mapper, na_action=na_action, convert=convert)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\algorithms.py", line 1743, in map_array
+    return lib.map_infer(values, mapper, convert=convert)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "lib.pyx", line 2972, in pandas._libs.lib.map_infer
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 262, in <lambda>
+    assets_df['acquisition_date'] = assets_df['acquisition_date'].apply(lambda dt: dt.replace(tzinfo=None) if dt is not None else None)
+                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'tzinfo' is an invalid keyword argument for replace()
+ERROR 2024-02-27 07:33:56,847 basehttp 17884 12596 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 135342
+INFO 2024-02-27 07:35:45,952 autoreload 17884 5316 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 07:35:46,524 autoreload 4652 12264 Watching for file changes with StatReloader
+ERROR 2024-02-27 07:35:50,060 log 4652 12644 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 262, in export_to_xlsx
+    assets_df['acquisition_date'] = assets_df['acquisition_date'].apply(lambda dt: dt.replace(tzinfo=None) if dt is not None else None)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\series.py", line 4915, in apply
+    ).apply()
+      ^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\apply.py", line 1427, in apply
+    return self.apply_standard()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\apply.py", line 1507, in apply_standard
+    mapped = obj._map_values(
+             ^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\base.py", line 921, in _map_values
+    return algorithms.map_array(arr, mapper, na_action=na_action, convert=convert)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\algorithms.py", line 1743, in map_array
+    return lib.map_infer(values, mapper, convert=convert)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "lib.pyx", line 2972, in pandas._libs.lib.map_infer
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 262, in <lambda>
+    assets_df['acquisition_date'] = assets_df['acquisition_date'].apply(lambda dt: dt.replace(tzinfo=None) if dt is not None else None)
+                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'tzinfo' is an invalid keyword argument for replace()
+ERROR 2024-02-27 07:35:50,065 basehttp 4652 12644 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 135342
+INFO 2024-02-27 07:37:28,815 autoreload 4652 12264 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 07:37:29,395 autoreload 13560 17696 Watching for file changes with StatReloader
+ERROR 2024-02-27 07:37:36,021 log 13560 16180 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 262, in export_to_xlsx
+    assets_df['acquisition_date'] = assets_df['acquisition_date'].apply(lambda dt: dt.tz_convert(None) if pd.notnull(dt) else None)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\series.py", line 4915, in apply
+    ).apply()
+      ^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\apply.py", line 1427, in apply
+    return self.apply_standard()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\apply.py", line 1507, in apply_standard
+    mapped = obj._map_values(
+             ^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\base.py", line 921, in _map_values
+    return algorithms.map_array(arr, mapper, na_action=na_action, convert=convert)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\algorithms.py", line 1743, in map_array
+    return lib.map_infer(values, mapper, convert=convert)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "lib.pyx", line 2972, in pandas._libs.lib.map_infer
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 262, in <lambda>
+    assets_df['acquisition_date'] = assets_df['acquisition_date'].apply(lambda dt: dt.tz_convert(None) if pd.notnull(dt) else None)
+                                                                                   ^^^^^^^^^^^^^
+AttributeError: 'datetime.date' object has no attribute 'tz_convert'
+ERROR 2024-02-27 07:37:36,024 basehttp 13560 16180 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 135332
+INFO 2024-02-27 07:39:27,881 autoreload 13560 17696 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 07:39:28,579 autoreload 4520 17144 Watching for file changes with StatReloader
+ERROR 2024-02-27 07:39:32,347 log 4520 15172 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 277, in export_to_xlsx
+    writer.save()
+    ^^^^^^^^^^^
+AttributeError: 'XlsxWriter' object has no attribute 'save'. Did you mean: '_save'?
+ERROR 2024-02-27 07:39:32,349 basehttp 4520 15172 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 94992
+INFO 2024-02-27 07:40:42,359 autoreload 4520 17144 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 07:40:43,291 autoreload 16012 9268 Watching for file changes with StatReloader
+INFO 2024-02-27 07:40:49,263 basehttp 16012 17688 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 200 22780
+INFO 2024-02-27 07:43:28,223 autoreload 16012 9268 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-27 07:43:29,250 autoreload 3340 1316 Watching for file changes with StatReloader
