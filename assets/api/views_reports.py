@@ -215,6 +215,74 @@ def calculate_current_price_by_type(request, pk):
 
 @authentication_classes([JWTAuthentication])
 @permission_classes([IsAuthenticated])
+# def export_to_xlsx(request):
+#     assets = Asset.objects.all().values(
+#         'inventory_number',
+#         'title',
+#         'identifier',
+#         'acquisition_date',
+#         'service_life',
+#         'cost',
+#         'current_cost',
+#         'last_recalculation_date',
+#         'description',
+#         'asset_type',
+#         'is_written_off',
+#         'written_off_at'
+#     )
+#     assignments = AssetAssignment.objects.select_related('asset', 'staff').all().values(
+#         'asset',
+#         'staff',
+#         'assignment_date',
+#         'return_date'
+#     )
+#     staff = Staff.objects.select_related('division', 'position').all().values(
+#         'last_name',
+#         'first_name',
+#         'patronymic',
+#         'division__department',
+#         'division__title',
+#         'position'
+#     )
+#     divisions = Division.objects.select_related('department').all().values(
+#         'department__title',
+#         'title'
+#     )
+#     departments = Department.objects.all().values(
+#         'title'
+#     )
+#
+#     assets_df = pd.DataFrame(list(assets))
+#     assignments_df = pd.DataFrame(list(assignments))
+#     staff_df = pd.DataFrame(list(staff))
+#     divisions_df = pd.DataFrame(list(divisions))
+#     departments_df = pd.DataFrame(list(departments))
+#
+#     # Преобразование объектов datetime в строки без информации о часовом поясе
+#     assets_df['acquisition_date'] = assets_df['acquisition_date'].apply(lambda dt: dt.strftime('%Y-%m-%d') if pd.notnull(dt) else None)
+#     assignments_df['assignment_date'] = assignments_df['assignment_date'].apply(lambda dt: dt.strftime('%Y-%m-%d') if pd.notnull(dt) else None)
+#     assignments_df['return_date'] = assignments_df['return_date'].apply(lambda dt: dt.strftime('%Y-%m-%d') if pd.notnull(dt) else None)
+#     assets_df['last_recalculation_date'] = assets_df['last_recalculation_date'].apply(lambda dt: dt.strftime('%Y-%m-%d') if pd.notnull(dt) else None)
+#     assets_df['written_off_at'] = assets_df['written_off_at'].apply(lambda dt: dt.strftime('%Y-%m-%d') if pd.notnull(dt) else None)
+#
+#     # Создание книги Excel с форматом .xlsx
+#     with pd.ExcelWriter('report.xlsx', engine='xlsxwriter') as writer:
+#         assets_df.to_excel(writer, sheet_name='Assets', index=False)
+#         assignments_df.to_excel(writer, sheet_name='Assignments', index=False)
+#         staff_df.to_excel(writer, sheet_name='Staff', index=False)
+#         divisions_df.to_excel(writer, sheet_name='Divisions', index=False)
+#         departments_df.to_excel(writer, sheet_name='Departments', index=False)
+#
+#     # Закрытие объекта ExcelWriter и сохранение файла .xlsx
+#     writer.close()
+#
+#     # Отправка файла .xlsx в ответе HTTP
+#     with open('report.xlsx', 'rb') as file:
+#         response = HttpResponse(file.read(), content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+#         response['Content-Disposition'] = 'attachment; filename=report.xlsx'
+#         return response
+
+
 def export_to_xlsx(request):
     assets = Asset.objects.all().values(
         'inventory_number',
@@ -266,12 +334,12 @@ def export_to_xlsx(request):
     assets_df['written_off_at'] = assets_df['written_off_at'].apply(lambda dt: dt.strftime('%Y-%m-%d') if pd.notnull(dt) else None)
 
     # Создание книги Excel с форматом .xlsx
-    with pd.ExcelWriter('report.xlsx', engine='xlsxwriter') as writer:
-        assets_df.to_excel(writer, sheet_name='Assets', index=False)
-        assignments_df.to_excel(writer, sheet_name='Assignments', index=False)
-        staff_df.to_excel(writer, sheet_name='Staff', index=False)
-        divisions_df.to_excel(writer, sheet_name='Divisions', index=False)
-        departments_df.to_excel(writer, sheet_name='Departments', index=False)
+    writer = pd.ExcelWriter('report.xlsx', engine='xlsxwriter')
+    assets_df.to_excel(writer, sheet_name='Assets', index=False)
+    assignments_df.to_excel(writer, sheet_name='Assignments', index=False)
+    staff_df.to_excel(writer, sheet_name='Staff', index=False)
+    divisions_df.to_excel(writer, sheet_name='Divisions', index=False)
+    departments_df.to_excel(writer, sheet_name='Departments', index=False)
 
     # Закрытие объекта ExcelWriter и сохранение файла .xlsx
     writer.close()
@@ -281,3 +349,4 @@ def export_to_xlsx(request):
         response = HttpResponse(file.read(), content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
         response['Content-Disposition'] = 'attachment; filename=report.xlsx'
         return response
+
