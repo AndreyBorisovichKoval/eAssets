@@ -38,6 +38,8 @@ urlpatterns = [
     path('reports/cost_by_type_assets/<int:pk>/', calculate_total_price_by_type, name='calculate_total_price_by_type-list'),
     path('reports/current_cost_by_type_assets/<int:pk>/', calculate_current_price_by_type, name='calculate_current_price_by_type-list'),
 
+    path('reports/export_to_excel/', export_to_xlsm, name='export_to_excel'),
+
 ]
 
 

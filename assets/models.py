@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 
 
-
 class Department(models.Model):
     title = models.CharField(max_length=100)
     is_deleted = models.BooleanField(default=False)
