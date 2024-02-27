@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "rest_framework",
     "rest_framework_simplejwt",
-    "django_crontab",
+    # "django_crontab",
     "index",
     "assets",
 ]
@@ -235,11 +235,22 @@ LOGGING = {
 # ==================================================================
 # pip install django-crontab
 # ------------------------------
-CRONJOBS = [
-    ('0 0 1 * *', 'assets.tasks.my_task'),  # Выполнять ежемесячно 1-го в 00:00, + 'путь.к.функции'
-]
+# CRONJOBS = [
+#     ('* * * * *', 'your_app.tasks.my_task', '>> /tmp/my_task.log')  # код запускает задачу my_task каждую минуту
+# ]
+# CRONJOBS = [
+#     ('*/5 * * * *', 'assets.tasks.task_recalculate_assets', '>> /tmp/my_task.log')  # код запускает задачу my_task каждые пять минут
+# ]
+# CRONJOBS = [
+#     ('0 0 1 * *', 'assets.tasks.my_task'),  # Выполнять ежемесячно 1-го в 00:00, + 'путь.к.функции'
+# ]
 # ------------------------------
 # Примените изменения в расписании с помощью следующей команды:
 # python manage.py crontab add
 # python manage.py crontab add
+# python manage.py crontab add - добавляет задачи в планировщик cron.
+# python manage.py crontab remove - удаляет задачи из планировщика cron.
+# python manage.py crontab run <job_hash> - выполняет задачу с указанным хэшем.
+# python manage.py crontab show - отображает текущие настройки задач.
+# Примечание: После внесения изменений в файл settings.py, выполните python manage.py crontab add, чтобы обновить задачи в планировщике cron.
 # ==================================================================
