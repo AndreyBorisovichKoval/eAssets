@@ -2961,3 +2961,121 @@ INFO 2024-02-27 16:35:48,091 views_reports 1912 17936 Calculated total price of 
 INFO 2024-02-27 16:35:48,091 basehttp 1912 17936 "GET /assets/api/reports/cost_assets/ HTTP/1.1" 200 29
 INFO 2024-02-27 16:35:55,400 views_reports 1912 17936 Calculated total current price of active assets
 INFO 2024-02-27 16:35:55,400 basehttp 1912 17936 "GET /assets/api/reports/current_cost_assets/ HTTP/1.1" 200 37
+INFO 2024-02-28 08:03:06,635 autoreload 18836 16200 Watching for file changes with StatReloader
+INFO 2024-02-28 08:03:11,462 views_reports 18836 16748 __-=*=-__ Retrieved assigned assets for staff with ID: 12. __-=*=-__
+INFO 2024-02-28 08:03:11,464 basehttp 18836 16748 "GET /assets/api/reports/staff/12/assets/ HTTP/1.1" 200 532
+ERROR 2024-02-28 08:03:27,236 log 18836 16748 Internal Server Error: /assets/api/reports/export_to_excel_report/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 307, in export_to_xlsx_report
+    writer = pd.ExcelWriter('report_in_one_sheets.xlsx', engine='xlsxwriter')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\excel\_xlsxwriter.py", line 197, in __init__
+    from xlsxwriter import Workbook
+ModuleNotFoundError: No module named 'xlsxwriter'
+ERROR 2024-02-28 08:03:27,238 basehttp 18836 16748 "GET /assets/api/reports/export_to_excel_report/ HTTP/1.1" 500 103701
+INFO 2024-02-28 08:04:23,012 autoreload 10080 15448 Watching for file changes with StatReloader
+INFO 2024-02-28 08:04:33,157 basehttp 10080 13320 "GET /assets/api/reports/export_to_excel_report/ HTTP/1.1" 200 22544
+INFO 2024-02-28 08:15:38,006 autoreload 10080 15448 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-28 08:15:38,984 autoreload 4784 15576 Watching for file changes with StatReloader
+INFO 2024-02-28 08:18:18,279 autoreload 4784 15576 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-28 08:18:19,195 autoreload 19248 2296 Watching for file changes with StatReloader
+INFO 2024-02-28 08:19:22,560 autoreload 19248 2296 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-28 08:19:23,451 autoreload 5792 15232 Watching for file changes with StatReloader
+INFO 2024-02-28 08:21:11,806 autoreload 5792 15232 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-28 08:21:12,643 autoreload 13732 17968 Watching for file changes with StatReloader
+ERROR 2024-02-28 08:21:26,560 log 13732 9188 Internal Server Error: /assets/api/reports/export_to_excel_report/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 306, in export_to_xlsx_report
+    combined_df=assets_df.merge(
+                ^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\frame.py", line 10819, in merge
+    return merge(
+           ^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\reshape\merge.py", line 170, in merge
+    op = _MergeOperation(
+         ^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\reshape\merge.py", line 794, in __init__
+    ) = self._get_merge_keys()
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\reshape\merge.py", line 1297, in _get_merge_keys
+    right_keys.append(right._get_label_or_level_values(rk))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\generic.py", line 1910, in _get_label_or_level_values
+    raise KeyError(key)
+KeyError: 'id'
+ERROR 2024-02-28 08:21:26,570 basehttp 13732 9188 "GET /assets/api/reports/export_to_excel_report/ HTTP/1.1" 500 143194
+INFO 2024-02-28 09:27:37,007 autoreload 12580 13316 Watching for file changes with StatReloader
+ERROR 2024-02-28 09:27:46,940 log 12580 10760 Internal Server Error: /assets/api/reports/export_to_excel_report/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 304, in export_to_xlsx_report
+    combined_df = assets_df.merge(
+                  ^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\frame.py", line 10819, in merge
+    return merge(
+           ^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\reshape\merge.py", line 170, in merge
+    op = _MergeOperation(
+         ^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\reshape\merge.py", line 794, in __init__
+    ) = self._get_merge_keys()
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\reshape\merge.py", line 1297, in _get_merge_keys
+    right_keys.append(right._get_label_or_level_values(rk))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\generic.py", line 1910, in _get_label_or_level_values
+    raise KeyError(key)
+KeyError: 'id'
+ERROR 2024-02-28 09:27:46,950 basehttp 12580 10760 "GET /assets/api/reports/export_to_excel_report/ HTTP/1.1" 500 143248
+INFO 2024-02-28 09:31:27,042 autoreload 12580 13316 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-28 09:31:28,254 autoreload 14508 13736 Watching for file changes with StatReloader
+INFO 2024-02-28 09:37:33,008 autoreload 14508 13736 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-28 09:37:33,933 autoreload 15948 7596 Watching for file changes with StatReloader
+ERROR 2024-02-28 09:37:42,272 log 15948 18896 Internal Server Error: /assets/api/reports/export_to_excel_report/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 308, in export_to_xlsx_report
+    combined_df = pd.merge(assets_df, assignments_df, left_on='inventory_number', right_on='asset_id', how='left')
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\reshape\merge.py", line 170, in merge
+    op = _MergeOperation(
+         ^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\reshape\merge.py", line 807, in __init__
+    self._maybe_coerce_merge_keys()
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\core\reshape\merge.py", line 1508, in _maybe_coerce_merge_keys
+    raise ValueError(msg)
+ValueError: You are trying to merge on object and int64 columns for key 'inventory_number'. If you wish to proceed you should use pd.concat
+ERROR 2024-02-28 09:37:42,276 basehttp 15948 18896 "GET /assets/api/reports/export_to_excel_report/ HTTP/1.1" 500 134660
+INFO 2024-02-28 09:39:11,195 autoreload 15948 7596 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-28 09:39:12,777 autoreload 14948 2884 Watching for file changes with StatReloader
+INFO 2024-02-28 09:39:17,265 basehttp 14948 14412 "GET /assets/api/reports/export_to_excel_report/ HTTP/1.1" 200 21571
+INFO 2024-02-28 09:40:58,579 autoreload 14948 2884 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-28 09:40:59,817 autoreload 16296 18872 Watching for file changes with StatReloader
+INFO 2024-02-28 09:42:21,283 autoreload 16296 18872 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-28 09:42:22,741 autoreload 12680 16908 Watching for file changes with StatReloader
+INFO 2024-02-28 09:42:34,652 basehttp 12680 19104 "GET /assets/api/reports/export_to_excel_report/ HTTP/1.1" 200 25604
+INFO 2024-02-28 09:44:09,582 autoreload 12680 16908 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-02-28 09:44:10,904 autoreload 11892 12064 Watching for file changes with StatReloader
+INFO 2024-02-28 09:46:32,091 basehttp 11892 5460 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 200 23309

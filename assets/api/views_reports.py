@@ -243,19 +243,22 @@ def export_to_xlsx_report(request):
         'is_written_off',
         'written_off_at'
     )
+
     assignments = AssetAssignment.objects.select_related('asset', 'staff').all().values(
-        'asset',
-        'staff',
+        'asset__inventory_number',
+        'staff_id',
         'assignment_date',
         'return_date'
     )
+
     staff = Staff.objects.select_related('division', 'position').all().values(
+        'id',
         'last_name',
         'first_name',
         'patronymic',
-        'division__department',
+        'division__department__title',
         'division__title',
-        'position',
+        'position_id',
         'position__title'
     )
 
@@ -279,19 +282,20 @@ def export_to_xlsx_report(request):
     ]
 
     assignments_df.columns = [
-        'asset',
-        'staff',
+        'inventory_number',
+        'staff_id',
         'assignment_date',
         'return_date'
     ]
 
     staff_df.columns = [
+        'staff_id',
         'last_name',
         'first_name',
         'patronymic',
         'division_department',
         'division_title',
-        'position',
+        'position_id',
         'position_title'
     ]
 
@@ -301,7 +305,8 @@ def export_to_xlsx_report(request):
     assets_df['last_recalculation_date'] = pd.to_datetime(assets_df['last_recalculation_date']).dt.date.astype(str)
     assets_df['written_off_at'] = pd.to_datetime(assets_df['written_off_at']).dt.date.astype(str)
 
-    combined_df = pd.concat([assets_df, assignments_df, staff_df], axis=1)
+    combined_df = assets_df.merge(assignments_df, left_on='inventory_number', right_on='inventory_number', how='left')
+    combined_df = combined_df.merge(staff_df, left_on='staff_id', right_on='staff_id', how='left')
 
     # Создание книги Excel с форматом .xlsx
     writer = pd.ExcelWriter('report_in_one_sheets.xlsx', engine='xlsxwriter')
@@ -312,7 +317,7 @@ def export_to_xlsx_report(request):
     worksheet = writer.sheets['Combined']
 
     # Вставка столбца 'position_title' рядом со столбцом 'position'
-    worksheet.write(0, combined_df.columns.get_loc('position') + 1, 'position_title')
+    worksheet.write(0, combined_df.columns.get_loc('position_id') + 1, 'position_title')
 
     # Закрытие объекта ExcelWriter и сохранение файла .xlsx
     writer.close()
@@ -323,3 +328,113 @@ def export_to_xlsx_report(request):
         response['Content-Disposition'] = 'attachment; filename=report_in_one_sheets.xlsx'
         return response
 
+
+
+# def export_to_xlsx_report(request):
+#     assets = Asset.objects.all().values(
+#         'inventory_number',
+#         'title',
+#         'identifier',
+#         'acquisition_date',
+#         'service_life',
+#         'cost',
+#         'current_cost',
+#         'last_recalculation_date',
+#         'description',
+#         'asset_type__title',
+#         'is_written_off',
+#         'written_off_at'
+#     )
+#     assignments = AssetAssignment.objects.select_related('asset', 'staff').all().values(
+#         'asset',
+#         'staff',
+#         'assignment_date',
+#         'return_date'
+#     )
+#     staff = Staff.objects.select_related('division', 'position').all().values(
+#         'last_name',
+#         'first_name',
+#         'patronymic',
+#         'division__department',
+#         'division__title',
+#         'position',
+#         'position__title'
+#     )
+#
+#     assets_df = pd.DataFrame(list(assets))
+#     assignments_df = pd.DataFrame(list(assignments))
+#     staff_df = pd.DataFrame(list(staff))
+#
+#     assets_df.columns = [
+#         'inventory_number',
+#         'title',
+#         'identifier',
+#         'acquisition_date',
+#         'service_life',
+#         'cost',
+#         'current_cost',
+#         'last_recalculation_date',
+#         'description',
+#         'asset_type',
+#         'is_written_off',
+#         'written_off_at'
+#     ]
+#
+#     assignments_df.columns = [
+#         'asset',
+#         'staff',
+#         'assignment_date',
+#         'return_date'
+#     ]
+#
+#     staff_df.columns = [
+#         'last_name',
+#         'first_name',
+#         'patronymic',
+#         'division_department',
+#         'division_title',
+#         'position',
+#         'position_title'
+#     ]
+#
+#     assets_df['acquisition_date'] = pd.to_datetime(assets_df['acquisition_date']).dt.date.astype(str)
+#     assignments_df['assignment_date'] = pd.to_datetime(assignments_df['assignment_date']).dt.date.astype(str)
+#     assignments_df['return_date'] = pd.to_datetime(assignments_df['return_date']).dt.date.astype(str)
+#     assets_df['last_recalculation_date'] = pd.to_datetime(assets_df['last_recalculation_date']).dt.date.astype(str)
+#     assets_df['written_off_at'] = pd.to_datetime(assets_df['written_off_at']).dt.date.astype(str)
+#
+#     #combined_df = pd.concat([assets_df, assignments_df, staff_df], axis=1)
+#
+#
+#     # Создание книги Excel с форматом .xlsx
+#     writer = pd.ExcelWriter('report_in_one_sheets.xlsx', engine='xlsxwriter')
+#     combined_df.to_excel(writer, sheet_name='Combined', index=False)
+#
+#     # Получение объекта xlsxwriter.Workbook и листа
+#     workbook = writer.book
+#     worksheet = writer.sheets['Combined']
+#
+#     # Вставка столбца 'position_title' рядом со столбцом 'position'
+#     worksheet.write(0, combined_df.columns.get_loc('position') + 1, 'position_title')
+#
+#     # Закрытие объекта ExcelWriter и сохранение файла .xlsx
+#     writer.close()
+#
+#     # Отправка файла .xlsx в ответе HTTP
+#     with open('report_in_one_sheets.xlsx', 'rb') as file:
+#         response = HttpResponse(file.read(), content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+#         response['Content-Disposition'] = 'attachment; filename=report_in_one_sheets.xlsx'
+#         return response
+
+
+    # combined_df=assets_df.merge(
+    #     right=assignments_df,
+    #     how='left',
+    #     left_on='asset',
+    #     right_on='id'
+    # ).merge(
+    #     right=staff_df,
+    #     how='left',
+    #     left_on='staff',
+    #     right_on='id'
+    # )
