@@ -3081,3 +3081,34 @@ INFO 2024-02-28 09:44:10,904 autoreload 11892 12064 Watching for file changes wi
 INFO 2024-02-28 09:46:32,091 basehttp 11892 5460 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 200 23309
 INFO 2024-02-28 09:51:05,954 autoreload 7496 12820 Watching for file changes with StatReloader
 INFO 2024-02-28 09:51:16,126 basehttp 7496 8928 "GET /assets/api/reports/export_to_excel_report/ HTTP/1.1" 200 25605
+INFO 2024-02-28 12:12:01,098 autoreload 4088 320 Watching for file changes with StatReloader
+WARNING 2024-02-28 12:12:07,741 log 4088 7344 Unauthorized: /assets/api/assetassignment/
+WARNING 2024-02-28 12:12:07,742 basehttp 4088 7344 "GET /assets/api/assetassignment/ HTTP/1.1" 401 183
+WARNING 2024-02-28 12:12:23,224 log 4088 7344 Unauthorized: /auth/sign-in/
+WARNING 2024-02-28 12:12:23,225 basehttp 4088 7344 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-02-28 12:12:35,044 log 4088 7344 Unauthorized: /auth/sign-in/
+WARNING 2024-02-28 12:12:35,045 basehttp 4088 7344 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-02-28 12:12:48,789 log 4088 7344 Unauthorized: /auth/sign-in/
+WARNING 2024-02-28 12:12:48,790 basehttp 4088 7344 "POST /auth/sign-in/ HTTP/1.1" 401 63
+INFO 2024-02-28 12:17:54,722 autoreload 17952 14304 Watching for file changes with StatReloader
+WARNING 2024-02-28 12:17:59,785 log 17952 12324 Unauthorized: /auth/sign-in/
+WARNING 2024-02-28 12:17:59,786 basehttp 17952 12324 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-02-28 12:18:17,634 log 17952 12324 Unauthorized: /auth/sign-in/
+WARNING 2024-02-28 12:18:17,634 basehttp 17952 12324 "POST /auth/sign-in/ HTTP/1.1" 401 63
+WARNING 2024-02-28 12:19:08,570 log 17952 12324 Unauthorized: /auth/sign-in/
+WARNING 2024-02-28 12:19:08,571 basehttp 17952 12324 "POST /auth/sign-in/ HTTP/1.1" 401 63
+INFO 2024-02-28 12:19:19,667 basehttp 17952 12324 "POST /auth/sign-in/ HTTP/1.1" 200 483
+INFO 2024-02-28 12:20:38,720 views 17952 12324 Password changed successfully.
+INFO 2024-02-28 12:20:38,721 basehttp 17952 12324 "PUT /auth/change_password/ HTTP/1.1" 200 32
+WARNING 2024-02-28 12:21:23,051 log 17952 12324 Unauthorized: /auth/sign-up/
+WARNING 2024-02-28 12:21:23,052 basehttp 17952 12324 "POST /auth/sign-up/ HTTP/1.1" 401 183
+INFO 2024-02-28 12:21:38,138 basehttp 17952 12324 "POST /auth/sign-in/ HTTP/1.1" 200 483
+INFO 2024-02-28 12:22:00,147 views 17952 12324 User created successfully.
+INFO 2024-02-28 12:22:00,148 basehttp 17952 12324 "POST /auth/sign-up/ HTTP/1.1" 201 245
+INFO 2024-02-28 12:23:45,382 basehttp 17952 12324 "GET /recalculation/ HTTP/1.1" 200 32
+INFO 2024-02-28 12:23:50,125 basehttp 17952 12324 "GET /recalculation/ HTTP/1.1" 200 32
+INFO 2024-02-28 12:25:29,374 basehttp 17952 12324 "GET /recalculation/ HTTP/1.1" 200 32
+INFO 2024-02-28 12:25:45,288 basehttp 17952 12324 "GET /recalculation/ HTTP/1.1" 200 32
+INFO 2024-02-28 12:28:43,631 basehttp 17952 12324 "GET /recalculation/ HTTP/1.1" 200 32
+INFO 2024-02-28 13:48:02,044 basehttp 17952 12980 "GET /recalculation/ HTTP/1.1" 200 32
+INFO 2024-02-28 14:15:36,623 basehttp 17952 12064 "GET /recalculation/ HTTP/1.1" 200 32
