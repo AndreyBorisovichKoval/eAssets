@@ -3114,3 +3114,127 @@ INFO 2024-02-28 13:48:02,044 basehttp 17952 12980 "GET /recalculation/ HTTP/1.1"
 INFO 2024-02-28 14:15:36,623 basehttp 17952 12064 "GET /recalculation/ HTTP/1.1" 200 32
 INFO 2024-02-28 16:54:33,944 autoreload 18300 14052 Watching for file changes with StatReloader
 INFO 2024-02-28 16:55:28,265 basehttp 18300 15920 "GET /recalculation/ HTTP/1.1" 200 32
+INFO 2024-02-28 19:48:31,361 autoreload 1528 1872 Watching for file changes with StatReloader
+ERROR 2024-02-28 19:55:05,985 log 1528 4704 Internal Server Error: /recalculation/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\views.py", line 7, in recalculate_assets_view
+    recalculator.recalculate_assets()
+  File "D:\0_Pycharm\eAssets\assets\tasks.py", line 12, in recalculate_assets
+    send_email()
+  File "D:\0_Pycharm\eAssets\email_sender.py", line 26, in send_email
+    smtp_server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Python312\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Python312\Lib\smtplib.py", line 343, in connect
+    (code, msg) = self.getreply()
+                  ^^^^^^^^^^^^^^^
+  File "C:\Python\Python312\Lib\smtplib.py", line 405, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+smtplib.SMTPServerDisconnected: Connection unexpectedly closed
+ERROR 2024-02-28 19:55:05,987 basehttp 1528 4704 "GET /recalculation/ HTTP/1.1" 500 84133
+ERROR 2024-02-28 20:07:37,692 log 1528 4704 Internal Server Error: /recalculation/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\views.py", line 7, in recalculate_assets_view
+    recalculator.recalculate_assets()
+  File "D:\0_Pycharm\eAssets\assets\tasks.py", line 12, in recalculate_assets
+    send_email()
+  File "D:\0_Pycharm\eAssets\email_sender.py", line 26, in send_email
+    smtp_server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Python312\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Python312\Lib\smtplib.py", line 343, in connect
+    (code, msg) = self.getreply()
+                  ^^^^^^^^^^^^^^^
+  File "C:\Python\Python312\Lib\smtplib.py", line 405, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+smtplib.SMTPServerDisconnected: Connection unexpectedly closed
+ERROR 2024-02-28 20:07:37,696 basehttp 1528 4704 "GET /recalculation/ HTTP/1.1" 500 84133
+INFO 2024-02-28 20:28:19,738 autoreload 1528 1872 D:\0_Pycharm\eAssets\email_sender.py changed, reloading.
+INFO 2024-02-28 20:28:23,623 autoreload 456 4376 Watching for file changes with StatReloader
+ERROR 2024-02-28 20:28:32,261 log 456 10964 Internal Server Error: /recalculation/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\views.py", line 7, in recalculate_assets_view
+    recalculator.recalculate_assets()
+  File "D:\0_Pycharm\eAssets\assets\tasks.py", line 12, in recalculate_assets
+    send_email()
+  File "D:\0_Pycharm\eAssets\email_sender.py", line 29, in send_email
+    smtp_server.starttls()
+  File "C:\Python\Python312\Lib\smtplib.py", line 771, in starttls
+    raise SMTPNotSupportedError(
+smtplib.SMTPNotSupportedError: STARTTLS extension not supported by server.
+ERROR 2024-02-28 20:28:32,263 basehttp 456 10964 "GET /recalculation/ HTTP/1.1" 500 75431
+INFO 2024-02-28 20:31:37,070 autoreload 456 4376 D:\0_Pycharm\eAssets\email_sender.py changed, reloading.
+INFO 2024-02-28 20:31:37,740 autoreload 2988 7704 Watching for file changes with StatReloader
+INFO 2024-02-28 20:31:50,181 autoreload 2988 7704 D:\0_Pycharm\eAssets\email_sender.py changed, reloading.
+INFO 2024-02-28 20:31:50,961 autoreload 11212 7484 Watching for file changes with StatReloader
+INFO 2024-02-28 20:32:24,736 autoreload 11212 7484 D:\0_Pycharm\eAssets\email_sender.py changed, reloading.
+INFO 2024-02-28 20:32:25,334 autoreload 520 2552 Watching for file changes with StatReloader
+ERROR 2024-02-28 20:37:31,428 log 520 5624 Internal Server Error: /recalculation/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\views.py", line 7, in recalculate_assets_view
+    recalculator.recalculate_assets()
+  File "D:\0_Pycharm\eAssets\assets\tasks.py", line 12, in recalculate_assets
+    send_email()
+  File "D:\0_Pycharm\eAssets\email_sender.py", line 29, in send_email
+    smtp_server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Python312\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Python312\Lib\smtplib.py", line 343, in connect
+    (code, msg) = self.getreply()
+                  ^^^^^^^^^^^^^^^
+  File "C:\Python\Python312\Lib\smtplib.py", line 405, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+smtplib.SMTPServerDisconnected: Connection unexpectedly closed
+ERROR 2024-02-28 20:37:31,431 basehttp 520 5624 "GET /recalculation/ HTTP/1.1" 500 84139
+INFO 2024-02-28 20:41:44,764 autoreload 520 2552 D:\0_Pycharm\eAssets\email_sender.py changed, reloading.
+INFO 2024-02-28 20:41:45,648 autoreload 10644 11972 Watching for file changes with StatReloader
+INFO 2024-02-28 20:42:22,058 autoreload 10644 11972 D:\0_Pycharm\eAssets\email_sender.py changed, reloading.
+INFO 2024-02-28 20:42:22,612 autoreload 8008 14360 Watching for file changes with StatReloader
+INFO 2024-02-28 21:09:56,759 autoreload 8008 14360 D:\0_Pycharm\eAssets\email_sender.py changed, reloading.
+INFO 2024-02-28 21:10:00,000 autoreload 4704 14428 Watching for file changes with StatReloader
+INFO 2024-02-28 21:11:25,242 autoreload 4704 14428 D:\0_Pycharm\eAssets\email_sender.py changed, reloading.
+INFO 2024-02-28 21:11:25,841 autoreload 2564 2692 Watching for file changes with StatReloader
+INFO 2024-02-28 21:11:35,553 basehttp 2564 12200 "GET /recalculation/ HTTP/1.1" 200 32
+INFO 2024-02-28 21:18:23,110 basehttp 2564 12200 "GET /recalculation/ HTTP/1.1" 200 32
+INFO 2024-02-28 21:22:05,020 autoreload 2564 2692 D:\0_Pycharm\eAssets\email_sender.py changed, reloading.
+INFO 2024-02-28 21:22:05,624 autoreload 11248 7752 Watching for file changes with StatReloader
+INFO 2024-02-28 21:22:22,917 basehttp 11248 15212 "GET /recalculation/ HTTP/1.1" 200 32
+INFO 2024-02-28 21:26:48,767 autoreload 11248 7752 D:\0_Pycharm\eAssets\email_sender.py changed, reloading.
+INFO 2024-02-28 21:26:49,355 autoreload 13884 12776 Watching for file changes with StatReloader
+INFO 2024-02-28 21:27:04,322 basehttp 13884 13964 "GET /recalculation/ HTTP/1.1" 200 32
+INFO 2024-02-28 21:28:50,992 autoreload 13884 12776 D:\0_Pycharm\eAssets\email_sender.py changed, reloading.
+INFO 2024-02-28 21:28:51,604 autoreload 9752 4856 Watching for file changes with StatReloader
+INFO 2024-02-28 21:33:03,952 basehttp 9752 7280 "GET /recalculation/ HTTP/1.1" 200 32
+INFO 2024-02-28 21:58:32,596 autoreload 9752 4856 D:\0_Pycharm\eAssets\assets\tasks.py changed, reloading.
+INFO 2024-02-28 21:58:35,671 autoreload 11864 10440 Watching for file changes with StatReloader
+INFO 2024-02-28 21:58:42,378 basehttp 11864 10408 "GET /recalculation/ HTTP/1.1" 200 32

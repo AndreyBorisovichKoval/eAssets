@@ -2,13 +2,15 @@ from datetime import datetime, timedelta, date
 from decimal import Decimal
 # from django.db.models import F
 from assets.models import Asset, TaskCheckPoint
-
+from email_sender import send_email
 
 class AssetRecalculator:
     def __init__(self):
         self.task_title = 'Assets Recalculation'
 
     def recalculate_assets(self):
+        # send_email()
+
         try:
             task_check_point = TaskCheckPoint.objects.get(title=self.task_title)
             last_processed_date = task_check_point.last_processed_date
