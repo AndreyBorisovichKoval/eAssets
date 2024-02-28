@@ -305,8 +305,18 @@ def export_to_xlsx_report(request):
     assets_df['last_recalculation_date'] = pd.to_datetime(assets_df['last_recalculation_date']).dt.date.astype(str)
     assets_df['written_off_at'] = pd.to_datetime(assets_df['written_off_at']).dt.date.astype(str)
 
-    combined_df = assets_df.merge(assignments_df, left_on='inventory_number', right_on='inventory_number', how='left')
-    combined_df = combined_df.merge(staff_df, left_on='staff_id', right_on='staff_id', how='left')
+    # combined_df = assets_df.merge(assignments_df, left_on='inventory_number', right_on='inventory_number', how='left')
+    # combined_df = combined_df.merge(staff_df, left_on='staff_id', right_on='staff_id', how='left')
+
+    combined_df = assets_df.merge(
+        right=assignments_df,
+        on='inventory_number',
+        how='left'
+    ).merge(
+        right=staff_df,
+        on='staff_id',
+        how='left'
+    )
 
     # Создание книги Excel с форматом .xlsx
     writer = pd.ExcelWriter('report_in_one_sheets.xlsx', engine='xlsxwriter')

@@ -3079,3 +3079,5 @@ INFO 2024-02-28 09:42:34,652 basehttp 12680 19104 "GET /assets/api/reports/expor
 INFO 2024-02-28 09:44:09,582 autoreload 12680 16908 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
 INFO 2024-02-28 09:44:10,904 autoreload 11892 12064 Watching for file changes with StatReloader
 INFO 2024-02-28 09:46:32,091 basehttp 11892 5460 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 200 23309
+INFO 2024-02-28 09:51:05,954 autoreload 7496 12820 Watching for file changes with StatReloader
+INFO 2024-02-28 09:51:16,126 basehttp 7496 8928 "GET /assets/api/reports/export_to_excel_report/ HTTP/1.1" 200 25605
