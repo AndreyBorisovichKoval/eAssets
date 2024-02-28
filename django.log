@@ -3112,3 +3112,5 @@ INFO 2024-02-28 12:25:45,288 basehttp 17952 12324 "GET /recalculation/ HTTP/1.1"
 INFO 2024-02-28 12:28:43,631 basehttp 17952 12324 "GET /recalculation/ HTTP/1.1" 200 32
 INFO 2024-02-28 13:48:02,044 basehttp 17952 12980 "GET /recalculation/ HTTP/1.1" 200 32
 INFO 2024-02-28 14:15:36,623 basehttp 17952 12064 "GET /recalculation/ HTTP/1.1" 200 32
+INFO 2024-02-28 16:54:33,944 autoreload 18300 14052 Watching for file changes with StatReloader
+INFO 2024-02-28 16:55:28,265 basehttp 18300 15920 "GET /recalculation/ HTTP/1.1" 200 32
