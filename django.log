@@ -3238,3 +3238,11 @@ INFO 2024-02-28 21:33:03,952 basehttp 9752 7280 "GET /recalculation/ HTTP/1.1" 2
 INFO 2024-02-28 21:58:32,596 autoreload 9752 4856 D:\0_Pycharm\eAssets\assets\tasks.py changed, reloading.
 INFO 2024-02-28 21:58:35,671 autoreload 11864 10440 Watching for file changes with StatReloader
 INFO 2024-02-28 21:58:42,378 basehttp 11864 10408 "GET /recalculation/ HTTP/1.1" 200 32
+INFO 2024-02-29 08:18:05,246 autoreload 7352 10016 Watching for file changes with StatReloader
+INFO 2024-02-29 08:18:22,136 autoreload 7352 10016 D:\0_Pycharm\eAssets\assets\tasks.py changed, reloading.
+INFO 2024-02-29 08:18:26,284 autoreload 8048 9844 Watching for file changes with StatReloader
+INFO 2024-02-29 08:25:21,181 basehttp 8048 11864 "GET /recalculation/ HTTP/1.1" 200 32
+INFO 2024-02-29 08:35:48,742 autoreload 8048 9844 D:\0_Pycharm\eAssets\email_sender.py changed, reloading.
+INFO 2024-02-29 08:35:52,339 autoreload 10752 10960 Watching for file changes with StatReloader
+INFO 2024-02-29 08:36:14,216 autoreload 10752 10960 D:\0_Pycharm\eAssets\email_sender.py changed, reloading.
+INFO 2024-02-29 08:36:15,193 autoreload 8924 3700 Watching for file changes with StatReloader

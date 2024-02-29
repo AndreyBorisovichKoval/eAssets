@@ -2,15 +2,16 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
+
 def send_email():
     # Настройки SMTP сервера Gmail
-    SMTP_SERVER = 'smtp.gmail.com'
-    SMTP_PORT = 587
-    SMTP_USERNAME = 'notification.sender.57@gmail.com'
-    SMTP_PASSWORD = '%#5nV)/(Mxs@9W@'
+    SMTP_SERVER = 'smtp.yandex.ru'
+    SMTP_PORT = 465
+    SMTP_USERNAME = 'andreyborisovichkoval@yandex.ru'
+    SMTP_PASSWORD = ''
 
     # Содержимое письма
-    sender = 'notification.sender.57@gmail.com'
+    sender = 'andreyborisovichkoval@yandex.ru'
     recipient = 'andrey.koval@tcell.tj'
     subject = 'Test Message'
     body = 'Привет! Это тестовое письмо!!!'
@@ -23,21 +24,62 @@ def send_email():
 
     try:
         # Установка соединения с SMTP сервером Gmail
+        print(0)
         smtp_server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
+        print(1)
         smtp_server.starttls()
-
+        print(2)
         # Авторизация на SMTP сервере
         smtp_server.login(SMTP_USERNAME, SMTP_PASSWORD)
-
+        print(3)
         # Отправка письма
         smtp_server.sendmail(sender, recipient, message.as_string())
-
+        print(4)
         # Закрытие соединения с SMTP сервером
         smtp_server.quit()
 
         print('Письмо успешно отправлено!')
     except Exception as e:
         print('Ошибка при отправке письма:', str(e))
+
+
+
+# def send_email():
+#     # Настройки SMTP сервера Gmail
+#     SMTP_SERVER = 'smtp.gmail.com'
+#     SMTP_PORT = 587
+#     SMTP_USERNAME = 'notification.sender.57@gmail.com'
+#     SMTP_PASSWORD = ''
+#
+#     # Содержимое письма
+#     sender = 'notification.sender.57@gmail.com'
+#     recipient = 'andrey.koval@tcell.tj'
+#     subject = 'Test Message'
+#     body = 'Привет! Это тестовое письмо!!!'
+#
+#     # Создание объекта MIMEText для форматирования письма
+#     message = MIMEText(body)
+#     message['Subject'] = subject
+#     message['From'] = sender
+#     message['To'] = recipient
+#
+#     try:
+#         # Установка соединения с SMTP сервером Gmail
+#         smtp_server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
+#         smtp_server.starttls()
+#
+#         # Авторизация на SMTP сервере
+#         smtp_server.login(SMTP_USERNAME, SMTP_PASSWORD)
+#
+#         # Отправка письма
+#         smtp_server.sendmail(sender, recipient, message.as_string())
+#
+#         # Закрытие соединения с SMTP сервером
+#         smtp_server.quit()
+#
+#         print('Письмо успешно отправлено!')
+#     except Exception as e:
+#         print('Ошибка при отправке письма:', str(e))
 
 # Вызов функции для отправки письма
 # send_email()
@@ -51,8 +93,8 @@ def send_email():
 #     SMTP_PORT = 465
 #     # SMTP_PORT = 587
 #     SMTP_USERNAME = 'notification.sender.0@mail.ru'
-#     # SMTP_PASSWORD = 'kBRbuXFGAL5Jd1Xdn4zy'
-#     SMTP_PASSWORD = '%#5nV)/(Mxs@9W@'
+#     # SMTP_PASSWORD = ''
+#     SMTP_PASSWORD = ''
 #
 #     # Отправитель и получатель
 #     SENDER_EMAIL = 'notification.sender.0@mail.ru'
@@ -121,7 +163,7 @@ def send_email():
 # SMTP_SERVER = 'smtp.mail.ru'
 # SMTP_PORT = 465
 # SMTP_USERNAME = 'notification.sender.0@mail.ru'
-# SMTP_PASSWORD = 'kBRbuXFGAL5Jd1Xdn4zy'
+# SMTP_PASSWORD = ''
 #
 # # Отправитель и получатель
 # SENDER_EMAIL = 'notification.sender.0@mail.ru'
