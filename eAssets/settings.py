@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from datetime import timedelta
 from pathlib import Path
 import logging
+from security import password_db_postgres
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -93,7 +94,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'assets',
         'USER': 'postgres',
-        'PASSWORD': 'Ak57320174Ak',
+        'PASSWORD': password_db_postgres,
         'HOST': 'localhost',
         'PORT': '5432',
     }
