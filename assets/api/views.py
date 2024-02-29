@@ -72,6 +72,25 @@ def create_user(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+@api_view(["GET"])
+@authentication_classes([JWTAuthentication])
+@permission_classes([IsAuthenticated])
+# @swagger_auto_schema(
+#     operation_description="Просмотр всех пользователей",
+#     responses={200: 'OK', 403: 'Нет доступа'}
+# )
+def view_users(request):
+    if not request.user.is_superuser:
+        logger.warning("Only administrators can view users.")
+        raise PermissionDenied("Only administrators can view users.")
+
+    # Логика для просмотра пользователей
+    users = User.objects.all()
+    serializer = UserSerializer(users, many=True)
+
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+
 @api_view(["PUT"])
 @authentication_classes([JWTAuthentication])
 @permission_classes([IsAuthenticated])

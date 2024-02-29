@@ -3257,3 +3257,112 @@ WARNING 2024-02-29 12:53:40,750 log 13060 5412 Unauthorized: /assets/api/departm
 WARNING 2024-02-29 12:53:40,750 basehttp 13060 5412 "GET /assets/api/department/2/ HTTP/1.1" 401 183
 INFO 2024-02-29 12:53:46,438 views 13060 5412 Department 2 Technical department viewed by user 11 user_6.
 INFO 2024-02-29 12:53:46,439 basehttp 13060 5412 "GET /assets/api/department/2/ HTTP/1.1" 200 155
+INFO 2024-02-29 14:23:10,511 autoreload 10320 13808 Watching for file changes with StatReloader
+INFO 2024-02-29 14:34:57,247 autoreload 10320 13808 D:\0_Pycharm\eAssets\eAssets\settings.py changed, reloading.
+INFO 2024-02-29 14:34:58,191 autoreload 6636 6820 Watching for file changes with StatReloader
+WARNING 2024-02-29 14:37:39,598 log 6636 4956 Unauthorized: /assets/api/assetassignment/211/
+WARNING 2024-02-29 14:37:39,618 basehttp 6636 4956 "PATCH /assets/api/assetassignment/211/ HTTP/1.1" 401 183
+INFO 2024-02-29 14:37:48,772 basehttp 6636 4956 "POST /auth/sign-in/ HTTP/1.1" 200 486
+INFO 2024-02-29 14:38:04,241 views 6636 4956 
+(__-=*=-__ User user_6 updated return date for asset assignment: id = 211, asset = Asset object (213), staff = Тестов Тест Тестович. __-=*=-__)
+INFO 2024-02-29 14:38:04,250 views 6636 4956 
+(__-=*=-__ User 11 user_6 created asset assignment: 224. The fixed asset Asset object (213) is tied to the employee Тестов Тест Тестович. __-=*=-__)
+INFO 2024-02-29 14:38:04,280 basehttp 6636 4956 "PATCH /assets/api/assetassignment/211/ HTTP/1.1" 201 136
+INFO 2024-02-29 14:38:08,311 views 6636 4956 
+(__-=*=-__ User user_6 updated return date for asset assignment: id = 211, asset = Asset object (213), staff = Тестов Тест Тестович. __-=*=-__)
+INFO 2024-02-29 14:38:08,315 views 6636 4956 
+(__-=*=-__ User 11 user_6 created asset assignment: 225. The fixed asset Asset object (213) is tied to the employee Тестов Тест Тестович. __-=*=-__)
+INFO 2024-02-29 14:38:08,316 basehttp 6636 4956 "PATCH /assets/api/assetassignment/211/ HTTP/1.1" 201 136
+INFO 2024-02-29 14:41:08,028 autoreload 6636 6820 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-29 14:41:12,151 autoreload 10692 9384 Watching for file changes with StatReloader
+INFO 2024-02-29 14:42:28,392 autoreload 10692 9384 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-29 14:42:29,059 autoreload 3768 12924 Watching for file changes with StatReloader
+INFO 2024-02-29 14:45:40,458 autoreload 3768 12924 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-02-29 14:45:41,166 autoreload 11644 10892 Watching for file changes with StatReloader
+INFO 2024-02-29 14:47:11,371 autoreload 11644 10892 D:\0_Pycharm\eAssets\eAssets\urls.py changed, reloading.
+INFO 2024-02-29 14:47:12,096 autoreload 12488 12248 Watching for file changes with StatReloader
+WARNING 2024-02-29 14:48:20,251 log 12488 12924 Unauthorized: /auth/view_users/
+WARNING 2024-02-29 14:48:20,252 basehttp 12488 12924 "POST /auth/view_users/ HTTP/1.1" 401 183
+INFO 2024-02-29 14:48:32,902 basehttp 12488 12924 "POST /auth/sign-in/ HTTP/1.1" 200 486
+WARNING 2024-02-29 14:48:43,966 log 12488 12924 Method Not Allowed: /auth/view_users/
+WARNING 2024-02-29 14:48:43,966 basehttp 12488 12924 "POST /auth/view_users/ HTTP/1.1" 405 41
+WARNING 2024-02-29 14:49:07,984 views 12488 12924 Only administrators can view users.
+WARNING 2024-02-29 14:49:07,984 log 12488 12924 Forbidden: /auth/view_users/
+WARNING 2024-02-29 14:49:07,985 basehttp 12488 12924 "GET /auth/view_users/ HTTP/1.1" 403 48
+INFO 2024-02-29 14:49:22,940 basehttp 12488 12924 "POST /auth/sign-in/ HTTP/1.1" 200 483
+INFO 2024-02-29 14:49:33,532 basehttp 12488 12924 "GET /auth/view_users/ HTTP/1.1" 200 1746
+INFO 2024-02-29 14:51:00,857 basehttp 12488 15060 "GET /admin/ HTTP/1.1" 302 0
+INFO 2024-02-29 14:51:01,396 basehttp 12488 15060 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4158
+INFO 2024-02-29 14:51:01,506 basehttp 12488 6588 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2682
+INFO 2024-02-29 14:51:01,517 basehttp 12488 10160 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2024-02-29 14:51:01,518 basehttp 12488 6588 "GET /static/admin/css/login.css HTTP/1.1" 200 958
+INFO 2024-02-29 14:51:01,533 basehttp 12488 15060 "GET /static/admin/css/base.css HTTP/1.1" 200 21544
+INFO 2024-02-29 14:51:01,557 basehttp 12488 10160 "GET /static/admin/css/responsive.css HTTP/1.1" 200 17905
+INFO 2024-02-29 14:51:01,557 basehttp 12488 15060 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2024-02-29 14:51:01,574 basehttp 12488 6588 "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+WARNING 2024-02-29 14:51:01,766 log 12488 6588 Not Found: /favicon.ico
+WARNING 2024-02-29 14:51:01,767 basehttp 12488 6588 "GET /favicon.ico HTTP/1.1" 404 3504
+INFO 2024-02-29 14:51:14,068 basehttp 12488 1016 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2024-02-29 14:51:14,191 basehttp 12488 1016 "GET /admin/ HTTP/1.1" 200 8793
+INFO 2024-02-29 14:51:14,215 basehttp 12488 1016 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2024-02-29 14:51:14,235 basehttp 12488 1016 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2024-02-29 14:51:14,236 basehttp 12488 3844 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2024-02-29 14:51:20,211 basehttp 12488 8980 "GET /admin/auth/user/ HTTP/1.1" 200 15869
+INFO 2024-02-29 14:51:20,245 basehttp 12488 8980 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6811
+INFO 2024-02-29 14:51:20,250 basehttp 12488 8980 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2024-02-29 14:51:20,274 basehttp 12488 8980 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2024-02-29 14:51:20,292 basehttp 12488 8980 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9042
+INFO 2024-02-29 14:51:20,304 basehttp 12488 5272 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-02-29 14:51:20,356 basehttp 12488 15156 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2024-02-29 14:51:20,361 basehttp 12488 5272 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2024-02-29 14:51:20,366 basehttp 12488 8980 "GET /static/admin/js/actions.js HTTP/1.1" 200 8067
+INFO 2024-02-29 14:51:20,371 basehttp 12488 5272 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2024-02-29 14:51:20,391 basehttp 12488 15156 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2024-02-29 14:51:20,391 basehttp 12488 5272 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2024-02-29 14:51:20,418 basehttp 12488 15156 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2024-02-29 14:51:20,435 basehttp 12488 15156 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2024-02-29 14:51:20,445 basehttp 12488 8980 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2024-02-29 14:51:20,493 basehttp 12488 8980 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2024-02-29 14:51:20,494 basehttp 12488 5272 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2024-02-29 14:51:20,506 basehttp 12488 15156 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2024-02-29 14:51:45,993 basehttp 12488 13616 "GET /admin/auth/user/11/change/ HTTP/1.1" 200 25429
+INFO 2024-02-29 14:51:46,031 basehttp 12488 13616 "GET /static/admin/css/forms.css HTTP/1.1" 200 9090
+INFO 2024-02-29 14:51:46,037 basehttp 12488 12408 "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2024-02-29 14:51:46,059 basehttp 12488 13616 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2024-02-29 14:51:46,069 basehttp 12488 11332 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-02-29 14:51:46,072 basehttp 12488 13616 "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2024-02-29 14:51:46,074 basehttp 12488 12408 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11800
+INFO 2024-02-29 14:51:46,078 basehttp 12488 13616 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2024-02-29 14:51:46,079 basehttp 12488 11332 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15492
+INFO 2024-02-29 14:51:46,110 basehttp 12488 11332 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2024-02-29 14:51:46,157 basehttp 12488 13616 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2024-02-29 14:51:46,157 basehttp 12488 11332 "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+INFO 2024-02-29 14:51:46,163 basehttp 12488 12408 "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+INFO 2024-02-29 14:51:46,164 basehttp 12488 11332 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2024-02-29 14:51:46,165 basehttp 12488 13616 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2024-02-29 14:52:04,249 basehttp 12488 14564 "GET /admin/auth/user/11/delete/ HTTP/1.1" 200 9932
+INFO 2024-02-29 14:52:04,269 basehttp 12488 14564 "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+INFO 2024-02-29 14:52:08,078 basehttp 12488 8264 "POST /admin/auth/user/11/delete/ HTTP/1.1" 302 0
+INFO 2024-02-29 14:52:08,246 basehttp 12488 8264 "GET /admin/auth/user/ HTTP/1.1" 200 15557
+INFO 2024-02-29 14:52:08,308 basehttp 12488 8264 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-02-29 14:52:11,402 basehttp 12488 8264 "GET /admin/auth/user/ HTTP/1.1" 200 15404
+INFO 2024-02-29 14:52:11,573 basehttp 12488 8264 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-02-29 14:52:22,666 basehttp 12488 2672 "GET /admin/auth/user/10/change/ HTTP/1.1" 200 25429
+INFO 2024-02-29 14:52:22,734 basehttp 12488 2672 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-02-29 14:52:43,237 basehttp 12488 15044 "POST /admin/auth/user/10/change/ HTTP/1.1" 302 0
+INFO 2024-02-29 14:52:43,407 basehttp 12488 15044 "GET /admin/auth/user/ HTTP/1.1" 200 15599
+INFO 2024-02-29 14:52:43,467 basehttp 12488 15044 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-02-29 14:54:08,222 basehttp 12488 12924 "GET /auth/view_users/ HTTP/1.1" 200 1490
+WARNING 2024-02-29 14:54:32,604 log 12488 12924 Unauthorized: /auth/sign-in/
+WARNING 2024-02-29 14:54:32,604 basehttp 12488 12924 "POST /auth/sign-in/ HTTP/1.1" 401 63
+INFO 2024-02-29 14:54:50,181 basehttp 12488 12924 "POST /auth/sign-in/ HTTP/1.1" 200 486
+WARNING 2024-02-29 14:55:18,756 log 12488 12924 Unauthorized: /auth/change_password/
+WARNING 2024-02-29 14:55:18,757 basehttp 12488 12924 "PUT /auth/change_password/ HTTP/1.1" 401 183
+WARNING 2024-02-29 14:55:27,340 views 12488 12924 Current password is incorrect.
+WARNING 2024-02-29 14:55:27,340 log 12488 12924 Forbidden: /auth/change_password/
+WARNING 2024-02-29 14:55:27,340 basehttp 12488 12924 "PUT /auth/change_password/ HTTP/1.1" 403 43
+INFO 2024-02-29 14:56:01,952 views 12488 12924 Password changed successfully.
+INFO 2024-02-29 14:56:01,953 basehttp 12488 12924 "PUT /auth/change_password/ HTTP/1.1" 200 32
+INFO 2024-02-29 14:56:11,375 basehttp 12488 12924 "GET /auth/view_users/ HTTP/1.1" 200 1490
+INFO 2024-02-29 14:57:58,951 basehttp 12488 12508 "GET /admin/auth/user/ HTTP/1.1" 200 15404
+INFO 2024-02-29 14:57:59,025 basehttp 12488 12508 "GET /admin/jsi18n/ HTTP/1.1" 200 3342

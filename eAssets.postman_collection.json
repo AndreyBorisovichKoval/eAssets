@@ -10,6 +10,49 @@
 			"name": "Users",
 			"item": [
 				{
+					"name": "View User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5Mjg2NTEyLCJpYXQiOjE3MDkyMDAxMTIsImp0aSI6ImQzMjZkYzllYzg4NzRlOWQ5Mzg5MjU0ZmI3MGQwMDJmIiwidXNlcl9pZCI6MTF9.zoT2igtueHgOT6e2ENXbDEBsqr0Se2hFvCPS2G6TR1k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"user_7\",\r\n    \"email\": \"user_7.eassets@gmail.com\",\r\n    \"password\": \"User_123\",\r\n    \"is_superuser\": false\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/view_users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"view_users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Create User",
 					"request": {
 						"auth": {
@@ -17,7 +60,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5MDQ4MTg3LCJpYXQiOjE3MDg5NjE3ODcsImp0aSI6ImE2NzI4ZTYwM2FhNzQ3Y2VhZTAwYzc4NzIxZjE0YTE5IiwidXNlcl9pZCI6Nn0.OAKf0JSvOuTVSBCg1U3fwxo72MBf0Iq9a3f87cxKi2c",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5MTkxMjk4LCJpYXQiOjE3MDkxMDQ4OTgsImp0aSI6ImE1ZWU2YzQzMDNlZjQzNDViMTFmYjg2ZTljNjU4NTZiIiwidXNlcl9pZCI6MX0.YWQ0LMfL4e-PDWa6HZv1klukDlJsuSOUD6iYh51M4TQ",
 									"type": "string"
 								}
 							]
@@ -26,7 +69,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"user_5\",\r\n    \"email\": \"user_5.eassets@gmail.com\",\r\n    \"password\": \"User_123\",\r\n    \"is_superuser\": false\r\n}\r\n",
+							"raw": "{\r\n    \"username\": \"user_1\",\r\n    \"email\": \"user_1.eassets@gmail.com\",\r\n    \"password\": \"User_123\",\r\n    \"is_superuser\": false\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -57,7 +100,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5MDQ4MzMzLCJpYXQiOjE3MDg5NjE5MzMsImp0aSI6IjYwMzIxYjRlN2MwZjRiOGRhMzU0NTUwYWZlMGE4ZTQ4IiwidXNlcl9pZCI6MTB9.v4Q5O7bFCljuyQOMWYR2dBAZ04Cgf9sYd1TGFExFHNw",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5MTkxMTU5LCJpYXQiOjE3MDkxMDQ3NTksImp0aSI6IjA5OWI5NzI4ZGEzMzRiYzM4ODQyYTI3OTE3Mzg1ZjIxIiwidXNlcl9pZCI6MX0.nC1IUrvayzm0jiQ8Se-EnxpiNDaIXz19po_Ef5BNAVM",
 									"type": "string"
 								}
 							]
@@ -66,7 +109,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"current_password\": \"User_123\",\r\n  \"new_password\": \"User_123456\"\r\n}",
+							"raw": "{\r\n  \"current_password\": \"test_123\",\r\n  \"new_password\": \"Admin_123456789000\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
