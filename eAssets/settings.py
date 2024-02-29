@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from datetime import timedelta
 from pathlib import Path
 import logging
-from security import password_db_postgres
+from eAssets.security import password_db_postgres
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

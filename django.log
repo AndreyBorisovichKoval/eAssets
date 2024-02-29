@@ -3246,3 +3246,14 @@ INFO 2024-02-29 08:35:48,742 autoreload 8048 9844 D:\0_Pycharm\eAssets\email_sen
 INFO 2024-02-29 08:35:52,339 autoreload 10752 10960 Watching for file changes with StatReloader
 INFO 2024-02-29 08:36:14,216 autoreload 10752 10960 D:\0_Pycharm\eAssets\email_sender.py changed, reloading.
 INFO 2024-02-29 08:36:15,193 autoreload 8924 3700 Watching for file changes with StatReloader
+INFO 2024-02-29 12:52:39,613 autoreload 13060 4992 Watching for file changes with StatReloader
+INFO 2024-02-29 12:52:48,586 basehttp 13060 5412 "GET /recalculation/ HTTP/1.1" 200 32
+WARNING 2024-02-29 12:53:04,938 log 13060 5412 Unauthorized: /assets/api/department/
+WARNING 2024-02-29 12:53:04,940 basehttp 13060 5412 "GET /assets/api/department/ HTTP/1.1" 401 183
+INFO 2024-02-29 12:53:16,064 basehttp 13060 5412 "POST /auth/sign-in/ HTTP/1.1" 200 486
+INFO 2024-02-29 12:53:32,108 views 13060 5412 All Departments viewed by user 11 user_6.
+INFO 2024-02-29 12:53:32,232 basehttp 13060 5412 "GET /assets/api/department/ HTTP/1.1" 200 1067
+WARNING 2024-02-29 12:53:40,750 log 13060 5412 Unauthorized: /assets/api/department/2/
+WARNING 2024-02-29 12:53:40,750 basehttp 13060 5412 "GET /assets/api/department/2/ HTTP/1.1" 401 183
+INFO 2024-02-29 12:53:46,438 views 13060 5412 Department 2 Technical department viewed by user 11 user_6.
+INFO 2024-02-29 12:53:46,439 basehttp 13060 5412 "GET /assets/api/department/2/ HTTP/1.1" 200 155
