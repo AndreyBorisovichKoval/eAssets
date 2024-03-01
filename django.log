@@ -3366,3 +3366,116 @@ INFO 2024-02-29 14:56:01,953 basehttp 12488 12924 "PUT /auth/change_password/ HT
 INFO 2024-02-29 14:56:11,375 basehttp 12488 12924 "GET /auth/view_users/ HTTP/1.1" 200 1490
 INFO 2024-02-29 14:57:58,951 basehttp 12488 12508 "GET /admin/auth/user/ HTTP/1.1" 200 15404
 INFO 2024-02-29 14:57:59,025 basehttp 12488 12508 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-02-29 19:13:57,585 autoreload 7156 6672 Watching for file changes with StatReloader
+INFO 2024-02-29 19:14:11,208 basehttp 7156 7588 "GET / HTTP/1.1" 200 27
+WARNING 2024-02-29 19:14:11,537 log 7156 7588 Not Found: /favicon.ico
+WARNING 2024-02-29 19:14:11,538 basehttp 7156 7588 "GET /favicon.ico HTTP/1.1" 404 3504
+INFO 2024-02-29 19:14:27,076 basehttp 7156 11524 "GET /admin/ HTTP/1.1" 302 0
+INFO 2024-02-29 19:14:27,304 basehttp 7156 11524 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4158
+INFO 2024-02-29 19:14:27,383 basehttp 7156 1216 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2682
+INFO 2024-02-29 19:14:27,397 basehttp 7156 11524 "GET /static/admin/css/base.css HTTP/1.1" 200 21544
+INFO 2024-02-29 19:14:27,402 basehttp 7156 1216 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2024-02-29 19:14:27,405 basehttp 7156 4800 "GET /static/admin/css/responsive.css HTTP/1.1" 200 17905
+INFO 2024-02-29 19:14:27,407 basehttp 7156 8116 "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+INFO 2024-02-29 19:14:27,419 basehttp 7156 2192 "GET /static/admin/css/login.css HTTP/1.1" 200 958
+INFO 2024-02-29 19:14:27,419 basehttp 7156 15244 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2024-02-29 19:14:40,946 basehttp 7156 5200 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4319
+INFO 2024-02-29 19:14:53,286 basehttp 7156 7964 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2024-02-29 19:14:53,457 basehttp 7156 7964 "GET /admin/ HTTP/1.1" 200 9472
+INFO 2024-02-29 19:14:53,478 basehttp 7156 7964 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2024-02-29 19:14:53,493 basehttp 7156 7200 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2024-02-29 19:14:53,493 basehttp 7156 4056 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2024-02-29 19:14:53,493 basehttp 7156 7964 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2024-02-29 19:15:02,325 basehttp 7156 12612 "GET /admin/auth/user/ HTTP/1.1" 200 15404
+INFO 2024-02-29 19:15:02,360 basehttp 7156 12612 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6811
+INFO 2024-02-29 19:15:02,361 basehttp 7156 4616 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2024-02-29 19:15:02,365 basehttp 7156 3848 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2024-02-29 19:15:02,367 basehttp 7156 10028 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9042
+INFO 2024-02-29 19:15:02,382 basehttp 7156 3848 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2024-02-29 19:15:02,387 basehttp 7156 12612 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2024-02-29 19:15:02,401 basehttp 7156 3848 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2024-02-29 19:15:02,401 basehttp 7156 12612 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2024-02-29 19:15:02,402 basehttp 7156 4616 "GET /static/admin/js/actions.js HTTP/1.1" 200 8067
+INFO 2024-02-29 19:15:02,411 basehttp 7156 4616 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2024-02-29 19:15:02,428 basehttp 7156 10088 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-02-29 19:15:02,457 basehttp 7156 444 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2024-02-29 19:15:02,458 basehttp 7156 10028 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2024-02-29 19:15:02,494 basehttp 7156 10028 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2024-02-29 19:15:02,570 basehttp 7156 10028 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2024-02-29 19:15:02,574 basehttp 7156 10088 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2024-02-29 19:15:02,580 basehttp 7156 444 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2024-02-29 19:23:36,028 basehttp 7156 13196 "GET /recalculation/ HTTP/1.1" 200 32
+INFO 2024-02-29 19:36:34,371 basehttp 7156 11404 "GET /admin/auth/user/ HTTP/1.1" 200 15404
+INFO 2024-02-29 19:36:34,549 basehttp 7156 11404 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-02-29 19:36:39,709 basehttp 7156 11404 "GET / HTTP/1.1" 200 27
+INFO 2024-02-29 19:36:43,525 basehttp 7156 11404 "GET /admin/auth/user/ HTTP/1.1" 200 15404
+INFO 2024-02-29 19:36:48,989 basehttp 7156 11404 "GET /admin/password_change/ HTTP/1.1" 200 9105
+INFO 2024-02-29 19:36:49,042 basehttp 7156 11404 "GET /static/admin/css/forms.css HTTP/1.1" 200 9090
+INFO 2024-02-29 19:36:49,089 basehttp 7156 11404 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11800
+INFO 2024-02-29 19:37:05,876 basehttp 7156 11404 "GET /admin/auth/user/ HTTP/1.1" 200 15404
+INFO 2024-02-29 19:37:38,962 basehttp 7156 11404 "GET /admin/assets/ HTTP/1.1" 200 7648
+INFO 2024-02-29 19:37:41,350 basehttp 7156 11404 "GET /admin/auth/user/ HTTP/1.1" 200 15404
+INFO 2024-02-29 19:37:42,962 basehttp 7156 11404 "GET /admin/assets/assetassignment/ HTTP/1.1" 200 42551
+INFO 2024-02-29 19:37:43,038 basehttp 7156 11404 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-02-29 19:37:46,227 basehttp 7156 11404 "GET /admin/assets/assettype/ HTTP/1.1" 200 12406
+INFO 2024-02-29 19:37:46,301 basehttp 7156 11404 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-02-29 19:37:47,767 basehttp 7156 11404 "GET /admin/assets/ HTTP/1.1" 200 7648
+INFO 2024-02-29 19:37:50,015 basehttp 7156 11404 "GET /admin/assets/assetassignment/ HTTP/1.1" 200 42551
+INFO 2024-02-29 19:37:50,218 basehttp 7156 11404 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-02-29 19:37:52,692 basehttp 7156 11404 "GET /admin/assets/assettype/ HTTP/1.1" 200 12406
+INFO 2024-02-29 19:37:52,768 basehttp 7156 11404 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-02-29 19:38:09,999 basehttp 7156 11404 "GET /admin/auth/ HTTP/1.1" 200 5553
+INFO 2024-02-29 19:38:14,469 basehttp 7156 11404 "GET /admin/auth/user/ HTTP/1.1" 200 15404
+INFO 2024-02-29 19:38:14,546 basehttp 7156 11404 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-03-01 00:00:16,739 basehttp 7156 6836 "GET /recalculation/ HTTP/1.1" 200 32
+INFO 2024-03-01 07:10:32,274 autoreload 15712 15060 Watching for file changes with StatReloader
+WARNING 2024-03-01 07:10:49,422 log 15712 9300 Unauthorized: /auth/view_users/
+WARNING 2024-03-01 07:10:49,423 basehttp 15712 9300 "GET /auth/view_users/ HTTP/1.1" 401 51
+WARNING 2024-03-01 07:11:14,621 log 15712 9300 Unauthorized: /auth/view_users/
+WARNING 2024-03-01 07:11:14,622 basehttp 15712 9300 "GET /auth/view_users/ HTTP/1.1" 401 51
+WARNING 2024-03-01 07:11:36,203 log 15712 9300 Unauthorized: /auth/view_users/
+WARNING 2024-03-01 07:11:36,203 basehttp 15712 9300 "GET /auth/view_users/ HTTP/1.1" 401 58
+WARNING 2024-03-01 07:11:46,336 log 15712 9300 Unauthorized: /auth/view_users/
+WARNING 2024-03-01 07:11:46,337 basehttp 15712 9300 "GET /auth/view_users/ HTTP/1.1" 401 51
+WARNING 2024-03-01 07:12:29,106 log 15712 9300 Unauthorized: /auth/sign-in/
+WARNING 2024-03-01 07:12:29,107 basehttp 15712 9300 "POST /auth/sign-in/ HTTP/1.1" 401 63
+INFO 2024-03-01 07:13:12,680 basehttp 15712 9300 "POST /auth/sign-in/ HTTP/1.1" 200 486
+WARNING 2024-03-01 07:13:27,639 log 15712 9300 Unauthorized: /auth/view_users/
+WARNING 2024-03-01 07:13:27,640 basehttp 15712 9300 "GET /auth/view_users/ HTTP/1.1" 401 51
+INFO 2024-03-01 07:13:56,458 basehttp 15712 9300 "GET /auth/view_users/ HTTP/1.1" 200 1490
+INFO 2024-03-01 07:14:20,631 basehttp 15712 9300 "GET /auth/view_users/ HTTP/1.1" 200 1490
+INFO 2024-03-01 07:14:32,305 basehttp 15712 9300 "POST /auth/sign-in/ HTTP/1.1" 200 483
+WARNING 2024-03-01 07:14:50,267 views 15712 9300 Only administrators can view users.
+WARNING 2024-03-01 07:14:50,267 log 15712 9300 Forbidden: /auth/view_users/
+WARNING 2024-03-01 07:14:50,267 basehttp 15712 9300 "GET /auth/view_users/ HTTP/1.1" 403 48
+WARNING 2024-03-01 07:15:13,613 log 15712 9300 Unauthorized: /assets/api/department/
+WARNING 2024-03-01 07:15:13,614 basehttp 15712 9300 "GET /assets/api/department/ HTTP/1.1" 401 51
+WARNING 2024-03-01 07:15:22,462 log 15712 9300 Unauthorized: /assets/api/department/
+WARNING 2024-03-01 07:15:22,463 basehttp 15712 9300 "GET /assets/api/department/ HTTP/1.1" 401 51
+WARNING 2024-03-01 07:15:30,817 log 15712 9300 Unauthorized: /assets/api/department/2/
+WARNING 2024-03-01 07:15:30,817 basehttp 15712 9300 "GET /assets/api/department/2/ HTTP/1.1" 401 51
+WARNING 2024-03-01 07:16:01,210 log 15712 15492 Unauthorized: /assets/api/department/2/
+WARNING 2024-03-01 07:16:01,210 basehttp 15712 15492 "GET /assets/api/department/2/ HTTP/1.1" 401 51
+WARNING 2024-03-01 07:16:21,897 log 15712 15492 Unauthorized: /assets/api/division/
+WARNING 2024-03-01 07:16:21,898 basehttp 15712 15492 "GET /assets/api/division/ HTTP/1.1" 401 183
+WARNING 2024-03-01 07:16:27,680 log 15712 15492 Unauthorized: /assets/api/department/
+WARNING 2024-03-01 07:16:27,680 basehttp 15712 15492 "GET /assets/api/department/ HTTP/1.1" 401 51
+INFO 2024-03-01 07:17:24,575 autoreload 15712 15060 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-03-01 07:17:25,661 autoreload 10168 12416 Watching for file changes with StatReloader
+WARNING 2024-03-01 07:17:31,548 log 10168 15612 Unauthorized: /assets/api/department/
+WARNING 2024-03-01 07:17:31,550 basehttp 10168 15612 "GET /assets/api/department/ HTTP/1.1" 401 51
+WARNING 2024-03-01 07:17:33,045 log 10168 15612 Unauthorized: /assets/api/department/
+WARNING 2024-03-01 07:17:33,045 basehttp 10168 15612 "GET /assets/api/department/ HTTP/1.1" 401 51
+INFO 2024-03-01 07:17:53,577 basehttp 10168 15612 "POST /auth/sign-in/ HTTP/1.1" 200 483
+INFO 2024-03-01 07:18:05,792 views 10168 15612 All Departments viewed by user 9 user_4.
+INFO 2024-03-01 07:18:05,956 basehttp 10168 15612 "GET /assets/api/department/ HTTP/1.1" 200 1067
+WARNING 2024-03-01 07:18:29,118 log 10168 15612 Unauthorized: /assets/api/department/2/
+WARNING 2024-03-01 07:18:29,119 basehttp 10168 15612 "GET /assets/api/department/2/ HTTP/1.1" 401 51
+INFO 2024-03-01 07:18:36,766 views 10168 15612 Department 2 Technical department viewed by user 9 user_4.
+INFO 2024-03-01 07:18:36,767 basehttp 10168 15612 "GET /assets/api/department/2/ HTTP/1.1" 200 155
+WARNING 2024-03-01 07:18:55,141 log 10168 15612 Unauthorized: /assets/api/division/
+WARNING 2024-03-01 07:18:55,142 basehttp 10168 15612 "GET /assets/api/division/ HTTP/1.1" 401 183
+INFO 2024-03-01 07:19:01,108 views 10168 15612 All Divisions viewed by user 9 user_4.
+INFO 2024-03-01 07:19:01,218 basehttp 10168 15612 "GET /assets/api/division/ HTTP/1.1" 200 2515
+INFO 2024-03-01 07:19:26,462 autoreload 10168 12416 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-03-01 07:19:28,065 autoreload 11132 13812 Watching for file changes with StatReloader
