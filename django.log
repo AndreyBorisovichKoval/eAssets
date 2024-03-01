@@ -3638,3 +3638,20 @@ INFO 2024-03-01 11:00:13,911 autoreload 11352 4756 Watching for file changes wit
 INFO 2024-03-01 11:02:06,882 autoreload 14028 1744 Watching for file changes with StatReloader
 INFO 2024-03-01 11:02:24,798 basehttp 14028 6772 "GET /recalculation/ HTTP/1.1" 200 32
 >>>>>>> andrey
+INFO 2024-03-01 12:09:42,337 autoreload 9072 8124 Watching for file changes with StatReloader
+INFO 2024-03-01 12:13:44,676 views_main 9072 8540 All Departments viewed by user 5 admin.
+INFO 2024-03-01 12:13:44,769 basehttp 9072 8540 "GET /assets/api/department/ HTTP/1.1" 200 1067
+INFO 2024-03-01 12:13:57,503 views_main 9072 8540 Department 2 Technical department viewed by user 9 user_4.
+INFO 2024-03-01 12:13:57,504 basehttp 9072 8540 "GET /assets/api/department/2/ HTTP/1.1" 200 155
+INFO 2024-03-01 12:14:15,581 views_main 9072 8540 All Staff viewed by user 5 admin.
+INFO 2024-03-01 12:14:15,741 basehttp 9072 8540 "GET /assets/api/staff/ HTTP/1.1" 200 11213
+WARNING 2024-03-01 12:14:36,480 log 9072 8540 Unauthorized: /assets/api/staff/42/
+WARNING 2024-03-01 12:14:36,480 basehttp 9072 8540 "GET /assets/api/staff/42/ HTTP/1.1" 401 183
+WARNING 2024-03-01 12:14:49,489 log 9072 8540 Unauthorized: /assets/api/staff/42/
+WARNING 2024-03-01 12:14:49,490 basehttp 9072 8540 "GET /assets/api/staff/42/ HTTP/1.1" 401 183
+INFO 2024-03-01 12:14:52,242 views_main 9072 8540 All Staff viewed by user 5 admin.
+INFO 2024-03-01 12:14:52,245 basehttp 9072 8540 "GET /assets/api/staff/ HTTP/1.1" 200 11213
+INFO 2024-03-01 12:15:02,743 basehttp 9072 8540 "GET /recalculation/ HTTP/1.1" 200 32
+INFO 2024-03-01 12:17:16,100 autoreload 9072 8124 D:\0_Pycharm\eAssets\assets\api\views_tasks.py changed, reloading.
+INFO 2024-03-01 12:17:19,689 autoreload 14284 9724 Watching for file changes with StatReloader
+INFO 2024-03-01 12:17:32,652 basehttp 14284 8756 "GET /recalculation/ HTTP/1.1" 200 32
