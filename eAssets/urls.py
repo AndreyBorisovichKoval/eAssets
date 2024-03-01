@@ -18,7 +18,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
-from assets.api.views import view_users, create_user, change_password
+from assets.api.views_user import view_users, create_user, change_password
 from assets.views import recalculate_assets_view
 from django.contrib.auth import views as auth_views
 

@@ -1,14 +1,5 @@
-# from django.contrib.auth.models import User
-# from django.contrib.auth.models import User, UserManager
 from rest_framework import serializers
 from assets.models import User, Department, Division, Position, Staff, Asset, AssetType, AssetAssignment, TaskCheckPoint, UserAction
-# from assets.models import *
-
-
-# class UserManagerSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = UserManager
-#         fields = '__all__'
 
 
 class UserSerializer(serializers.ModelSerializer):

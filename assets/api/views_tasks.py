@@ -1,8 +1,8 @@
-from datetime import datetime, timedelta, date
+from datetime import datetime
 from decimal import Decimal
 # from django.db.models import F
 from assets.models import Asset, TaskCheckPoint
-from email_sender import send_email
+# from additional.email_sender import send_email
 
 class AssetRecalculator:
     def __init__(self):

@@ -1,123 +1,25 @@
-from datetime import datetime, timezone
 import logging
+from datetime import datetime
 
-from django.contrib.auth.hashers import make_password
-from django.shortcuts import get_object_or_404
-from rest_framework import status, viewsets, request
-from rest_framework.exceptions import AuthenticationFailed, PermissionDenied
+from rest_framework import status
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.permissions import IsAuthenticated
-from rest_framework_simplejwt.tokens import AccessToken
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.decorators import api_view, permission_classes, authentication_classes
-from typing import Any
 
-from assets.api.serializers import (UserSerializer, DepartmentSerializer, DivisionSerializer, PositionSerializer,
-                                    StaffSerializer, AssetTypeSerializer, AssetSerializer, AssetAssignmentSerializer)
 from assets.models import *
+from assets.api.serializers import (
+    DepartmentSerializer,
+    DivisionSerializer,
+    PositionSerializer,
+    StaffSerializer,
+    AssetTypeSerializer,
+    AssetSerializer,
+    AssetAssignmentSerializer,
+)
 
 # Получаем логгер Django
 logger = logging.getLogger('django')
-# logger = logging.getLogger(__name__)
-# def my_function():
-# logger.debug('user_id', get_user_id_from_token(request))
-# logger.info('Это информационное сообщение')
-# logger.warning('Это предупреждение')
-# logger.error('Это сообщение об ошибке')
-# logger.critical('Это критическое сообщение')
-
-
-def get_user_id_from_token(request):
-    try:
-        authorization_header = request.headers.get('Authorization')
-        access_token = AccessToken(authorization_header.split()[1])
-        user_id = access_token['user_id']
-        # logger.info(f'User: {user_id} добавлен в систему для доступа к ')
-        return user_id
-    except (AuthenticationFailed, IndexError):
-        return None
-
-
-# @api_view(["POST"])
-# @authentication_classes([JWTAuthentication])
-# @permission_classes([IsAuthenticated])
-# def create_user(request):
-#     serializer = UserSerializer(data=request.data)
-#     if serializer.is_valid():
-#         serializer.save()
-#         return Response(serializer.data)
-
-@api_view(["POST"])
-@authentication_classes([JWTAuthentication])
-@permission_classes([IsAuthenticated])
-def create_user(request):
-    if not request.user.is_superuser:
-        logger.warning("Only administrators can create users.")
-        raise PermissionDenied("Only administrators can create users.")
-
-    serializer = UserSerializer(data=request.data)
-    if serializer.is_valid():
-        serializer.save()
-
-        user = request.user
-        action = f"User '{serializer.data['username']}' created"
-        user_action = UserAction(user=user, action=action)
-        user_action.save()
-
-        logger.info("User created successfully.")
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
-    else:
-        logger.error("Failed to create user.")
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
-@api_view(["GET"])
-@authentication_classes([JWTAuthentication])
-@permission_classes([IsAuthenticated])
-# @swagger_auto_schema(
-#     operation_description="Просмотр всех пользователей",
-#     responses={200: 'OK', 403: 'Нет доступа'}
-# )
-def view_users(request):
-    if not request.user.is_superuser:
-        logger.warning("Only administrators can view users.")
-        raise PermissionDenied("Only administrators can view users.")
-
-    # Логика для просмотра пользователей
-    users = User.objects.all()
-    serializer = UserSerializer(users, many=True)
-
-    return Response(serializer.data, status=status.HTTP_200_OK)
-
-
-@api_view(["PUT"])
-@authentication_classes([JWTAuthentication])
-@permission_classes([IsAuthenticated])
-def change_password(request):
-    user = request.user
-    # Проверяем, является ли пользователь аутентифицированным
-    if not user.is_authenticated:
-        logger.warning("User is not authenticated.")
-        raise PermissionDenied("User is not authenticated.")
-    # Получаем текущий пароль пользователя
-    current_password = request.data.get("current_password")
-    # Проверяем, совпадает ли текущий пароль с паролем пользователя
-    if not user.check_password(current_password):
-        logger.warning("Current password is incorrect.")
-        raise PermissionDenied("Current password is incorrect.")
-    # Получаем новый пароль
-    new_password = request.data.get("new_password")
-    # Устанавливаем новый пароль для пользователя
-    user.password = make_password(new_password)
-    user.save()
-
-    action = f"Password changed for user '{user.username}'"
-    user_action = UserAction(user=user, action=action)
-    user_action.save()
-
-    logger.info("Password changed successfully.")
-    return Response("Password changed successfully.", status=status.HTTP_200_OK)
 
 
 class DepartmentView(APIView):
