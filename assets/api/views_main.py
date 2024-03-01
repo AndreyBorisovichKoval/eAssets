@@ -19,7 +19,7 @@ from assets.api.serializers import (
 )
 
 # Получаем логгер Django
-logger = logging.getLogger('django')
+logger = logging.getLogger('application')
 
 
 class DepartmentView(APIView):

@@ -4,6 +4,7 @@ from decimal import Decimal
 from assets.models import Asset, TaskCheckPoint
 # from additional.email_sender import send_email
 
+
 class AssetRecalculator:
     def __init__(self):
         self.task_title = 'Assets Recalculation'

@@ -10,7 +10,7 @@ from assets.models import *
 from assets.api.serializers import UserSerializer
 
 # Получаем логгер Django
-logger = logging.getLogger('django')
+logger = logging.getLogger('application')
 
 
 @api_view(["POST"])

@@ -8,7 +8,7 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 import pandas as pd
 from assets.models import *
 
-logger = logging.getLogger('django')
+logger = logging.getLogger('application')
 
 
 @authentication_classes([JWTAuthentication])

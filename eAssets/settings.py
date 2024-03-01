@@ -211,12 +211,12 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': 'django.log',
+            'filename': 'application.log',
             'formatter': 'verbose'
         },
     },
     'loggers': {
-        'django': {
+        'application': {
             'handlers': ['file'],
             # 'level': 'WARNING',
             'level': 'INFO',
