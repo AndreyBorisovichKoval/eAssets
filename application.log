@@ -1,0 +1,14 @@
+INFO 2024-03-01 15:51:57,026 views_reports 11824 18860 __-=*=-__ Retrieved assigned assets for staff with ID: 12. __-=*=-__
+INFO 2024-03-01 15:55:37,838 views_reports 11824 18860 Retrieved retired assets
+INFO 2024-03-01 15:56:04,126 views_reports 11824 18860 Retrieved retired assets
+INFO 2024-03-01 15:57:11,560 views_main 11824 18860 All Assets viewed by user 4 user_1.
+INFO 2024-03-01 15:57:30,255 views_reports 11824 18860 Retrieved retired assets
+INFO 2024-03-01 15:58:38,400 views_reports 11824 18860 Calculated total price of active assets
+INFO 2024-03-01 15:58:57,744 views_reports 11824 18860 Calculated total current price of active assets
+INFO 2024-03-01 15:59:02,629 views_reports 11824 18860 Calculated total price of active assets
+INFO 2024-03-01 15:59:09,935 views_reports 11824 18860 Calculated total current price of active assets
+INFO 2024-03-01 15:59:54,927 views_reports 11824 18860 Calculated total price for asset type with id 1
+INFO 2024-03-01 16:00:14,192 views_reports 11824 18860 Calculated current price for asset type with id 1
+INFO 2024-03-01 16:02:59,910 views_main 11824 18860 All AssetsAssignments viewed by user 4 user_1.
+ERROR 2024-03-01 16:04:39,321 views_main 11824 18860 AssetAssignment with pk=215 does not exist
+INFO 2024-03-01 16:04:55,574 views_main 11824 18860 AssetAssignment 210 viewed by user 4 user_1.

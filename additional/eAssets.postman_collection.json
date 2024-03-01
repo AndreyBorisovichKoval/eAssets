@@ -300,7 +300,7 @@
 			"name": "Departments",
 			"item": [
 				{
-					"name": "http://localhost:8000/assets/api/department/",
+					"name": "View All Departments",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -344,7 +344,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/department/3/",
+					"name": "View Department by ID",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -389,7 +389,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/department/",
+					"name": "Adding Departments",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -430,7 +430,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/department/11/",
+					"name": "Renaming Departments by ID",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -472,7 +472,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/department/7/",
+					"name": "Deleting Departments by ID",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -511,7 +511,7 @@
 			"name": "Divisions",
 			"item": [
 				{
-					"name": "http://localhost:8000/assets/api/division/",
+					"name": "View All Divisions",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -543,7 +543,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/division/9/",
+					"name": "View Division by ID",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -576,7 +576,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/division/",
+					"name": "Adding Divisions",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -617,7 +617,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/division/",
+					"name": "Renaming Divisions by ID",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -659,7 +659,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/division/16/",
+					"name": "Deleting Divisions by ID",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -706,7 +706,7 @@
 			"name": "Positions",
 			"item": [
 				{
-					"name": "http://localhost:8000/assets/api/position/",
+					"name": "View All Position",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -750,7 +750,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/position/10/",
+					"name": "View Position by ID",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -795,7 +795,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/position/",
+					"name": "Adding Positions",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -836,7 +836,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/position/12/",
+					"name": "Renaming Positions by ID",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -878,7 +878,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/position/12/",
+					"name": "Deleting Positions by ID",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -925,7 +925,7 @@
 			"name": "Staff",
 			"item": [
 				{
-					"name": "http://localhost:8000/assets/api/staff/",
+					"name": "View All Staff",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -969,7 +969,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/staff/42/",
+					"name": "View Staff by ID",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1014,7 +1014,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/staff/",
+					"name": "Adding Employees",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -1055,7 +1055,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/staff/46/",
+					"name": "Renaming Employees by ID",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -1097,7 +1097,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/staff/46/",
+					"name": "Deleting Employees by ID",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -1138,7 +1138,7 @@
 					"name": "Asset_Type",
 					"item": [
 						{
-							"name": "http://localhost:8000/assets/api/assettype/",
+							"name": "Viewing Asset Types",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1170,7 +1170,7 @@
 							"response": []
 						},
 						{
-							"name": "http://localhost:8000/assets/api/assettype/6/",
+							"name": "Viewing Asset Types by ID",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1203,7 +1203,7 @@
 							"response": []
 						},
 						{
-							"name": "http://localhost:8000/assets/api/assettype/",
+							"name": "Adding Asset Types",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1244,7 +1244,7 @@
 							"response": []
 						},
 						{
-							"name": "http://localhost:8000/assets/api/assettype/7/",
+							"name": "Renaming Asset Types by ID",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1286,7 +1286,7 @@
 							"response": []
 						},
 						{
-							"name": "http://localhost:8000/assets/api/assettype/7/",
+							"name": "Deleting Asset Types by ID",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1333,7 +1333,7 @@
 					"name": "Asset",
 					"item": [
 						{
-							"name": "http://localhost:8000/assets/api/asset/",
+							"name": "Viewing Assets",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1365,7 +1365,7 @@
 							"response": []
 						},
 						{
-							"name": "http://localhost:8000/assets/api/asset/210/",
+							"name": "Viewing Assets by ID",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1398,7 +1398,7 @@
 							"response": []
 						},
 						{
-							"name": "http://localhost:8000/assets/api/asset/",
+							"name": "Adding Assets",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1439,7 +1439,7 @@
 							"response": []
 						},
 						{
-							"name": "http://localhost:8000/assets/api/asset/212/",
+							"name": "Renaming Assets by ID",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1481,7 +1481,7 @@
 							"response": []
 						},
 						{
-							"name": "http://localhost:8000/assets/api/asset/212/",
+							"name": "Deleting Assets by ID",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1514,7 +1514,7 @@
 							"response": []
 						},
 						{
-							"name": "http://localhost:8000/assets/api/asset/written_off/",
+							"name": "Viewing Retired Assets",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1556,7 +1556,7 @@
 							"response": []
 						},
 						{
-							"name": "http://localhost:8000/assets/api/asset/written_off/212/",
+							"name": "Viewing Retired Assets by ID",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1604,7 +1604,7 @@
 					"name": "Asset_Assignment",
 					"item": [
 						{
-							"name": "http://localhost:8000/assets/api/assetassignment/",
+							"name": "View all assets assigned to employees",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1636,7 +1636,7 @@
 							"response": []
 						},
 						{
-							"name": "http://localhost:8000/assets/api/assetassignment/215/",
+							"name": "View an assigned asset by ID",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1669,7 +1669,7 @@
 							"response": []
 						},
 						{
-							"name": "http://localhost:8000/assets/api/assetassignment/",
+							"name": "Assigning an asset to an employee",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1710,7 +1710,7 @@
 							"response": []
 						},
 						{
-							"name": "http://localhost:8000/assets/api/assetassignment/215/",
+							"name": "Detaching an asset from an employee",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1752,7 +1752,7 @@
 							"response": []
 						},
 						{
-							"name": "http://localhost:8000/assets/api/assetassignment/214/",
+							"name": "Moving an asset between employees",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1796,7 +1796,7 @@
 					]
 				},
 				{
-					"name": "http://localhost:8000/recalculation/",
+					"name": "Recalculation of Asset Values",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -1821,7 +1821,7 @@
 			"name": "Reports",
 			"item": [
 				{
-					"name": "http://localhost:8000/assets/api/reports/staff/12/assets/",
+					"name": "View all assets of a specific employee by ID",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -1856,7 +1856,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/reports/department/1/assets/",
+					"name": "View all assets of all departments",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -1891,7 +1891,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/reports/division/1/assets/",
+					"name": "View all assets of a specific department by ID",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -1926,7 +1926,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/reports/retired_assets/",
+					"name": "Viewing Retired Assets",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -1959,7 +1959,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/reports/cost_assets/",
+					"name": "Cost All Aassets",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -1992,7 +1992,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/reports/current_cost_assets/",
+					"name": "Current Cost All Aassets",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -2025,7 +2025,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/reports/cost_by_type_assets/1/",
+					"name": "Cost by Type Aassets",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -2059,7 +2059,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/reports/current_cost_by_type_assets/1/",
+					"name": "Current Cost by Type Aassets",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -2093,7 +2093,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/reports/export_to_excel/",
+					"name": "Export Test Excel File",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -2126,7 +2126,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8000/assets/api/reports/export_to_excel_report/",
+					"name": "Exporting a merged Excel file",
 					"request": {
 						"auth": {
 							"type": "bearer",
