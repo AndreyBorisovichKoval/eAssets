@@ -3366,6 +3366,7 @@ INFO 2024-02-29 14:56:01,953 basehttp 12488 12924 "PUT /auth/change_password/ HT
 INFO 2024-02-29 14:56:11,375 basehttp 12488 12924 "GET /auth/view_users/ HTTP/1.1" 200 1490
 INFO 2024-02-29 14:57:58,951 basehttp 12488 12508 "GET /admin/auth/user/ HTTP/1.1" 200 15404
 INFO 2024-02-29 14:57:59,025 basehttp 12488 12508 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+<<<<<<< HEAD
 INFO 2024-02-29 19:13:57,585 autoreload 7156 6672 Watching for file changes with StatReloader
 INFO 2024-02-29 19:14:11,208 basehttp 7156 7588 "GET / HTTP/1.1" 200 27
 WARNING 2024-02-29 19:14:11,537 log 7156 7588 Not Found: /favicon.ico
@@ -3479,3 +3480,161 @@ INFO 2024-03-01 07:19:01,108 views 10168 15612 All Divisions viewed by user 9 us
 INFO 2024-03-01 07:19:01,218 basehttp 10168 15612 "GET /assets/api/division/ HTTP/1.1" 200 2515
 INFO 2024-03-01 07:19:26,462 autoreload 10168 12416 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
 INFO 2024-03-01 07:19:28,065 autoreload 11132 13812 Watching for file changes with StatReloader
+=======
+INFO 2024-03-01 09:29:38,853 autoreload 10104 13176 Watching for file changes with StatReloader
+INFO 2024-03-01 09:33:50,656 autoreload 10104 13176 D:\0_Pycharm\eAssets\assets\tasks.py changed, reloading.
+INFO 2024-03-01 09:33:51,275 autoreload 15108 1140 Watching for file changes with StatReloader
+INFO 2024-03-01 09:38:53,673 autoreload 15108 1140 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-03-01 09:38:54,387 autoreload 704 11092 Watching for file changes with StatReloader
+INFO 2024-03-01 09:42:05,275 autoreload 704 11092 D:\0_Pycharm\eAssets\assets\api\views.py changed, reloading.
+INFO 2024-03-01 09:42:05,990 autoreload 6040 3408 Watching for file changes with StatReloader
+INFO 2024-03-01 09:45:06,620 autoreload 6040 3408 D:\0_Pycharm\eAssets\assets\models.py changed, reloading.
+INFO 2024-03-01 09:45:07,278 autoreload 3896 5136 Watching for file changes with StatReloader
+INFO 2024-03-01 09:46:40,569 autoreload 3896 5136 D:\0_Pycharm\eAssets\eAssets\urls.py changed, reloading.
+INFO 2024-03-01 09:46:41,126 autoreload 1084 2388 Watching for file changes with StatReloader
+INFO 2024-03-01 09:48:46,090 autoreload 1084 2388 D:\0_Pycharm\eAssets\assets\api\urls.py changed, reloading.
+INFO 2024-03-01 09:48:51,791 autoreload 2732 10428 Watching for file changes with StatReloader
+INFO 2024-03-01 09:53:57,288 autoreload 2732 10428 D:\0_Pycharm\eAssets\assets\api\views_user.py changed, reloading.
+INFO 2024-03-01 09:54:00,199 autoreload 11280 11192 Watching for file changes with StatReloader
+INFO 2024-03-01 09:56:52,599 autoreload 11280 11192 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-03-01 09:56:53,167 autoreload 9896 2732 Watching for file changes with StatReloader
+INFO 2024-03-01 09:57:38,373 autoreload 9896 2732 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-03-01 09:57:41,623 autoreload 3004 2716 Watching for file changes with StatReloader
+INFO 2024-03-01 09:58:19,291 autoreload 3004 2716 D:\0_Pycharm\eAssets\assets\api\views_user.py changed, reloading.
+INFO 2024-03-01 09:58:19,849 autoreload 12816 8372 Watching for file changes with StatReloader
+INFO 2024-03-01 09:59:16,472 autoreload 12816 8372 D:\0_Pycharm\eAssets\assets\api\views_main.py changed, reloading.
+INFO 2024-03-01 09:59:17,044 autoreload 2780 11300 Watching for file changes with StatReloader
+INFO 2024-03-01 10:00:13,418 autoreload 2780 11300 D:\0_Pycharm\eAssets\assets\api\urls.py changed, reloading.
+INFO 2024-03-01 10:00:13,990 autoreload 10636 6632 Watching for file changes with StatReloader
+INFO 2024-03-01 10:02:15,724 autoreload 10636 6632 D:\0_Pycharm\eAssets\assets\api\serializers.py changed, reloading.
+INFO 2024-03-01 10:02:16,275 autoreload 12320 14512 Watching for file changes with StatReloader
+INFO 2024-03-01 10:07:22,438 autoreload 12320 14512 D:\0_Pycharm\eAssets\assets\models.py changed, reloading.
+INFO 2024-03-01 10:07:23,014 autoreload 12432 2072 Watching for file changes with StatReloader
+INFO 2024-03-01 10:08:23,093 autoreload 12432 2072 D:\0_Pycharm\eAssets\assets\tasks.py changed, reloading.
+INFO 2024-03-01 10:08:23,732 autoreload 13524 11300 Watching for file changes with StatReloader
+INFO 2024-03-01 10:18:27,843 autoreload 4876 5088 Watching for file changes with StatReloader
+WARNING 2024-03-01 10:18:54,987 views_user 4876 2476 Only administrators can view users.
+WARNING 2024-03-01 10:18:54,988 log 4876 2476 Forbidden: /auth/view_users/
+WARNING 2024-03-01 10:18:54,989 basehttp 4876 2476 "GET /auth/view_users/ HTTP/1.1" 403 48
+INFO 2024-03-01 10:19:05,143 basehttp 4876 2476 "POST /auth/sign-in/ HTTP/1.1" 200 483
+INFO 2024-03-01 10:19:22,333 basehttp 4876 2476 "GET /auth/view_users/ HTTP/1.1" 200 1490
+WARNING 2024-03-01 10:20:11,185 views_user 4876 2476 Current password is incorrect.
+WARNING 2024-03-01 10:20:11,185 log 4876 2476 Forbidden: /auth/change_password/
+WARNING 2024-03-01 10:20:11,186 basehttp 4876 2476 "PUT /auth/change_password/ HTTP/1.1" 403 43
+INFO 2024-03-01 10:20:59,836 views_main 4876 2476 All Departments viewed by user 5 admin.
+INFO 2024-03-01 10:21:00,252 basehttp 4876 2476 "GET /assets/api/department/ HTTP/1.1" 200 1067
+INFO 2024-03-01 10:21:12,301 views_main 4876 2476 Department 2 Technical department viewed by user 9 user_4.
+INFO 2024-03-01 10:21:12,302 basehttp 4876 2476 "GET /assets/api/department/2/ HTTP/1.1" 200 155
+WARNING 2024-03-01 10:21:31,036 log 4876 2476 Unauthorized: /assets/api/position/
+WARNING 2024-03-01 10:21:31,037 basehttp 4876 2476 "GET /assets/api/position/ HTTP/1.1" 401 183
+INFO 2024-03-01 10:21:38,327 views_main 4876 2476 All Positions viewed by user 5 admin.
+INFO 2024-03-01 10:21:38,458 basehttp 4876 2476 "GET /assets/api/position/ HTTP/1.1" 200 1772
+WARNING 2024-03-01 10:21:45,388 log 4876 2476 Unauthorized: /assets/api/position/10/
+WARNING 2024-03-01 10:21:45,389 basehttp 4876 2476 "GET /assets/api/position/10/ HTTP/1.1" 401 183
+INFO 2024-03-01 10:21:51,343 views_main 4876 2476 Position 10 Supervisor viewed by user 5 admin.
+INFO 2024-03-01 10:21:51,345 basehttp 4876 2476 "GET /assets/api/position/10/ HTTP/1.1" 200 146
+WARNING 2024-03-01 10:22:03,888 log 4876 2476 Unauthorized: /assets/api/staff/
+WARNING 2024-03-01 10:22:03,888 basehttp 4876 2476 "GET /assets/api/staff/ HTTP/1.1" 401 183
+INFO 2024-03-01 10:22:09,120 views_main 4876 2476 All Staff viewed by user 5 admin.
+INFO 2024-03-01 10:22:09,263 basehttp 4876 2476 "GET /assets/api/staff/ HTTP/1.1" 200 11213
+INFO 2024-03-01 10:22:44,208 views_reports 4876 2476 __-=*=-__ Retrieved assigned assets for staff with ID: 12. __-=*=-__
+INFO 2024-03-01 10:22:44,210 basehttp 4876 2476 "GET /assets/api/reports/staff/12/assets/ HTTP/1.1" 200 532
+INFO 2024-03-01 10:22:54,891 views_reports 4876 2476 Retrieved assets for department with ID: 1
+INFO 2024-03-01 10:22:54,893 basehttp 4876 2476 "GET /assets/api/reports/department/1/assets/ HTTP/1.1" 200 7448
+INFO 2024-03-01 10:23:00,195 views_reports 4876 2476 Retrieved assets for division with ID: 1
+INFO 2024-03-01 10:23:00,196 basehttp 4876 2476 "GET /assets/api/reports/division/1/assets/ HTTP/1.1" 200 7550
+INFO 2024-03-01 10:23:07,490 views_reports 4876 2476 Retrieved assets for division with ID: 1
+INFO 2024-03-01 10:23:07,491 basehttp 4876 2476 "GET /assets/api/reports/division/1/assets/ HTTP/1.1" 200 7550
+INFO 2024-03-01 10:23:13,783 views_reports 4876 2476 Retrieved retired assets
+INFO 2024-03-01 10:23:13,784 basehttp 4876 2476 "GET /assets/api/reports/retired_assets/ HTTP/1.1" 200 238
+INFO 2024-03-01 10:23:27,817 views_reports 4876 2476 Calculated total price of active assets
+INFO 2024-03-01 10:23:27,817 basehttp 4876 2476 "GET /assets/api/reports/cost_assets/ HTTP/1.1" 200 29
+INFO 2024-03-01 10:23:31,382 views_reports 4876 2476 Calculated total current price of active assets
+INFO 2024-03-01 10:23:31,382 basehttp 4876 2476 "GET /assets/api/reports/current_cost_assets/ HTTP/1.1" 200 37
+INFO 2024-03-01 10:23:33,996 views_reports 4876 2476 Calculated total price for asset type with id 8
+INFO 2024-03-01 10:23:33,997 basehttp 4876 2476 "GET /assets/api/reports/cost_by_type_assets/8/ HTTP/1.1" 200 26
+INFO 2024-03-01 10:23:39,494 views_reports 4876 2476 Calculated current price for asset type with id 1
+INFO 2024-03-01 10:23:39,495 basehttp 4876 2476 "GET /assets/api/reports/current_cost_by_type_assets/1/ HTTP/1.1" 200 30
+ERROR 2024-03-01 10:23:49,961 log 4876 2476 Internal Server Error: /assets/api/reports/export_to_excel/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 193, in export_to_xlsx
+    with pd.ExcelWriter('/additional/Reports/report.xlsx', engine='xlsxwriter') as writer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\excel\_xlsxwriter.py", line 204, in __init__
+    super().__init__(
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\excel\_base.py", line 1246, in __init__
+    self._handles = get_handle(
+                    ^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\common.py", line 749, in get_handle
+    check_parent_directory(str(handle))
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\common.py", line 616, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: '\additional\Reports'
+ERROR 2024-03-01 10:23:49,966 basehttp 4876 2476 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 500 115793
+ERROR 2024-03-01 10:24:04,703 log 4876 2476 Internal Server Error: /assets/api/reports/export_to_excel_report/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 303, in export_to_xlsx_report
+    writer = pd.ExcelWriter('/additional/Reports/report_in_one_sheets.xlsx', engine='xlsxwriter')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\excel\_xlsxwriter.py", line 204, in __init__
+    super().__init__(
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\excel\_base.py", line 1246, in __init__
+    self._handles = get_handle(
+                    ^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\common.py", line 749, in get_handle
+    check_parent_directory(str(handle))
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\common.py", line 616, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: '\additional\Reports'
+ERROR 2024-03-01 10:24:04,706 basehttp 4876 2476 "GET /assets/api/reports/export_to_excel_report/ HTTP/1.1" 500 115419
+INFO 2024-03-01 10:26:36,953 autoreload 4876 5088 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-03-01 10:26:40,313 autoreload 7444 8660 Watching for file changes with StatReloader
+ERROR 2024-03-01 10:26:51,137 log 7444 4904 Internal Server Error: /assets/api/reports/export_to_excel_report/
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\assets\api\views_reports.py", line 303, in export_to_xlsx_report
+    writer = pd.ExcelWriter('\additional\Reports\report_in_one_sheets.xlsx', engine='xlsxwriter')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\excel\_xlsxwriter.py", line 204, in __init__
+    super().__init__(
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\excel\_base.py", line 1246, in __init__
+    self._handles = get_handle(
+                    ^^^^^^^^^^^
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\common.py", line 749, in get_handle
+    check_parent_directory(str(handle))
+  File "D:\0_Pycharm\eAssets\venv\Lib\site-packages\pandas\io\common.py", line 616, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: 'dditional'
+ERROR 2024-03-01 10:26:51,141 basehttp 7444 4904 "GET /assets/api/reports/export_to_excel_report/ HTTP/1.1" 500 115396
+INFO 2024-03-01 10:32:05,344 autoreload 7444 8660 D:\0_Pycharm\eAssets\assets\api\views_reports.py changed, reloading.
+INFO 2024-03-01 10:32:08,729 autoreload 468 7588 Watching for file changes with StatReloader
+INFO 2024-03-01 10:32:17,674 basehttp 468 10028 "GET /assets/api/reports/export_to_excel_report/ HTTP/1.1" 200 26822
+INFO 2024-03-01 10:32:22,710 basehttp 468 10028 "GET /assets/api/reports/export_to_excel/ HTTP/1.1" 200 23677
+INFO 2024-03-01 10:57:10,775 autoreload 468 7588 D:\0_Pycharm\eAssets\assets\views.py changed, reloading.
+INFO 2024-03-01 10:57:14,917 autoreload 8756 14024 Watching for file changes with StatReloader
+INFO 2024-03-01 10:57:22,869 basehttp 8756 5144 "GET / HTTP/1.1" 200 27
+WARNING 2024-03-01 10:57:23,132 log 8756 5144 Not Found: /favicon.ico
+WARNING 2024-03-01 10:57:23,133 basehttp 8756 5144 "GET /favicon.ico HTTP/1.1" 404 3504
+INFO 2024-03-01 10:57:47,107 basehttp 8756 13620 "GET /recalculation/ HTTP/1.1" 200 32
+INFO 2024-03-01 11:00:13,011 autoreload 8756 14024 D:\0_Pycharm\eAssets\assets\views.py changed, reloading.
+INFO 2024-03-01 11:00:13,911 autoreload 11352 4756 Watching for file changes with StatReloader
+INFO 2024-03-01 11:02:06,882 autoreload 14028 1744 Watching for file changes with StatReloader
+INFO 2024-03-01 11:02:24,798 basehttp 14028 6772 "GET /recalculation/ HTTP/1.1" 200 32
+>>>>>>> andrey

@@ -1,7 +1,14 @@
 from django.urls import path
-# from assets.api.views import AssetViewSet, AssetDetail
-from assets.api.views import (DepartmentView, DivisionView, PositionView, StaffView, AssetTypeView, AssetView,
-                              AssetAssignmentView)
+
+from assets.api.views_main import (
+    DepartmentView,
+    DivisionView,
+    PositionView,
+    StaffView,
+    AssetTypeView,
+    AssetView,
+    AssetAssignmentView,
+)
 from assets.api.views_reports import *
 
 

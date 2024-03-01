@@ -1,31 +1,12 @@
-# pip install pandas
-# pip install openpyxl
-# pip install xlsxwriter
-
-import pandas as pd
-import openpyxl as xl
-# from openpyxl.utils.dataframe import dataframe_to_rows
-# from openpyxl.drawing.image import Image
-# from openpyxl.styles import Alignment
-from django.utils import timezone
-from datetime import datetime, timezone
-from django.db.models import Sum
+import logging
 from django.shortcuts import get_object_or_404
 from django.http import JsonResponse, HttpResponse
-from rest_framework import status, viewsets, request
-from rest_framework.exceptions import AuthenticationFailed
-from rest_framework_simplejwt.authentication import JWTAuthentication
-from rest_framework.permissions import IsAuthenticated
-# from rest_framework_simplejwt.models.TokenUser import username
-from rest_framework_simplejwt.tokens import AccessToken
-from rest_framework.response import Response
-from rest_framework.views import APIView
+from django.db.models import Sum
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
-from typing import Any
-from assets.api.serializers import (UserSerializer, DepartmentSerializer, DivisionSerializer, PositionSerializer,
-                                    StaffSerializer, AssetTypeSerializer, AssetSerializer, AssetAssignmentSerializer)
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.authentication import JWTAuthentication
+import pandas as pd
 from assets.models import *
-import logging
 
 logger = logging.getLogger('django')
 
@@ -209,7 +190,7 @@ def export_to_xlsx(request):
     assets_df['written_off_at'] = assets_df['written_off_at'].apply(lambda dt: dt.strftime('%Y-%m-%d') if pd.notnull(dt) else None)
 
     # Создание книги Excel с форматом .xlsx
-    with pd.ExcelWriter('report.xlsx', engine='xlsxwriter') as writer:
+    with pd.ExcelWriter('additional/Reports/report.xlsx', engine='xlsxwriter') as writer:
         assets_df.to_excel(writer, sheet_name='Assets', index=False)
         assignments_df.to_excel(writer, sheet_name='Assignments', index=False)
         staff_df.to_excel(writer, sheet_name='Staff', index=False)
@@ -220,9 +201,9 @@ def export_to_xlsx(request):
     writer.close()
 
     # Отправка файла .xlsx в ответе HTTP
-    with open('report.xlsx', 'rb') as file:
+    with open('additional/Reports/report.xlsx', 'rb') as file:
         response = HttpResponse(file.read(), content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-        response['Content-Disposition'] = 'attachment; filename=report.xlsx'
+        response['Content-Disposition'] = 'attachment; filename=additional/Reports/report.xlsx'
         return response
 
 
@@ -319,7 +300,7 @@ def export_to_xlsx_report(request):
     )
 
     # Создание книги Excel с форматом .xlsx
-    writer = pd.ExcelWriter('report_in_one_sheets.xlsx', engine='xlsxwriter')
+    writer = pd.ExcelWriter('additional/Reports/report_in_one_sheets.xlsx', engine='xlsxwriter')
     combined_df.to_excel(writer, sheet_name='Combined', index=False)
 
     # Получение объекта xlsxwriter.Workbook и листа
@@ -333,118 +314,7 @@ def export_to_xlsx_report(request):
     writer.close()
 
     # Отправка файла .xlsx в ответе HTTP
-    with open('report_in_one_sheets.xlsx', 'rb') as file:
+    with open('additional/Reports/report_in_one_sheets.xlsx', 'rb') as file:
         response = HttpResponse(file.read(), content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-        response['Content-Disposition'] = 'attachment; filename=report_in_one_sheets.xlsx'
+        response['Content-Disposition'] = 'attachment; filename=additional/Reports/report_in_one_sheets.xlsx'
         return response
-
-
-
-# def export_to_xlsx_report(request):
-#     assets = Asset.objects.all().values(
-#         'inventory_number',
-#         'title',
-#         'identifier',
-#         'acquisition_date',
-#         'service_life',
-#         'cost',
-#         'current_cost',
-#         'last_recalculation_date',
-#         'description',
-#         'asset_type__title',
-#         'is_written_off',
-#         'written_off_at'
-#     )
-#     assignments = AssetAssignment.objects.select_related('asset', 'staff').all().values(
-#         'asset',
-#         'staff',
-#         'assignment_date',
-#         'return_date'
-#     )
-#     staff = Staff.objects.select_related('division', 'position').all().values(
-#         'last_name',
-#         'first_name',
-#         'patronymic',
-#         'division__department',
-#         'division__title',
-#         'position',
-#         'position__title'
-#     )
-#
-#     assets_df = pd.DataFrame(list(assets))
-#     assignments_df = pd.DataFrame(list(assignments))
-#     staff_df = pd.DataFrame(list(staff))
-#
-#     assets_df.columns = [
-#         'inventory_number',
-#         'title',
-#         'identifier',
-#         'acquisition_date',
-#         'service_life',
-#         'cost',
-#         'current_cost',
-#         'last_recalculation_date',
-#         'description',
-#         'asset_type',
-#         'is_written_off',
-#         'written_off_at'
-#     ]
-#
-#     assignments_df.columns = [
-#         'asset',
-#         'staff',
-#         'assignment_date',
-#         'return_date'
-#     ]
-#
-#     staff_df.columns = [
-#         'last_name',
-#         'first_name',
-#         'patronymic',
-#         'division_department',
-#         'division_title',
-#         'position',
-#         'position_title'
-#     ]
-#
-#     assets_df['acquisition_date'] = pd.to_datetime(assets_df['acquisition_date']).dt.date.astype(str)
-#     assignments_df['assignment_date'] = pd.to_datetime(assignments_df['assignment_date']).dt.date.astype(str)
-#     assignments_df['return_date'] = pd.to_datetime(assignments_df['return_date']).dt.date.astype(str)
-#     assets_df['last_recalculation_date'] = pd.to_datetime(assets_df['last_recalculation_date']).dt.date.astype(str)
-#     assets_df['written_off_at'] = pd.to_datetime(assets_df['written_off_at']).dt.date.astype(str)
-#
-#     #combined_df = pd.concat([assets_df, assignments_df, staff_df], axis=1)
-#
-#
-#     # Создание книги Excel с форматом .xlsx
-#     writer = pd.ExcelWriter('report_in_one_sheets.xlsx', engine='xlsxwriter')
-#     combined_df.to_excel(writer, sheet_name='Combined', index=False)
-#
-#     # Получение объекта xlsxwriter.Workbook и листа
-#     workbook = writer.book
-#     worksheet = writer.sheets['Combined']
-#
-#     # Вставка столбца 'position_title' рядом со столбцом 'position'
-#     worksheet.write(0, combined_df.columns.get_loc('position') + 1, 'position_title')
-#
-#     # Закрытие объекта ExcelWriter и сохранение файла .xlsx
-#     writer.close()
-#
-#     # Отправка файла .xlsx в ответе HTTP
-#     with open('report_in_one_sheets.xlsx', 'rb') as file:
-#         response = HttpResponse(file.read(), content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-#         response['Content-Disposition'] = 'attachment; filename=report_in_one_sheets.xlsx'
-#         return response
-
-
-    # combined_df=assets_df.merge(
-    #     right=assignments_df,
-    #     how='left',
-    #     left_on='asset',
-    #     right_on='id'
-    # ).merge(
-    #     right=staff_df,
-    #     how='left',
-    #     left_on='staff',
-    #     right_on='id'
-    # )

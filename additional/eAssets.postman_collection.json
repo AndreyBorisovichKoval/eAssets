@@ -20,7 +20,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5Mjg2NTEyLCJpYXQiOjE3MDkyMDAxMTIsImp0aSI6ImQzMjZkYzllYzg4NzRlOWQ5Mzg5MjU0ZmI3MGQwMDJmIiwidXNlcl9pZCI6MTF9.zoT2igtueHgOT6e2ENXbDEBsqr0Se2hFvCPS2G6TR1k",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5MzQ1NjcyLCJpYXQiOjE3MDkyNTkyNzIsImp0aSI6IjFmMDZjOTM3NWUwMDRhYmM5MDYzOTU2Y2UxYjkzNGUyIiwidXNlcl9pZCI6OX0.G7KtVdOd3THOB4E_oQjEUADPPrTK-aBxIky3QiaXyoc",
 									"type": "string"
 								}
 							]
@@ -29,7 +29,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"user_7\",\r\n    \"email\": \"user_7.eassets@gmail.com\",\r\n    \"password\": \"User_123\",\r\n    \"is_superuser\": false\r\n}\r\n",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2152,6 +2152,45 @@
 								"api",
 								"reports",
 								"export_to_excel_report",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "0_Ping",
+			"item": [
+				{
+					"name": "Ping Home eAsseTs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
 								""
 							]
 						}
