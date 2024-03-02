@@ -7,6 +7,7 @@ from django.db.models import Sum
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
+import xlsxwriter
 import pandas as pd
 from assets.models import *
 
@@ -445,3 +446,290 @@ def create_and_export_report(request):
     else:
         return HttpResponse('Invalid export format specified.')
 
+
+
+# @authentication_classes([JWTAuthentication])
+# @permission_classes([IsAuthenticated])
+# def create_and_export_report(request):
+#     export_format = request.GET.get('format', '').lower()
+#
+#     assets = Asset.objects.all().values(
+#         'inventory_number',
+#         'title',
+#         'identifier',
+#         'acquisition_date',
+#         'service_life',
+#         'cost',
+#         'current_cost',
+#         'last_recalculation_date',
+#         'description',
+#         'asset_type__title',
+#         'is_written_off',
+#         'written_off_at'
+#     )
+#
+#     assignments = AssetAssignment.objects.select_related('asset', 'staff').all().values(
+#         'asset__inventory_number',
+#         'staff_id',
+#         'assignment_date',
+#         'return_date'
+#     )
+#
+#     staff = Staff.objects.select_related('division', 'position').all().values(
+#         'id',
+#         'last_name',
+#         'first_name',
+#         'patronymic',
+#         'division__department__title',
+#         'division__title',
+#         'position_id',
+#         'position__title'
+#     )
+#
+#     assets_df = pd.DataFrame(list(assets))
+#     assignments_df = pd.DataFrame(list(assignments))
+#     staff_df = pd.DataFrame(list(staff))
+#
+#     assets_df.columns = [
+#         'inventory_number',
+#         'title',
+#         'identifier',
+#         'acquisition_date',
+#         'service_life',
+#         'cost',
+#         'current_cost',
+#         'last_recalculation_date',
+#         'description',
+#         'asset_type',
+#         'is_written_off',
+#         'written_off_at'
+#     ]
+#
+#     assignments_df.columns = [
+#         'inventory_number',
+#         'staff_id',
+#         'assignment_date',
+#         'return_date'
+#     ]
+#
+#     staff_df.columns = [
+#         'staff_id',
+#         'last_name',
+#         'first_name',
+#         'patronymic',
+#         'division_department',
+#         'division_title',
+#         'position_id',
+#         'position_title'
+#     ]
+#
+#     assets_df['acquisition_date'] = pd.to_datetime(assets_df['acquisition_date']).dt.date.astype(str)
+#     assignments_df['assignment_date'] = pd.to_datetime(assignments_df['assignment_date']).dt.date.astype(str)
+#     assignments_df['return_date'] = pd.to_datetime(assignments_df['return_date']).dt.date.astype(str)
+#     assets_df['last_recalculation_date'] = pd.to_datetime(assets_df['last_recalculation_date']).dt.date.astype(str)
+#     assets_df['written_off_at'] = pd.to_datetime(assets_df['written_off_at']).dt.date.astype(str)
+#
+#     combined_df = assets_df.merge(
+#         right=assignments_df,
+#         on='inventory_number',
+#         how='left'
+#     ).merge(
+#         right=staff_df,
+#         on='staff_id',
+#         how='left'
+#     )
+#
+#     if export_format == 'csv':
+#         csv_path = "additional/Reports/report_in_one_sheets.csv"
+#
+#         # Сохранение DataFrame в CSV-файл
+#         combined_df.to_csv(csv_path, index=False)
+#
+#         # Отправка CSV-файла в ответе HTTP
+#         with open(csv_path, 'rb') as f:
+#             response = HttpResponse(f.read(), content_type='text/csv')
+#             response['Content-Disposition'] = 'attachment; filename=report.csv'
+#             return response
+#
+#     elif export_format == 'xlsx':
+#         # Создание нового Excel файла
+#         workbook = xlsxwriter.Workbook('additional/Reports/report_in_one_sheets.xlsx', {'nan_inf_to_errors': True})
+#         worksheet = workbook.add_worksheet('Main Assets Report')
+#
+#         # Настройка стилей
+#         header_format = workbook.add_format({'bold': True, 'bg_color': 'yellow'})
+#         date_format = workbook.add_format({'num_format': 'yyyy-mm-dd'})
+#
+#         # Запись заголовков
+#         for col_num, header in enumerate(combined_df.columns):
+#             worksheet.write(0, col_num, header, header_format)
+#
+#         # Запись данных
+#         for row_num, row_data in enumerate(combined_df.values, start=1):
+#             for col_num, cell_data in enumerate(row_data):
+#                 if isinstance(cell_data, pd.Timestamp):
+#                     worksheet.write(row_num, col_num, cell_data, date_format)
+#                 else:
+#                     worksheet.write(row_num, col_num, cell_data)
+#
+#         # Закрытие файла
+#         workbook.close()
+#
+#         # Отправка Excel файла в ответе HTTP
+#         with open('additional/Reports/report_in_one_sheets.xlsx', 'rb') as file:
+#             response = HttpResponse(file.read(), content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+#             response['ContentDisposition'] = 'attachment; filename=report_in_one_sheets.xlsx'
+#             return response
+#
+#     else:
+#         return HttpResponse('Invalid export format specified.')
+#
+
+
+# @authentication_classes([JWTAuthentication])
+# @permission_classes([IsAuthenticated])
+# def create_and_export_report(request):
+#     export_format = request.GET.get('format', '').lower()
+#
+#     assets = Asset.objects.all().values(
+#         'inventory_number',
+#         'title',
+#         'identifier',
+#         'acquisition_date',
+#         'service_life',
+#         'cost',
+#         'current_cost',
+#         'last_recalculation_date',
+#         'description',
+#         'asset_type__title',
+#         'is_written_off',
+#         'written_off_at'
+#     )
+#
+#     assignments = AssetAssignment.objects.select_related('asset', 'staff').all().values(
+#         'asset__inventory_number',
+#         'staff_id',
+#         'assignment_date',
+#         'return_date'
+#     )
+#
+#     staff = Staff.objects.select_related('division', 'position').all().values(
+#         'id',
+#         'last_name',
+#         'first_name',
+#         'patronymic',
+#         'division__department__title',
+#         'division__title',
+#         'position_id',
+#         'position__title'
+#     )
+#
+#     assets_df = pd.DataFrame(list(assets))
+#     assignments_df = pd.DataFrame(list(assignments))
+#     staff_df = pd.DataFrame(list(staff))
+#
+#     assets_df.columns = [
+#         'inventory_number',
+#         'title',
+#         'identifier',
+#         'acquisition_date',
+#         'service_life',
+#         'cost',
+#         'current_cost',
+#         'last_recalculation_date',
+#         'description',
+#         'asset_type',
+#         'is_written_off',
+#         'written_off_at'
+#     ]
+#
+#     assignments_df.columns = [
+#         'inventory_number',
+#         'staff_id',
+#         'assignment_date',
+#         'return_date'
+#     ]
+#
+#     staff_df.columns = [
+#         'staff_id',
+#         'last_name',
+#         'first_name',
+#         'patronymic',
+#         'division_department',
+#         'division_title',
+#         'position_id',
+#         'position_title'
+#     ]
+#
+#     assets_df['acquisition_date'] = pd.to_datetime(assets_df['acquisition_date']).dt.date.astype(str)
+#     assignments_df['assignment_date'] = pd.to_datetime(assignments_df['assignment_date']).dt.date.astype(str)
+#     assignments_df['return_date'] = pd.to_datetime(assignments_df['return_date']).dt.date.astype(str)
+#     assets_df['last_recalculation_date'] = pd.to_datetime(assets_df['last_recalculation_date']).dt.date.astype(str)
+#     assets_df['written_off_at'] = pd.to_datetime(assets_df['written_off_at']).dt.date.astype(str)
+#
+#     combined_df = assets_df.merge(
+#         right=assignments_df,
+#         on='inventory_number',
+#         how='left'
+#     ).merge(
+#         right=staff_df,
+#         on='staff_id',
+#         how='left'
+#     )
+#
+#     if export_format == 'csv':
+#         csv_path = "additional/Reports/report_in_one_sheets.csv"
+#
+#         # Сохранение DataFrame в CSV-файл
+#         combined_df.to_csv(csv_path, index=False)
+#
+#         # Отправка CSV-файла в ответе HTTP
+#         with open(csv_path, 'rb') as f:
+#             response = HttpResponse(f.read(), content_type='text/csv')
+#             response['Content-Disposition'] = 'attachment; filename=report.csv'
+#             return response
+#
+#     elif export_format == 'xlsx':
+#         # Создание нового Excel файла
+#         workbook = xlsxwriter.Workbook('additional/Reports/report_in_one_sheets.xlsx', {'nan_inf_to_errors': True})
+#         worksheet = workbook.add_worksheet('Main Assets Report')
+#
+#         # Настройка стилей
+#         header_format = workbook.add_format({'bold': True, 'bg_color': '#c6efce'})
+#         data_light_format = workbook.add_format({'bg_color': '#d9ead3'})
+#         data_dark_format = workbook.add_format({'bg_color': '#cfe2d4'})
+#         date_format = workbook.add_format({'num_format': 'yyyy-mm-dd'})
+#
+#         # Запись заголовков
+#         for col_num, header in enumerate(combined_df.columns):
+#             worksheet.write(0, col_num, header, header_format)
+#
+#         # Запись пустой строки
+#         worksheet.write(1, 0, '', data_light_format)
+#
+#         # Запись данных
+#         for row_num, row_data in enumerate(combined_df.values, start=2):
+#             for col_num, cell_data in enumerate(row_data):
+#                 if isinstance(cell_data, pd.Timestamp):
+#                     worksheet.write(row_num, col_num, cell_data, date_format)
+#                 else:
+#                     # Определение формата фона данных в зависимости от номера строки
+#                     if row_num % 2 == 0:
+#                         cell_format = data_light_format
+#                     else:
+#                         cellformat = data_dark_format
+#
+#                     worksheet.write(row_num, col_num, cell_data, cell_format)
+#
+#         # Закрытие файла
+#         workbook.close()
+#
+#         # Отправка Excel файла в ответе HTTP
+#         with open('additional/Reports/report_in_one_sheets.xlsx', 'rb') as file:
+#             response = HttpResponse(file.read(), content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+#             response['Content-Disposition'] = 'attachment; filename=report.xlsx'
+#             return response
+#
+#     else:
+#         return HttpResponse('Invalid export format specified.', status=400)
+#
