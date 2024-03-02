@@ -2126,7 +2126,7 @@
 					"response": []
 				},
 				{
-					"name": "Exporting a merged Excel file",
+					"name": "Create and Export file to CSV",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -2141,7 +2141,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/assets/api/reports/export_to_excel_report/",
+							"raw": "http://localhost:8000/assets/api/reports/export_report_to_file/?format=csv",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2151,8 +2151,53 @@
 								"assets",
 								"api",
 								"reports",
-								"export_to_excel_report",
+								"export_report_to_file",
 								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "csv"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create and Export file to XLSX",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5MDI4MTcyLCJpYXQiOjE3MDg5NDE3NzIsImp0aSI6ImQyMzA4YWJhNWY0MDQ3ZjFhYjIxYTY0YTdlMzJlMGU2IiwidXNlcl9pZCI6Nn0.m_dQOSnDsmPxSMncOHH-3o_C9UMdHwNXKG_K6Nq4zuE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/assets/api/reports/export_report_to_file/?format=xlsx",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"assets",
+								"api",
+								"reports",
+								"export_report_to_file",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "xlsx"
+								}
 							]
 						}
 					},
