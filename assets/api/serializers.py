@@ -1,5 +1,11 @@
 from rest_framework import serializers
-from assets.models import User, Department, Division, Position, Staff, Asset, AssetType, AssetAssignment, TaskCheckPoint, UserAction
+from assets.models import User, Department, Division, Position, Staff, Asset, AssetType, AssetAssignment, TaskCheckPoint, UserAction, UserSettings
+
+
+class UserSettingsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserSettings
+        fields = '__all__'
 
 
 class UserSerializer(serializers.ModelSerializer):

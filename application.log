@@ -12,3 +12,4 @@ INFO 2024-03-01 16:00:14,192 views_reports 11824 18860 Calculated current price 
 INFO 2024-03-01 16:02:59,910 views_main 11824 18860 All AssetsAssignments viewed by user 4 user_1.
 ERROR 2024-03-01 16:04:39,321 views_main 11824 18860 AssetAssignment with pk=215 does not exist
 INFO 2024-03-01 16:04:55,574 views_main 11824 18860 AssetAssignment 210 viewed by user 4 user_1.
+ERROR 2024-03-02 15:06:56,067 views_user 2308 16104 User settings not found for user: user_4

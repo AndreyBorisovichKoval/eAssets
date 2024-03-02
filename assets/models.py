@@ -108,6 +108,18 @@ class TaskCheckPoint(models.Model):
         return self.title
 
 
+class UserSettings(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    setting1 = models.CharField(max_length=120)
+    setting2 = models.IntegerField()
+    setting3 = models.BooleanField()
+    setting4 = models.CharField(max_length=120)
+    setting5 = models.CharField(max_length=120)
+
+    def __str__(self):
+        return self.user.username
+
+
 # for Migrations
 # python manage.py makemigrations
 # python manage.py makemigrations assets

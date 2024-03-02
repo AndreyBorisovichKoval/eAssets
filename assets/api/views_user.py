@@ -7,10 +7,26 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from assets.models import *
-from assets.api.serializers import UserSerializer
+from assets.api.serializers import UserSerializer, UserSettingsSerializer
+
 
 # Получаем логгер Django
 logger = logging.getLogger('application')
+
+
+@api_view(["GET"])
+@authentication_classes([JWTAuthentication])
+@permission_classes([IsAuthenticated])
+def get_user_settings(request):
+    user = request.user
+    try:
+        settings = UserSettings.objects.get(user=user)
+        serializer = UserSettingsSerializer(settings)
+        logger.info(f"User settings fetched for user: {user.username}")
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    except UserSettings.DoesNotExist:
+        logger.error(f"User settings not found for user: {user.username}")
+        return Response({'error': 'Settings not found'}, status=status.HTTP_404_NOT_FOUND)
 
 
 @api_view(["POST"])
