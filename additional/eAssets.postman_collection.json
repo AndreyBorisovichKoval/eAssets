@@ -10,6 +10,127 @@
 			"name": "Users",
 			"item": [
 				{
+					"name": "ADD User Settings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5NTM4NTE1LCJpYXQiOjE3MDk0NTIxMTUsImp0aSI6ImNkMjg2NTYwMjg4MjQ0ODFhZGJjMDM2NmI3ZWQxODQwIiwidXNlcl9pZCI6OH0.yX2114lHu6R6FUD5pvdD5r8or5N4DI_psmSYCSCf2fY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"setting1\": \"dark theme\",\r\n  \"setting2\": 123,\r\n  \"setting3\": true,\r\n  \"setting4\": \"add settings\",\r\n  \"setting5\": \"add settings\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/create_user_settings/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"create_user_settings",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET User Settings",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5NTMzMDc1LCJpYXQiOjE3MDk0NDY2NzUsImp0aSI6IjkxMzI2Yjk1OWI2MzQ0Y2ZiYWZlOTViMDI4OTAzZThkIiwidXNlcl9pZCI6OX0.ZbzXQSO5-vFb1DUgAqR4ALwxLHClkk6NdLz3KQi_xQ8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/get_user_settings/4/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"get_user_settings",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MOD User Settings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5NTMzMDc1LCJpYXQiOjE3MDk0NDY2NzUsImp0aSI6IjkxMzI2Yjk1OWI2MzQ0Y2ZiYWZlOTViMDI4OTAzZThkIiwidXNlcl9pZCI6OX0.ZbzXQSO5-vFb1DUgAqR4ALwxLHClkk6NdLz3KQi_xQ8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"setting1\": \"dark theme\",\r\n  \"setting2\": 123,\r\n  \"setting3\": true,\r\n  \"setting4\": \"update data settings\",\r\n  \"setting5\": \"update data settings\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/update_user_settings/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"update_user_settings",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "View User",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true

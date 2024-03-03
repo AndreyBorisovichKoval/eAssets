@@ -14,57 +14,109 @@ from assets.api.serializers import UserSerializer, UserSettingsSerializer
 logger = logging.getLogger('application')
 
 
-# @api_view(["GET"])
-# @authentication_classes([JWTAuthentication])
-# @permission_classes([IsAuthenticated])
-# def get_user_settings(request):
-#     user = request.user
-#     try:
-#         settings = UserSettings.objects.get(user=user)
-#         serializer = UserSettingsSerializer(settings)
-#         logger.info(f"User settings fetched for user: {user.username}")
-#         return Response(serializer.data, status=status.HTTP_200_OK)
-#     except UserSettings.DoesNotExist:
-#         logger.error(f"User settings not found for user: {user.username}")
-#         return Response({'error': 'Settings not found'}, status=status.HTTP_404_NOT_FOUND)
-
-
-@api_view(["GET", "POST", "PATCH"])
+@api_view(["POST"])
 @authentication_classes([JWTAuthentication])
 @permission_classes([IsAuthenticated])
-def user_settings(request):
+def create_user_settings(request):
     user = request.user
     try:
         settings = UserSettings.objects.get(user=user)
-
-        if request.method == "GET":
-            serializer = UserSettingsSerializer(settings)
-            logger.info(f"Настройки пользователя получены для пользователя: {user.username}")
-            return Response(serializer.data, status=status.HTTP_200_OK)
-
-        elif request.method == "POST":
-            serializer = UserSettingsSerializer(settings, data=request.data)
-            if serializer.is_valid():
-                serializer.save()
-                logger.info(f"Настройки пользователя добавлены для пользователя: {user.username}")
-                return Response(serializer.data, status=status.HTTP_200_OK)
-            else:
-                logger.error(f"Недопустимые данные для обновления настроек пользователя для пользователя: {user.username}")
-                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-        elif request.method == "PATCH":
-            serializer = UserSettingsSerializer(settings, data=request.data, partial=True)
-            if serializer.is_valid():
-                serializer.save()
-                logger.info(f"Настройки пользователя обновлены для пользователя: {user.username}")
-                return Response(serializer.data, status=status.HTTP_200_OK)
-            else:
-                logger.error(f"Недопустимые данные для обновления настроек пользователя для пользователя: {user.username}")
-                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+        logger.error(f"User settings already exist for user: {user.username}")
+        return Response({'error': 'Settings already exist'}, status=status.HTTP_400_BAD_REQUEST)
     except UserSettings.DoesNotExist:
-        logger.error(f"Настройки пользователя не найдены для пользователя: {user.username}")
-        return Response({'error': 'Настройки не найдены'}, status=status.HTTP_404_NOT_FOUND)
+        data = request.data.copy()
+        data['user'] = user.id  # Добавляем ID пользователя в данные запроса
+        serializer = UserSettingsSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save(user=user)
+            logger.info(f"User settings added for user: {user.username}")
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            logger.error(f"Invalid data to add user settings for user: {user.username}")
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(["GET"])
+@authentication_classes([JWTAuthentication])
+@permission_classes([IsAuthenticated])
+def get_user_settings(request):
+    user = request.user
+    try:
+        settings = UserSettings.objects.get(user=user)
+        serializer = UserSettingsSerializer(settings)
+        logger.info(f"User settings fetched for user: {user.username}")
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    except UserSettings.DoesNotExist:
+        logger.error(f"User settings not found for user: {user.username}")
+        return Response({'error': 'Settings not found'}, status=status.HTTP_404_NOT_FOUND)
+
+
+@api_view(["PATCH"])
+@authentication_classes([JWTAuthentication])
+@permission_classes([IsAuthenticated])
+def update_user_settings(request):
+    user = request.user
+    try:
+        settings = UserSettings.objects.get(user=user)
+        serializer = UserSettingsSerializer(settings, data=request.data, partial=True, context={'user': user})
+        if serializer.is_valid():
+            serializer.save()
+            logger.info(f"User settings updated for user: {user.username}")
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        else:
+            logger.error(f"Invalid data to update user settings for user: {user.username}")
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    except UserSettings.DoesNotExist:
+        logger.error(f"User settings not found for user: {user.username}")
+        return Response({'error': 'Settings not found'}, status=status.HTTP_404_NOT_FOUND)
+
+
+
+# @api_view(["GET", "POST", "PATCH"])
+# @authentication_classes([JWTAuthentication])
+# @permission_classes([IsAuthenticated])
+# def user_settings(request):
+#     user = request.user
+#     try:
+#         if request.method == "GET":
+#             try:
+#                 settings = UserSettings.objects.get(user=user)
+#                 serializer = UserSettingsSerializer(settings)
+#                 logger.info(f"User settings retrieved for user: {user.username}")
+#                 return Response(serializer.data, status=status.HTTP_200_OK)
+#             except UserSettings.DoesNotExist:
+#                 logger.error(f"User settings not found for user: {user.username}")
+#                 return Response({'error': 'Settings not found'}, status=status.HTTP_404_NOT_FOUND)
+#         elif request.method == "POST":
+#             try:
+#                 settings = UserSettings.objects.get(user=user)
+#                 logger.error(f"User settings already exist for user: {user.username}")
+#                 return Response({'error': 'Settings already exist'}, status=status.HTTP_400_BAD_REQUEST)
+#             except UserSettings.DoesNotExist:
+#                 serializer = UserSettingsSerializer(data=request.data, context={'user': user})
+#                 if serializer.is_valid():
+#                     serializer.save()
+#                     logger.info(f"User settings added for user: {user.username}")
+#                     return Response(serializer.data, status=status.HTTP_201_CREATED)
+#                 else:
+#                     logger.error(f"Invalid data to add user settings for user: {user.username}")
+#                     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+#         elif request.method == "PATCH":
+#             try:
+#                 settings = UserSettings.objects.get(user=user)
+#                 serializer = UserSettingsSerializer(settings, data=request.data, partial=True, context={'user': user})
+#                 if serializer.is_valid():
+#                     serializer.save()
+#                     logger.info(f"User settings updated for user: {user.username}")
+#                     return Response(serializer.data, status=status.HTTP_200_OK)
+#                 else:
+#                     logger.error(f"Invalid data to update user settings for user: {user.username}")
+#                     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+#             except UserSettings.DoesNotExist:
+#                 logger.error(f"User settings not found for user: {user.username}")
+#                 return Response({'error': 'Settings not found'}, status=status.HTTP_404_NOT_FOUND)
+#     except Exception as e:
+#         logger.error(f"An error occurred: {str(e)}")
+#         return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 @api_view(["POST"])

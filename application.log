@@ -16,3 +16,48 @@ ERROR 2024-03-02 15:06:56,067 views_user 2308 16104 User settings not found for 
 ERROR 2024-03-02 15:54:58,298 views_user 12748 14940 User settings not found for user: user_4
 ERROR 2024-03-02 16:02:35,146 views_user 13516 1432 Настройки пользователя не найдены для пользователя: user_4
 ERROR 2024-03-02 16:03:16,611 views_user 13516 1432 Настройки пользователя не найдены для пользователя: user_4
+ERROR 2024-03-03 11:12:38,554 views_user 9820 11688 Настройки пользователя не найдены для пользователя: user_4
+ERROR 2024-03-03 11:18:15,518 views_user 9888 10680 User settings not found for user: user_4
+ERROR 2024-03-03 11:19:15,330 views_user 9888 10680 User settings not found for user: user_4
+ERROR 2024-03-03 11:19:37,057 views_user 9888 10680 User settings not found for user: user_4
+ERROR 2024-03-03 11:20:08,873 views_user 9888 10680 User settings not found for user: user_4
+ERROR 2024-03-03 11:24:40,802 views_user 3860 12352 Invalid data to add user settings for user: user_4
+ERROR 2024-03-03 11:30:21,325 views_user 10776 11968 Invalid data to add user settings for user: user_4
+ERROR 2024-03-03 11:31:06,485 views_user 8844 12868 Invalid data to add user settings for user: user_4
+ERROR 2024-03-03 11:34:34,672 views_user 5028 7344 User settings already exist for user: user_4
+ERROR 2024-03-03 11:39:42,649 views_user 5348 5492 User settings not found for user: user_4
+ERROR 2024-03-03 11:39:53,243 views_user 5348 5492 User settings already exist for user: user_4
+ERROR 2024-03-03 11:40:25,174 views_user 15120 11736 User settings already exist for user: user_4
+ERROR 2024-03-03 11:42:39,873 views_user 14944 14372 Invalid data to add user settings for user: user_4
+ERROR 2024-03-03 11:42:53,322 views_user 14944 14372 User settings not found for user: user_4
+ERROR 2024-03-03 11:42:57,020 views_user 14944 14372 User settings not found for user: user_4
+ERROR 2024-03-03 11:59:52,169 views_user 4856 10064 User settings not found for user: user_4
+ERROR 2024-03-03 12:00:11,499 views_user 4856 10064 User settings not found for user: user_4
+ERROR 2024-03-03 12:02:51,012 views_user 4856 10064 User settings not found for user: user_4
+ERROR 2024-03-03 12:02:59,060 views_user 4856 10064 User settings not found for user: user_4
+ERROR 2024-03-03 12:05:14,406 views_user 13044 12500 Invalid data to add user settings for user: user_4
+ERROR 2024-03-03 12:17:02,222 views_user 13044 12500 Invalid data to add user settings for user: user_4
+INFO 2024-03-03 12:29:29,761 views_user 13044 12500 User settings added for user: user_4
+ERROR 2024-03-03 12:30:29,406 views_user 13044 12500 User settings already exist for user: user_4
+INFO 2024-03-03 12:30:58,516 views_user 13044 12500 User settings fetched for user: user_4
+INFO 2024-03-03 12:31:26,306 views_user 13044 12500 User settings updated for user: user_4
+INFO 2024-03-03 12:31:39,300 views_user 13044 12500 User settings updated for user: user_4
+INFO 2024-03-03 12:31:57,188 views_user 13044 12500 User settings fetched for user: user_4
+INFO 2024-03-03 12:36:00,019 views_user 13992 1988 User settings fetched for user: user_4
+INFO 2024-03-03 12:36:10,458 views_user 13992 1988 User settings updated for user: user_4
+INFO 2024-03-03 12:36:54,461 views_user 13992 1988 User settings updated for user: user_4
+ERROR 2024-03-03 12:39:36,051 views_user 13992 1988 User settings already exist for user: user_4
+ERROR 2024-03-03 12:39:55,567 views_user 13992 1988 User settings already exist for user: user_4
+ERROR 2024-03-03 12:40:49,696 views_user 1824 12192 User settings already exist for user: user_4
+ERROR 2024-03-03 12:47:49,004 views_user 12592 14552 User settings already exist for user: user_4
+INFO 2024-03-03 12:49:04,059 views_user 7520 12504 User settings added for user: user_3
+ERROR 2024-03-03 12:49:15,101 views_user 7520 12504 User settings already exist for user: user_3
+INFO 2024-03-03 12:51:56,735 views_user 7520 12504 User settings added for user: admin
+INFO 2024-03-03 12:52:33,615 views_user 7520 12504 User settings added for user: user_1
+INFO 2024-03-03 12:52:53,807 views_user 7520 12504 User settings added for user: user_2
+ERROR 2024-03-03 12:52:56,123 views_user 7520 12504 User settings already exist for user: user_2
+INFO 2024-03-03 12:53:58,621 views_user 7520 12504 User settings added for user: user_5
+INFO 2024-03-03 12:54:32,444 views_user 7520 12504 User settings fetched for user: user_4
+INFO 2024-03-03 12:56:03,319 views_user 7520 12504 User settings fetched for user: user_4
+INFO 2024-03-03 12:56:23,498 views_user 7520 12504 User settings updated for user: user_4
+INFO 2024-03-03 12:56:43,442 views_user 7520 12504 User settings updated for user: user_4
