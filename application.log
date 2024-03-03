@@ -61,3 +61,7 @@ INFO 2024-03-03 12:54:32,444 views_user 7520 12504 User settings fetched for use
 INFO 2024-03-03 12:56:03,319 views_user 7520 12504 User settings fetched for user: user_4
 INFO 2024-03-03 12:56:23,498 views_user 7520 12504 User settings updated for user: user_4
 INFO 2024-03-03 12:56:43,442 views_user 7520 12504 User settings updated for user: user_4
+INFO 2024-03-03 15:38:04,687 views_main 4020 9784 All Assets viewed by user 6 user_1.
+INFO 2024-03-03 15:38:15,560 views_main 4020 9784 Asset 210 Asus viewed by user 6 user_1.
+INFO 2024-03-03 15:38:32,821 views_reports 4020 9784 __-=*=-__ Retrieved assigned assets for staff with ID: 12. __-=*=-__
+INFO 2024-03-03 15:38:48,488 views_reports 4020 9784 Retrieved assets for department with ID: 1
