@@ -108,7 +108,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"setting1\": \"dark theme\",\r\n  \"setting2\": 123,\r\n  \"setting3\": true,\r\n  \"setting4\": \"update data settings\",\r\n  \"setting5\": \"update data settings\"\r\n}",
+							"raw": "{\r\n  \"setting1\": \"dark theme\",\r\n  \"setting2\": 123,\r\n  \"setting3\": true,\r\n  \"setting4\": \"update data1 settings\",\r\n  \"setting5\": \"update data1 settings\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
