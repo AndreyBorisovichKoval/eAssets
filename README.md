@@ -79,7 +79,7 @@ _-=*=-_
 * tzdata==2023.4;
 * XlsxWriter==3.2.0.
 
-" file --- ***requirements.txt*** "
+"file - ***requirements.txt***": 
 [requirements.txt](requirements.txt)
 
 ##### _____________________________________

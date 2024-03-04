@@ -126,3 +126,5 @@ class UserSettings(models.Model):
 # python manage.py migrate
 
 # pip freeze > requirements.txt
+# pip install pipdeptree
+# pipdeptree
