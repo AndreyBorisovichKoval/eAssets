@@ -58,24 +58,24 @@ _-=*=-_
 
 ## Требования (зависимости) проекта:
 
-asgiref==3.7.2;
-Django==5.0.2;
-django-crontab==0.7.1;
-djangorestframework==3.14.0;
-djangorestframework-simplejwt==5.3.1;
-et-xmlfile==1.1.0;
-numpy==1.26.4;
-openpyxl==3.1.2;
-pandas==2.2.1;
-psycopg2==2.9.9;
-PyJWT==2.8.0;
-python-dateutil==2.8.2;
-pytz==2024.1;
-six==1.16.0;
-sqlparse==0.4.4;
-suppress==0.1.1;
-tzdata==2023.4;
-XlsxWriter==3.2.0.
+* asgiref==3.7.2;
+* Django==5.0.2;
+* django-crontab==0.7.1;
+* djangorestframework==3.14.0;
+* djangorestframework-simplejwt==5.3.1;
+* et-xmlfile==1.1.0;
+* numpy==1.26.4;
+* openpyxl==3.1.2;
+* pandas==2.2.1;
+* psycopg2==2.9.9;
+* PyJWT==2.8.0;
+* python-dateutil==2.8.2;
+* pytz==2024.1;
+* six==1.16.0;
+* sqlparse==0.4.4;
+* suppress==0.1.1;
+* tzdata==2023.4;
+* XlsxWriter==3.2.0.
 
 ##### _____________________________________
 
