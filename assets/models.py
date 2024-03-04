@@ -124,3 +124,5 @@ class UserSettings(models.Model):
 # python manage.py makemigrations
 # python manage.py makemigrations assets
 # python manage.py migrate
+
+# pip freeze > requirements.txt
