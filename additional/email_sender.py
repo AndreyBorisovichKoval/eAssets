@@ -2,13 +2,20 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
+from django.http import HttpResponse
 
-def send_email():
+from eAssets.security import SMTP_PASSWORD_YANDEX
+
+
+def send_email(request):
+    print('1***1')
     # Настройки SMTP сервера Gmail
     SMTP_SERVER = 'smtp.yandex.ru'
+    # SMTP_PORT = 25
     SMTP_PORT = 465
+    # SMTP_PORT = 587
     SMTP_USERNAME = 'andreyborisovichkoval@yandex.ru'
-    SMTP_PASSWORD = ''
+    SMTP_PASSWORD = SMTP_PASSWORD_YANDEX
 
     # Содержимое письма
     sender = 'andreyborisovichkoval@yandex.ru'
@@ -21,6 +28,8 @@ def send_email():
     message['Subject'] = subject
     message['From'] = sender
     message['To'] = recipient
+
+    print('0***0')
 
     try:
         # Установка соединения с SMTP сервером Gmail
@@ -39,9 +48,10 @@ def send_email():
         smtp_server.quit()
 
         print('Письмо успешно отправлено!')
+        return HttpResponse('Письмо успешно отправлено!')
     except Exception as e:
         print('Ошибка при отправке письма:', str(e))
-
+        return HttpResponse('Ошибка при отправке письма:', str(e))
 
 
 # def send_email():

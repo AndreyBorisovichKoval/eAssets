@@ -16,8 +16,11 @@ Including another URLconf
 """
 
 from django.contrib import admin
+# from django.core.mail import send_mail
 from django.urls import path, include
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
+
+from additional.email_sender import send_email
 from assets.api.views_user import view_users, create_user, change_password, get_user_settings, create_user_settings, update_user_settings
 from assets.views import recalculate_assets_view
 from django.contrib.auth import views as auth_views
@@ -60,6 +63,8 @@ urlpatterns = [
 
     path('recalculation/', recalculate_assets_view, name='recalculate_assets'),
     # path('recalculation/', AssetRecalculator, name='recalculate_assets'),
+
+    path('send_email/', send_email, name='send_email'),
 
     # path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     # path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
