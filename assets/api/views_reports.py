@@ -10,6 +10,7 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 import xlsxwriter
 import pandas as pd
 from assets.models import *
+from assets.views import recalculate_assets_view
 
 logger = logging.getLogger('application')
 

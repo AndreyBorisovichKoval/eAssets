@@ -66,3 +66,14 @@ INFO 2024-03-03 15:38:15,560 views_main 4020 9784 Asset 210 Asus viewed by user 
 INFO 2024-03-03 15:38:32,821 views_reports 4020 9784 __-=*=-__ Retrieved assigned assets for staff with ID: 12. __-=*=-__
 INFO 2024-03-03 15:38:48,488 views_reports 4020 9784 Retrieved assets for department with ID: 1
 INFO 2024-03-05 08:17:43,335 views_tasks 13852 7684 Successful completion of recalculation of fixed assets...
+INFO 2024-03-05 14:35:55,262 views_tasks 12892 10296 Successful completion of recalculation of fixed assets...
+INFO 2024-03-05 14:41:54,281 views_reports 8876 11952 Calculated current price for asset type with id 1
+INFO 2024-03-05 14:41:59,013 views_reports 8876 11952 Calculated total price for asset type with id 1
+INFO 2024-03-05 14:42:02,613 views_reports 8876 11952 Calculated total current price of active assets
+INFO 2024-03-05 14:42:06,881 views_reports 8876 11952 Calculated total price of active assets
+INFO 2024-03-05 14:42:12,714 views_reports 8876 11952 Calculated total current price of active assets
+INFO 2024-03-05 14:42:18,007 views_reports 8876 11952 Retrieved retired assets
+INFO 2024-03-05 14:42:25,878 views_reports 8876 11952 Retrieved assets for division with ID: 1
+INFO 2024-03-05 14:42:41,913 views_reports 8876 11952 Retrieved assets for department with ID: 1
+INFO 2024-03-05 14:42:52,405 views_reports 8876 11952 __-=*=-__ Retrieved assigned assets for staff with ID: 12. __-=*=-__
+INFO 2024-03-05 14:43:04,870 views_tasks 8876 11952 Successful completion of recalculation of fixed assets...
