@@ -108,16 +108,36 @@ class TaskCheckPoint(models.Model):
         return self.title
 
 
+# class UserSettings(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE)
+#     setting2 = models.IntegerField()
+#     deletion_confirmation = models.BooleanField()
+#     desktop_theme = models.CharField(max_length=32)
+#     setting4 = models.CharField(max_length=120)
+#     setting5 = models.CharField(max_length=120)
+#
+#     def __str__(self):
+#         return self.user.username
+
 class UserSettings(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    setting1 = models.CharField(max_length=120)
-    setting2 = models.IntegerField()
-    setting3 = models.BooleanField()
-    setting4 = models.CharField(max_length=120)
-    setting5 = models.CharField(max_length=120)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    add_confirmation = models.BooleanField(default=True)
+    update_confirmation = models.BooleanField(default=True)
+    delete_confirmation = models.BooleanField(default=True)
+    display_language = models.CharField(max_length=255, default="Russian")
+    desktop_theme = models.CharField(max_length=255, default="Green animation")
+    dark_mode_theme = models.BooleanField(default=False)
+    # font = models.CharField(max_length=255, default="Helvetica")
+    font = models.CharField(max_length=255, default="Helvetica")
+    font_size = models.IntegerField(default=11)
+    accessibility_options = models.CharField(max_length=255, default="High contrast")
+    # timezone_format = models.CharField(max_length=255)
+    notification_sound = models.BooleanField(default=True)
+    email_notifications = models.BooleanField(default=False)
+    notification_frequency = models.CharField(max_length=255)
 
     def __str__(self):
-        return self.user.username
+        return f"User Settings for {self.user.username}"
 
 
 # for Migrations

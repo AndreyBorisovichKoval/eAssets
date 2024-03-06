@@ -77,3 +77,33 @@ INFO 2024-03-05 14:42:25,878 views_reports 8876 11952 Retrieved assets for divis
 INFO 2024-03-05 14:42:41,913 views_reports 8876 11952 Retrieved assets for department with ID: 1
 INFO 2024-03-05 14:42:52,405 views_reports 8876 11952 __-=*=-__ Retrieved assigned assets for staff with ID: 12. __-=*=-__
 INFO 2024-03-05 14:43:04,870 views_tasks 8876 11952 Successful completion of recalculation of fixed assets...
+INFO 2024-03-05 18:34:39,064 views_user 11912 11404 User settings fetched for user: user_1
+ERROR 2024-03-05 18:35:32,830 views_user 11912 11404 User settings already exist for user: user_1
+INFO 2024-03-05 18:35:51,019 views_user 11912 11404 User settings fetched for user: user_1
+INFO 2024-03-05 18:36:11,587 views_user 11912 11404 User settings updated for user: user_1
+INFO 2024-03-05 18:52:55,544 views_tasks 11912 11404 Successful completion of recalculation of fixed assets...
+INFO 2024-03-05 18:58:25,839 views_reports 11912 11404 __-=*=-__ Retrieved assigned assets for staff with ID: 12. __-=*=-__
+INFO 2024-03-05 18:58:48,069 views_reports 11912 11404 Retrieved assets for department with ID: 1
+INFO 2024-03-05 18:59:30,632 views_reports 11912 11404 Retrieved assets for division with ID: 1
+INFO 2024-03-05 18:59:40,195 views_reports 11912 11404 Retrieved retired assets
+INFO 2024-03-05 18:59:50,023 views_reports 11912 11404 Calculated total price of active assets
+INFO 2024-03-05 18:59:59,062 views_reports 11912 11404 Calculated total current price of active assets
+INFO 2024-03-05 19:00:15,143 views_reports 11912 11404 Calculated total price for asset type with id 1
+INFO 2024-03-05 19:00:21,497 views_reports 11912 11404 Calculated current price for asset type with id 1
+INFO 2024-03-06 11:51:51,192 views_tasks 5564 11184 Successful completion of recalculation of fixed assets...
+INFO 2024-03-06 11:54:40,578 views_tasks 11156 10040 Successful completion of recalculation of fixed assets...
+INFO 2024-03-06 11:56:53,822 views_main 11156 10040 All AssetTypes viewed by user 6 user_1.
+INFO 2024-03-06 11:57:09,871 views_main 11156 10040 AssetType 6 Printer viewed by user 6 user_1.
+ERROR 2024-03-06 14:15:28,970 views_user 10668 5320 Invalid data to add user settings for user: user_1
+INFO 2024-03-06 14:17:02,565 views_user 10668 5320 User settings added for user: user_1
+ERROR 2024-03-06 14:19:50,849 views_user 10668 5320 User settings already exist for user: user_1
+INFO 2024-03-06 14:20:32,221 views_user 10668 5320 User settings updated for user: user_1
+INFO 2024-03-06 14:20:47,241 views_user 10668 5320 User settings fetched for user: user_1
+INFO 2024-03-06 14:25:07,201 views_user 17808 19540 User settings fetched for user: user_1
+INFO 2024-03-06 14:25:10,617 views_user 17808 19540 User settings updated for user: user_1
+ERROR 2024-03-06 14:25:13,685 views_user 17808 19540 User settings already exist for user: user_1
+ERROR 2024-03-06 14:31:37,019 views_user 17808 19540 User settings already exist for user: user_1
+INFO 2024-03-06 14:31:42,591 views_user 17808 19540 User settings updated for user: user_1
+INFO 2024-03-06 14:31:49,860 views_user 17808 19540 User settings fetched for user: user_1
+INFO 2024-03-06 14:32:20,914 views_user 17808 19540 User settings updated for user: user_1
+INFO 2024-03-06 14:32:31,425 views_user 17808 19540 User settings fetched for user: user_1

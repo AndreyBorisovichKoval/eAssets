@@ -17,7 +17,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5NTM4NTE1LCJpYXQiOjE3MDk0NTIxMTUsImp0aSI6ImNkMjg2NTYwMjg4MjQ0ODFhZGJjMDM2NmI3ZWQxODQwIiwidXNlcl9pZCI6OH0.yX2114lHu6R6FUD5pvdD5r8or5N4DI_psmSYCSCf2fY",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5ODAxMjA4LCJpYXQiOjE3MDk3MTQ4MDgsImp0aSI6IjMzZDMwNDlmMmIwNTQ0ZDE4OWY3NzNhOGQzNTk3MjQ0IiwidXNlcl9pZCI6Nn0.YiknErGBwOV6t9Am70RY6Y1cHZb1uOcZNniyXvztIJM",
 									"type": "string"
 								}
 							]
@@ -26,7 +26,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"setting1\": \"dark theme\",\r\n  \"setting2\": 123,\r\n  \"setting3\": true,\r\n  \"setting4\": \"add settings\",\r\n  \"setting5\": \"add settings\"\r\n}",
+							"raw": "{\r\n  \"add_confirmation\": true,\r\n  \"update_confirmation\": true,\r\n  \"delete_confirmation\": true,\r\n  \"display_language\": \"English\",\r\n  \"desktop_theme\": \"Green animation\",\r\n  \"dark_mode_theme\": false,\r\n  \"font\": \"Arial\",\r\n  \"font_size\": 12,\r\n  \"accessibility_options\": \"High contrast\",\r\n  \"notification_sound\": true,\r\n  \"email_notifications\": false,\r\n  \"notification_frequency\": \"daily\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -59,7 +59,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5NTMzMDc1LCJpYXQiOjE3MDk0NDY2NzUsImp0aSI6IjkxMzI2Yjk1OWI2MzQ0Y2ZiYWZlOTViMDI4OTAzZThkIiwidXNlcl9pZCI6OX0.ZbzXQSO5-vFb1DUgAqR4ALwxLHClkk6NdLz3KQi_xQ8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5NzMyMDQwLCJpYXQiOjE3MDk2NDU2NDAsImp0aSI6IjRmMzRjYTkwNjU2NTQ4YjRiNTllYWU0ZWYzY2NjYmRkIiwidXNlcl9pZCI6Nn0.Gr7KZju2_hpvYzr8cF8zNurfh7NcK_R30fBNSObxwVE",
 									"type": "string"
 								}
 							]
@@ -76,7 +76,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/get_user_settings/4/",
+							"raw": "http://localhost:8000/get_user_settings/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -84,7 +84,6 @@
 							"port": "8000",
 							"path": [
 								"get_user_settings",
-								"4",
 								""
 							]
 						}
@@ -99,7 +98,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5NTMzMDc1LCJpYXQiOjE3MDk0NDY2NzUsImp0aSI6IjkxMzI2Yjk1OWI2MzQ0Y2ZiYWZlOTViMDI4OTAzZThkIiwidXNlcl9pZCI6OX0.ZbzXQSO5-vFb1DUgAqR4ALwxLHClkk6NdLz3KQi_xQ8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5ODAxMjA4LCJpYXQiOjE3MDk3MTQ4MDgsImp0aSI6IjMzZDMwNDlmMmIwNTQ0ZDE4OWY3NzNhOGQzNTk3MjQ0IiwidXNlcl9pZCI6Nn0.YiknErGBwOV6t9Am70RY6Y1cHZb1uOcZNniyXvztIJM",
 									"type": "string"
 								}
 							]
@@ -108,7 +107,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"setting1\": \"dark theme\",\r\n  \"setting2\": 123,\r\n  \"setting3\": true,\r\n  \"setting4\": \"update data1 settings\",\r\n  \"setting5\": \"update data1 settings\"\r\n}",
+							"raw": "{\r\n  \"add_confirmation\": true,\r\n  \"update_confirmation\": true,\r\n  \"delete_confirmation\": true,\r\n  \"display_language\": \"English\",\r\n  \"desktop_theme\": \"Green animation\",\r\n  \"dark_mode_theme\": false,\r\n  \"font\": \"Arial\",\r\n  \"font_size\": 12,\r\n  \"accessibility_options\": \"High contrast\",\r\n  \"notification_sound\": true,\r\n  \"email_notifications\": false,\r\n  \"notification_frequency\": \"daily\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
