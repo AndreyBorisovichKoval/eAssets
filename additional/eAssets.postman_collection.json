@@ -1796,7 +1796,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5ODczNDUyLCJpYXQiOjE3MDk3ODY4ODMsImp0aSI6ImFlYTYwY2FlODlkZDQxNDFhODcxNGI3YzEyZjVkYjUyIiwidXNlcl9pZCI6MTJ9.6gnMXEy4u56ueEb8pbA-8y0BU0dmQmo0HucF-1i5-GE",
 											"type": "string"
 										}
 									]
@@ -1805,7 +1805,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"asset\": 216,\r\n    \"staff\": 47\r\n}\r\n",
+									"raw": "{\r\n    \"asset\": 217,\r\n    \"staff\": 42\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1879,16 +1879,16 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5MDI4MTcyLCJpYXQiOjE3MDg5NDE3NzIsImp0aSI6ImQyMzA4YWJhNWY0MDQ3ZjFhYjIxYTY0YTdlMzJlMGU2IiwidXNlcl9pZCI6Nn0.m_dQOSnDsmPxSMncOHH-3o_C9UMdHwNXKG_K6Nq4zuE",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5ODczNDUyLCJpYXQiOjE3MDk3ODY4ODMsImp0aSI6ImFlYTYwY2FlODlkZDQxNDFhODcxNGI3YzEyZjVkYjUyIiwidXNlcl9pZCI6MTJ9.6gnMXEy4u56ueEb8pbA-8y0BU0dmQmo0HucF-1i5-GE",
 											"type": "string"
 										}
 									]
 								},
-								"method": "PATCH",
+								"method": "PUT",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"asset\": 213,\r\n    \"staff\": 43\r\n}\r\n",
+									"raw": "{\r\n    \"asset\": 217,\r\n    \"staff\": 1\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1896,7 +1896,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8000/assets/api/assetassignment/211/",
+									"raw": "http://localhost:8000/assets/api/assetassignment/233/",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1906,7 +1906,7 @@
 										"assets",
 										"api",
 										"assetassignment",
-										"211",
+										"233",
 										""
 									]
 								}

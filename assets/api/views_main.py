@@ -1,5 +1,5 @@
 import logging
-from datetime import datetime
+from datetime import datetime, date
 
 from rest_framework import status
 from rest_framework_simplejwt.authentication import JWTAuthentication
@@ -620,9 +620,55 @@ class AssetAssignmentView(APIView):
             logger.exception("An error occurred while processing the DELETE request when updating return date for the asset assignment...")
             return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-    # def move_asset_assignment(self, request, pk):
-    def patch(self, request, pk):
+    def put(self, request, pk):
+        try:
+            asset_assignment = AssetAssignment.objects.get(pk=pk)
+            serializer = AssetAssignmentSerializer(asset_assignment, data=request.data, partial=True)
+            if serializer.is_valid():
+                if 'staff' in serializer.validated_data:
+                    new_staff = serializer.validated_data['staff']
+                    old_staff = asset_assignment.staff
 
-        delete_response = self.delete(request, pk)
-        post_response = self.post(request)
-        return post_response
+                    if old_staff:
+                        # Открепление актива от предыдущего сотрудника
+                        asset_assignment.return_date = date.today()
+                        asset_assignment.return_by = request.user
+                        asset_assignment.save()
+
+                        action_description = f"User {request.user.username} detached asset assignment: id = {asset_assignment.id}, asset = {asset_assignment.asset} from staff {old_staff}."
+
+                        UserAction.objects.create(user=request.user, action=action_description)
+
+                        logger.info(f"\n(__-=*=-__ {action_description} __-=*=-__)")
+
+                    # Создание новой записи с привязкой актива к новому сотруднику
+                    new_assignment = AssetAssignment.objects.create(
+                        asset=asset_assignment.asset,
+                        staff=new_staff,
+                        assignment_by=request.user
+                    )
+
+                    action_description = f"User {request.user.username} created new asset assignment: id = {new_assignment.id}, asset = {new_assignment.asset}, staff = {new_assignment.staff}."
+
+                    UserAction.objects.create(user=request.user, action=action_description)
+
+                    logger.info(f"\n(__-=*=-__ {action_description} __-=*=-__)")
+
+                return Response(serializer.data)
+            else:
+                logger.error(f"Invalid asset assignment data: {serializer.errors}")
+                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except AssetAssignment.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            logger.exception("An error occurred while processing the PUT request for asset assignment...")
+            return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+
+    # def move_asset_assignment(self, request, pk):
+    # def patch(self, request, pk):
+    #
+    #     delete_response = self.delete(request, pk)
+    #     post_response = self.post(request)
+    #     return post_response

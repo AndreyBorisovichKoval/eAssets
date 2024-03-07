@@ -193,3 +193,25 @@ INFO 2024-03-07 10:35:51,090 views_reports 19580 17504 Calculated total current 
 INFO 2024-03-07 10:35:57,231 views_reports 19580 17504 Calculated total price for asset type with id 1
 INFO 2024-03-07 10:36:13,918 views_reports 19580 17504 Calculated current price for asset type with id 1
 INFO 2024-03-07 10:36:22,285 views_reports 19580 17504 Calculated current price for asset type with id 1
+INFO 2024-03-07 13:28:33,039 views_main 19016 1240 
+(__-=*=-__ Asset 217 MacBook added by user 12 user_6. __-=*=-__)
+INFO 2024-03-07 13:29:28,690 views_main 19016 1240 All Staff viewed by user 12 user_6.
+INFO 2024-03-07 13:29:54,094 views_main 19016 1240 
+(__-=*=-__ User 12 user_6 created asset assignment: 233. The fixed asset Asset object (217) is tied to the employee Кузьмин Владимир Дмитриевич. __-=*=-__)
+ERROR 2024-03-07 13:34:47,980 views_main 19016 1240 An error occurred while processing the PUT request for asset assignment...
+Traceback (most recent call last):
+  File "D:\0_Pycharm\eAssets\assets\api\views_main.py", line 634, in put
+    asset_assignment.return_date = date.today()
+                                   ^^^^
+NameError: name 'date' is not defined
+INFO 2024-03-07 13:36:14,549 views_main 7608 17720 
+(__-=*=-__ User user_6 detached asset assignment: id = 233, asset = Asset object (217) from staff Кузьмин Владимир Дмитриевич. __-=*=-__)
+INFO 2024-03-07 13:36:14,551 views_main 7608 17720 
+(__-=*=-__ User user_6 created new asset assignment: id = 234, asset = Asset object (217), staff = Иванов Иван Иванович. __-=*=-__)
+INFO 2024-03-07 13:44:19,800 views_main 7608 17720 
+(__-=*=-__ User user_6 detached asset assignment: id = 234, asset = Asset object (217) from staff Иванов Иван Иванович. __-=*=-__)
+INFO 2024-03-07 13:44:19,803 views_main 7608 17720 
+(__-=*=-__ User user_6 created new asset assignment: id = 235, asset = Asset object (217), staff = Кузьмин Владимир Дмитриевич. __-=*=-__)
+ERROR 2024-03-07 13:50:58,211 views_main 7608 17720 AssetAssignment with pk=215 does not exist
+INFO 2024-03-07 13:51:14,304 views_main 7608 17720 All AssetsAssignments viewed by user 12 user_6.
+INFO 2024-03-07 14:00:57,520 views_main 7608 17720 All Departments viewed by user 12 user_6.
