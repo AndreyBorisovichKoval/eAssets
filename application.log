@@ -110,3 +110,86 @@ INFO 2024-03-06 14:32:31,425 views_user 17808 19540 User settings fetched for us
 INFO 2024-03-06 16:23:02,313 views_user 9920 11624 User settings fetched for user: user_1
 INFO 2024-03-06 16:23:30,975 views_user 9920 11624 User settings updated for user: user_1
 INFO 2024-03-06 17:20:49,681 views_main 9476 3948 All Departments viewed by user 6 user_1.
+WARNING 2024-03-07 09:41:04,115 views_user 19580 17504 Only administrators can view users.
+WARNING 2024-03-07 09:41:35,121 views_user 19580 17504 Only administrators can create users.
+WARNING 2024-03-07 09:42:20,831 views_user 19580 17504 Current password is incorrect.
+WARNING 2024-03-07 09:42:40,890 views_user 19580 17504 Current password is incorrect.
+WARNING 2024-03-07 09:43:02,742 views_user 19580 17504 Current password is incorrect.
+WARNING 2024-03-07 09:43:41,914 views_user 19580 17504 Current password is incorrect.
+WARNING 2024-03-07 09:44:04,257 views_user 19580 17504 Only administrators can create users.
+WARNING 2024-03-07 09:45:45,888 views_user 19580 17504 Current password is incorrect.
+INFO 2024-03-07 09:45:59,624 views_user 19580 17504 Password changed successfully.
+WARNING 2024-03-07 09:46:39,257 views_user 19580 17504 Only administrators can create users.
+INFO 2024-03-07 09:47:25,947 views_user 19580 17504 User created successfully.
+INFO 2024-03-07 09:48:28,001 views_user 19580 17504 Password changed successfully.
+ERROR 2024-03-07 09:48:52,235 views_user 19580 17504 User settings not found for user: user_6
+ERROR 2024-03-07 09:49:16,947 views_user 19580 17504 Invalid data to add user settings for user: user_6
+INFO 2024-03-07 09:49:34,688 views_user 19580 17504 User settings added for user: user_6
+INFO 2024-03-07 09:50:04,618 views_user 19580 17504 User settings fetched for user: user_6
+INFO 2024-03-07 09:50:18,601 views_user 19580 17504 User settings updated for user: user_1
+INFO 2024-03-07 09:51:40,580 views_main 19580 17504 All Departments viewed by user 12 user_6.
+INFO 2024-03-07 09:52:01,225 views_main 19580 17504 Department 2 Technical department viewed by user 12 user_6.
+INFO 2024-03-07 09:53:15,444 views_main 19580 17504 
+(__-=*=-__ Department 14 Dep_Test_0001 added by user 12 user_6. __-=*=-__)
+INFO 2024-03-07 09:54:04,991 views_main 19580 17504 All Departments viewed by user 12 user_6.
+INFO 2024-03-07 09:54:43,311 views_main 19580 17504 
+(__-=*=-__ Department 14 Dep_Test_4321 updated by user 12 user_6. __-=*=-__)
+INFO 2024-03-07 09:55:15,475 views_main 19580 17504 
+(__-=*=-__ Department 14 Dep_Test_4321 deleted by user 12 user_6. __-=*=-__)
+INFO 2024-03-07 10:08:07,133 views_main 19580 17504 
+(__-=*=-__ Department 15 Dep_Test_0001 added by user 12 user_6. __-=*=-__)
+INFO 2024-03-07 10:08:43,749 views_main 19580 17504 Division 18 Div_Test_0001 added by user 12 user_6.
+INFO 2024-03-07 10:09:35,578 views_main 19580 17504 All Positions viewed by user 12 user_6.
+INFO 2024-03-07 10:11:58,661 views_main 19580 17504 
+(__-=*=-__ Staff 47 Дустов Далерджон Юнусович added by user 12 user_6. __-=*=-__)
+INFO 2024-03-07 10:12:13,270 views_main 19580 17504 All AssetTypes viewed by user 6 user_1.
+INFO 2024-03-07 10:12:37,353 views_main 19580 17504 All Assets viewed by user 12 user_6.
+INFO 2024-03-07 10:14:11,710 views_main 19580 17504 All AssetTypes viewed by user 6 user_1.
+INFO 2024-03-07 10:14:43,741 views_main 19580 17504 
+(__-=*=-__ Asset 216 MacBook added by user 12 user_6. __-=*=-__)
+INFO 2024-03-07 10:16:16,770 views_main 19580 17504 
+(__-=*=-__ User 12 user_6 created asset assignment: 226. The fixed asset Asset object (216) is tied to the employee Дустов Далерджон Юнусович. __-=*=-__)
+INFO 2024-03-07 10:17:08,219 views_main 19580 17504 All Staff viewed by user 12 user_6.
+INFO 2024-03-07 10:17:53,669 views_main 19580 17504 
+(__-=*=-__ User 12 user_6 created asset assignment: 227. The fixed asset Asset object (216) is tied to the employee Иванов Иван Иванович. __-=*=-__)
+ERROR 2024-03-07 10:20:24,512 views_main 19580 17504 Invalid asset assignment data: {'asset': [ErrorDetail(string='Invalid pk "226" - object does not exist.', code='does_not_exist')]}
+ERROR 2024-03-07 10:20:36,149 views_main 19580 17504 Invalid asset assignment data: {'asset': [ErrorDetail(string='Invalid pk "227" - object does not exist.', code='does_not_exist')]}
+INFO 2024-03-07 10:20:59,779 views_main 19580 17504 
+(__-=*=-__ User 12 user_6 created asset assignment: 228. The fixed asset Asset object (216) is tied to the employee Иванов Иван Иванович. __-=*=-__)
+INFO 2024-03-07 10:21:40,050 views_main 19580 17504 
+(__-=*=-__ User user_6 updated return date for asset assignment: id = 228, asset = Asset object (216), staff = Иванов Иван Иванович. __-=*=-__)
+INFO 2024-03-07 10:22:14,798 views_main 19580 17504 
+(__-=*=-__ User 12 user_6 created asset assignment: 229. The fixed asset Asset object (216) is tied to the employee Дустов Далерджон Юнусович. __-=*=-__)
+INFO 2024-03-07 10:22:46,098 views_main 19580 17504 
+(__-=*=-__ User user_6 updated return date for asset assignment: id = 229, asset = Asset object (216), staff = Дустов Далерджон Юнусович. __-=*=-__)
+INFO 2024-03-07 10:23:07,056 views_main 19580 17504 
+(__-=*=-__ User 12 user_6 created asset assignment: 230. The fixed asset Asset object (216) is tied to the employee Дустов Далерджон Юнусович. __-=*=-__)
+ERROR 2024-03-07 10:24:27,863 views_main 19580 17504 Invalid asset assignment data: {'asset': [ErrorDetail(string='Invalid pk "230" - object does not exist.', code='does_not_exist')]}
+INFO 2024-03-07 10:24:42,283 views_main 19580 17504 
+(__-=*=-__ User 12 user_6 created asset assignment: 231. The fixed asset Asset object (216) is tied to the employee Иванов Иван Иванович. __-=*=-__)
+INFO 2024-03-07 10:26:31,323 views_main 19580 17504 All AssetsAssignments viewed by user 12 user_6.
+INFO 2024-03-07 10:27:23,550 views_main 19580 17504 
+(__-=*=-__ User 12 user_6 created asset assignment: 232. The fixed asset Asset object (216) is tied to the employee Дустов Далерджон Юнусович. __-=*=-__)
+INFO 2024-03-07 10:27:48,838 views_main 19580 17504 
+(__-=*=-__ User user_6 updated return date for asset assignment: id = 232, asset = Asset object (216), staff = Дустов Далерджон Юнусович. __-=*=-__)
+INFO 2024-03-07 10:28:15,634 views_tasks 19580 17504 Successful completion of recalculation of fixed assets...
+INFO 2024-03-07 10:28:50,145 views_tasks 19580 17504 Successful completion of recalculation of fixed assets...
+INFO 2024-03-07 10:30:18,774 views_tasks 19580 17504 Successful completion of recalculation of fixed assets...
+INFO 2024-03-07 10:30:56,755 views_tasks 19580 17504 Successful completion of recalculation of fixed assets...
+INFO 2024-03-07 10:31:57,071 views_tasks 19580 17504 Successful completion of recalculation of fixed assets...
+INFO 2024-03-07 10:31:57,946 views_tasks 19580 17504 Successful completion of recalculation of fixed assets...
+INFO 2024-03-07 10:31:58,713 views_tasks 19580 17504 Successful completion of recalculation of fixed assets...
+INFO 2024-03-07 10:31:59,462 views_tasks 19580 17504 Successful completion of recalculation of fixed assets...
+INFO 2024-03-07 10:32:00,548 views_tasks 19580 17504 Successful completion of recalculation of fixed assets...
+INFO 2024-03-07 10:32:42,263 views_reports 19580 17504 __-=*=-__ Retrieved assigned assets for staff with ID: 12. __-=*=-__
+INFO 2024-03-07 10:33:05,652 views_reports 19580 17504 Retrieved assets for department with ID: 1
+INFO 2024-03-07 10:33:32,960 views_reports 19580 17504 Retrieved assets for department with ID: 1
+INFO 2024-03-07 10:34:30,916 views_reports 19580 17504 Retrieved assets for department with ID: 1
+INFO 2024-03-07 10:34:57,557 views_reports 19580 17504 Retrieved assets for department with ID: 1
+INFO 2024-03-07 10:35:03,680 views_reports 19580 17504 Retrieved assets for division with ID: 1
+INFO 2024-03-07 10:35:36,970 views_reports 19580 17504 Retrieved retired assets
+INFO 2024-03-07 10:35:44,578 views_reports 19580 17504 Calculated total price of active assets
+INFO 2024-03-07 10:35:51,090 views_reports 19580 17504 Calculated total current price of active assets
+INFO 2024-03-07 10:35:57,231 views_reports 19580 17504 Calculated total price for asset type with id 1
+INFO 2024-03-07 10:36:13,918 views_reports 19580 17504 Calculated current price for asset type with id 1
+INFO 2024-03-07 10:36:22,285 views_reports 19580 17504 Calculated current price for asset type with id 1

@@ -10,23 +10,13 @@
 			"name": "Users",
 			"item": [
 				{
-					"name": "ADD User Settings",
+					"name": "Authorization/sign-in/admin",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5ODAxMjA4LCJpYXQiOjE3MDk3MTQ4MDgsImp0aSI6IjMzZDMwNDlmMmIwNTQ0ZDE4OWY3NzNhOGQzNTk3MjQ0IiwidXNlcl9pZCI6Nn0.YiknErGBwOV6t9Am70RY6Y1cHZb1uOcZNniyXvztIJM",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"add_confirmation\": true,\r\n  \"update_confirmation\": true,\r\n  \"delete_confirmation\": true,\r\n  \"display_language\": \"English\",\r\n  \"desktop_theme\": \"Green animation\",\r\n  \"dark_mode_theme\": false,\r\n  \"font\": \"Arial\",\r\n  \"font_size\": 12,\r\n  \"accessibility_options\": \"High contrast\",\r\n  \"notification_sound\": true,\r\n  \"email_notifications\": false,\r\n  \"notification_frequency\": \"daily\"\r\n}\r\n",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"Admin_123456789000\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -34,14 +24,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/create_user_settings/",
+							"raw": "http://localhost:8000/auth/sign-in/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8000",
 							"path": [
-								"create_user_settings",
+								"auth",
+								"sign-in",
 								""
 							]
 						}
@@ -49,26 +40,13 @@
 					"response": []
 				},
 				{
-					"name": "GET User Settings",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
+					"name": "Authorization/sign-in/user",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5NzMyMDQwLCJpYXQiOjE3MDk2NDU2NDAsImp0aSI6IjRmMzRjYTkwNjU2NTQ4YjRiNTllYWU0ZWYzY2NjYmRkIiwidXNlcl9pZCI6Nn0.Gr7KZju2_hpvYzr8cF8zNurfh7NcK_R30fBNSObxwVE",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "",
+							"raw": "{\r\n    \"username\": \"user_1\",\r\n    \"password\": \"User_123\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -76,53 +54,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/get_user_settings/",
+							"raw": "http://localhost:8000/auth/sign-in/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8000",
 							"path": [
-								"get_user_settings",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "MOD User Settings",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5ODAxMjA4LCJpYXQiOjE3MDk3MTQ4MDgsImp0aSI6IjMzZDMwNDlmMmIwNTQ0ZDE4OWY3NzNhOGQzNTk3MjQ0IiwidXNlcl9pZCI6Nn0.YiknErGBwOV6t9Am70RY6Y1cHZb1uOcZNniyXvztIJM",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"add_confirmation\": true,\r\n  \"update_confirmation\": true,\r\n  \"delete_confirmation\": true,\r\n  \"display_language\": \"English\",\r\n  \"desktop_theme\": \"Green animation\",\r\n  \"dark_mode_theme\": false,\r\n  \"font\": \"Arial\",\r\n  \"font_size\": 12,\r\n  \"accessibility_options\": \"High contrast\",\r\n  \"notification_sound\": true,\r\n  \"email_notifications\": false,\r\n  \"notification_frequency\": \"daily\"\r\n}\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8000/update_user_settings/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"update_user_settings",
+								"auth",
+								"sign-in",
 								""
 							]
 						}
@@ -180,7 +120,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5MTkxMjk4LCJpYXQiOjE3MDkxMDQ4OTgsImp0aSI6ImE1ZWU2YzQzMDNlZjQzNDViMTFmYjg2ZTljNjU4NTZiIiwidXNlcl9pZCI6MX0.YWQ0LMfL4e-PDWa6HZv1klukDlJsuSOUD6iYh51M4TQ",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5ODczMjA2LCJpYXQiOjE3MDk3ODY4MDYsImp0aSI6IjYyMmM0OTM2YjM0NTRhZjg5ZGJhMDQxNjZmZjM0MWJiIiwidXNlcl9pZCI6NX0.uGbJ1nPUsF4z0c3aU8rBtWJcEDPKLYYds7lUNrRtqaQ",
 									"type": "string"
 								}
 							]
@@ -189,7 +129,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"user_1\",\r\n    \"email\": \"user_1.eassets@gmail.com\",\r\n    \"password\": \"User_123\",\r\n    \"is_superuser\": false\r\n}\r\n",
+							"raw": "{\r\n    \"username\": \"user_6\",\r\n    \"email\": \"user_6.eassets@gmail.com\",\r\n    \"password\": \"User_123\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -220,7 +160,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5MTkxMTU5LCJpYXQiOjE3MDkxMDQ3NTksImp0aSI6IjA5OWI5NzI4ZGEzMzRiYzM4ODQyYTI3OTE3Mzg1ZjIxIiwidXNlcl9pZCI6MX0.nC1IUrvayzm0jiQ8Se-EnxpiNDaIXz19po_Ef5BNAVM",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5ODcyODUxLCJpYXQiOjE3MDk3ODY0NTEsImp0aSI6IjA3OTFlYzM0NmI4MDQ4YTg4NjExYTViNGZkOWU0NTk2IiwidXNlcl9pZCI6Nn0._MWVYzUJylekvufWPctXdDzt_jaYvuR0Y6aSjPiMIRA",
 									"type": "string"
 								}
 							]
@@ -229,7 +169,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"current_password\": \"test_123\",\r\n  \"new_password\": \"Admin_123456789000\"\r\n}",
+							"raw": "{\r\n  \"current_password\": \"User_123\",\r\n  \"new_password\": \"User_123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -293,13 +233,26 @@
 					"response": []
 				},
 				{
-					"name": "Authorization/sign-in/admin",
+					"name": "GET User Settings",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
-						"method": "POST",
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5ODczMjgzLCJpYXQiOjE3MDk3ODY4ODMsImp0aSI6IjE1Y2NiMGEwZTg3YzQwZGRhYzgxOGFkYjVjZGQ5YjU5IiwidXNlcl9pZCI6MTJ9.H495FYpoU7xb6Z-IPIGHF8RG-NoWeDxfcwlHtVxiBKI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"Admin_123456789000\"\r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -307,15 +260,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/auth/sign-in/",
+							"raw": "http://localhost:8000/get_user_settings/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8000",
 							"path": [
-								"auth",
-								"sign-in",
+								"get_user_settings",
 								""
 							]
 						}
@@ -323,13 +275,23 @@
 					"response": []
 				},
 				{
-					"name": "Authorization/sign-in/user",
+					"name": "ADD User Settings",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5ODAxMjA4LCJpYXQiOjE3MDk3MTQ4MDgsImp0aSI6IjMzZDMwNDlmMmIwNTQ0ZDE4OWY3NzNhOGQzNTk3MjQ0IiwidXNlcl9pZCI6Nn0.YiknErGBwOV6t9Am70RY6Y1cHZb1uOcZNniyXvztIJM",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"user_1\",\r\n    \"password\": \"User_123\"\r\n}\r\n",
+							"raw": "{\r\n  \"add_confirmation\": true,\r\n  \"update_confirmation\": true,\r\n  \"delete_confirmation\": true,\r\n  \"display_language\": \"English\",\r\n  \"desktop_theme\": \"Green animation\",\r\n  \"dark_mode_theme\": false,\r\n  \"font\": \"Arial\",\r\n  \"font_size\": 12,\r\n  \"accessibility_options\": \"High contrast\",\r\n  \"notification_sound\": true,\r\n  \"email_notifications\": false,\r\n  \"notification_frequency\": \"daily\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -337,15 +299,53 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/auth/sign-in/",
+							"raw": "http://localhost:8000/create_user_settings/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8000",
 							"path": [
-								"auth",
-								"sign-in",
+								"create_user_settings",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MOD User Settings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5ODAxMjA4LCJpYXQiOjE3MDk3MTQ4MDgsImp0aSI6IjMzZDMwNDlmMmIwNTQ0ZDE4OWY3NzNhOGQzNTk3MjQ0IiwidXNlcl9pZCI6Nn0.YiknErGBwOV6t9Am70RY6Y1cHZb1uOcZNniyXvztIJM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"add_confirmation\": true,\r\n  \"update_confirmation\": true,\r\n  \"delete_confirmation\": true,\r\n  \"display_language\": \"English\",\r\n  \"desktop_theme\": \"Green animation\",\r\n  \"dark_mode_theme\": false,\r\n  \"font\": \"Arial\",\r\n  \"font_size\": 12,\r\n  \"accessibility_options\": \"High contrast\",\r\n  \"notification_sound\": true,\r\n  \"email_notifications\": false,\r\n  \"notification_frequency\": \"daily\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/update_user_settings/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"update_user_settings",
 								""
 							]
 						}
@@ -430,7 +430,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM3NTgxLCJpYXQiOjE3MDg4NTExODEsImp0aSI6IjQ1MDk3ZjRlZWQ2MDQ5MTg4NzMwOTY4MTI3MWMzMmI0IiwidXNlcl9pZCI6Nn0.JUI6Z6gwu8U0VdLCyEc3LeFlhOsNgb_ICexQYihtq-c",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5ODczNDUyLCJpYXQiOjE3MDk3ODY4ODMsImp0aSI6ImFlYTYwY2FlODlkZDQxNDFhODcxNGI3YzEyZjVkYjUyIiwidXNlcl9pZCI6MTJ9.6gnMXEy4u56ueEb8pbA-8y0BU0dmQmo0HucF-1i5-GE",
 									"type": "string"
 								}
 							]
@@ -516,7 +516,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5ODczNDUyLCJpYXQiOjE3MDk3ODY4ODMsImp0aSI6ImFlYTYwY2FlODlkZDQxNDFhODcxNGI3YzEyZjVkYjUyIiwidXNlcl9pZCI6MTJ9.6gnMXEy4u56ueEb8pbA-8y0BU0dmQmo0HucF-1i5-GE",
 									"type": "string"
 								}
 							]
@@ -525,7 +525,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Dep_Test_0012\"\r\n}\r\n",
+							"raw": "{\r\n    \"title\": \"Dep_Test_0001\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -599,7 +599,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5ODczNDUyLCJpYXQiOjE3MDk3ODY4ODMsImp0aSI6ImFlYTYwY2FlODlkZDQxNDFhODcxNGI3YzEyZjVkYjUyIiwidXNlcl9pZCI6MTJ9.6gnMXEy4u56ueEb8pbA-8y0BU0dmQmo0HucF-1i5-GE",
 									"type": "string"
 								}
 							]
@@ -607,7 +607,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/assets/api/department/7/",
+							"raw": "http://localhost:8000/assets/api/department/14/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -617,7 +617,7 @@
 								"assets",
 								"api",
 								"department",
-								"7",
+								"14",
 								""
 							]
 						}
@@ -703,7 +703,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5ODczNDUyLCJpYXQiOjE3MDk3ODY4ODMsImp0aSI6ImFlYTYwY2FlODlkZDQxNDFhODcxNGI3YzEyZjVkYjUyIiwidXNlcl9pZCI6MTJ9.6gnMXEy4u56ueEb8pbA-8y0BU0dmQmo0HucF-1i5-GE",
 									"type": "string"
 								}
 							]
@@ -712,7 +712,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Dev_Test_0001\",\r\n    \"department\": 7\r\n}\r\n",
+							"raw": "{\r\n    \"title\": \"Div_Test_0001\",\r\n    \"department\": 15\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -836,7 +836,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5ODczNDUyLCJpYXQiOjE3MDk3ODY4ODMsImp0aSI6ImFlYTYwY2FlODlkZDQxNDFhODcxNGI3YzEyZjVkYjUyIiwidXNlcl9pZCI6MTJ9.6gnMXEy4u56ueEb8pbA-8y0BU0dmQmo0HucF-1i5-GE",
 									"type": "string"
 								}
 							]
@@ -1141,7 +1141,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5ODczNDUyLCJpYXQiOjE3MDk3ODY4ODMsImp0aSI6ImFlYTYwY2FlODlkZDQxNDFhODcxNGI3YzEyZjVkYjUyIiwidXNlcl9pZCI6MTJ9.6gnMXEy4u56ueEb8pbA-8y0BU0dmQmo0HucF-1i5-GE",
 									"type": "string"
 								}
 							]
@@ -1150,7 +1150,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"last_name\": \"Тестов\",\r\n    \"first_name\": \"Тест\",\r\n    \"patronymic\": \"Тестович\",\r\n    \"memo\": \"Memo_0002\",\r\n    \"division\": 9,\r\n    \"position\": 7\r\n}\r\n",
+							"raw": "{\r\n    \"last_name\": \"Дустов\",\r\n    \"first_name\": \"Далерджон\",\r\n    \"patronymic\": \"Юнусович\",\r\n    \"memo\": \"Memo_0001\",\r\n    \"division\": 18,\r\n    \"position\": 7\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1460,7 +1460,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5ODczNDUyLCJpYXQiOjE3MDk3ODY4ODMsImp0aSI6ImFlYTYwY2FlODlkZDQxNDFhODcxNGI3YzEyZjVkYjUyIiwidXNlcl9pZCI6MTJ9.6gnMXEy4u56ueEb8pbA-8y0BU0dmQmo0HucF-1i5-GE",
 											"type": "string"
 										}
 									]
@@ -1525,7 +1525,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5ODczNDUyLCJpYXQiOjE3MDk3ODY4ODMsImp0aSI6ImFlYTYwY2FlODlkZDQxNDFhODcxNGI3YzEyZjVkYjUyIiwidXNlcl9pZCI6MTJ9.6gnMXEy4u56ueEb8pbA-8y0BU0dmQmo0HucF-1i5-GE",
 											"type": "string"
 										}
 									]
@@ -1534,7 +1534,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"inventory_number\": \"INV-10213\",\r\n    \"title\": \"Test_0213\",\r\n    \"identifier\": \"S/N-45654858\",\r\n    \"acquisition_date\": \"2023-01-28\",\r\n    \"service_life\": 15,\r\n    \"cost\": \"1200.00\",\r\n    \"current_cost\": \"1200.00\",\r\n    \"description\": \"Конфигурация оборудования, либо мебели…\",\r\n    \"asset_type\": 8\r\n}\r\n",
+									"raw": "{\r\n    \"inventory_number\": \"INV-10222\",\r\n    \"title\": \"MacBook\",\r\n    \"identifier\": \"S/N-45654866\",\r\n    \"acquisition_date\": \"2024-03-07\",\r\n    \"service_life\": 5,\r\n    \"cost\": \"32500.00\",\r\n    \"current_cost\": \"32500.00\",\r\n    \"description\": \"Конфигурация оборудования, либо мебели…\",\r\n    \"asset_type\": 1\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1731,7 +1731,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5ODczNDUyLCJpYXQiOjE3MDk3ODY4ODMsImp0aSI6ImFlYTYwY2FlODlkZDQxNDFhODcxNGI3YzEyZjVkYjUyIiwidXNlcl9pZCI6MTJ9.6gnMXEy4u56ueEb8pbA-8y0BU0dmQmo0HucF-1i5-GE",
 											"type": "string"
 										}
 									]
@@ -1805,7 +1805,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"asset\": 213,\r\n    \"staff\": 44\r\n}\r\n",
+									"raw": "{\r\n    \"asset\": 216,\r\n    \"staff\": 47\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1837,7 +1837,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4OTM5NDA3LCJpYXQiOjE3MDg4NTMwMDcsImp0aSI6IjU3NDBlZGJmMTM0NzRhMWFiNDQ2NjYyNTA2ZDA1YzFjIiwidXNlcl9pZCI6Nn0.CpLPb8f-VugmRV_L8WlL0AUtZ7GIY3KpLBCDe-deFks",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5ODczNDUyLCJpYXQiOjE3MDk3ODY4ODMsImp0aSI6ImFlYTYwY2FlODlkZDQxNDFhODcxNGI3YzEyZjVkYjUyIiwidXNlcl9pZCI6MTJ9.6gnMXEy4u56ueEb8pbA-8y0BU0dmQmo0HucF-1i5-GE",
 											"type": "string"
 										}
 									]
@@ -1854,7 +1854,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8000/assets/api/assetassignment/215/",
+									"raw": "http://localhost:8000/assets/api/assetassignment/228/",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1864,7 +1864,7 @@
 										"assets",
 										"api",
 										"assetassignment",
-										"215",
+										"228",
 										""
 									]
 								}
@@ -1976,7 +1976,7 @@
 					"response": []
 				},
 				{
-					"name": "View all assets of all departments",
+					"name": "View all assets of a specific departments by ID",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -2011,7 +2011,7 @@
 					"response": []
 				},
 				{
-					"name": "View all assets of a specific department by ID",
+					"name": "View all assets of a specific division by ID",
 					"request": {
 						"auth": {
 							"type": "bearer",
