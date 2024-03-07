@@ -1,5 +1,5 @@
-from django.http import HttpResponse, JsonResponse
-from assets.api.views_tasks import AssetRecalculator
+from django.http import JsonResponse
+from assets.api.views.tasks import AssetRecalculator
 
 
 def recalculate_assets_view(request):

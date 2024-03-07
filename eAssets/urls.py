@@ -21,7 +21,7 @@ from django.urls import path, include
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
 
 from additional.email_sender import send_email
-from assets.api.views_user import view_users, create_user, change_password, get_user_settings, create_user_settings, update_user_settings
+from assets.api.views.user import view_users, create_user, change_password, get_user_settings, create_user_settings, update_user_settings
 from assets.views import recalculate_assets_view
 from django.contrib.auth import views as auth_views
 

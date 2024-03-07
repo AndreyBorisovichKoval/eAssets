@@ -215,3 +215,27 @@ INFO 2024-03-07 13:44:19,803 views_main 7608 17720
 ERROR 2024-03-07 13:50:58,211 views_main 7608 17720 AssetAssignment with pk=215 does not exist
 INFO 2024-03-07 13:51:14,304 views_main 7608 17720 All AssetsAssignments viewed by user 12 user_6.
 INFO 2024-03-07 14:00:57,520 views_main 7608 17720 All Departments viewed by user 12 user_6.
+WARNING 2024-03-07 17:51:22,022 views_user 8960 12492 Only administrators can view users.
+WARNING 2024-03-07 17:51:36,727 views_user 8960 12492 Only administrators can create users.
+WARNING 2024-03-07 17:52:17,227 views_user 8960 12492 Only administrators can create users.
+INFO 2024-03-07 17:52:28,165 views_user 8960 12492 User created successfully.
+INFO 2024-03-07 17:54:00,229 views_main 8960 12492 All Departments viewed by user 5 admin.
+INFO 2024-03-07 17:54:34,802 views_main 8960 12492 
+(__-=*=-__ Department 16 Dep_Test_0001 added by user 5 admin. __-=*=-__)
+INFO 2024-03-07 17:55:00,858 views_main 8960 12492 Division 19 Div_Test_0001 added by user 12 user_6.
+INFO 2024-03-07 17:55:54,603 views_main 8960 12492 All Staff viewed by user 12 user_6.
+INFO 2024-03-07 19:17:10,893 reports 12900 6200 __-=*=-__ Retrieved assigned assets for staff with ID: 12. __-=*=-__
+INFO 2024-03-07 19:17:15,648 reports 12900 6200 Retrieved assets for department with ID: 1
+INFO 2024-03-07 19:17:19,712 reports 12900 6200 Retrieved assets for division with ID: 1
+INFO 2024-03-07 19:17:23,398 reports 12900 6200 Retrieved retired assets
+INFO 2024-03-07 19:17:27,408 reports 12900 6200 Calculated total price of active assets
+INFO 2024-03-07 19:17:30,920 reports 12900 6200 Calculated total current price of active assets
+INFO 2024-03-07 19:17:34,659 reports 12900 6200 Calculated total price for asset type with id 1
+INFO 2024-03-07 19:17:39,307 reports 12900 6200 Calculated current price for asset type with id 1
+INFO 2024-03-07 19:19:10,895 user 12900 6200 User settings fetched for user: user_6
+INFO 2024-03-07 19:19:26,051 main 12900 6200 All Departments viewed by user 5 admin.
+INFO 2024-03-07 19:19:40,380 main 12900 6200 All Positions viewed by user 12 user_6.
+INFO 2024-03-07 19:19:47,136 main 12900 6200 All Staff viewed by user 12 user_6.
+INFO 2024-03-07 19:20:05,469 main 12900 6200 All Assets viewed by user 12 user_6.
+INFO 2024-03-07 19:20:13,918 main 12900 6200 All AssetsAssignments viewed by user 12 user_6.
+INFO 2024-03-07 19:20:23,017 tasks 12900 6200 Successful completion of recalculation of fixed assets...

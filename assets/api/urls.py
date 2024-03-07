@@ -1,6 +1,6 @@
 from django.urls import path
 
-from assets.api.views_main import (
+from assets.api.views.main import (
     DepartmentView,
     DivisionView,
     PositionView,
@@ -9,7 +9,7 @@ from assets.api.views_main import (
     AssetView,
     AssetAssignmentView,
 )
-from assets.api.views_reports import *
+from assets.api.views.reports import *
 
 
 urlpatterns = [
