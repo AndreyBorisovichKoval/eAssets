@@ -193,9 +193,6 @@ class PositionView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request, pk=None):
-        # Добавляем запись о действии пользователя перед проверкой pk
-        # action_description = f"User {request.user.username} initiated a GET request to retrieve position data."
-        # UserAction.objects.create(user=request.user, action=action_description)
 
         if pk:
             try:

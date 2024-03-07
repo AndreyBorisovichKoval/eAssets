@@ -25,21 +25,6 @@ from assets.api.views_user import view_users, create_user, change_password, get_
 from assets.views import recalculate_assets_view
 from django.contrib.auth import views as auth_views
 
-# from django.urls import re_path
-# from rest_framework import permissions
-# from drf_yasg.views import get_schema_view
-# from drf_yasg import openapi
-#
-#
-# schema_view = get_schema_view(
-#     openapi.Info(
-#         title="API Documentation",
-#         default_version="v1",
-#         description="Your API description",
-#     ),
-#     public=True,
-# )
-
 
 urlpatterns = [
     path('', include('index.urls')),
